@@ -7,7 +7,7 @@ slug: /
 # Introdução
 
 ## Descrição do módulo
-Aqui você encontrará toda a documentação desenvolvida pelo grupo 3 durante o módulo 5 de Engenharia da Computação.
+Aqui você encontrará toda a documentação desenvolvida pelo Violeta durante o módulo 5 de Engenharia da Computação.
 
 O cliente do projeto é o Hospital Sírio-Libanês e o projeto consiste em uma ferramenta com hardware e software que facilite o reabastecimento e montagem dos carrinhos de emergência de maneira que possibilite modificações e conectividade com outras ferramentas.
 

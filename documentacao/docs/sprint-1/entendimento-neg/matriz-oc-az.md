@@ -12,10 +12,12 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 
 - Eliminar (Eliminate): Identificar e eliminar elementos do setor que são tradicionais e dispensáveis, focando apenas no que é essencial.
 - Reduzir (Reduce): Reduzir a ênfase em áreas menos valorizadas pelos clientes, otimizando custos sem comprometer a qualidade percebida.
-- Elevar (Raise): Concentrar esforços em aspectos do produto ou serviço que são valorizados pelos clientes, elevando seu padrão acima do convencional.
+- Aumentar (Raise): Concentrar esforços em aspectos do produto ou serviço que são valorizados pelos clientes, elevando seu padrão acima do convencional.
 - Criar (Create): Introduzir novos elementos ou características que ainda não estão presentes no mercado, proporcionando um valor inédito aos consumidores.
   
 &nbsp;&nbsp;&nbsp;&nbsp;A seguir, tem-se a análise de oceano azul aplicada ao parceiro de projeto, Sírio-Libanes.
+
+![oceano azul](../../../static/img/business/oceano-azul.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Reduzir***:
 - **Tempo de Espera para Atendimento Emergencial**:
@@ -27,7 +29,10 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 - **Custos Administrativos**:
     - **Estratégia**: Revisar processos internos, adotar tecnologias de automação e simplificar a burocracia para reduzir custos administrativos.
     - **Indicadores de Desempenho**: Redução percentual nos custos administrativos; eficiência no processamento de transações.
-
+- **Processos muito manuais**
+  - **Estratégia**: Automatizar alguns processos para gerar eficiência e ganho de tempo para emergências.
+  - **Indicadores de Desempenho**: Emergências sendo atendidas mais rápidamente, maior quantidade de emergências atendidas em menos tempo.
+  
 &nbsp;&nbsp;&nbsp;&nbsp;***Eliminar***:
 - **Desconforto na Experiência do Paciente**:
     - **Estratégia**: Investir em melhorias na infraestrutura, treinamento de equipe para atendimento humanizado e coleta de feedback constante.
@@ -52,6 +57,9 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 - **Escuta de reclamações**
     - **Estratégia**: Atender mais reclamações em SAC ou sites como Reclame Aqui.
     - **Indicadores de Desempenho**: Aumento percentual nas respostas de reclamações, mai reclamações resolvidas ou diminuição no número de reclamações.
+- **Automatização de processos manuais**:
+    - **Estratégia**: Investir em automatização de processos que demandam um longo período de tempo e geram atraso.
+      - **Indicadores de Desempenho**: Diminuição de tempo em processos.
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Criar***:
 - **Programas de Saúde Preventiva Personalizados**:

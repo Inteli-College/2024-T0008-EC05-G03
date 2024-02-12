@@ -24,10 +24,6 @@ No contexto do presente projeto, a equipe Violeta elaborou duas personas diferen
 
 Diante do exposto, percebe-se que Miguel tem dificuldade na bipagem dos itens de reabastecimento dos carrinhos de emergência e em realizar a própria tarefa de reabastecimento em uma quantidade menor de tempo. Com isso, é evidente que a solução de automação proposta pelo grupo Violeta pode ajudá-lo no sentido de possibilitar o rastreamento dos itens bipados por meio de uma interface visível e, além disso, no sentido de aumentar a rapidez e precisão do reabastecimento dos carrinhos, uma vez que será realizado por um robô, que é menos suscetível a bipar ou realocar itens de forma errônea.
 
-
-<br></br>
-
-
 <p style={{textAlign: 'center'}}>Figura 2 - Layout de persona (Médica)</p>
 
 ![teste](../../../static/img/ux/persona_2.png)

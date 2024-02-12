@@ -8,9 +8,9 @@ custom_edit_url: null
 ## Requisitos da solução
 
 ### Requisitos funcionais
-&emsp;&emsp;“Um requisito funcional é uma declaração de como um sistema deve se comportar. Define o que o sistema deve fazer para atender às necessidades ou expectativas do usuário.”[13] , ou seja, requisitos funcionais é a interação entre o sistema e seu ambiente.
+&emsp;&emsp;Requisitos funcionais são descrições detalhadas das funções ou capacidades que o sistema deve fornecer para atender às necessidades do usuário. Eles descrevem as operações específicas que o sistema deve ser capaz de realizar, as interações que ele deve suportar e os resultados que ele deve produzir, definindo assim o comportamento funcional do sistema. Geralmente, esses requisitos são expressos em termos de entradas, saídas e comportamentos esperados.
 
-&emsp;&emsp;Os requisitos funcionais também definem a interação entre o sistema e o seu ambiente, que pode incluir outros sistemas, usuários, dispositivos, etc. Na elaboração dos requisitos funcionais de um projeto, é essencial identificar os problemas e as necessidades que o projeto visa resolver ou atender. Cada ação que o sistema deve executar é considerada um requisito funcional. 
+&emsp;&emsp;Nesse contexto, foram delineados os requisitos funcionais específicos para o nosso sistema, os quais estão apresentados de forma detalhada na tabela a seguir:
 
 | Requisitos | Ação |
 | --- | --- |

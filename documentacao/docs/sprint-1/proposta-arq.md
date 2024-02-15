@@ -28,17 +28,16 @@ custom_edit_url: null
 
 &emsp;&emsp;Os requisitos não funcionais de um sistema descrevem atributos que não estão diretamente relacionados às funcionalidades específicas do sistema, mas são igualmente importantes para sua operação, desempenho, segurança e usabilidade. Assim, visando uma maior qualidade de operação do sistema, estabelecemos os seguintes requisitos não funcionais: 
 
-| Requisitos | Descrição | Teste |
-| --- | --- | --- |
-| RNF01 | O sistema permitir a adição de novos layouts de maneira configurável e fácil, fazendo com que o próprio usuário o mantenha atualizado. | Teste |
-| RNF02 | Aplicação com UI agradável e de fácil compreensão. | Teste |
-| RNF03 | O sistema deve ser eficiente ao realizar a montagem das caixas, sendo rápido e preciso. | Teste |
-| RNF04 | O sistema deve permitir que o usuário selecione o layout do carrinho desejado. | Teste |
-| RNF05 | Monitorar continuamente o status operacional do robô e de todos os componentes envolvidos na montagem, detectando e respondendo imediatamente a quaisquer anomalias ou problemas que possam surgir. | Teste |
-| RNF06 | O sistema pode ser equipado com algoritmos de correção de erros robustos, capazes de identificar e corrigir automaticamente problemas durante o processo de montagem, minimizando a ocorrência de falhas graves. | Teste |
-| RNF07 | O sistema deve registrar todas as falhas, anomalias e eventos relevantes durante o processo de montagem para análise posterior, permitindo a identificação de tendências e a implementação de medidas preventivas. | Teste |
-| RNF08 | O software e o robô devem ter uma baixa latência, que permita uma maior eficácia. | Teste |
-| RNF09 | O sistema deve ser altamente disponível, minimizando o tempo de inatividade não planejado e garantindo que o sistema esteja sempre disponível para uso durante o horário de produção | Teste |
+| Requisitos | Descrição |
+| --- | --- |
+| RNF01 | O sistema permitir a adição de novos layouts de maneira configurável e fácil, fazendo com que o próprio usuário o mantenha atualizado. |
+| RNF02 | Aplicação com UI agradável e de fácil compreensão. |
+| RNF03 | O sistema deve ser eficiente ao realizar a montagem das caixas, sendo rápido e preciso. |
+| RNF04 | Monitorar continuamente o status operacional do robô e de todos os componentes envolvidos na montagem, detectando e respondendo imediatamente a quaisquer anomalias ou problemas que possam surgir. |
+| RNF05 | O sistema pode ser equipado com algoritmos de correção de erros robustos, capazes de identificar e corrigir automaticamente problemas durante o processo de montagem, minimizando a ocorrência de falhas graves. |
+| RNF06 | O sistema deve registrar todas as falhas, anomalias e eventos relevantes durante o processo de montagem para análise posterior, permitindo a identificação de tendências e a implementação de medidas preventivas. |
+| RNF07 | O software e o robô devem ter uma baixa latência, que permita uma maior eficácia. |
+| RNF08 | O sistema deve ser altamente disponível, minimizando o tempo de inatividade não planejado e garantindo que o sistema esteja sempre disponível para uso durante o horário de produção. |
 
 ## Diagrama de blocos
 <div style={{margin:25}}>

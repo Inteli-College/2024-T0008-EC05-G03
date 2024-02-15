@@ -28,8 +28,9 @@ Abaixo segue a Jornada de Usuário do auxiliar de farmácia com as característi
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 
-Por fim, as jornadas do usuário são uma ferramenta fundamental para o desenvolvimento de produtos centrados no usuário. Ao mapear e entender o caminho que os usuários percorrem, podem ser criadas soluções mais eficazes e orientadas para atender às necessidades e expectativas dos usuários em todas as fases do ciclo de vida do produto. Isso não apenas aumenta a satisfação do usuário, mas também contribui para o sucesso e a relevância contínua do produto.
+A partir da jornada do usuário acima, foi possível concluir que entender o percurso do usuário é essencial para o desenvolvimento de produtos centrados no usuário. Ao mapear e compreender as etapas que os usuários percorrem, podemos criar soluções mais eficazes e direcionadas para atender às suas necessidades e expectativas em todas as fases do ciclo de vida do produto.
 
+Essa abordagem não só aumenta a satisfação do usuário, mas também contribui significativamente para o sucesso e a relevância contínua do produto no mercado. Ao alinhar as estratégias de desenvolvimento com as experiências reais dos usuários, as jornadas do usuário tornam-se uma poderosa ferramenta para orientar o desenvolvimento de produtos que realmente agregam valor e impacto positivo na vida dos usuários.
 
 
 

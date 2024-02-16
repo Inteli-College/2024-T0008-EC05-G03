@@ -1,10 +1,10 @@
 <p align="center">
-<a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172046/Full-Inversed.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
+<a href= "https://www.inteli.edu.br/"> <img src="https://lh3.googleusercontent.com/proxy/lIqelEx3J1_WFCxtiV4qAsPQXPQqUwQ6oRNzFX4wUUClp16DstvcOxQR7YAZyr-e9oIpj-xi6W8bePAj5njamq65vIYrVybo3QtBTghMvFEzxD8cNQ3v6VM2kfRJUa8" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
 # Violeta
 
-A história do centenário Sírio-Libanês teve início com a reunião de um grupo de amigas sírio-libanesas que, como forma de retribuição pela hospitalidade que encontraram aqui ao migrarem da Síria a São Paulo, fundaram a Sociedade Beneficente de Senhoras e, posteriormente, o Hospital Sírio-Libanês. A figura responsável por liderar esse processo foi Adma Jafet, que coordenou o projeto do hospital por muito tempo. Para homenagear seu legado, tomamos a decisão unânime de nomear nossa equipe como “Violeta”, primeiro nome da filha de Adma Jafet, que também presidiu o Sírio-Libanês por décadas.
+A história do centenário Sírio-Libanês teve início com a reunião de um grupo de amigas sírio-libanesas que, como forma de retribuição pela hospitalidade que encontraram aqui ao migrarem da Síria a São Paulo, fundaram a Sociedade Beneficente de Senhoras e, posteriormente, o Hospital Sírio-Libanês. A figura responsável por liderar esse processo foi Adma Jafet, que coordenou o projeto do hospital por muito tempo. Para homenagear seu legado, tomamos a decisão unânime de nomear nossa equipe como “Violeta”, primeiro nome da filha de Adma Jafet, que também presidiu o Sírio-Libanês por décadas. 
 
 ## Integrantes
 
@@ -27,10 +27,7 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 📜| Projeto feito por alunos do Inteli - Instituto de Tecnologia e liderança - de Engenharia da Computação em parceria com o Hospital Sírio-Libanês. O projeto se trata de uma automatização no processo de montagem de carrinhos de emergência utilizado em situações necessárias, eliminando processos manuais e garatindo maior eficiência e otimização de tempo, uma resposta mais rápida e eficiente em casos de emergência.
 
 <br><br>
-<br><br>
 <p align="center">
 
-<img src="documentacao/static/img/logo-violeta.png" align="center" alt="Violeta Logo" border="0" height="400" width="600" >
+<img src="documentacao/static/img/logo-violeta.png" align="center" alt="Violeta Logo" border="0">
 
-
-                                                 Violeta

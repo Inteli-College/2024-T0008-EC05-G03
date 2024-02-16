@@ -7,6 +7,11 @@ slug: /
 # Introdução
 
 ## Descrição do módulo
+
+Aqui, disponibilizamos toda a documentação elaborada pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação.
+
+O nosso projeto tem como cliente o Hospital Sírio-Libanês e visa desenvolver uma ferramenta abrangente, composta por hardware e software, para otimizar o reabastecimento e a montagem dos carrinhos de emergência. Este sistema foi concebido de modo a proporcionar flexibilidade para modificações e aprimorar a conectividade com outras ferramentas essenciais.
+=======
 Este documento compila a documentação detalhada desenvolvida pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação. Nosso projeto tem como cliente o Hospital Sírio-Libanês, uma instituição de referência na área da saúde, e visa a criação de uma ferramenta abrangente, composta por hardware e software. Essa ferramenta foi concebida com o propósito específico de otimizar os processos de reabastecimento e montagem dos carrinhos de emergência, visando à eficiência operacional e à melhoria dos serviços prestados. O sistema busca, ainda, oferecer flexibilidade para futuras modificações e aprimorar a conectividade com outras ferramentas essenciais no ambiente hospitalar.
 
 ## Parceiro de projeto
@@ -29,6 +34,7 @@ Os objetivos delineados para nosso projeto abrangem diversos aspectos, visando �
 
 A solução proposta pelo Grupo 3 - Violeta consiste em um sistema abrangente que integra hardware e software. O sistema foi concebido para otimizar a gestão dos carrinhos de emergência, abordando desde o reabastecimento até o monitoramento em tempo real do status desses equipamentos. A flexibilidade do sistema permite adaptações contínuas, garantindo que as mudanças nas necessidades hospitalares sejam facilmente incorporadas. A conectividade aprimorada possibilita a integração fluida com outras ferramentas essenciais no ambiente hospitalar, promovendo uma abordagem mais holística e eficaz na prestação de serviços de saúde emergenciais. A solução almeja não apenas resolver desafios operacionais específicos, mas também contribuir para o aprimoramento geral dos processos internos do Hospital Sírio-Libanês, refletindo o compromisso com a excelência e inovação na área da saúde.
 
+
 ## Membros do grupo
 
 - [Antonio Artimonte Vaz Guimarães](https://www.linkedin.com/in/antonio-guimar%C3%A3es-2bb961264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
@@ -36,5 +42,5 @@ A solução proposta pelo Grupo 3 - Violeta consiste em um sistema abrangente qu
 - [Gabriel Gallo Menequini Coutinho](https://www.linkedin.com/in/gabriel-gallo-m-coutinho-443809232/)
 - [Gustavo Machado Esteves](https://github.com/gustavoesteves0)
 - [Laura Padilha Bueno](https://www.linkedin.com/in/laura-padilha-bueno-b358419a/)
-- [Rafaela Cristina Rojas Lemos](https://www.linkedin.com/in/laura-padilha-bueno-b358419a/)
+- [Rafaela Cristina Rojas Lemos](https://www.linkedin.com/in/rafaelarojas/)
 - [Raí de Oliveira Cajé](https://www.linkedin.com/in/raideoliveira/)

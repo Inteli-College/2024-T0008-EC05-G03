@@ -19,7 +19,7 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
   
 &nbsp;&nbsp;&nbsp;&nbsp;A seguir, tem-se a análise de oceano azul aplicada ao parceiro de projeto, Sírio-Libanes.
 
-![oceano azul](../../../static/img/business/oceano-azul.png)
+![oceano azul](../../../static/img/business/oceanoazul.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Reduzir***:
 - **Tempo de Espera para Atendimento Emergencial**:

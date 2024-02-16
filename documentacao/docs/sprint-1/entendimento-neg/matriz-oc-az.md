@@ -79,7 +79,7 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 
 ![oceano azul](../../../static/img/business/matriz-oceano-azul.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;Inicialmente, é de importante destacar que a matriz de oceano azul acima visa realizar uma análise quantitativa em relação a possíveis tecnologias que podem ser utilizadas para a automação alvo do Sírio-Libanês. É necessário destacar também, que a tranformação em uma análise quantitativa foi feita tomando como base os documentos que podem ser encontrados (aqui)[https://drive.google.com/drive/folders/1AgG_qLSkDvK4uzXCPOZHy4Xjx8X4qp96?usp=sharing], além de pesquisas observando o contexto industrial inserido. 
+&nbsp;&nbsp;&nbsp;&nbsp;Inicialmente, é de importante destacar que a matriz de oceano azul acima visa realizar uma análise quantitativa em relação a possíveis tecnologias que podem ser utilizadas para a automação alvo do Sírio-Libanês. É necessário destacar também, que a tranformação em uma análise quantitativa foi feita tomando como base os documentos que podem ser encontrados [aqui](https://drive.google.com/drive/folders/1AgG_qLSkDvK4uzXCPOZHy4Xjx8X4qp96?usp=sharing), além de pesquisas observando o contexto industrial inserido. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;A decisão de automatizar o processo de montagem de carrinhos de emergência no Hospital Sírio Libanês é uma medida estratégica que visa otimizar diversos aspectos relacionados a esse procedimento vital para o atendimento eficiente em situações críticas. Para entendermos as razões por trás dessa escolha, é fundamental analisar detalhadamente cada um dos atributos mencionados: Preço, Qualidade, Tecnologia, Conforto, Comodidade e Praticidade.
 

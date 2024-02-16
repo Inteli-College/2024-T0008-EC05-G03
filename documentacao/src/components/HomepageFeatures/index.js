@@ -62,3 +62,26 @@ export default function HomepageFeatures() {
     </section>
   );
 }
+
+const Equipe = () => {
+  const members = [
+    { name: 'Antonio Artimonte Vaz Guimarães', img: 'url_da_imagem1.jpg' },
+    { name: 'Daniel Quintão Dávila', img: 'url_da_imagem2.jpg' },
+    { name: 'Gabriel Gallo Menequini Coutinho', img: 'url_da_imagem3.jpg' },
+    { name: 'Gustavo Machado Esteves', img: '' },
+    { name: 'Laura Padilha Bueno', img: 'url_da_imagem5.jpg' },
+    { name: 'Rafaela Cristina Rojas Lemos', img: 'url_da_imagem6.jpg' },
+    { name: 'Raí de Oliveira Cajé', img: 'url_da_imagem7.jpg' },
+  ];
+
+  return (
+    <div className="equipe-container">
+      {members.map((member, index) => (
+        <div key={index} className="member-card">
+          <img src={member.img} alt={member.name} />
+          <p>{member.name}</p>
+        </div>
+      ))}
+    </div>
+  );
+};

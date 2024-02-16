@@ -7,9 +7,9 @@ slug: /
 # Introdução
 
 ## Descrição do módulo
-Aqui você encontrará toda a documentação desenvolvida pelo grupo 3 durante o módulo 5 de Engenharia da Computação.
+Aqui, disponibilizamos toda a documentação elaborada pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação.
 
-O cliente do projeto é o Hospital Sírio-Libanês e o projeto consiste em uma ferramenta com hardware e software que facilite o reabastecimento e montagem dos carrinhos de emergência de maneira que possibilite modificações e conectividade com outras ferramentas.
+O nosso projeto tem como cliente o Hospital Sírio-Libanês e visa desenvolver uma ferramenta abrangente, composta por hardware e software, para otimizar o reabastecimento e a montagem dos carrinhos de emergência. Este sistema foi concebido de modo a proporcionar flexibilidade para modificações e aprimorar a conectividade com outras ferramentas essenciais.
 
 ## Membros do grupo
 
@@ -18,5 +18,5 @@ O cliente do projeto é o Hospital Sírio-Libanês e o projeto consiste em uma f
 - [Gabriel Gallo Menequini Coutinho](https://www.linkedin.com/in/gabriel-gallo-m-coutinho-443809232/)
 - [Gustavo Machado Esteves](https://github.com/gustavoesteves0)
 - [Laura Padilha Bueno](https://www.linkedin.com/in/laura-padilha-bueno-b358419a/)
-- [Rafaela Cristina Rojas Lemos](https://www.linkedin.com/in/laura-padilha-bueno-b358419a/)
+- [Rafaela Cristina Rojas Lemos](https://www.linkedin.com/in/rafaelarojas/)
 - [Raí de Oliveira Cajé](https://www.linkedin.com/in/raideoliveira/)

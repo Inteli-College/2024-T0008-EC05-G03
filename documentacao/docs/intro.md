@@ -7,7 +7,6 @@ slug: /
 # Introdução
 
 ## Descrição do módulo
-Aqui você encontrará toda a documentação desenvolvida pelo Violeta durante o módulo 5 de Engenharia da Computação.
 
 Aqui, disponibilizamos toda a documentação elaborada pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação.
 
@@ -41,7 +40,7 @@ A solução proposta pelo Grupo 3 - Violeta consiste em um sistema abrangente qu
 - [Antonio Artimonte Vaz Guimarães](https://www.linkedin.com/in/antonio-guimar%C3%A3es-2bb961264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 - [Daniel Quintão Dávila](https://github.com/danielquintaos/)
 - [Gabriel Gallo Menequini Coutinho](https://www.linkedin.com/in/gabriel-gallo-m-coutinho-443809232/)
-- [Gustavo Machado Esteves](https://www.linkedin.com/in/gustavo-machado-esteves-453b81248/)
+- [Gustavo Machado Esteves](https://github.com/gustavoesteves0)
 - [Laura Padilha Bueno](https://www.linkedin.com/in/laura-padilha-bueno-b358419a/)
 - [Rafaela Cristina Rojas Lemos](https://www.linkedin.com/in/rafaelarojas/)
 - [Raí de Oliveira Cajé](https://www.linkedin.com/in/raideoliveira/)

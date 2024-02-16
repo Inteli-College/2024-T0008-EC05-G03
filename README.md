@@ -31,3 +31,23 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 
 <img src="documentacao/static/img/logo-violeta.png" align="center" alt="Violeta Logo" border="0">
 
+##  Estrutura de pastas
+
+## Instalação
+
+Siga passo a passo para inciar a documentação:
+
+Abra o repositório em seu dispositivo e em seguida abra o terminal.
+Digite ```cd .\documentacao\``` para entrar na pasta referente.
+Digite ```npm i``` para instalar todas dependências.
+Por fim, digite ```npm start``` para inicializar o sistema.
+
+## Configuração para Desenvolvimento
+
+## Histórico de lançamentos
+
+- 0.1.0 - 16/02/24
+  - Entendimento do negócio
+  - Arquitetura do sistema
+  - UX Research
+  - Guia de estilos

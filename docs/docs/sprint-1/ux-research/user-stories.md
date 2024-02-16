@@ -14,50 +14,90 @@ As user stories são compostas por três elementos principais: quem, o que e por
 
 Abaixo, seguem tantos as User Stories referentes a Persona da médica, quanto do auxiliar de farmácia.
 
-### User Stories referentes ao Auxiliar de Farmácia;
+## User Stories referentes ao Auxiliar de Farmácia;
 
-**1.** Como Miguel, um médico no Hospital Sírio Libanês, quero que o braço robótico tenha um sistema que garanta a correção do layout do carrinho de emergência afim que o mesmo sempre esteja completo, para evitar erros no atendimento.
+### User Storie 0.1
+
+**0.1** Como Miguel, um médico no Hospital Sírio Libanês, quero que o braço robótico tenha um sistema que garanta a correção do layout do carrinho de emergência afim de que o mesmo sempre esteja completo, para evitar erros no atendimento.
    - Critério de Aceitação: O sistema deve verificar a presença de todos os itens obrigatórios no carrinho, de acordo com o protocolo de atendimento definido pelo hospital.
    - Estimativa de Esforço: Médio
+   - Prioridade: Alta
+---
 
-**2.** Como Miguel, um profissional preocupado com a segurança dos pacientes, espero que o braço robótico tenha funcionalidades de bloqueio e desativação automáticos em caso de detecção de falhas, para evitar qualquer risco de erro humano ou danos aos medicamentos.
+### User Storie 0.2
+
+**0.2** Como Miguel, um profissional preocupado com a segurança dos pacientes, espero que o braço robótico tenha funcionalidades de bloqueio e desativação automáticos em caso de detecção de falhas, para evitar qualquer risco de erro humano ou danos aos medicamentos.
    - Critério de Aceitação: Em caso de detecção de falha, o sistema deve desabilitar todas as funcionalidades imediatamente.
    - Estimativa de Esforço: Médio
+   - Prioridade: Média
+---
 
-**3.** Como Miguel, quero que o sistema me permita personalizar o conteúdo do carrinho de emergência de acordo com as necessidades específicas de cada paciente ou situação, para que eu possa ter os recursos mais adequados à mão.
+### User Storie 0.3
+
+**0.3** Como Miguel, quero que o sistema me permita personalizar o conteúdo do carrinho de emergência de acordo com as necessidades específicas de cada paciente ou situação, para que eu possa ter os recursos mais adequados à mão.
    - Critério de Aceitação: O sistema deve permitir a criação de layouts personalizados para o carrinho de emergência
    - Estimativa de Esforço: Baixo
+   - Prioridade: Alta
+---
 
-**4.** Como Miguel, quero que o sistema se integre ao sistema de estoque do hospital para monitorar o nível de medicamentos e instrumentos no carrinho de emergência e automaticamente solicitar reabastecimento quando necessário, para garantir que o carrinho esteja sempre completo.
+### User Storie 0.4
+
+**0.4** Como Miguel, quero que o sistema se integre ao sistema de estoque do hospital para monitorar o nível de medicamentos e instrumentos no carrinho de emergência e automaticamente solicitar reabastecimento quando necessário, para garantir que o carrinho esteja sempre completo.
    - Critério de Aceitação: O sistema do braço robótico deve se integrar com o sistema de estoque do hospital em tempo real.
    - Estimativa de Esforço: Médio
+   - Prioridade: Baixo
+---
 
-**5.** Quero que o sistema registre todas as atividades relacionadas ao carregamento do carrinho de emergência, como data, hora, usuário responsável e itens carregados, para que eu possa ter um histórico completo e rastrear qualquer problema que possa surgir.
+### User Storie 0.5
+
+**0.5** Quero que o sistema registre todas as atividades relacionadas ao carregamento do carrinho de emergência, como data, hora, usuário responsável e itens carregados, para que eu possa ter um histórico completo e rastrear qualquer problema que possa surgir.
    - Critério de Aceitação: O sistema deve registrar todas as atividades de carregamento do carrinho de emergência
    - Estimativa de Esforço: Médio
+   - Prioridade: Baixa
 
 
-### User Stories referentes a médica;
+## User Stories referentes a médica;
 
-**1.** Como auxiliar de farmácia quero ter a capacidade de monitorar o processo de carregamento dos carrinhos de emergência remotamente, para que eu possa acompanhar o progresso e identificar gargalos ou problemas em tempo real.
+
+### User Storie 1.1
+
+**1.1** Como auxiliar de farmácia quero ter a capacidade de monitorar o processo de carregamento dos carrinhos de emergência remotamente, para que eu possa acompanhar o progresso e identificar gargalos ou problemas em tempo real.
    - Critério de Aceitação: O sistema deve permitir o monitoramento remoto do processo de carregamento dos carrinhos de emergência em tempo real
    - Estimativa de Esforço: Média
+   - Prioridade: Média
+---
 
-**2.** Como auxiliar de farmácia quero que o sistema me avise automaticamente quando houver medicamentos ou insumos com validade próxima ou com baixo estoque no carrinho de emergência, para que eu possa substituí-los e garantir a qualidade dos itens disponíveis.
+### User Storie 1.2
+
+**1.2** Como auxiliar de farmácia quero que o sistema me avise automaticamente quando houver medicamentos ou insumos com validade próxima ou com baixo estoque no carrinho de emergência, para que eu possa substituí-los e garantir a qualidade dos itens disponíveis.
    - Critério de Aceitação: O sistema deve detectar itens com validade próxima ao limite estabelecido e emitir um alerta ao usuário.
    - Estimativa de Esforço: Alto
+   - Prioridade: Baixo
+---
 
-**3.** Como auxiliar de farmácia quero poder gerar relatórios personalizados sobre minhas atividades, como número de carrinhos carregados, tempo médio de carregamento, itens mais utilizados e erros ocorridos, para avaliar meu desempenho e identificar oportunidades de melhoria.
+### User Storie 1.3
+
+**1.3** Como auxiliar de farmácia quero poder gerar relatórios personalizados sobre minhas atividades, como número de carrinhos carregados, tempo médio de carregamento, itens mais utilizados e erros ocorridos, para avaliar meu desempenho e identificar oportunidades de melhoria.
    - Critério de Aceitação: O sistema deve permitir a criação de relatórios personalizados por período, tipo de carrinho e responsável.
    - Estimativa de Esforço: Médio
+   - Prioridade: Médio
+---
 
-**4.** Como auxiliar de farmácia quero ter um canal fácil para fornecer feedback sobre o sistema e sugerir melhorias, para contribuir no aperfeiçoamento da ferramenta e torná-la mais eficiente para o meu trabalho.
+### User Storie 1.4
+
+**1.4** Como auxiliar de farmácia quero ter um canal fácil para fornecer feedback sobre o sistema e sugerir melhorias, para contribuir no aperfeiçoamento da ferramenta e torná-la mais eficiente para o meu trabalho.
    - Critério de Aceitação: O sistema deve oferecer um formulário online para envio de feedback e sugestões.
    - Estimativa de Esforço: Baixo
+   - Prioridade: Baixo
+---
 
-**5.** Como Auxiliar de Farmácia quero que o sistema possua controle de acesso seguro e hierarquizado, para garantir que apenas pessoas autorizadas possam utilizar e modificar as configurações, além de proteger informações sensíveis como dados de medicamentos e pacientes.
+### User Storie 1.5
+
+**1.5** Como Auxiliar de Farmácia quero que o sistema possua controle de acesso seguro e hierarquizado, para garantir que apenas pessoas autorizadas possam utilizar e modificar as configurações, além de proteger informações sensíveis como dados de medicamentos e pacientes.
    - Critério de Aceitação: O sistema deve permitir a criação de diferentes níveis de acesso com permissões específicas.
    - Estimativa de Esforço: Baixo
+   - Prioridade: Alta
+   ---
 
 
 

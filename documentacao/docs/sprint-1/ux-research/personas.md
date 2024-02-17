@@ -11,13 +11,14 @@ No contexto do presente projeto, a equipe Violeta elaborou duas personas diferen
 
 Vale ressaltar que ambas as personas possuem um alto nível de letramento digital, uma vez que trabalham num ambiente hospitalar imerso em tecnologia de ponta, cujo uso é rotineiro para elas. Ademais, cada uma das personas, que estão retratadas nas figuras a seguir, conta (também) com uma tabela que apresenta suas respectivas dores, necessidades e desejos.
 
-<p style={{textAlign: 'center'}}>Figura 1 - Layout de persona (Auxiliar de farmácia)</p>
+<p style={{textAlign: 'center'}}>Figura 1 - Layout de persona (auxiliar de farmácia)</p>
 
-![teste](../../../static/img/ux/persona_1.png)
+![Layout de persona (Auxiliar de farmácia)](../../../static/img/ux/persona_1.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 <p style={{textAlign: 'center'}}>Tabela 1 - Tabela de dores, desejos e necessidades de persona (Auxiliar de farmácia)</p>
+
 | **Dores** | **Desejos** | **Necessidades**  |
 | --------- | ----------- | ----------------- |
 | 1 - Às vezes, por engano, Miguel “bipa” duas vezes ou esquece de “bipar” um mesmo item no reabastecimento dos carrinhos de emergência <br></br><br></br> 2 - Às vezes, sem querer, Miguel deixa um dos itens para reabastecimento cair no chão <br></br><br></br> 3 - Miguel demora um tempo elevado no reabastecimento de carrinhos: cerca de 51 minutos | 1 - Miguel deseja saber quais itens bipou e quais itens não bipou <br></br><br></br> 2 - Miguel deseja reabastecer os carrinhos de emergência num período de tempo menor do que o atual | 1 - Miguel precisa bipar cada item reposto exatamente uma vez <br></br><br></br> 2 - Miguel não pode deixar quaisquer itens caírem no chão |
@@ -26,9 +27,9 @@ Vale ressaltar que ambas as personas possuem um alto nível de letramento digita
 
 Diante do exposto, percebe-se que Miguel tem dificuldade na bipagem dos itens de reabastecimento dos carrinhos de emergência e em realizar a própria tarefa de reabastecimento em uma quantidade menor de tempo. Com isso, é evidente que a solução de automação proposta pelo grupo Violeta pode ajudá-lo no sentido de possibilitar o rastreamento dos itens bipados por meio de uma interface visível e, além disso, no sentido de aumentar a rapidez e precisão do reabastecimento dos carrinhos, uma vez que será realizado por um robô, que é menos suscetível a bipar ou realocar itens de forma errônea.
 
-<p style={{textAlign: 'center'}}>Figura 2 - Layout de persona (Médica)</p>
+<p style={{textAlign: 'center'}}>Figura 2 - Layout de persona (médica)</p>
 
-![teste](../../../static/img/ux/persona_2.png)
+![Layout de persona (Médica)](../../../static/img/ux/persona_2.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

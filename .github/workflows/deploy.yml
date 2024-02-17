@@ -1,5 +1,9 @@
 name: Deploy to GitHub Pages
 
+defaults:
+  run:
+    working-directory: ./documentacao
+
 on:
   push:
     branches:
@@ -25,7 +29,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: documentacao
       - name: Build website
         run: npm run build
 

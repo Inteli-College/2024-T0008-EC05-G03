@@ -24,16 +24,13 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install dependencies and Build website
         working-directory: ./documentacao
-        run: npm ci
-
-      - name: Build website
-        working-directory: ./documentacao
-        run: npm run build
+        run: |
+          npm ci
+          npm run build
 
       - name: Deploy to GitHub Pages
-        working-directory: ./documentacao
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -41,12 +41,14 @@ custom_edit_url: null
 &emsp;&emsp;Em suma, os requisitos não funcionais delineados para o sistema são essenciais para garantir sua eficiência, confiabilidade e usabilidade. Desde a facilidade de atualização dos layouts até a detecção e correção automática de falhas, cada requisito foi cuidadosamente elaborado para promover uma operação fluida e segura. Além disso, a baixa latência e alta disponibilidade são elementos-chave para assegurar que o sistema esteja sempre pronto para uso, minimizando o tempo de inatividade não planejado. Ao adotar uma abordagem abrangente em relação aos requisitos não funcionais, podemos garantir que o sistema não apenas atenda às expectativas de desempenho, mas também ofereça uma experiência de usuário aprimorada e confiável.
 
 ## Diagrama de blocos
-<div style={{margin:25}}>
+
+<div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src="/img/diagrama_blocos.png" style={{width: 300}}/>
-        <br/>
+        <img src={require("../../static/img/diagrama_blocos.png").default} style={{width: 300}} alt="Diagrama de blocos" />
+        <br />
     </div>
 </div>
+
 Adicionar a descrição dos componentes aqui
 
 ##

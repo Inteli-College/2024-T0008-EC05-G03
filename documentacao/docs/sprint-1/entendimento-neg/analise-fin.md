@@ -5,8 +5,8 @@ custom_edit_url: null
 
 # Análise financeira
 
-Esta análise transcende a esfera numérica para questionar como o investimento em automação pode simultaneamente otimizar a gestão de recursos e elevar a qualidade do cuidado ao paciente, buscando um equilíbrio entre o imperativo econômico e a missão humanitária da medicina. Ao calcular o ponto de equilíbrio, não miramos apenas um objetivo financeiro, mas reconhecemos esse limiar como um passo fundamental na jornada contínua de inovação e melhoria no cuidado à saúde, almejando harmonizar a eficácia operacional com a sustentabilidade econômica e o comprometimento com o bem-estar do paciente.
-Valores estimados em USD. Dados acessados em fevereiro de 2024.
+&nbsp;&nbsp;&nbsp;&nbsp;Esta análise transcende a esfera numérica para questionar como o investimento em automação pode simultaneamente otimizar a gestão de recursos e elevar a qualidade do cuidado ao paciente, buscando um equilíbrio entre o imperativo econômico e a missão humanitária da medicina. Ao calcular o ponto de equilíbrio, não miramos apenas um objetivo financeiro, mas reconhecemos esse limiar como um passo fundamental na jornada contínua de inovação e melhoria no cuidado à saúde, almejando harmonizar a eficácia operacional com a sustentabilidade econômica e o comprometimento com o bem-estar do paciente.
+&nbsp;&nbsp;&nbsp;&nbsp;Valores estimados em USD. Dados acessados em fevereiro de 2024.
 
 
 ## Investimento
@@ -39,7 +39,7 @@ Valores estimados em USD. Dados acessados em fevereiro de 2024.
 
 ## Retorno
 
-Para fornecer uma análise abrangente das economias associadas à implementação de um projeto de automação hospitalar para a montagem de carrinhos de emergência após um ano, serão detalhados possíveis tipos de economia que o projeto pode gerar. Essas economias podem ser derivadas da redução de custos operacionais, aumento da eficiência, redução de erros e desperdícios, e aprimoramento da gestão de inventário.
+&nbsp;&nbsp;&nbsp;&nbsp;Para fornecer uma análise abrangente das economias associadas à implementação de um projeto de automação hospitalar para a montagem de carrinhos de emergência após um ano, serão detalhados possíveis tipos de economia que o projeto pode gerar. Essas economias podem ser derivadas da redução de custos operacionais, aumento da eficiência, redução de erros e desperdícios, e aprimoramento da gestão de inventário.
 
 ### 1. Economia com Mão de Obra
 
@@ -76,7 +76,7 @@ Para fornecer uma análise abrangente das economias associadas à implementaçã
 
 ### Total Estimado de Economias
 
-Somando todas as economias potenciais, podemos estimar uma economia total no intervalo de **$40,000 - $95,000 anuais**. Esta estimativa é altamente dependente das condições específicas do hospital, incluindo o tamanho da operação, o custo da mão de obra local, a eficiência do sistema implementado, e a escala do desperdício e dos erros antes da automação.
+&nbsp;&nbsp;&nbsp;&nbsp;Somando todas as economias potenciais, podemos estimar uma economia total no intervalo de **$40,000 - $95,000 anuais**. Esta estimativa é altamente dependente das condições específicas do hospital, incluindo o tamanho da operação, o custo da mão de obra local, a eficiência do sistema implementado, e a escala do desperdício e dos erros antes da automação.
 
 
 ## Ponto de Equilíbrio
@@ -97,6 +97,6 @@ $$
 
 ## Conclusão
 
-A análise financeira preliminar sugere um investimento inicial considerável, mas com potencial para eficiências operacionais significativas e redução de custos a longo prazo. A viabilidade financeira final dependerá da capacidade do sistema em atingir os benefícios esperados e na gestão eficaz dos custos operacionais.
+&nbsp;&nbsp;&nbsp;&nbsp;A análise financeira preliminar sugere um investimento inicial considerável, mas com potencial para eficiências operacionais significativas e redução de custos a longo prazo. A viabilidade financeira final dependerá da capacidade do sistema em atingir os benefícios esperados e na gestão eficaz dos custos operacionais.
 
-Essa análise foi baseada em estimativas e pode variar de acordo com os fornecedores específicos, soluções tecnológicas escolhidas e a complexidade do ambiente hospitalar onde o sistema será implementado. Recomenda-se uma avaliação detalhada, incluindo solicitações de propostas (RFPs) de fornecedores e a consulta com especialistas em automação hospitalar para refinar essas estimativas.
+&nbsp;&nbsp;&nbsp;&nbsp;Essa análise foi baseada em estimativas e pode variar de acordo com os fornecedores específicos, soluções tecnológicas escolhidas e a complexidade do ambiente hospitalar onde o sistema será implementado. Recomenda-se uma avaliação detalhada, incluindo solicitações de propostas (RFPs) de fornecedores e a consulta com especialistas em automação hospitalar para refinar essas estimativas.

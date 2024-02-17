@@ -1,0 +1,45 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.equipe-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.member-card {
+  align-items: center;
+  border: 1px solid #ffffff40;
+  border-radius: 25px;
+  box-shadow: 0 5px 20px #0006;
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins, sans-serif;
+  margin: 16px;
+  max-width: 400px;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.member-card img {
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.member-card p {
+  margin: 0;
+  font-weight: bold;
+}

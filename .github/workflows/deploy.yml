@@ -14,6 +14,9 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./your-working-directory
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,10 +27,8 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        working-directory: ./documentacao
         run: npm ci
       - name: Build website
-        working-directory: ./documentacao
         run: npm run build
 
       # Popular action to deploy to GitHub Pages:

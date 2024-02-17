@@ -15,7 +15,8 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     defaults:
-      working-directory: ./documentacao
+      run:
+        working-directory: ./documentacao
     steps:
       - uses: actions/checkout@v4
         with:

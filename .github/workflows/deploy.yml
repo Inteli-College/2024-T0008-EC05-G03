@@ -4,34 +4,31 @@ on:
   push:
     branches:
       - main
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
 permissions:
   contents: write
 
-defaults:
-  run:
-    working-directory: ./documentacao
-
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
+    runs-o: ubuntu-latest
+    defaults:
+    run:
+    working-directory: ./documentacao
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: 18
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
-
       - name: Build website
         run: npm run build
 
@@ -41,7 +38,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Specify the build output directory relative to 'documentacao'
+          # Build output to publish to the `gh-pages` branch:
           publish_dir: ./build
           # The following lines assign commit authorship to the official
           # GH-Actions bot for deploys to `gh-pages` branch:
@@ -50,3 +47,6 @@ jobs:
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
+
+
+

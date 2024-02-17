@@ -13,11 +13,9 @@ permissions:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    runs-o: ubuntu-latest
+    runs-on: ubuntu-latest
     defaults:
-    run:
-    working-directory: ./documentacao
-
+      working-directory: .documentacao
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,7 +29,6 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
@@ -47,6 +44,3 @@ jobs:
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
-
-
-

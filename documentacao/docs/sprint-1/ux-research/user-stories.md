@@ -5,14 +5,13 @@ custom_edit_url: null
 
 # User Stories
 
-As user stories são uma ferramenta extremamente útil na metodologia ágil, pois proporcionam uma abordagem centrada no usuário para a definição de requisitos. São declarações que descrevem as necessidades dos usuários em relação a um produto ou sistema. Escritas geralmente na perspectiva do usuário, essas histórias auxiliam na compreensão mais profunda das necessidades, desejos e objetivos dos usuários, orientando o processo de desenvolvimento.
+&nbsp;&nbsp;&nbsp;&nbsp;As user stories são uma ferramenta extremamente útil na metodologia ágil, pois proporcionam uma abordagem centrada no usuário para a definição de requisitos. São declarações que descrevem as necessidades dos usuários em relação a um produto ou sistema. Escritas geralmente na perspectiva do usuário, essas histórias auxiliam na compreensão mais profunda das necessidades, desejos e objetivos dos usuários, orientando o processo de desenvolvimento.
 
+&nbsp;&nbsp;&nbsp;&nbsp;Além disso, as user stories são frequentemente utilizadas como uma forma de comunicação entre as equipes de desenvolvimento e os stakeholders. Ao expressar as necessidades dos usuários de forma compreensível, elas promovem uma colaboração mais estreita e uma melhor compreensão entre todas as partes envolvidas no projeto. Isso ajuda a garantir que o produto final atenda verdadeiramente às expectativas dos usuários finais, resultando em maior satisfação e sucesso do produto.
 
-Além disso, as user stories são frequentemente utilizadas como uma forma de comunicação entre as equipes de desenvolvimento e os stakeholders. Ao expressar as necessidades dos usuários de forma compreensível, elas promovem uma colaboração mais estreita e uma melhor compreensão entre todas as partes envolvidas no projeto. Isso ajuda a garantir que o produto final atenda verdadeiramente às expectativas dos usuários finais, resultando em maior satisfação e sucesso do produto.
+&nbsp;&nbsp;&nbsp;&nbsp;As user stories são compostas por três elementos principais: quem, o que e por quê. O "quem" representa o usuário ou a persona para a qual a funcionalidade está sendo desenvolvida. O "o que" descreve a funcionalidade desejada ou a necessidade específica do usuário. E o "por quê" fornece o contexto ou a razão por trás da funcionalidade solicitada. Essas histórias são frequentemente escritas de forma iterativa e colaborativa. Isso garante que as user stories sejam claras, relevantes e alinhadas com os objetivos do projeto.
 
-As user stories são compostas por três elementos principais: quem, o que e por quê. O "quem" representa o usuário ou a persona para a qual a funcionalidade está sendo desenvolvida. O "o que" descreve a funcionalidade desejada ou a necessidade específica do usuário. E o "por quê" fornece o contexto ou a razão por trás da funcionalidade solicitada. Essas histórias são frequentemente escritas de forma iterativa e colaborativa. Isso garante que as user stories sejam claras, relevantes e alinhadas com os objetivos do projeto.
-
-Abaixo, segue tanto as user stories referentes à persona da médica quanto as referentes à persona do auxiliar de farmácia.
+&nbsp;&nbsp;&nbsp;&nbsp;Abaixo, segue tanto as user stories referentes à persona da médica quanto as referentes à persona do auxiliar de farmácia.
 
 ## User Stories referentes ao auxiliar de farmácia (Miguel);
 
@@ -101,6 +100,6 @@ Abaixo, segue tanto as user stories referentes à persona da médica quanto as r
    - Prioridade: Baixa
 
 
-A partir das user stories acima, foi possível concluir que a adoção dessas histórias proporciona uma melhoria significativa na comunicação, colaboração e foco no valor do produto para o usuário final. Elas garantem que o desenvolvimento permaneça centrado no usuário, assegurando que as funcionalidades desenvolvidas atendam às suas necessidades reais.
+&nbsp;&nbsp;&nbsp;&nbsp;A partir das user stories acima, foi possível concluir que a adoção dessas histórias proporciona uma melhoria significativa na comunicação, colaboração e foco no valor do produto para o usuário final. Elas garantem que o desenvolvimento permaneça centrado no usuário, assegurando que as funcionalidades desenvolvidas atendam às suas necessidades reais.
 
-Além disso, as user stories oferecem flexibilidade, permitindo adaptações ao longo do ciclo de desenvolvimento à medida que novos insights surgem ou requisitos mudam. Em última análise, as user stories representam uma ferramenta poderosa para criar produtos e sistemas que verdadeiramente agregam valor e satisfazem as necessidades dos usuários finais
+&nbsp;&nbsp;&nbsp;&nbsp;Além disso, as user stories oferecem flexibilidade, permitindo adaptações ao longo do ciclo de desenvolvimento à medida que novos insights surgem ou requisitos mudam. Em última análise, as user stories representam uma ferramenta poderosa para criar produtos e sistemas que verdadeiramente agregam valor e satisfazem as necessidades dos usuários finais

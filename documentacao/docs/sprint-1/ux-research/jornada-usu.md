@@ -17,7 +17,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-Abaixo, segue a jornada de usuário da médica com as características referentes à mesma.
+&nbsp;&nbsp;&nbsp;&nbsp;Abaixo, segue a jornada de usuário da médica com as características referentes à mesma.
 
 <p style={{textAlign: 'center'}}>Figura 2 - Jornada de usuário referente à médica</p>
 

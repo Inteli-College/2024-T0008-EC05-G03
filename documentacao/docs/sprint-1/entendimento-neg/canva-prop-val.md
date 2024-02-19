@@ -7,7 +7,11 @@ custom_edit_url: null
 
 &nbsp;&nbsp;&nbsp;&nbsp;No âmbito da análise estratégica, o Value Proposition Canvas é uma ferramenta essencial, concebida para aprimorar a articulação e entrega da proposta de valor das empresas aos seus clientes. Este modelo analítico, desenvolvido para detalhar a correspondência entre as ofertas de uma empresa e as necessidades de seus clientes, divide-se em duas seções principais: Perfil do Cliente (Customer Profile) e Proposição de Valor (Value Proposition). Tal estrutura permite às organizações identificar e endereçar as necessidades não satisfeitas e as dores dos clientes de forma precisa, facilitando a criação de ofertas que geram valor significativo. Segundo Michael Porter, o alinhamento eficaz entre as capacidades da empresa e as demandas do mercado é crucial para sustentar vantagens competitivas, sendo o Value Proposition Canvas um instrumento chave nesse processo de alinhamento estratégico.
 
-### Perfil do Cliente (Customer Profile)
+<p style={{textAlign: 'center'}}>Figura 1 - Value Proposition Canvas (Canvas da Proposta de Valor)</p>
+
+![Value Proposition Canvas](../../../static/img/business/value_proposition_canvas.png)
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 1. **Segmentos de Clientes**:
    - Hospitais e clínicas que utilizam carrinhos de emergência.

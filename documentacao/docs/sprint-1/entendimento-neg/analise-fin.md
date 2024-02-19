@@ -86,14 +86,11 @@ Para calcular o ponto de equilíbrio do projeto de automação hospitalar, preci
 - **Custos Iniciais (CAPEX):** Vamos assumir um valor médio dentro da faixa estimada, por exemplo, $710,000 (considerando o meio da faixa de $435,000 a $985,000).
 - **Economias Anuais Totais:** Assumindo um valor médio dentro da faixa estimada, por exemplo, $67,500 (considerando o meio da faixa de $40,000 a $95,000).
 
-$$
- \text{Ponto de Equilíbrio} = \frac{\text{CAPEX + OPEX}}{\text{Economias Anuais Totais}} 
-$$
-$$
+<p style={{textAlign: 'center'}}>Figura 1 - Expressões de cálculo do ponto de equilíbrio</p>
 
+![Expressões de cálculo do ponto de equilíbrio](../../../static/img/business/analise_financeira_expressoes.png)
 
- \text{Ponto de Equilíbrio} = \frac{710,000}{67,500} = 10.5 \text{ anos}
-$$
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 ## Conclusão
 

@@ -11,7 +11,9 @@ slug: /
 Aqui, disponibilizamos toda a documentação elaborada pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação.
 
 O nosso projeto tem como cliente o Hospital Sírio-Libanês e visa desenvolver uma ferramenta abrangente, composta por hardware e software, para otimizar o reabastecimento e a montagem dos carrinhos de emergência. Este sistema foi concebido de modo a proporcionar flexibilidade para modificações e aprimorar a conectividade com outras ferramentas essenciais.
-=======
+
+---
+
 Este documento compila a documentação detalhada desenvolvida pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação. Nosso projeto tem como cliente o Hospital Sírio-Libanês, uma instituição de referência na área da saúde, e visa a criação de uma ferramenta abrangente, composta por hardware e software. Essa ferramenta foi concebida com o propósito específico de otimizar os processos de reabastecimento e montagem dos carrinhos de emergência, visando à eficiência operacional e à melhoria dos serviços prestados. O sistema busca, ainda, oferecer flexibilidade para futuras modificações e aprimorar a conectividade com outras ferramentas essenciais no ambiente hospitalar.
 
 ## Parceiro de projeto

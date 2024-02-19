@@ -5,6 +5,8 @@ custom_edit_url: null
 
 # Análise financeira
 
+##### Análise financeira elaborada no processo de entendimento de negócio do projeto
+
 &nbsp;&nbsp;&nbsp;&nbsp;Esta análise transcende a esfera numérica para questionar como o investimento em automação pode simultaneamente otimizar a gestão de recursos e elevar a qualidade do cuidado ao paciente, buscando um equilíbrio entre o imperativo econômico e a missão humanitária da medicina. Ao calcular o ponto de equilíbrio, não miramos apenas um objetivo financeiro, mas reconhecemos esse limiar como um passo fundamental na jornada contínua de inovação e melhoria no cuidado à saúde, almejando harmonizar a eficácia operacional com a sustentabilidade econômica e o comprometimento com o bem-estar do paciente.
 &nbsp;&nbsp;&nbsp;&nbsp;Valores estimados em USD. Dados acessados em fevereiro de 2024.
 

@@ -12,6 +12,8 @@ custom_edit_url: null
 
 &emsp;&emsp;Nesse contexto, foram delineados os requisitos funcionais específicos para o nosso sistema, os quais estão apresentados de forma detalhada na tabela a seguir:
 
+<p style={{textAlign: 'center'}}>Tabela 1 - Requisitos funcionais da solução</p>
+
 | Requisitos | Ação |
 | --- | --- |
 | RF01 | O sistema deve ser capaz de permitir a escolha de diferentes opções de layouts para o carrinho de emergência. |
@@ -22,11 +24,15 @@ custom_edit_url: null
 | RF06 | Deve haver uma documentação abrangente do sistema, incluindo manuais de usuário, manuais de manutenção e documentação técnica para facilitar a operação, manutenção e suporte técnico. |
 | RF07 | O sistema deve permitir a integração com outros sistemas. |
 
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
+
 &emsp;&emsp;Em síntese, os requisitos funcionais delineados para o sistema de carrinho de emergência representam um conjunto abrangente de diretrizes que visam garantir sua eficácia, segurança e usabilidade. Ao permitir a escolha de diferentes layouts, montagem automatizada, precisão na execução das tarefas, rastreamento de itens, alta segurança, documentação detalhada e integração com outros sistemas, o sistema está preparado para atender às demandas e necessidades dos usuários de forma eficiente. A incorporação desses requisitos funcionais não apenas define o comportamento esperado do sistema, mas também estabelece as bases para uma implementação bem-sucedida que promove a confiabilidade e a excelência operacional.
 
 ### Requisitos não funcionais
 
 &emsp;&emsp;Os requisitos não funcionais de um sistema descrevem atributos que não estão diretamente relacionados às funcionalidades específicas do sistema, mas são igualmente importantes para sua operação, desempenho, segurança e usabilidade. Assim, visando uma maior qualidade de operação do sistema, estabelecemos os seguintes requisitos não funcionais: 
+
+<p style={{textAlign: 'center'}}>Tabela 2 - Requisitos não funcionais da solução</p>
 
 | Requisitos | Descrição |
 | --- | --- |
@@ -38,9 +44,13 @@ custom_edit_url: null
 | RNF06 | O software e o robô devem ter uma baixa latência, que permita uma maior eficácia. |
 | RNF07 | O sistema deve ser altamente disponível, minimizando o tempo de inatividade não planejado e garantindo que o sistema esteja sempre disponível para uso durante o horário de produção. |
 
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
+
 &emsp;&emsp;Em suma, os requisitos não funcionais delineados para o sistema são essenciais para garantir sua eficiência, confiabilidade e usabilidade. Desde a facilidade de atualização dos layouts até a detecção e correção automática de falhas, cada requisito foi cuidadosamente elaborado para promover uma operação fluida e segura. Além disso, a baixa latência e alta disponibilidade são elementos-chave para assegurar que o sistema esteja sempre pronto para uso, minimizando o tempo de inatividade não planejado. Ao adotar uma abordagem abrangente em relação aos requisitos não funcionais, podemos garantir que o sistema não apenas atenda às expectativas de desempenho, mas também ofereça uma experiência de usuário aprimorada e confiável.
 
 ## Diagrama de blocos
+
+<p style={{textAlign: 'center'}}>Figura 1 - Diagrama de blocos da solução</p>
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
@@ -48,6 +58,9 @@ custom_edit_url: null
         <br />
     </div>
 </div>
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
+
 
 ## Descrição dos elementos do diagrama de blocos
 

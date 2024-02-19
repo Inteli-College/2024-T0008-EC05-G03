@@ -5,11 +5,18 @@ custom_edit_url: null
 
 # Matriz de Risco
 
+##### Matriz de risco elaborada no processo de entendimento de negócio do projeto
+
 &nbsp;&nbsp;&nbsp;&nbsp;A matriz de riscos é uma ferramenta fundamental na análise de negócios que consiste em uma tabela onde os riscos são enumerados nas linhas, enquanto os impactos e probabilidades são indicados nas colunas. Ao preencher as células da matriz com informações sobre a gravidade do risco (impacto) e a probabilidade de ocorrência, a organização consegue identificar quais riscos são os mais críticos e quais demandam maior atenção e alocação de recursos para serem gerenciados.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Essa ferramenta em questão, é essencial na avaliação e gestão de riscos em projetos ou implementações, pois uma matriz bem elaborada permite à equipe priorizar os riscos mais críticos, facilitando a implementação de medidas preventivas e corretivas adequadas, o que reduz os possíveis impactos negativos. Então, tendo como base de análise as particularidades da equipe e do projeto em questão, a seguir está uma análise de riscos específica para esta solução.
 
+<p style={{textAlign: 'center'}}>Figura 1 - Matriz de risco referente ao projeto</p>
+
+
 ![Matriz de Risco](../../../static/img/business/matriz-de-risco.png)
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Também, disponibiliza-se a transcrição dos textos inseridos na matriz:
 

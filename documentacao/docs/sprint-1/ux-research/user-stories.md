@@ -5,6 +5,8 @@ custom_edit_url: null
 
 # User Stories
 
+##### User stories elaboradas no processo de UX research do projeto
+
 &nbsp;&nbsp;&nbsp;&nbsp;As user stories são uma ferramenta extremamente útil na metodologia ágil, pois proporcionam uma abordagem centrada no usuário para a definição de requisitos. São declarações que descrevem as necessidades dos usuários em relação a um produto ou sistema. Escritas geralmente na perspectiva do usuário, essas histórias auxiliam na compreensão mais profunda das necessidades, desejos e objetivos dos usuários, orientando o processo de desenvolvimento.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Além disso, as user stories são frequentemente utilizadas como uma forma de comunicação entre as equipes de desenvolvimento e os stakeholders. Ao expressar as necessidades dos usuários de forma compreensível, elas promovem uma colaboração mais estreita e uma melhor compreensão entre todas as partes envolvidas no projeto. Isso ajuda a garantir que o produto final atenda verdadeiramente às expectativas dos usuários finais, resultando em maior satisfação e sucesso do produto.

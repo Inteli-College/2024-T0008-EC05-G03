@@ -1,90 +1,61 @@
-import pydobot
+# robo.py
+
+# Traz a ferramenta serial para apresentar quais portas estão disponíveis
 from serial.tools import list_ports
-# Mandar para a posição home
-def home():
-    #m_lite.set_home()
-    print("casa")
-    menu()
-# Ligar a ferramenta (atuador)
-def ligarFerramenta():
-    if head == "gripper":
-        print("gripClose")
-        #m_lite.set_endeffector_gripper(enable=True, on=True)
-    else:
-        print("succStart")
-        #m_lite.set_endeffector_suctioncup(enable=True, on=True)
-    menu()
-# Desligar a ferramenta (atuador)
-def desligarFerramenta():
-    if head == "gripper":
-        print("gripOpen")
-        #m_lite.set_endeffector_gripper(enable=True, on=False)
-    else:
-        print("succOff")
-        #m_lite.set_endeffector_suctioncup(enable=True, on=False)
-    menu()
-def quit():
-    exit(1)
-def obter_posicao_atual():
-    # Implementa a função para obter a posição atual do robô
-    # pos = m_lite.pose()
-    # print(f"Posição Atual: X={pos[0]}, Y={pos[1]}, Z={pos[2]}")
-    print("Posição Atual: X=0, Y=0, Z=0")  # Simulação, substitua pelos valores reais
-    menu()
-def mover_eixo(axis, distance):
-    # Implementa a função para mover o robô em um eixo específico (x, y ou z)
-    if axis.lower() == 'x':
-        # Mover na direção X
-        # m_lite.move_to(x=current_x + distance, y=current_y, z=current_z)
-        print(f"Moveu {distance} unidades em X.")
-    elif axis.lower() == 'y':
-        # Mover na direção Y
-        # m_lite.move_to(x=current_x, y=current_y + distance, z=current_z)
-        print(f"Moveu {distance} unidades em Y.")
-    elif axis.lower() == 'z':
-        # Mover na direção Z
-        # m_lite.move_to(x=current_x, y=current_y, z=current_z + distance)
-        print(f"Moveu {distance} unidades em Z.")
-    else:
-        print("Eixo inválido.")
-    menu()
-def menu():
-    print("\nO que você quer fazer?")
-    inter = str(input())
-    match inter:
-        case "ligar":
-            ligarFerramenta()
-        case "desligar":
-            desligarFerramenta()
-        case "home":
-            home()
-        case "mover":
-            eixo = str(input("Qual eixo (X, Y ou Z)? "))
-            distancia = float(input("Distância a percorrer: "))
-            mover_eixo(eixo, distancia)
-        case "atual":
-            obter_posicao_atual()
-        case "quit":
-            quit()
-        case _:
-            quit()
-head = None
-if __name__ == "__main__":
-    available_ports = list_ports.comports()
-    try:
-        port = available_ports[0].device
-        device = pydobot.Dobot(port=port, verbose=True)
-    except:
-        port = available_ports[1].device
-        device = pydobot.Dobot(port=port, verbose=True)
-    print("Olá! esta é uma pequena interface gráfica para interagir com o robô")
-    head = str(input("\nInicialmente, qual o atuador sendo utilizado?\n"))
-    # available_ports = list_ports.comports()
-    # print(f'available ports: {[x.device for x in available_ports]}')
-    # port = available_ports[0].device
-    # a = int(input("Quantos inputs vc quer? "))
-    # b = []
-    # for i in range(a):
-    #     b.append(str(input(f'Frase {i + 1}:')))
-    # print(b)
-    menu()
+import inquirer
+import pydobot
+from yaspin import yaspin
+
+# Traz o spinner para apresentar uma animação enquanto o robô está se movendo
+spinner = yaspin(text="Processando...", color="yellow")
+
+# Listas as portas seriais disponíveis
+available_ports = list_ports.comports()
+
+
+# Pede para o usuário escolher uma das portas disponíveis
+porta_escolhida = inquirer.prompt([
+    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
+])["porta"]
+
+# Cria uma instância do robô
+robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
+
+# Define a velocidade e a aceleracao do robô
+robo.speed(30, 30)
+
+# Move o robô para a posição (200, 0, 0)
+spinner.start()
+robo.move_to(247, 6, 146, 0, wait=True)
+spinner.stop()
+
+# Inicializa o efetuador do robô
+spinner.start()
+robo.suck(True)
+# Adiciona um delay para o robô efetuar a operação
+robo.wait(200)
+spinner.stop()
+
+# Move o robô para a posição (200, 200, 0)
+spinner.start()
+robo.move_to(200, 200, 0, 0, wait=True)
+spinner.stop()
+
+# Move o robô para a posição (0, 200, 0)
+spinner.start()
+robo.move_to(0, 200, 0, 0, wait=True)
+spinner.stop()
+
+# Inicializa o efetuador do robô
+spinner.start()
+robo.suck(False)
+# Adiciona um delay para o robô efetuar a operação
+robo.wait(200)
+spinner.stop()
+
+# Pega a posição atual do robô
+posicao_atual = robo.pose()
+print(f"Posição atual: {posicao_atual}")
+
+# Fecha a conexão com o robô
+robo.close()

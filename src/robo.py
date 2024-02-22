@@ -5,6 +5,7 @@ from serial.tools import list_ports
 import inquirer
 import pydobot  
 from yaspin import yaspin
+import typer
 
 # Traz o spinner para apresentar uma animação enquanto o robô está se movendo
 spinner = yaspin(text="Processando...", color="yellow")
@@ -29,21 +30,25 @@ spinner.start()
 robo.move_to_J(247, 6, 146, 0, wait=True)
 spinner.stop()
 
+X1 = inquirer.prompt([inquirer.Text("x1", message="Informe a coordenada X da localização desejada")])
+Y1 = inquirer.prompt([inquirer.Text("y1", message="Informe a coordenada Y da localização desejada")])
+Z1 = inquirer.prompt([inquirer.Text("z1", message="Informe a coordenada Z da localização desejada")])
+
+# Converte as entradas para inteiros
+x1 = int(X1["x1"])
+y1 = int(Y1["y1"])
+z1 = int(Z1["z1"])
+
+# Move o robô para a posição desejada
+spinner.start()
+robo.move_to_J(x1, y1, z1, 0, wait=True)
+spinner.stop()
+
 # Inicializa o efetuador do robô
 spinner.start()
 robo.suck(True)
 # Adiciona um delay para o robô efetuar a operação
 robo.wait(200)
-spinner.stop()
-
-# Move o robô para a posição (200, 200, 0)
-spinner.start()
-robo.move_to(200, 200, 0, 0, wait=True)
-spinner.stop()
-
-# Move o robô para a posição (0, 200, 0)
-spinner.start()
-robo.move_to(0, 200, 0, 0, wait=True)
 spinner.stop()
 
 # Inicializa o efetuador do robô

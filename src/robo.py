@@ -3,7 +3,7 @@
 # Traz a ferramenta serial para apresentar quais portas estão disponíveis
 from serial.tools import list_ports
 import inquirer
-import pydobot
+import pydobot  
 from yaspin import yaspin
 
 # Traz o spinner para apresentar uma animação enquanto o robô está se movendo
@@ -26,7 +26,7 @@ robo.speed(30, 30)
 
 # Move o robô para a posição (200, 0, 0)
 spinner.start()
-robo.move_to(247, 6, 146, 0, wait=True)
+robo.move_to_J(247, 6, 146, 0, wait=True)
 spinner.stop()
 
 # Inicializa o efetuador do robô

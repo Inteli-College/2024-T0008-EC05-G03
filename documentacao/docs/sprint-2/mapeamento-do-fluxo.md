@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Mapeamento do fluxo
 
-##### Mapeamento do fluxo do projeto
+### Mapeamento do fluxo do projeto
 
 &emsp;&emsp;O mapeamento do fluxo é uma ferramenta incrivelmente valiosa para qualquer projeto. Ao realizar o mapeamento do fluxo, não apenas podemos identificar recursos desperdiçados, mas também avaliar minuciosamente o fluxo de trabalho em todas as suas etapas. Isso inclui a identificação de atividades redundantes, atrasos desnecessários e quaisquer outras áreas que possam prejudicar a eficiência ou a qualidade do projeto.
 
@@ -23,7 +23,7 @@ custom_edit_url: null
 
 ---
 
-#### Wireframe da aplicação web referente ao projeto
+### Wireframe da aplicação web referente ao projeto
 
 &emsp;&emsp;Para complementar a solução, foi desenvolvido um wireframe para a aplicação web responsável por controlar o robô. Um wireframe é uma representação visual básica e esquemática da interface de um software ou site, que mostra a estrutura e disposição dos elementos sem se aprofundar em detalhes visuais ou de design. Ele serve como um guia inicial para o layout e a funcionalidade da interface, permitindo uma compreensão clara da arquitetura da aplicação antes do desenvolvimento completo.
 

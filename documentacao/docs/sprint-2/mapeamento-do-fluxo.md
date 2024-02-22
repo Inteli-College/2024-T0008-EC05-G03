@@ -19,6 +19,16 @@ custom_edit_url: null
 
 &emsp;&emsp;Segue abaixo o mapeamento de fluxo do projeto [Violeta](https://inteli-college.github.io/2024-T0008-EC05-G03/) referente tanto as User Stories quanto Jornadas de Usuários das personas. 
 
+---
 
+---
 
+#### Wireframe da aplicação web referente ao projeto
 
+&emsp;&emsp;Para complementar a solução, foi desenvolvido um wireframe para a aplicação web responsável por controlar o robô. Um wireframe é uma representação visual básica e esquemática da interface de um software ou site, que mostra a estrutura e disposição dos elementos sem se aprofundar em detalhes visuais ou de design. Ele serve como um guia inicial para o layout e a funcionalidade da interface, permitindo uma compreensão clara da arquitetura da aplicação antes do desenvolvimento completo.
+
+&emsp;&emsp;Além disso, o processo de criação de wireframes ajuda a identificar e resolver problemas de usabilidade e fluxo de interação antes que se tornem mais complexos e difíceis de corrigir durante as etapas posteriores de desenvolvimento. Ao fornecer uma estrutura clara e organizada para a interface, o wireframe ajuda a garantir que a aplicação web seja intuitiva e fácil de usar para os usuários finais.
+
+&emsp;&emsp;Portanto, ao criar um wireframe para a aplicação web de controle do robô, estamos estabelecendo uma base sólida para o desenvolvimento subsequente, garantindo que o produto final atenda às necessidades dos usuários e alcance os objetivos do projeto de forma eficiente e eficaz.
+
+&emsp;&emsp;Abaixo segue as imagens relacionadas ao wireframe;

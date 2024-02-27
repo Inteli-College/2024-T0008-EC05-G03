@@ -1,17 +1,21 @@
-# robo.py
-
-# Traz a ferramenta serial para apresentar quais portas estão disponíveis
 from serial.tools import list_ports
 import inquirer
 import pydobot  
 from yaspin import yaspin
-import typer
 
 # Traz o spinner para apresentar uma animação enquanto o robô está se movendo
 spinner = yaspin(text="Processando...", color="yellow")
 
 # Listas as portas seriais disponíveis
 available_ports = list_ports.comports()
+porta_escolhida = inquirer.prompt([
+    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
+])["porta"]
+# Cria uma instância do robô
+device = pydobot.Dobot(port=porta_escolhida, verbose=False)
+
+# Define a velocidade e a aceleracao do robô
+device.speed(30, 30)
 
 home = (240.53, 0, 150.23, 0)
 #Posição das caixas é a 10cm da base do robô
@@ -34,139 +38,134 @@ destino6 = (37.7, 301.52, 14.95, 82.87)
 destino7 = (-27.07, 305.53, 12.42, 95.06)
 destino8 = (-98.12, 301.37, 13.09, 108.03)
 
-# Pede para o usuário escolher uma das portas disponíveis
-porta_escolhida = inquirer.prompt([
-    inquirer.List("porta", message="Escolha a porta serial", choices=[x.device for x in available_ports])
-])["porta"]
+caminho = []
+destino = []
 
-# Cria uma instância do robô
-robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
+def __init__():
+        # Move o robô para a posição home.
+        spinner.start()
+        device.move_to_J(home[0], home[1], home[2], home[3], wait=True)
+        spinner.stop()
+        return "Robô inicializado."
 
-# Define a velocidade e a aceleracao do robô
-robo.speed(30, 30)
+def casa():
+        spinner.start()
+        device.move_to_J(home[0], home[1], home[2], home[3], wait=True)
+        spinner.stop()
+        return "Robô retornou à posição inicial."
 
-# Move o robô para a posição home.
-spinner.start()
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
+def ligar_ferramenta():
+        device.suck(True)
+        return "Ferramenta ligada."
 
-#X1 = inquirer.prompt([inquirer.Text("x1", message="Informe a coordenada X da localização desejada")])
-#Y1 = inquirer.prompt([inquirer.Text("y1", message="Informe a coordenada Y da localização desejada")])
-#Z1 = inquirer.prompt([inquirer.Text("z1", message="Informe a coordenada Z da localização desejada")])
+def desligar_ferramenta(): #if ferramenta == true, desligar ferramenta (fazer isso depois)
+        device.suck(False)
+        return "Ferramenta desligada."
 
-# Converte as entradas para inteiros
-#x1 = int(X1["x1"])
-#y1 = int(Y1["y1"])
-#z1 = int(Z1["z1"])
+def mover():
+        return "Robô movido para as posições desejadas."
+def atual():
+        return f"Posição atual do robô: {device.pose()}" 
 
-# Fazer com que todos subam mais antes de deslocar o remedio
-# Faz com que o robô pegue o remédio 1 e coloque no destino 1.
-spinner.start()
-robo.move_to_J(remedio1[0], remedio1[1], 55.64, remedio1[3], wait=True)
-robo.move_to_J(remedio1[0], remedio1[1], remedio1[2], remedio1[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio1[0], remedio1[1], 55.64, remedio1[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino1[0], destino1[1], destino1[2], destino1[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
 
-# Faz com que o robô pegue o remédio 2 e coloque no destino 2.
-spinner.start()
-robo.move_to_J(remedio2[0], remedio2[1], 55.64, remedio2[3], wait=True)
-robo.move_to_J(remedio2[0], remedio2[1], remedio2[2], remedio2[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio2[0], remedio2[1], 55.64, remedio2[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino2[0], destino2[1], destino2[2], destino2[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
+def execute_comando(comando):
+    match comando:
+        case "home":
+            spinner.start()
+            device.move_to_J(home[0], home[1], home[2], home[3], wait=True)
+            spinner.stop()
+            return "Robô retornou à posição inicial."
+        case "ligar_ferramenta":
+            device.suck(True)
+            return "Ferramenta ligada."
+        case "desligar_ferramenta":
+            device.suck(False)
+            return "Ferramenta desligada."
+        case "mover":
+            acao1 = inquirer.prompt([inquirer.Text("acao1", message="Qual o remédio desejado?")])
+            if acao1["acao1"] in ["remedio1", "remedio2", "remedio3", "remedio4", "remedio5", "remedio6", "remedio7", "remedio8"]:
+                caminho.append(acao1["acao1"])
+                acao2 = inquirer.prompt([inquirer.Text("acao2", message="Qual o destino desejado?")])
+                destinos = {
+                    "destino1": destino1,
+                    "destino2": destino2,
+                    "destino3": destino3,
+                    "destino4": destino4,
+                    "destino5": destino5,
+                    "destino6": destino6,
+                    "destino7": destino7,
+                    "destino8": destino8
+                }
 
-# Faz com que o robô pegue o remédio 3 e coloque no destino 3.
-spinner.start()
-robo.move_to_J(remedio3[0], remedio3[1], 55.64, remedio3[3], wait=True)
-robo.move_to_J(remedio3[0], remedio3[1], remedio3[2], remedio3[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio3[0], remedio3[1], 55.64, remedio3[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino3[0], destino3[1], destino3[2], destino3[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
+                if acao2["acao2"] in destinos:
+                    destino.append(acao2["acao2"])
+                    remedios = {
+                        "remedio1": remedio1,
+                        "remedio2": remedio2,
+                        "remedio3": remedio3,
+                        "remedio4": remedio4,
+                        "remedio5": remedio5,
+                        "remedio6": remedio6,
+                        "remedio7": remedio7,
+                        "remedio8": remedio8
+                    }
 
-# Faz com que o robô pegue o remédio 4 e coloque no destino 4.
-spinner.start()
-robo.move_to_J(remedio4[0], remedio4[1], 55.64, remedio4[3], wait=True)
-robo.move_to_J(remedio4[0], remedio4[1], remedio4[2], remedio4[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio4[0], remedio4[1], 55.64, remedio4[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino4[0], destino4[1], destino4[2], destino4[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
+                    for posicao in caminho:
+                        if posicao in remedios:
+                            remedio = remedios[posicao]
+                            spinner.start()
+                            device.move_to_J(remedio[0], remedio[1], 55.64, remedio[3], wait=True)
+                            device.move_to_J(remedio[0], remedio[1], remedio[2], remedio[3], wait=True)
+                            device.suck(True)
+                            device.wait(200)
+                            device.move_to_J(remedio[0], remedio[1], 55.64, remedio[3], wait=True)
+                            device.move_to_J(home[0], home[1], home[2], home[3], wait=True)
+                            spinner.stop()
+                            #trocar por for loop que alterna com posição
+                        else:
+                            return "Posição inválida."
 
-# Faz com que o robô pegue o remédio 5 e coloque no destino 5.
-spinner.start()
-robo.move_to_J(remedio5[0], remedio5[1], 55.64, remedio5[3], wait=True)
-robo.move_to_J(remedio5[0], remedio5[1], remedio5[2], remedio5[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio5[0], remedio5[1], 55.64, remedio5[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino5[0], destino5[1], destino5[2], destino5[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
+                    for chegada in destino:
+                        if chegada in destinos:
+                            destino_coords = destinos[chegada]
+                            spinner.start()
+                            device.move_to_J(destino_coords[0], destino_coords[1], destino_coords[2], destino_coords[3], wait=True)
+                            device.suck(False)
+                            spinner.stop()
+                        else:
+                            return "Posição inválida."
+                else:
+                    return "Destino inválido."
+            else:
+                return "Remédio inválido."
+        case "posicao_atual":
+            return f"Posição atual do robô: {device.pose()}"
+        case _:
+            return "Comando inválido."
 
-# Faz com que o robô pegue o remédio 6 e coloque no destino 6.
-spinner.start()
-robo.move_to_J(remedio6[0], remedio6[1], 55.64, remedio6[3], wait=True)
-robo.move_to_J(remedio6[0], remedio6[1], remedio6[2], remedio6[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio6[0], remedio6[1], 55.64, remedio6[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino6[0], destino6[1], destino6[2], destino6[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
 
-# Faz com que o robô pegue o remédio 7 e coloque no destino 7.
-spinner.start()
-robo.move_to_J(remedio7[0], remedio7[1], 55.64, remedio7[3], wait=True)
-robo.move_to_J(remedio7[0], remedio7[1], remedio7[2], remedio7[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio7[0], remedio7[1], 55.64, remedio7[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino7[0], destino7[1], destino7[2], destino7[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
+if __name__ == "__main__":
+    if ligar_ferramenta() == "Ferramenta ligada.":
+        while True:
+            perguntas = [
+                inquirer.List("comando", message="Escolha um comando", choices=["home", "ligar_ferramenta", "desligar_ferramenta", "mover", "posicao_atual", "sair"])
+            ]
+            resposta = inquirer.prompt(perguntas)
+            if resposta["comando"] == "sair":
+                break
 
-# Faz com que o robô pegue o remédio 8 e coloque no destino 8.
-spinner.start()
-robo.move_to_J(remedio8[0], remedio8[1], 55.64, remedio8[3], wait=True)
-robo.move_to_J(remedio8[0], remedio8[1], remedio8[2], remedio8[3], wait=True)
-robo.suck(True)
-robo.wait(200)
-robo.move_to_J(remedio8[0], remedio8[1], 55.64, remedio8[3], wait=True)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-robo.move_to_J(destino8[0], destino8[1], destino8[2], destino8[3], wait=True)
-robo.suck(False)
-robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-spinner.stop()
+            resultado = execute_comando(resposta["comando"])
+            print(resultado)
+    else:
+         
+         while True:
+            perguntas = [
+            inquirer.List("comando", message="Escolha um comando", choices=["home", "ligar_ferramenta", "mover", "posicao_atual", "sair"])
+            ]
 
-# Pega a posição atual do robô
-posicao_atual = robo.pose()
-print(f"Posição atual: {posicao_atual}")
+            resposta = inquirer.prompt(perguntas)
 
-# Fecha a conexão com o robô
-robo.close()
+            if resposta["comando"] == "sair":
+                break
+            resultado = execute_comando(resposta["comando"])
+            print(resultado)

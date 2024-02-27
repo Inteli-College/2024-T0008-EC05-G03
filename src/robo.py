@@ -45,7 +45,7 @@ robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
 # Define a velocidade e a aceleracao do robô
 robo.speed(30, 30)
 
-# Move o robô para a posição (200, 0, 0)
+# Move o robô para a posição home.
 spinner.start()
 robo.move_to_J(home[0], home[1], home[2], home[3], wait=True)
 spinner.stop()

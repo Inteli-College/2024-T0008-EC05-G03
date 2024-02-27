@@ -20,7 +20,7 @@ device.speed(30, 30)
 home = (240.53, 0, 150.23, 0)
 #Posição das caixas é a 10cm da base do robô
 #55.64 #tamanho de 4 bloquinhos no z = -10.18
-remedio1 = (111.46, -294.44, -10.18, -70.86)
+remedio1 = (111.46, -294.44, -9.18, -70.86)
 remedio2 = (32.09, -296.95, -10.18, -83.83)
 remedio3 = (-31.74, -299.74, -10.18, -96.05)
 remedio4 = (-98.01, -295.91, -10.18, -108.33)
@@ -121,7 +121,6 @@ def execute_comando(comando):
                             device.move_to_J(remedio[0], remedio[1], 55.64, remedio[3], wait=True)
                             device.move_to_J(home[0], home[1], home[2], home[3], wait=True)
                             spinner.stop()
-                            #trocar por for loop que alterna com posição
                         else:
                             return "Posição inválida."
 

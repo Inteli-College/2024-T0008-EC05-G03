@@ -5,25 +5,6 @@ import inquirer
 import pydobot  
 from yaspin import yaspin
 
-#home = (240.53, 0, 150.23, 0)
-#remedio1 = (111.46, -294.44, -9.18, -70.86)
-#remedio2 = (32.09, -296.95, -10.18, -83.83)
-#remedio3 = (-31.74, -299.74, -10.18, -96.05)
-#remedio4 = (-98.01, -295.91, -10.18, -108.33)
-#remedio5 = (111.59, -217.81, -7.61, -62.87)
-#remedio6 = (44.38, -210.17, -7.28, -78.08)
-#remedio7 = (-24.8, -209.59, -8.17, -96.75)
-#remedio8 = (-91.94, -212.67, -6.64, -113.38)
-
-#destino1 = (106.46, 205.79, 43.29, 62.65)
-#destino2 = (35.55, 217.71, 18.44, 80.73)
-#destino3 = (-27.28, 215.22, 19.69, 97.22)
-#destino4 = (-97.49, 213.63, 13.13, 114.53)
-#destino5 = (110.93, 302.16, 12.63, 69.84)
-#destino6 = (37.7, 301.52, 14.95, 82.87)
-#destino7 = (-27.07, 305.53, 12.42, 95.06)
-#destino8 = (-98.12, 301.37, 13.09, 108.03)
-
 # Traz o spinner para apresentar uma animação enquanto o robô está se movendo
 spinner = yaspin(text="Processando...", color="yellow")
 
@@ -61,24 +42,13 @@ def load_points_from_file(file_path):
         else:
             raise ValueError("Formato de arquivo não suportado")
 
-def casa():
-        spinner.start()
-        device.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-        spinner.stop()
-        return "Robô retornou à posição inicial."
-
 def ligar_ferramenta():
         device.suck(True)
         return "Ferramenta ligada."
 
-def desligar_ferramenta(): #if ferramenta == true, desligar ferramenta (fazer isso depois)
+def desligar_ferramenta():
         device.suck(False)
         return "Ferramenta desligada."
-
-def mover():
-        return "Robô movido para as posições desejadas."
-def atual():
-        return f"Posição atual do robô: {device.pose()}" 
 
 
 def execute_comando(comando):

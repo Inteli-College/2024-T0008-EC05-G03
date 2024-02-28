@@ -18,7 +18,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 1 - Mapeamento de Exportar Layout</p>
 
-![Exportar layout](../../../static/img/business/oceanoazul.png)
+![Exportar layout](../../static/img/mapeamento_exportar.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -28,6 +28,6 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 2 - Mapeamento de Importar Layout</p>
 
-![Exportar layout](../../../static/img/business/oceanoazul.png)
+![Ixportar layout](../../static/img/mapeament_importar.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>

@@ -17,17 +17,11 @@ porta_escolhida = inquirer.prompt([
 device = pydobot.Dobot(port=porta_escolhida, verbose=False)
 
 # Define a velocidade e a aceleracao do robô
-device.speed(30, 30)
+device.speed(100, 100)
 
 caminho = []
 destino = []
-
-def __init__():
-        # Move o robô para a posição home.
-        spinner.start()
-        device.move_to_J(home[0], home[1], home[2], home[3], wait=True)
-        spinner.stop()
-        return "Robô inicializado."
+choices = ["home", "mover", "posicao_atual", "sair"]
 
 def load_points_from_file(file_path):
     # Lógica para carregar pontos do arquivo
@@ -44,10 +38,14 @@ def load_points_from_file(file_path):
 
 def ligar_ferramenta():
         device.suck(True)
+        choices.remove("ligar_ferramenta")
+        choices.insert("desligar_ferramenta")
         return "Ferramenta ligada."
 
 def desligar_ferramenta():
         device.suck(False)
+        choices.remove("desligar_ferramenta")
+        choices.insert(1, "ligar_ferramenta")
         return "Ferramenta desligada."
 
 
@@ -59,15 +57,17 @@ def execute_comando(comando):
             spinner.stop()
             return "Robô retornou à posição inicial."
         case "ligar_ferramenta":
-            device.suck(True)
+            ligar_ferramenta()
             return "Ferramenta ligada."
         case "desligar_ferramenta":
-            device.suck(False)
+            desligar_ferramenta()
             return "Ferramenta desligada."
         case "mover":
+            print("Medicamentos disponíveis: remedio1, remedio2, remedio3, remedio4, remedio5, remedio6, remedio7, remedio8")
             acao1 = inquirer.prompt([inquirer.Text("acao1", message="Qual o remédio desejado?")])
             if acao1["acao1"] in ["remedio1", "remedio2", "remedio3", "remedio4", "remedio5", "remedio6", "remedio7", "remedio8"]:
                 caminho.append(acao1["acao1"])
+                print("Locais disponíveis: destino1, destino2, destino3, destino4, destino5, destino6, destino7, destino8")
                 acao2 = inquirer.prompt([inquirer.Text("acao2", message="Qual o destino desejado?")])
                 destinos = {
                     "destino1": destinos_import['destino1'],
@@ -94,33 +94,31 @@ def execute_comando(comando):
                     }
 
                     for posicao in caminho:
-                        if posicao in remedios:
-                            remedio = remedios[posicao]
-                            spinner.start()
-                            device.move_to_J(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
-                            device.move_to_J(remedio['x'], remedio['y'], remedio['z'], remedio['r'], wait=True)
-                            device.suck(True)
-                            device.wait(200)
-                            device.move_to_J(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
-                            device.move_to_J(home['x'], home['y'], home['z'], home['r'], wait=True)
-                            spinner.stop()
-                        else:
-                            return "Posição inválida."
-
-                    for chegada in destino:
-                        if chegada in destinos:
+                        remedio = remedios[posicao]
+                        spinner.start()
+                        device.move_to_J(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
+                        device.move_to(remedio['x'], remedio['y'], remedio['z'], remedio['r'], wait=True)
+                        device.suck(True)
+                        choices.remove("ligar_ferramenta")
+                        choices.insert(1, "desligar_ferramenta")
+                        device.wait(200)
+                        device.move_to(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
+                        device.move_to_J(home['x'], home['y'], home['z'], home['r'], wait=True)
+                        spinner.stop()
+                        for chegada in destino:
                             destino_coords = destinos[chegada]
                             spinner.start()
                             device.move_to_J(destino_coords['x'], destino_coords['y'], destino_coords['z'], destino_coords['r'], wait=True)
                             device.suck(False)
+                            choices.remove("desligar_ferramenta")
+                            choices.insert(1, "ligar_ferramenta")
                             spinner.stop()
-                        else:
-                            return "Posição inválida."
+
                 else:
+                    caminho.clear()
                     return "Destino inválido."
-                caminho.clear()
-                destino.clear()
             else:
+                caminho.clear()
                 return "Remédio inválido."
         case "posicao_atual":
             return f"Posição atual do robô: {device.pose()}"
@@ -131,29 +129,17 @@ def execute_comando(comando):
 if __name__ == "__main__":
     pontos_home, pontos_remedios, pontos_destinos = load_points_from_file('src/pontos.json')
     home = pontos_home
+    choices.insert(1, "ligar_ferramenta")
     remedios_import= {ponto['nome']: ponto['posicao'] for ponto in pontos_remedios}
     destinos_import = {ponto['nome']: ponto['posicao'] for ponto in pontos_destinos}
-    if ligar_ferramenta() == "Ferramenta ligada.":
-        while True:
-            perguntas = [
-                inquirer.List("comando", message="Escolha um comando", choices=["home", "ligar_ferramenta", "desligar_ferramenta", "mover", "posicao_atual", "sair"])
-            ]
-            resposta = inquirer.prompt(perguntas)
-            if resposta["comando"] == "sair":
+    device.move_to_J(home['x'], home['y'], home['z'], home['r'], wait=True)
+    while True:
+        perguntas = [
+            inquirer.List("comando", message="Escolha um comando", choices=choices)
+        ]
+        resposta = inquirer.prompt(perguntas)
+        if resposta["comando"] == "sair":
                 break
 
-            resultado = execute_comando(resposta["comando"])
-            print(resultado)
-    else:
-         
-         while True:
-            perguntas = [
-            inquirer.List("comando", message="Escolha um comando", choices=["home", "ligar_ferramenta", "mover", "posicao_atual", "sair"])
-            ]
-
-            resposta = inquirer.prompt(perguntas)
-
-            if resposta["comando"] == "sair":
-                break
-            resultado = execute_comando(resposta["comando"])
-            print(resultado)
+        resultado = execute_comando(resposta["comando"])
+        print(resultado)

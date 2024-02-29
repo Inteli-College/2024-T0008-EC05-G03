@@ -39,7 +39,7 @@ def load_points_from_file(file_path):
 def ligar_ferramenta():
         device.suck(True)
         choices.remove("ligar_ferramenta")
-        choices.insert("desligar_ferramenta")
+        choices.insert(1, "desligar_ferramenta")
         return "Ferramenta ligada."
 
 def desligar_ferramenta():

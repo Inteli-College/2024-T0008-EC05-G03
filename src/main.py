@@ -99,20 +99,18 @@ def execute_comando(comando):
                         device.move_to_J(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
                         device.move_to(remedio['x'], remedio['y'], remedio['z'], remedio['r'], wait=True)
                         device.suck(True)
-                        choices.remove("ligar_ferramenta")
-                        choices.insert(1, "desligar_ferramenta")
                         device.wait(200)
                         device.move_to(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
                         device.move_to_J(home['x'], home['y'], home['z'], home['r'], wait=True)
                         spinner.stop()
+                        caminho.clear()
                         for chegada in destino:
                             destino_coords = destinos[chegada]
                             spinner.start()
                             device.move_to_J(destino_coords['x'], destino_coords['y'], destino_coords['z'], destino_coords['r'], wait=True)
                             device.suck(False)
-                            choices.remove("desligar_ferramenta")
-                            choices.insert(1, "ligar_ferramenta")
                             spinner.stop()
+                            destino.clear()
 
                 else:
                     caminho.clear()

@@ -5,6 +5,8 @@ custom_edit_url: null
 
 # Matriz Oceano Azul
 
+##### Matriz de oceano azul elaborada no processo de entendimento de negócio do projeto
+
 &nbsp;&nbsp;&nbsp;&nbsp;Uma matriz de oceano azul é uma ferramenta estratégica concebida para orientar as organizações na busca de inovação e crescimento sustentável em seus mercados. É uma abordagem inovadora para a criação de espaços de mercado inexplorados e desvinculados da competição direta.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ao contrário do oceano vermelho, que representa mercados saturados e altamente competitivos, o oceano azul simboliza novas oportunidades e segmentos de mercado onde a concorrência é irrelevante ou inexistente. A matriz de oceano azul fornece um quadro estruturado para as empresas identificarem e explorarem esses nichos, permitindo que se afastem da competição direta e criem novos espaços de mercado.
@@ -19,7 +21,11 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
   
 &nbsp;&nbsp;&nbsp;&nbsp;A seguir, tem-se a análise de oceano azul aplicada ao parceiro de projeto, Sírio-Libanes.
 
-![oceano azul](../../../static/img/business/oceano-azul.png)
+<p style={{textAlign: 'center'}}>Figura 1 - Esquema visual da análise de oceano azul referente ao projeto</p>
+
+![oceano azul](../../../static/img/business/oceanoazul.png)
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;***Reduzir***:
 - **Tempo de Espera para Atendimento Emergencial**:
@@ -77,7 +83,11 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 
 ### Tecnologia e Matriz de Oceano Azul
 
+<p style={{textAlign: 'center'}}>Figura 2 - Matriz de oceano azul referente ao projeto</p>
+
 ![oceano azul](../../../static/img/business/matriz-oceano-azul.png)
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;Inicialmente, é de importante destacar que a matriz de oceano azul acima visa realizar uma análise quantitativa em relação a possíveis tecnologias que podem ser utilizadas para a automação alvo do Sírio-Libanês. É necessário destacar também, que a tranformação em uma análise quantitativa foi feita tomando como base os documentos que podem ser encontrados [aqui](https://drive.google.com/drive/folders/1AgG_qLSkDvK4uzXCPOZHy4Xjx8X4qp96?usp=sharing), além de pesquisas observando o contexto industrial inserido. 
 

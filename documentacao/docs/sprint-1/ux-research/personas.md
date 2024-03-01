@@ -5,6 +5,8 @@ custom_edit_url: null
 
 # Definição de personas
 
+##### Personas elaboradas no processo de UX research do projeto
+
 &nbsp;&nbsp;&nbsp;&nbsp;"Persona" é o nome dado a uma pessoa fictícia criada para guiar o desenvolvimento de um produto e/ou serviço de acordo com um determinado perfil que se dá pelo(s) usuário(s) deste. As personas se diferem da simples definição de um perfil de usuário através da individualização, uma vez que elas apresentam nome, idade, hobbies etc. individuais e não apenas características gerais de um grupo de pessoas ao qual o produto se dirige.
 
 &nbsp;&nbsp;&nbsp;&nbsp;No contexto do presente projeto, a equipe Violeta elaborou duas personas diferentes. A primeira refere-se a um auxiliar de farmácia, que usaria a solução desenvolvida no momento do reabastecimento dos carrinhos de parada. A segunda, refere-se a uma médica, que usufruiria indiretamente da solução ao utilizar os itens repostos nos carrinhos de parada. Num cenário real, ambas as personas dificilmente teriam contato direto entre si no ambiente de trabalho. A ligação entre eles, em prática, é indireta e se dá através do carrinho de parada, que é reabastecido e organizado pelo auxiliar e utilizado em emergências pela médica.

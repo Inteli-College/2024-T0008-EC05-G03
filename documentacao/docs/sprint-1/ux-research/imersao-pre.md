@@ -5,6 +5,9 @@ custom_edit_url: null
 
 # Imersão preliminar
 
+##### Imersão preliminar do processo de UX research do projeto
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;“UX research” (pesquisa de experiência do usuário), sob o contexto da criação de um produto, refere-se ao processo de pesquisa sobre a utilização do produto por determinado(s) usuário(s) e todos os fatores que circundam ela — isso inclui (mas não se limita a) por quem, quando, onde, por que e para que o produto será utilizado. Com base nisso, com o objetivo de guiar o desenvolvimento do projeto de maneira condizente com o cenário real ao qual a solução se destina, o grupo Violeta realizou o processo de UX research, cuja etapa de imersão preliminar, feita por meio de uma pesquisa exploratória e uma pesquisa desk, é debatida na presente seção.
 
 ### Pesquisa exploratória

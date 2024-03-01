@@ -7,7 +7,6 @@ custom_edit_url: null
 
 ##### Imersão preliminar do processo de UX research do projeto
 
-
 &nbsp;&nbsp;&nbsp;&nbsp;“UX research” (pesquisa de experiência do usuário), sob o contexto da criação de um produto, refere-se ao processo de pesquisa sobre a utilização do produto por determinado(s) usuário(s) e todos os fatores que circundam ela — isso inclui (mas não se limita a) por quem, quando, onde, por que e para que o produto será utilizado. Com base nisso, com o objetivo de guiar o desenvolvimento do projeto de maneira condizente com o cenário real ao qual a solução se destina, o grupo Violeta realizou o processo de UX research, cuja etapa de imersão preliminar, feita por meio de uma pesquisa exploratória e uma pesquisa desk, é debatida na presente seção.
 
 ### Pesquisa exploratória
@@ -34,9 +33,8 @@ custom_edit_url: null
 
 ---
 
-# Bibliografia
+## Bibliografia
 
+FARREL, Susan. UX Research Cheat Sheet. Nielsen Norman Group, 2017. Disponível em: <https://www.nngroup.com/articles/ux-research-cheat-sheet/>. Acesso em: 16 de fevereiro de 2024.
 
-FARREL, Susan. UX Research Cheat Sheet. Nielsen Norman Group, 2017. Disponível em: https://www.nngroup.com/articles/ux-research-cheat-sheet/. Acesso em: 16 de fevereiro de 2024.
-
-Site oficial de candidatura a vagas de emprego no Hospital Sírio-Libanês. Disponível em: https://vagas.hsl.org.br/job/Pessoa-Auxiliar-de-Farm%C3%A1cia-Banco-de-Talentos/629715219/. Acesso em: 16 de fevereiro de 2024.
+Site oficial de candidatura a vagas de emprego no Hospital Sírio-Libanês. Disponível em: <https://vagas.hsl.org.br/job/Pessoa-Auxiliar-de-Farm%C3%A1cia-Banco-de-Talentos/629715219/>. Acesso em: 16 de fevereiro de 2024.

@@ -17,9 +17,10 @@ O nosso projeto tem como cliente o Hospital Sírio-Libanês e visa desenvolver u
 Este documento compila a documentação detalhada desenvolvida pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação. Nosso projeto tem como cliente o Hospital Sírio-Libanês, uma instituição de referência na área da saúde, e visa a criação de uma ferramenta abrangente, composta por hardware e software. Essa ferramenta foi concebida com o propósito específico de otimizar os processos de reabastecimento e montagem dos carrinhos de emergência, visando à eficiência operacional e à melhoria dos serviços prestados. O sistema busca, ainda, oferecer flexibilidade para futuras modificações e aprimorar a conectividade com outras ferramentas essenciais no ambiente hospitalar.
 
 ## Parceiro de projeto
+
 O Hospital Sírio-Libanês, renomado centro de saúde, é nosso parceiro de projeto. Reconhecido pela excelência no atendimento médico, o hospital compartilha conosco a necessidade de aprimorar seus processos internos, especificamente no que diz respeito ao reabastecimento e montagem dos carrinhos de emergência. A parceria visa proporcionar soluções inovadoras que contribuam para a eficiência e agilidade nos serviços prestados, alinhando-se com os padrões de qualidade já estabelecidos pela instituição.
 
-## O Problema 
+## O Problema
 
  A necessidade de uma resposta rápida e eficaz em situações de emergência é inquestionável, e os processos atuais de reabastecimento e montagem dos carrinhos podem apresentar oportunidades de melhoria. A ineficiência nesses procedimentos pode resultar em atrasos críticos, comprometendo a capacidade de resposta do hospital diante de situações emergenciais. Diante desse cenário, nosso projeto propõe uma solução inovadora para otimizar tais processos, garantindo a prontidão constante dos carrinhos de emergência.
 
@@ -32,10 +33,9 @@ Os objetivos delineados para nosso projeto abrangem diversos aspectos, visando �
 - **Aprimoramento** da conectividade da ferramenta com outras soluções essenciais, promovendo uma integração mais eficiente no ambiente hospitalar.
 - Garantia da **eficiência operacional**, contribuindo para a agilidade no atendimento de emergências médicas e fortalecendo a capacidade de resposta do hospital.
 
-## A Solução 
+## A Solução
 
 A solução proposta pelo Grupo 3 - Violeta consiste em um sistema abrangente que integra hardware e software. O sistema foi concebido para otimizar a gestão dos carrinhos de emergência, abordando desde o reabastecimento até o monitoramento em tempo real do status desses equipamentos. A flexibilidade do sistema permite adaptações contínuas, garantindo que as mudanças nas necessidades hospitalares sejam facilmente incorporadas. A conectividade aprimorada possibilita a integração fluida com outras ferramentas essenciais no ambiente hospitalar, promovendo uma abordagem mais holística e eficaz na prestação de serviços de saúde emergenciais. A solução almeja não apenas resolver desafios operacionais específicos, mas também contribuir para o aprimoramento geral dos processos internos do Hospital Sírio-Libanês, refletindo o compromisso com a excelência e inovação na área da saúde.
-
 
 ## Membros do grupo
 

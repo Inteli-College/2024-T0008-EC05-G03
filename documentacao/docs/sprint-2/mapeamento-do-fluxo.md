@@ -5,8 +5,7 @@ custom_edit_url: null
 
 # Mapeamento do fluxo
 
-
-### Mapeamento do fluxo - Médica Isabel
+## Mapeamento do fluxo - Médica Isabel
 
 &nbsp;&nbsp;&nbsp;&nbsp;A user story de máxima prioridade para a nossa persona Isabel, uma médica, destaca-se como uma demanda crucial: "Como médica cardiologista, quero que o sistema permita a personalização do conteúdo do carrinho de emergência de acordo com as necessidades específicas de cada médico e/ou situação, para que eu possa ter os recursos mais adequados à mão."
 
@@ -14,9 +13,9 @@ custom_edit_url: null
 
 &nbsp;&nbsp;&nbsp;&nbsp;É crucial enfatizar que, nesse contexto, a presença física do robô não é necessária para a execução dessa ação por parte do usuário. A manipulação física do carrinho é considerada uma atividade alheia à responsabilidade da persona Isabel, uma vez que a execução da tarefa é totalmente dependente do software, proporcionando praticidade e agilidade no acesso aos recursos essenciais.
 
-##### Mapeamento de Exportar Layout
+### Mapeamento de Exportar Layout
 
-&nbsp;&nbsp;&nbsp;&nbsp;O procedimento de exportação de layout emerge como uma funcionalidade de suma importância para a personalização do carrinho de emergência. Quando o usuário opta por um espaço vazio na montagem do layout, tem a capacidade de inserir não apenas o nome do item, mas também a quantidade que ocupará o espaço designado. Ao acionar a opção "exportar layout", as posições são registradas em matrizes, onde cada gaveta do layout é correlacionada a uma matriz específica. Estas informações são arquivadas em um documento CSV, o qual apresenta colunas distintas para o Nome do item, Quantidade do item, Número da gaveta, e Local na matriz (coordenadas x, y). Este processo assegura não apenas a organização eficiente, mas também a identificação ágil dos recursos contidos no carrinho de emergência. 
+&nbsp;&nbsp;&nbsp;&nbsp;O procedimento de exportação de layout emerge como uma funcionalidade de suma importância para a personalização do carrinho de emergência. Quando o usuário opta por um espaço vazio na montagem do layout, tem a capacidade de inserir não apenas o nome do item, mas também a quantidade que ocupará o espaço designado. Ao acionar a opção "exportar layout", as posições são registradas em matrizes, onde cada gaveta do layout é correlacionada a uma matriz específica. Estas informações são arquivadas em um documento CSV, o qual apresenta colunas distintas para o Nome do item, Quantidade do item, Número da gaveta, e Local na matriz (coordenadas x, y). Este processo assegura não apenas a organização eficiente, mas também a identificação ágil dos recursos contidos no carrinho de emergência.
 
 <p style={{textAlign: 'center'}}>Figura 1 - Mapeamento de Exportar Layout</p>
 
@@ -24,7 +23,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-##### Mapeamento de Importar Layout
+### Mapeamento de Importar Layout
 
 &nbsp;&nbsp;&nbsp;&nbsp;A funcionalidade de importar layout complementa o processo, permitindo que o usuário recupere layouts previamente personalizados. Ao selecionar a opção "importar layout" e escolher o arquivo CSV desejado, o sistema exibe uma representação visual do layout na tela do usuário. O exemplo de disposição do CSV inclui as informações cruciais, como nome do item, quantidade, número da gaveta e coordenadas na matriz. Essa abordagem simplificada torna o processo de importação intuitivo, proporcionando uma maneira eficiente de recuperar configurações personalizadas.
 
@@ -46,7 +45,7 @@ custom_edit_url: null
 
 &emsp;&emsp;Em resumo, o mapeamento do fluxo é uma ferramenta poderosa que oferece uma compreensão aprofundada do fluxo de trabalho de um projeto, permitindo a identificação de desperdícios, a otimização do processo, a melhoria da comunicação e colaboração, e a promoção da melhoria contínua. Integrar essa abordagem ao seu projeto pode resultar em uma execução mais eficiente, eficaz e bem-sucedida.
 
-&emsp;&emsp;Segue abaixo o mapeamento de fluxo do projeto [Violeta](https://inteli-college.github.io/2024-T0008-EC05-G03/) referente tanto as User Stories quanto Jornadas de Usuários das personas. 
+&emsp;&emsp;Segue abaixo o mapeamento de fluxo do projeto [Violeta](https://inteli-college.github.io/2024-T0008-EC05-G03/) referente tanto as User Stories quanto Jornadas de Usuários das personas.
 
 ---
 

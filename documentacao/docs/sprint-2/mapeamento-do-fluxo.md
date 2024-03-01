@@ -53,7 +53,7 @@ custom_edit_url: null
 
 &emsp;&emsp;O design da tela inicial foi meticulosamente concebido para incorporar a máxima simplicidade, aderindo à eficiente regra dos três cliques. Esta abordagem visa garantir que todas as ações sejam realizadas com no máximo três cliques, proporcionando uma experiência intuitiva e eficaz aos usuários. Na interface inicial, destacam-se as seguintes funcionalidades: a capacidade de criar um layout personalizado(Botão 1), exportar(Botão 4) e importar(Botão 5) layouts, iniciar o sistema de montagem(Botão 2) e visualizar o histórico completo das montagens realizadas(Botão 3). Essa abordagem simplificada não apenas otimiza a usabilidade, mas também amplia a acessibilidade, permitindo que os usuários realizem suas tarefas de forma eficiente e direta, sem complicações desnecessárias.
 
-##### Botão 1 - Adicionar item no layout
+#### Botão 1 - Adicionar item no layout
 
 <p style={{textAlign: 'center'}}>Figura 4 - Tela de adicionar item baixa fidelidade</p>
 
@@ -69,7 +69,7 @@ custom_edit_url: null
 
 &emsp;&emsp;Ao criar o layout, o usuário tem a opção de selecionar os espaços em branco desejados. Posteriormente, é exibida uma janela pop-up que facilita a inclusão do nome do item desejado, assim como a definição da quantidade que será alocada para o espaço selecionado. Este processo simplificado e intuitivo oferece ao usuário um controle preciso sobre a disposição dos itens no layout, ao mesmo tempo em que proporciona uma experiência fluida e eficiente na atribuição de nomes e quantidades a cada espaço específico.
 
-##### Botão 2 - Iniciar o sistema
+#### Botão 2 - Iniciar o sistema
 
 <p style={{textAlign: 'center'}}>Figura 6 - Pop up de feedback de uso do robô - baixa fidelidade</p>
 
@@ -85,7 +85,7 @@ custom_edit_url: null
 
 &emsp;&emsp;Ao iniciar o sistema, uma notificação pop-up é automaticamente exibida, fornecendo feedback imediato de que o robô está atualmente em uso. Essa funcionalidade informativa visa manter o usuário ciente do estado operacional do sistema, assegurando uma interação transparente e uma compreensão imediata do status do robô assim que o processo é iniciado.
 
-##### Botão 3
+#### Botão 3 - Histórico de montagem
 
 <p style={{textAlign: 'center'}}>Figura 8 - Tabela de histórico de montagem - baixa fidelidade</p>
 

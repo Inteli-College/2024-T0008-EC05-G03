@@ -35,6 +35,6 @@ custom_edit_url: null
 
 ## Bibliografia
 
-FARREL, Susan. UX Research Cheat Sheet. Nielsen Norman Group, 2017. Disponível em: <https://www.nngroup.com/articles/ux-research-cheat-sheet/>. Acesso em: 16 de fevereiro de 2024.
+FARREL, Susan. UX Research Cheat Sheet. Nielsen Norman Group, 2017. Disponível em: https://www.nngroup.com/articles/ux-research-cheat-sheet. Acesso em: 16 de fevereiro de 2024.
 
-Site oficial de candidatura a vagas de emprego no Hospital Sírio-Libanês. Disponível em: <https://vagas.hsl.org.br/job/Pessoa-Auxiliar-de-Farm%C3%A1cia-Banco-de-Talentos/629715219/>. Acesso em: 16 de fevereiro de 2024.
+Site oficial de candidatura a vagas de emprego no Hospital Sírio-Libanês. Disponível em: https://vagas.hsl.org.br/job/Pessoa-Auxiliar-de-Farm%C3%A1cia-Banco-de-Talentos/629715219. Acesso em: 16 de fevereiro de 2024.

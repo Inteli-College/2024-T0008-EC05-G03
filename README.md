@@ -24,7 +24,7 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 
 ## Descrição 
 
-📜| Projeto feito por alunos do Inteli - Instituto de Tecnologia e liderança - de Engenharia da Computação em parceria com o Hospital Sírio-Libanês. O projeto se trata de uma automatização no processo de montagem de carrinhos de emergência utilizado em situações necessárias, eliminando processos manuais e garatindo maior eficiência e otimização de tempo, uma resposta mais rápida e eficiente em casos de emergência.
+📜| Projeto feito por alunos do Inteli - Instituto de Tecnologia e liderança - de Engenharia da Computação em parceria com o Hospital Sírio-Libanês. O projeto se trata de uma automatização no processo de montagem de carrinhos de emergência utilizado em situações necessárias, eliminando processos manuais e garantindo maior eficiência e otimização de tempo, uma resposta mais rápida e eficiente em casos de emergência.
 
 <br><br>
 <p align="center">
@@ -57,7 +57,7 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 ```py src/main.py```
 - Utilize as setas do teclado para navegar entre as opções e aperte ```Enter``` para selecionar, e então a interface por linha de comando estará pronta para usar.
 
-#### Documetação
+#### Documentação
 
 Siga passo a passo para inciar a documentação:
 

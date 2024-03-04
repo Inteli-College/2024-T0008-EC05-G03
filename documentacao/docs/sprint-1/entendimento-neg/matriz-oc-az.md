@@ -23,7 +23,7 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 
 <p style={{textAlign: 'center'}}>Figura 1 - Esquema visual da análise de oceano azul referente ao projeto</p>
 
-![oceano azul](../../../static/img/business/oceanoazul.png)
+![oceano azul](../../../static/img/sprint-1/business/oceanoazul.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -85,7 +85,7 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 
 <p style={{textAlign: 'center'}}>Figura 2 - Matriz de oceano azul referente ao projeto</p>
 
-![oceano azul](../../../static/img/business/matriz-oceano-azul.png)
+![oceano azul](../../../static/img/sprint-1/business/matriz-oceano-azul.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

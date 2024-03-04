@@ -90,7 +90,7 @@ Para calcular o ponto de equilíbrio do projeto de automação hospitalar, preci
 
 <p style={{textAlign: 'center'}}>Figura 1 - Expressões de cálculo do ponto de equilíbrio</p>
 
-![Expressões de cálculo do ponto de equilíbrio](../../../static/img/business/analise_financeira_expressoes.png)
+![Expressões de cálculo do ponto de equilíbrio](../../../static/img/sprint-1/business/analise_financeira_expressoes.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

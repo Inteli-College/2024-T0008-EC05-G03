@@ -55,7 +55,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/diagrama_blocos.png").default} style={{width: 300}} alt="Diagrama de blocos" />
+        <img src={require("../../static/img/sprint-1/diagrama_blocos.png").default} style={{width: 300}} alt="Diagrama de blocos" />
         <br />
     </div>
 </div>

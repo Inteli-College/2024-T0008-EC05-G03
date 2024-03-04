@@ -4,7 +4,7 @@
 
 Durante a segunda sprint do desenvolvimento do projeto, a equipe Violeta focou na construção de uma CLI (Command Line Interface ou, em português, Interface de Linha de Comando), que se trata de uma interface na qual um usuário pode digitar termos pré-definidos que, quando ordenados e em conjunto, significam comandos para que o computador execute determinadas ações. No contexto do projeto, a CLI foi desenvolvida sobre a linguagem Python 3 e construída a fim de possibilitar que, através de um computador, seja possível executar ações básicas de movimento com o robô Dobot Magician Lite. 
 
-À vista disso, ao decorrer desta seção, serão apresentados trechos de códigos que serão relacionados à proposta de arquitetura desenvolvida na sprint 1 e a casos de uso sob contexto do projeto. Por isso, para melhor entendimento, deve-se ler as seções da documentação referente às tecnologias usadas na sprint 2 e à inicialização local da CLI.
+À vista disso, ao decorrer desta seção, serão apresentados trechos de códigos que serão relacionados à proposta de arquitetura desenvolvida na sprint 1 e a casos de uso sob contexto do projeto. Por isso, para melhor entendimento, deve-se ler as seções da documentação referente às [tecnologias utilizadas](https://inteli-college.github.io/2024-T0008-EC05-G03/sprint-2/sistema-robotico/tecnologias) na sprint 2 e à [inicialização local da CLI](https://inteli-college.github.io/2024-T0008-EC05-G03/sprint-2/sistema-robotico/inicializacao).
 
 > Até o final da sprint 2, o arquivo principal com o código da CLI desenvolvida para a solução se encontra, dentro da estrutura de pastas do repositório do projeto, em: ```./src/ main.py```.
 
@@ -22,7 +22,7 @@ Diante do exposto, a seguir, estão descritas as relações existentes entre tre
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-Neste trecho, são importadas as bibliotecas necessárias para execução da CLI (as quais são detalhadamente descritas na seção de tecnologias utilizadas). A partir da importação dessas bibliotecas, é feita uma série de declaração de variáveis e instanciação de objetos, como na linha 8, na qual, com a biblioteca ```yaspin``` cria-se o objeto responsável por fornecer, para o usuário, o feedback de que um comando está sendo carregado/executado pelo robô.
+Neste trecho, são importadas as bibliotecas necessárias para execução da CLI (as quais são detalhadamente descritas na seção de [tecnologias utilizadas](https://inteli-college.github.io/2024-T0008-EC05-G03/sprint-2/sistema-robotico/tecnologias)). A partir da importação dessas bibliotecas, é feita uma série de declaração de variáveis e instanciação de objetos, como na linha 8, na qual, com a biblioteca ```yaspin``` cria-se o objeto responsável por fornecer, para o usuário, o feedback de que um comando está sendo carregado/executado pelo robô.
 
 Além disso, nesse trecho inicial, por meio da biblioteca built-in “```serial.ports```”, há uma lógica na qual é criada uma lista com todas as portas seriais (USB) em uso pelo computador no momento. A partir dessa lista, com uso da biblioteca “```inquirer```”, a CLI solicita que o usuário selecione qual porta deve ser utilizada para comunicação com o robô. A partir dessa seleção, declara-se o objeto “device”, que representa o próprio robô Dobot Magician Lite.
 

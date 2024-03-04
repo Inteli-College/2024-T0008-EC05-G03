@@ -29,7 +29,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 1 - Mapeamento de fluxo de monitoramento antes de e durante o reabastecimento</p>
 
-![Mapeamento de fluxo de monitoramento antes de e durante o reabastecimento](../../static/img/mapeamento_fluxo_persona1A.png)
+![Mapeamento de fluxo de monitoramento antes de e durante o reabastecimento](../../static/img/sprint-2/mapeamento-do-fluxo/mapeamento_fluxo_persona1A.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -39,7 +39,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 2 - Mapeamento de fluxo de monitoramento após o reabastecimento</p>
 
-![Mapeamento de fluxo de monitoramento após o reabastecimento](../../static/img/mapeamento_fluxo_persona1B.png)
+![Mapeamento de fluxo de monitoramento após o reabastecimento](../../static/img/sprint-2/mapeamento-do-fluxo/mapeamento_fluxo_persona1B.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -59,7 +59,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 2 - Mapeamento de Exportar Layout</p>
 
-![Exportar layout](../../static/img/mapeamento_exportar.png)
+![Exportar layout](../../static/img/sprint-2/mapeamento-do-fluxo/mapeamento_exportar.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -69,7 +69,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 3 - Mapeamento de Importar Layout</p>
 
-![Importar layout](../../static/img/mapeament_importar.png)
+![Importar layout](../../static/img/sprint-2/mapeamento-do-fluxo/mapeamento_importar.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -89,7 +89,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 4 - Tela de inicio (baixa fidelidade)</p>
 
-![Tela Inicio](../../static/img/wireframe/wr_baixa_1.png)
+![Tela Inicio](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/wr_baixa_1.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -97,7 +97,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 5 - Tela de inicio (alta fidelidade)</p>
 
-![Tela de inicio](../../static/img/wireframe/Canva1.1.png)
+![Tela de inicio](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/Canva1.1.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -105,7 +105,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 6 - Botões da tela de inicio</p>
 
-![Botões tela de inicio](../../static/img/wireframe/wr_botões.png)
+![Botões tela de inicio](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/wr_botões.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -115,7 +115,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 7 - Tela de adicionar item (baixa fidelidade)</p>
 
-![Inserir item](../../static/img/wireframe/wr_baixa_2.png)
+![Inserir item](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/wr_baixa_2.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -123,7 +123,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 8 - Tela de adicionar item (alta fidelidade)</p>
 
-![Inserir item](../../static/img/wireframe/Canva1.2.png)
+![Inserir item](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/Canva1.2.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -133,7 +133,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 9 - Pop up de feedback de uso do robô (baixa fidelidade)</p>
 
-![O robô está sendo utilizado](../../static/img/wireframe/wr_baixa_3.png)
+![O robô está sendo utilizado](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/wr_baixa_3.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -141,7 +141,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 10 - Pop up de feedback de uso do robô (alta fidelidade)</p>
 
-![O robô está sendo utilizado](../../static/img/wireframe/Canva1.3.png)
+![O robô está sendo utilizado](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/Canva1.3.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -151,7 +151,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 11 - Tabela de histórico de montagem (baixa fidelidade)</p>
 
-![Tabela de histórico de montagem](../../static/img/wireframe/wr_baixa_5.png)
+![Tabela de histórico de montagem](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/wr_baixa_5.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -159,7 +159,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 12 - Tabela de histórico de montagem (alta fidelidade)</p>
 
-![Tabela de histórico de montagem](../../static/img/wireframe/Canva1.5.png)
+![Tabela de histórico de montagem](../../static/img/sprint-2/mapeamento-do-fluxo/wireframe/Canva1.5.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

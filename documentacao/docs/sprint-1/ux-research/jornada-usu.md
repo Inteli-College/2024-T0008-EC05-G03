@@ -15,7 +15,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 1 - Jornada de usuário referente ao auxiliar de farmácia</p>
 
-![Jornada de usuário referente ao auxiliar de farmácia](../../../static/img/ux/jornadausu_1.jpg)
+![Jornada de usuário referente ao auxiliar de farmácia](../../../static/img/sprint-1/ux/jornadausu_1.jpg)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -23,7 +23,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 2 - Jornada de usuário referente à médica</p>
 
-![testJornada de usuário referente à médicae](../../../static/img/ux/jornadausu_2.jpg)
+![testJornada de usuário referente à médicae](../../../static/img/sprint-1/ux/jornadausu_2.jpg)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

@@ -15,7 +15,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 1 - Layout de persona (auxiliar de farmácia)</p>
 
-![Layout de persona (Auxiliar de farmácia)](../../../static/img/ux/persona_1.png)
+![Layout de persona (Auxiliar de farmácia)](../../../static/img/sprint-1/ux/persona_1.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -31,7 +31,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 2 - Layout de persona (médica)</p>
 
-![Layout de persona (Médica)](../../../static/img/ux/persona_2.png)
+![Layout de persona (Médica)](../../../static/img/sprint-1/ux/persona_2.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

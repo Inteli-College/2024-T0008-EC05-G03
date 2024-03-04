@@ -14,7 +14,7 @@ custom_edit_url: null
 <p style={{textAlign: 'center'}}>Figura 1 - Matriz de risco referente ao projeto</p>
 
 
-![Matriz de Risco](../../../static/img/business/matriz-de-risco.png)
+![Matriz de Risco](../../../static/img/sprint-1/business/matriz-de-risco.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

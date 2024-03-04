@@ -12,7 +12,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 1 - Value Proposition Canvas (Canvas da Proposta de Valor)</p>
 
-![Value Proposition Canvas](../../../static/img/business/value_proposition_canvas.png)
+![Value Proposition Canvas](../../../static/img/sprint-1/business/value_proposition_canvas.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

@@ -1,5 +1,5 @@
 <p align="center">
-<a href= "https://www.inteli.edu.br/"> <img src="https://lh3.googleusercontent.com/proxy/lIqelEx3J1_WFCxtiV4qAsPQXPQqUwQ6oRNzFX4wUUClp16DstvcOxQR7YAZyr-e9oIpj-xi6W8bePAj5njamq65vIYrVybo3QtBTghMvFEzxD8cNQ3v6VM2kfRJUa8" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
+<a href= "https://www.inteli.edu.br/"> <img src="https://github.com/Inteli-College/2024-T0008-EC05-G03/assets/85657433/afc793e7-2a20-4207-8832-0c998187c537" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
 # Violeta
@@ -24,7 +24,7 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 
 ## Descrição 
 
-📜| Projeto feito por alunos do Inteli - Instituto de Tecnologia e liderança - de Engenharia da Computação em parceria com o Hospital Sírio-Libanês. O projeto se trata de uma automatização no processo de montagem de carrinhos de emergência utilizado em situações necessárias, eliminando processos manuais e garatindo maior eficiência e otimização de tempo, uma resposta mais rápida e eficiente em casos de emergência.
+📜| Projeto feito por alunos do Inteli - Instituto de Tecnologia e liderança - de Engenharia da Computação em parceria com o Hospital Sírio-Libanês. O projeto se trata de uma automatização no processo de montagem de carrinhos de emergência utilizado em situações necessárias, eliminando processos manuais e garantindo maior eficiência e otimização de tempo, uma resposta mais rápida e eficiente em casos de emergência.
 
 <br><br>
 <p align="center">
@@ -33,16 +33,38 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 
 ##  Estrutura de pastas
 
-## Instalação
+```
+└── documentacao
+│   ├── blog
+│   ├── docs
+|   │   ├── sprint-1
+|   │   ├── sprint-2
+│   ├── src
+|   │   ├── components
+|   │   ├── css
+|   │   ├── pages
+│   ├── static
+└── pydobot-base/pydobot
+└── src
+```
+
+## Inicialização
+
+#### CLI (Command Line Interface)
+
+- Abra o Terminal no seu VSCode, isso pode ser feito através do comando ```Ctrl + “```
+- Digite a seguinte linha de comando:
+```py src/main.py```
+- Utilize as setas do teclado para navegar entre as opções e aperte ```Enter``` para selecionar, e então a interface por linha de comando estará pronta para usar.
+
+#### Documentação
 
 Siga passo a passo para inciar a documentação:
 
-Abra o repositório em seu dispositivo e em seguida abra o terminal.
-Digite ```cd .\documentacao\``` para entrar na pasta referente.
-Digite ```npm i``` para instalar todas dependências.
-Por fim, digite ```npm start``` para inicializar o sistema.
-
-## Configuração para Desenvolvimento
+- Abra o repositório em seu dispositivo e em seguida abra o terminal.
+- Digite ```cd .\documentacao\``` para entrar na pasta referente.
+- Digite ```npm i``` para instalar todas dependências.
+- Por fim, digite ```npm start``` para inicializar o sistema.
 
 ## Histórico de lançamentos
 
@@ -51,3 +73,8 @@ Por fim, digite ```npm start``` para inicializar o sistema.
   - Arquitetura do sistema
   - UX Research
   - Guia de estilos
+- 0.2.0 - 01/03/24
+  - Wireframe (baixa e alta fidelidade)
+  - Mapeamento do fluxo de utilização da solução
+  - CLI (Command Line Interface)
+  - Sistema básico de automação

@@ -1,12 +1,17 @@
 
+import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, Text, ForeignKey
 from sqlalchemy.orm import relationship
 
+current_dir = os.path.dirname(__file__)
+database_uri = 'sqlite:///' + os.path.join(current_dir, '..', 'database', 'database.db')
+
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/macbook/Documents/GitHub/mod5/src/db/database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = database_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -63,7 +68,7 @@ def add_scheme(id_layout):
 
 from flask import jsonify
 
-# Rota adquirir os schemas de acordo com todos o layout_id da url
+# Rota para obter os schemas de acordo com todos o layout_id da url
 
 @app.route('/get_schemes/<int:id_layout>', methods=['GET'])
 def get_schemes(id_layout):
@@ -137,6 +142,19 @@ def add_layout():
     db.session.commit()
     
     return jsonify({'message': 'Layout added successfully'})
+
+# Rota para obter todos os layouts existentes
+
+@app.route('/get_layouts', methods=['GET'])
+def get_layouts():
+    layouts = Layout.query.all()
+
+    layouts_list = [{
+            'id_layout': layout.id,
+            'nome_layout': layout.layout,
+        } for layout in layouts]
+        
+    return jsonify(layouts_list)
 
 
 # Rotas referentes ao Usuário

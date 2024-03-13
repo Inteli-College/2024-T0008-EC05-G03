@@ -2,7 +2,7 @@
 
 ## Contextualização
 
-&emsp;&emsp;Durante a segunda sprint do desenvolvimento do projeto, a equipe Violeta focou na construção de uma CLI (Command Line Interface ou, em português, Interface de Linha de Comando), que se trata de uma interface na qual um usuário pode digitar termos pré-definidos que, quando ordenados e em conjunto, significam comandos para que o computador execute determinadas ações. No contexto do projeto, a CLI foi desenvolvida sobre a linguagem Python 3 e construída a fim de possibilitar que, através de um computador, seja possível executar ações básicas de movimento com o robô Dobot Magician Lite. 
+&emsp;&emsp;Durante a segunda sprint do desenvolvimento do projeto, a equipe Violeta focou na construção de uma CLI (Command Line Interface ou, em português, Interface de Linha de Comando), que se trata de uma interface na qual um usuário pode digitar termos pré-definidos que, quando ordenados e em conjunto, significam comandos para que o computador execute determinadas ações. No contexto do projeto, a CLI foi desenvolvida sobre a linguagem Python 3 e construída a fim de possibilitar que, através de um computador, seja possível executar ações básicas de movimento com o robô Dobot Magician Lite.
 
 &emsp;&emsp;À vista disso, ao decorrer desta seção, serão apresentados trechos de códigos que serão relacionados à proposta de arquitetura desenvolvida na sprint 1 e a casos de uso sob contexto do projeto. Por isso, para melhor entendimento, deve-se ler as seções da documentação referente às [tecnologias utilizadas](https://inteli-college.github.io/2024-T0008-EC05-G03/sprint-2/sistema-robotico/tecnologias) na sprint 2 e à [inicialização local da CLI](https://inteli-college.github.io/2024-T0008-EC05-G03/sprint-2/sistema-robotico/inicializacao).
 
@@ -70,7 +70,7 @@ No trecho intermediário do código, são definidas quatro funções:
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;Essa função é responsável por executar um comando que é definido pelo parâmetro ```comando```. Dependendo do valor desse parâmetro, que é passado para a função por meio de uma seleção feita pelo próprio usuário a partir de um menu de múltipla escolha na CLI, o programa realiza ações diferentes. 
+&emsp;&emsp;Essa função é responsável por executar um comando que é definido pelo parâmetro ```comando```. Dependendo do valor desse parâmetro, que é passado para a função por meio de uma seleção feita pelo próprio usuário a partir de um menu de múltipla escolha na CLI, o programa realiza ações diferentes.
 
 Caso o usuário opte por:
 

@@ -13,7 +13,6 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Figura 1 - Matriz de risco referente ao projeto</p>
 
-
 ![Matriz de Risco](../../../static/img/sprint-1/business/matriz-de-risco.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
@@ -22,6 +21,7 @@ custom_edit_url: null
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 ***Riscos Potenciais***:
+
 - O custo da implementação da solução pode tornar a aplicação do projeto inviável ( Probabilidade: Alta 70% x Impacto: Muito alto)
 - A solução pode aumentar a dependência de sistemas digitais e tecnológicos, podendo ser problemático em caso de falhas ou interrupções ( Probabilidade: Média 50% x Impacto: Médio)
 - O projeto pode não aliviar as dores do cliente, uma vez que a equipe não utilizará Visão Computacional para aprimorar a solução ( Probabilidade: Média 50% x Impacto: Alto)
@@ -36,11 +36,12 @@ custom_edit_url: null
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 ***Riscos Reais***:
+
 - A solução permite a visualização dos itens utilizados nos kits de parada, gerando um relatório ( Probabilidade: Muito Alta 90% x Impacto: Muito Alto)
 
 - A solução realiza a montagem de diferentes layouts de kits de carrinhos, facilitando a operação do setor de montagem e minimizando erros de operação ( Probabilidade: Muito Alta 90% x Impacto: Alto)
 
-- O projeto concluiu seu objetivo, tornando o setor de montagem mais produtivo (Probabilidade: Alta 70% x Impacto: Muito Alto) 
+- O projeto concluiu seu objetivo, tornando o setor de montagem mais produtivo (Probabilidade: Alta 70% x Impacto: Muito Alto)
 
 - A solução desenvolvida possibilita integração com outros sistemas ( Probabilidade: Alta 70% x Impacto: Alto)
 
@@ -64,7 +65,7 @@ custom_edit_url: null
     - Resposta ao Risco: Torna-se crucial estabelecer uma comunicação clara com o cliente desde o início para garantir que suas expectativas sejam alinhadas com a solução proposta.
 
 4. Interface de uso e controle da solução pouco intuitiva para os usuários
-    - Plano de Ação: A realização de testes de usabilidade e design iterativo da interface se torna imprescindível, uma vez que serve para garantir que seja intuitiva e fácil de usar. 
+    - Plano de Ação: A realização de testes de usabilidade e design iterativo da interface se torna imprescindível, uma vez que serve para garantir que seja intuitiva e fácil de usar.
     - Resposta ao Risco: Priorizar a experiência do usuário como um aspecto fundamental do projeto, portanto, designar recursos para refinamento contínuo da interface com base no feedback dos usuários durante todo o ciclo de desenvolvimento é um requisito para mitigar essa ameaça.
 
 5. Conflito entre o resultado entregue em relação ao escopo inicial do projeto
@@ -76,5 +77,5 @@ custom_edit_url: null
     - Resposta ao Risco: O Scrum Master deve monitorar de perto o progresso do projeto e estar preparado para realocar recursos ou reavaliar prazos conforme necessário para mitigar a complexidade. Também, para garantir a qualidade e a viabilidade técnica do projeto, torna-se necessário implementar processos de revisão de design e código.
 
 7. A integração da nova tecnologia com o sistema existente pode ser complexa e necessita de habilidades especializadas
-    - Plano de Ação: Realizar uma análise detalhada dos requisitos de integração e identificar as habilidades necessárias para sua realização. 
-    - Resposta ao Risco: Estabelecer uma comunicação clara com a equipe responsável pela integração garante que todos os requisitos e expectativas sejam compreendidos. 
+    - Plano de Ação: Realizar uma análise detalhada dos requisitos de integração e identificar as habilidades necessárias para sua realização.
+    - Resposta ao Risco: Estabelecer uma comunicação clara com a equipe responsável pela integração garante que todos os requisitos e expectativas sejam compreendidos.

@@ -4,6 +4,9 @@ from serial.tools import list_ports
 import inquirer
 import pydobot  
 from yaspin import yaspin
+import numpy as np
+import requests
+import time
 
 # Traz o spinner para apresentar uma animação enquanto o robô está se movendo
 spinner = yaspin(text="Processando...", color="yellow")
@@ -22,6 +25,67 @@ device.speed(100, 100)
 caminho = []
 destino = []
 choices = ["home", "mover", "posicao_atual", "sair"]
+
+# Verificações
+#Código para mover e verificar se pegou
+def mover(x, y):
+    device.move_to_J(round(x,2), round(y,2), 55.64,0, wait=True)
+    # print("Descer em z")
+    device.move_to(round(x,2), round(y,2), -13.39,0, wait=True)
+    # print("Pegar")
+    # print("Subir em z")
+    device.move_to(round(x,2), round(y,2), 55.64,0, wait=True)
+    # print("verificar se pegou")
+    time.sleep(0.5)
+    pegou = requests.get("http://127.0.0.1:5000/recebe").json()
+    return pegou["ir"]  # Se pegou ou não
+
+# Algoritmo 1: Espiral
+def espiral(pc, cx, cy, p):
+    div = 2*p + 1
+    matRot = np.array([[0.0, 1.0], [-1.0, 0.0]])
+    pegou = False
+    fim = False
+    delta = 1
+    iter = 0
+    direcao = np.array([1.0, 0.0])
+    matDelta = np.array([[round(float(2*cx/div),2), 0.0], [0.0, round(float(2*cy/div),2)]])
+    while not pegou and not fim:
+        for a in range(delta):
+            pc += matDelta @ direcao
+            pegou = mover(pc[0], pc[1])
+        iter += 1
+        if iter == 2:
+            delta += 1
+            iter = 0
+        direcao = matRot @ direcao
+        if delta >= div:
+            for a in range(delta-1):
+                pc += matDelta @ direcao
+                pegou = mover(pc[0], pc[1])
+            fim = True
+            break
+    return pegou
+
+# Algoritmo 2: Cobrinha
+def cobrinha (pc, cx, cy, qx, qy):
+    dx, dy = round(2*cx/qx,2), round(2*cy/qy,2)
+    xVal = -1
+    achou = False
+    for x in range(qy):
+        for y in range(qx):
+            pc[0] += dx*xVal
+            achou = mover(pc[0], pc[1])
+            if achou:
+                break
+        if achou:
+            break
+        pc[1] -= dy
+        achou = mover(pc[0], pc[1])
+        if achou:
+            break
+        xVal *= -1
+    return achou
 
 def load_points_from_file(file_path):
     # Lógica para carregar pontos do arquivo
@@ -92,8 +156,8 @@ def execute_comando(comando):
                         "remedio7": remedios_import['remedio7'],
                         "remedio8": remedios_import['remedio8']
                     }
-
                     for posicao in caminho:
+                        pegou = False
                         remedio = remedios[posicao]
                         spinner.start()
                         device.move_to_J(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
@@ -101,6 +165,15 @@ def execute_comando(comando):
                         device.suck(True)
                         device.wait(200)
                         device.move_to(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
+                        # Adicionar aqui a verificação para pegar virar True
+                        pegou = requests.get("http://127.0.0.1:5000/recebe").json()
+                        if not pegou["ir"]:
+                            primVer = espiral(np.array([remedio["x"],remedio["y"]]),40,25,1)
+                            if not primVer:
+                                segVer = cobrinha(np.array([remedio["x"],remedio["y"]]),40,25,3,3)
+                                if not segVer:
+                                    print("Não achou o objeto")
+                                    return "Não achou o objeto"
                         device.move_to_J(home['x'], home['y'], home['z'], home['r'], wait=True)
                         spinner.stop()
                         caminho.clear()
@@ -125,7 +198,7 @@ def execute_comando(comando):
 
 
 if __name__ == "__main__":
-    pontos_home, pontos_remedios, pontos_destinos = load_points_from_file('src/pontos.json')
+    pontos_home, pontos_remedios, pontos_destinos = load_points_from_file('./pontos.json')
     home = pontos_home
     choices.insert(1, "ligar_ferramenta")
     remedios_import= {ponto['nome']: ponto['posicao'] for ponto in pontos_remedios}

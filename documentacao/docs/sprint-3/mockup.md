@@ -6,10 +6,10 @@
 
 &emsp;&emsp;Abaixo, tem-se o mockup da solução Violeta:
 
-<div align="center">
-<sub>Figura 1 - Gif de Demonstração do Mockup</sub>
-<img src="../../static/video/mockup.gif" width="100%">
-<sup>Fonte: Elaboração própria </sup>
-</div>
+<p style={{textAlign: 'center'}}>Figura 1 - Gif de Demonstração do Mockup</p>
+
+![](../../static/video/mockup.gif)
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &emsp;&emsp;A demonstração também pode ser visualizada [aqui](https://drive.google.com/drive/folders/14ZJpX0hsesfdj9MjAr5Bf2q9yxehT4uc)

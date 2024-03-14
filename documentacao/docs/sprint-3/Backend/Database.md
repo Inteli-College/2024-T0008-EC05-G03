@@ -11,33 +11,33 @@ Abaixo seguem todas as tabelas e suas respectivas colunas.
 | Coluna          | Tipo       | Descrição                                      |
 |-----------------|------------|------------------------------------------------|
 | id              | INTEGER    | Chave primária única do layout                 |
-| layout          | TEXT       | Nome do layout                            |
+| nome_layout     | TEXT       | Nome do layout                                 |
 
-#### Tabela "Scheme":
-- **Descrição:** Guarda o nome dos medicamentos, seu id, posição e quantidade em cada local
+#### Tabela "Compartment":
+- **Descrição:** Guarda o nome dos medicamentos, seu id, posição e quantidade em cada compartimento de um layout
   
 | Coluna             | Tipo       | Descrição                                           |
 |--------------------|------------|-----------------------------------------------------|
 | id                 | INTEGER    | Chave primária única do esquema                     |
-| nome_remedio       | TEXT       | Nome do medicamento                                 |
-| quantidade_remedio | INTEGER    | Quantidade de medicamento na caixa                  |
-| numero_caixa       | INTEGER    | Número da caixa de medicamento ao mesmo ser colocado                      |
-| id_layout          | INTEGER    | Chave estrangeira referenciando o id da tabela "Layout"   |
-| id_remedio         | INTEGER    | Chave do remédio a ser adicionado |
+| nome_item          | TEXT       | Nome do item no compartimento                       |
+| quantidade_item    | INTEGER    | Quantidade de itens no compartimento                |
+| numero_caixa       | INTEGER    | Número do compartimento do layout no qual o item deve ser colocado|
+| id_layout          | INTEGER    | Chave estrangeira referenciando o id da tabela "Layout"|
+| id_item            | INTEGER    | Chave do remédio a ser adicionado |
 
 #### Tabela "Users":
 - **Descrição:** Armazena informações sobre os usuários do sistema.
   
 | Coluna             | Tipo       | Descrição                                           |
 |--------------------|------------|-----------------------------------------------------|
-| id                 | INTEGER    | Chave primária única do usuário                    |
+| id                 | INTEGER    | Chave primária única do usuário                     |
 | usuario            | TEXT       | Nome do usuário                                     |
 | senha              | TEXT       | Senha do usuário                                    |
 | nivel_prioridade   | INTEGER    | Nível de prioridade do usuário para controle de acesso |
 
 ### 2. Restrições:
 
-- A tabela "Scheme" possui uma chave estrangeira "id_layout" que referencia a tabela "Layout".
+- A tabela "Compartment" possui uma chave estrangeira "id_layout" que referencia a tabela "Layout".
 
 ### 3. Desenho esquemático da base de dados:
 

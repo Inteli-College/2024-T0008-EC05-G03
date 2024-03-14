@@ -14,14 +14,14 @@ Abaixo seguem todas as tabelas e suas respectivas colunas.
 | nome_layout     | TEXT       | Nome do layout                                 |
 
 #### Tabela "Compartment":
-- **Descrição:** Guarda o nome dos medicamentos, seu id, posição e quantidade em cada compartimento de um layout
+- **Descrição:** Guarda o nome dos medicamentos, seu id, posição e quantidade em cada compartimento de um layout; 
   
 | Coluna             | Tipo       | Descrição                                           |
 |--------------------|------------|-----------------------------------------------------|
 | id                 | INTEGER    | Chave primária única do esquema                     |
 | nome_item          | TEXT       | Nome do item no compartimento                       |
 | quantidade_item    | INTEGER    | Quantidade de itens no compartimento                |
-| numero_caixa       | INTEGER    | Número do compartimento do layout no qual o item deve ser colocado|
+| numero_compartimento| INTEGER   | Número do compartimento do layout no qual o item deve ser colocado|
 | id_layout          | INTEGER    | Chave estrangeira referenciando o id da tabela "Layout"|
 | id_item            | INTEGER    | Chave do remédio a ser adicionado |
 

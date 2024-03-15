@@ -172,6 +172,7 @@ def execute_comando(comando):
                             if not primVer:
                                 segVer = cobrinha(np.array([remedio["x"],remedio["y"]]),40,25,3,3)
                                 if not segVer:
+                                    spinner.stop()
                                     print("Não achou o objeto")
                                     return "Não achou o objeto"
                         device.move_to_J(home['x'], home['y'], home['z'], home['r'], wait=True)

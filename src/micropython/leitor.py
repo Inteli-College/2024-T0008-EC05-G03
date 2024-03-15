@@ -14,7 +14,7 @@ def ler():
     b = ir.read_u16()
     time.sleep(0.1)
     c = ir.read_u16()
-    return (a+b+c)/3 < 45000
+    return (a+b+c)/3 < 5000
 
 url =  "http://10.128.0.15:5000/manda"
 headers = {'X-AIO-Key': 'xxxxxxxxxxxxxxxxxxx',

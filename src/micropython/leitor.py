@@ -14,7 +14,6 @@ def ler():
     b = ir.read_u16()
     time.sleep(0.1)
     c = ir.read_u16()
-    print((a+b+c)/3)
     return (a+b+c)/3 < 45000
 
 url =  "http://10.128.0.15:5000/manda"

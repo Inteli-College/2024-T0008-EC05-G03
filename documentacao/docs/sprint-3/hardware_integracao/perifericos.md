@@ -6,7 +6,7 @@ Documentação dos dispositivos periféricos integrados ao sistema.
 
 ### Periférico
 
-&emsp;&emsp;Um periférico, no contexto da computação, refere-se a um dispositivo auxiliar e externo ao dispositivo central de um sistema. Geralmente os periféricos são responsáveis por desempenhar funções que não são estritamente necessárias para o funcionamento geral do sistema, mas que permitem que o sistema seja mais eficiente e/ou acessível, por exemplo.
+&emsp;&emsp;Um periférico, no contexto da computação, refere-se a um dispositivo auxiliar e externo ao dispositivo central de um sistema. Geralmente, os periféricos são responsáveis por desempenhar funções que não são estritamente necessárias para o funcionamento geral do sistema, mas que permitem que o sistema seja mais eficiente e/ou acessível, por exemplo.
 
 ### Raspberry Pi Pico
 
@@ -26,6 +26,6 @@ Documentação dos dispositivos periféricos integrados ao sistema.
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;Como se observa no desenho esquemático, o circuito desenvolvido se baseia no pino 38 (GPIO 26) do Raspberry Pi Pico. Através dele, o microcontrolador recebe os dados de detecção do sensor infravermelho e, sempre que detecta que um objeto foi pego, acende um LED. Tanto o sensor quando o LED são alimentados por um pino de energia com uma voltagem de 3.3V intermediada por resistores.
+&emsp;&emsp;Como se observa no desenho esquemático, o circuito desenvolvido se baseia no pino 38 (GPIO 26) do Raspberry Pi Pico. Através dele, o microcontrolador recebe os dados de detecção do sensor infravermelho e, sempre que detecta que um objeto foi pego, acende um LED e repassa tal informação para o servidor da aplicação web via HTTP. Tanto o sensor quando o LED são alimentados por um pino de energia com uma voltagem de 3.3V intermediada por resistores.
 
 &emsp;&emsp;Dessa forma, existe uma forma de verificação sensorial para confirmar que determinado item do carrinho de parada realmente foi pego e recolocado. Isso evita que o sistema considere um item como pego apenas pelo fato da ventosa do braço mecânico ter sido ativada em determinado ponto/compartimento de um layout, o que eleva a segurança — parte dos principais requisitos não funcionis almejados pelo cliente — da solução por meio da detecção de erros.

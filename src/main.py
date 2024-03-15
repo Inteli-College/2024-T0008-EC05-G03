@@ -26,17 +26,18 @@ caminho = []
 destino = []
 choices = ["home", "mover", "posicao_atual", "sair"]
 
+mov = None
 # Verificações
 #Código para mover e verificar se pegou
 def mover(x, y):
     device.move_to_J(round(x,2), round(y,2), 55.64,0, wait=True)
     # print("Descer em z")
-    device.move_to(round(x,2), round(y,2), -13.39,0, wait=True)
+    device.move_to(round(x,2), round(y,2), -25.39,0, wait=True)
     # print("Pegar")
     # print("Subir em z")
     device.move_to(round(x,2), round(y,2), 55.64,0, wait=True)
     # print("verificar se pegou")
-    time.sleep(0.5)
+    time.sleep(0.8)
     pegou = requests.get("http://127.0.0.1:5000/recebe").json()
     return pegou["ir"]  # Se pegou ou não
 
@@ -65,15 +66,17 @@ def espiral(pc, cx, cy, p):
                 pegou = mover(pc[0], pc[1])
             fim = True
             break
+    global mov
+    mov = pc
     return pegou
 
 # Algoritmo 2: Cobrinha
 def cobrinha (pc, cx, cy, qx, qy):
-    dx, dy = round(2*cx/qx,2), round(2*cy/qy,2)
+    dx, dy = round(2*cx/(qx-1),2), round(2*cy/qy,2)
     xVal = -1
     achou = False
-    for x in range(qy):
-        for y in range(qx):
+    for y in range(qy):
+        for x in range(qx-1):
             pc[0] += dx*xVal
             achou = mover(pc[0], pc[1])
             if achou:
@@ -81,7 +84,8 @@ def cobrinha (pc, cx, cy, qx, qy):
         if achou:
             break
         pc[1] -= dy
-        achou = mover(pc[0], pc[1])
+        if y != qy-1:
+            achou = mover(pc[0], pc[1])
         if achou:
             break
         xVal *= -1
@@ -168,9 +172,9 @@ def execute_comando(comando):
                         # Adicionar aqui a verificação para pegar virar True
                         pegou = requests.get("http://127.0.0.1:5000/recebe").json()
                         if not pegou["ir"]:
-                            primVer = espiral(np.array([remedio["x"],remedio["y"]]),40,25,1)
+                            primVer = espiral(np.array([remedio["x"],remedio["y"]]),20,40,1)
                             if not primVer:
-                                segVer = cobrinha(np.array([remedio["x"],remedio["y"]]),40,25,3,3)
+                                segVer = cobrinha(mov,18,40,3,3)
                                 if not segVer:
                                     spinner.stop()
                                     print("Não achou o objeto")

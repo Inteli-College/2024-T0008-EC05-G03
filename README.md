@@ -26,10 +26,19 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 
 📜| Projeto feito por alunos do Inteli - Instituto de Tecnologia e liderança - de Engenharia da Computação em parceria com o Hospital Sírio-Libanês. O projeto se trata de uma automatização no processo de montagem de carrinhos de emergência utilizado em situações necessárias, eliminando processos manuais e garantindo maior eficiência e otimização de tempo, uma resposta mais rápida e eficiente em casos de emergência.
 
+A documentação do projeto pode ser encontrada [aqui](https://inteli-college.github.io/2024-T0008-EC05-G03/)
+
 <br><br>
 <p align="center">
 
 <img src="documentacao/static/img/logo-violeta.png" align="center" alt="Violeta Logo" border="0">
+
+<br><br>
+<p align="center">
+
+<img src="documentacao/static/img/video_verificacao.gif" align="center" alt="Violeta Logo" border="0">
+
+
 
 ##  Estrutura de pastas
 
@@ -44,7 +53,6 @@ A história do centenário Sírio-Libanês teve início com a reunião de um gru
 |   │   ├── css
 |   │   ├── pages
 │   ├── static
-└── pydobot-base/pydobot
 └── src
 ```
 
@@ -78,3 +86,12 @@ Siga passo a passo para inciar a documentação:
   - Mapeamento do fluxo de utilização da solução
   - CLI (Command Line Interface)
   - Sistema básico de automação
+- 0.3.0 - 15/03/24
+  - Implementação de rotina de dupla verificação com sensor infravermelho
+  - Mockup 
+  - Inicio do backend (Rotas)
+  - Inicio do frontend
+
+##  Licença/License
+
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Inteli-College/2024-T0008-EC05-G03">VIOLETA</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName">Inteli, - <a href="https://www.linkedin.com/in/antonio-guimar%C3%A3es-2bb961264/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Antônio Guimarães</a>, <a href="https://github.com/danielquintaos">Daniel Dávila</a>, <a href="https://www.linkedin.com/in/gabriel-gallo-m-coutinho-443809232/">Gabriel Gallo</a>, <a href="https://www.linkedin.com/in/gustavo-machado-esteves-453b81248/">Gustavo Machado</a>, <a href="https://www.linkedin.com/in/laura-padilha-bueno-b358419a/">Laura Bueno</a>, <a href="https://www.linkedin.com/in/rafaelarojas/">Rafaela Rojas</a>,  <a href="https://www.linkedin.com/in/raideoliveira/">Raí Cajé</a> </a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>

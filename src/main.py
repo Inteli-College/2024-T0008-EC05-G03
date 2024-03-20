@@ -7,6 +7,7 @@ from yaspin import yaspin
 import numpy as np
 import requests
 import time
+import serial
 
 # Traz o spinner para apresentar uma animação enquanto o robô está se movendo
 spinner = yaspin(text="Processando...", color="yellow")
@@ -26,20 +27,27 @@ caminho = []
 destino = []
 choices = ["home", "mover", "posicao_atual", "sair"]
 
+ser = serial.Serial('COM15', 9600, timeout=1)
+
 mov = None
 # Verificações
 #Código para mover e verificar se pegou
 def mover(x, y):
+    device.speed(300,100)
+    leitura = []
     device.move_to_J(round(x,2), round(y,2), 55.64,0, wait=True)
     # print("Descer em z")
     device.move_to(round(x,2), round(y,2), -25.39,0, wait=True)
     # print("Pegar")
     # print("Subir em z")
-    device.move_to(round(x,2), round(y,2), 55.64,0, wait=True)
+    device.move_to(round(x,2), round(y,2), 55.64,-144, wait=True)
+    device.speed(100,100)
     # print("verificar se pegou")
-    time.sleep(0.8)
-    pegou = requests.get("http://127.0.0.1:5000/recebe").json()
-    return pegou["ir"]  # Se pegou ou não
+    device.move_to(round(x,2), round(y,2), 55.64,144, wait=False)
+    start = time.time()
+    while time.time() - start < 2:
+        leitura.append(ser.readline().decode('utf-8').strip())
+    return "True" in leitura  # Se pegou ou não
 
 # Algoritmo 1: Espiral
 def espiral(pc, cx, cy, p):
@@ -161,17 +169,20 @@ def execute_comando(comando):
                         "remedio8": remedios_import['remedio8']
                     }
                     for posicao in caminho:
-                        pegou = False
                         remedio = remedios[posicao]
                         spinner.start()
                         device.move_to_J(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
                         device.move_to(remedio['x'], remedio['y'], remedio['z'], remedio['r'], wait=True)
                         device.suck(True)
                         device.wait(200)
-                        device.move_to(remedio['x'], remedio['y'], 55.64, remedio['r'], wait=True)
+                        device.move_to(remedio['x'], remedio['y'], 55.64, -144, wait=True)
                         # Adicionar aqui a verificação para pegar virar True
-                        pegou = requests.get("http://127.0.0.1:5000/recebe").json()
-                        if not pegou["ir"]:
+                        pegou = []
+                        device.move_to(remedio['x'], remedio['y'], 55.64, 144, wait=False)
+                        start = time.time()
+                        while time.time() - start < 2:
+                            pegou.append(ser.readline().decode('utf-8').strip())
+                        if "True" not in pegou:
                             primVer = espiral(np.array([remedio["x"],remedio["y"]]),20,40,1)
                             if not primVer:
                                 segVer = cobrinha(mov,18,40,3,3)

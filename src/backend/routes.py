@@ -42,7 +42,7 @@ class Compartment(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome_item = Column(Text, nullable=False)
     quantidade_item = Column(Integer, nullable=False)
-    numero_caixa = Column(Integer, nullable=False)
+    numero_compartimento = Column(Integer, nullable=False)
     id_layout = Column(Integer, ForeignKey('Layout.id'), nullable=False)
     id_item = Column(Integer, nullable=False)
     layout = relationship("Layout")
@@ -57,11 +57,11 @@ def add_compartment(id_layout):
     data = request.json 
     nome_item = data['nome_item']
     quantidade_item = data['quantidade_item']
-    numero_caixa = data['numero_caixa']
+    numero_compartimento = data['numero_compartimento']
     id_item = data['id_item']
     
     new_compartment = Compartment(nome_item=nome_item, quantidade_item=quantidade_item,
-                        numero_caixa=numero_caixa, id_layout=id_layout, id_item=id_item)
+                        numero_compartimento=numero_compartimento, id_layout=id_layout, id_item=id_item)
     
     db.session.add(new_compartment)
     db.session.commit()
@@ -80,7 +80,7 @@ def get_compartments(id_layout):
             'id': compartment.id,
             'nome_item': compartment.nome_item,
             'quantidade_item': compartment.quantidade_item,
-            'numero_caixa': compartment.numero_caixa,
+            'numero_compartimento': compartment.numero_compartimento,
             'id_item': compartment.id_item
         } for compartment in compartments]
         return jsonify(compartment_list)

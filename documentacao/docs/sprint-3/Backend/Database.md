@@ -1,8 +1,10 @@
 # Base de dados
 
+## Resumo
+
 &emsp;&emsp;Bases de dados, no contexto da computação, são conjuntos de informações de tipos que podem ser variados ou não. Esses mesmos dados podem ser estruturados (quando são organizados por tipos, tabelas, colunas e linhas) ou não-estruturados (quando há mais de um tipo de dado em um arquivo que contém texto, imagens e vídeos, por exemplo).
 
-&emsp;&emsp;Como parte do desenvolvimento da aplicação web da solução proposta pelo grupo Violeta, foi feita uma base de dados para armazenar e gerenciar as informações essenciais para o funcionamento do projeto. Esta base de dados foi projetada para abrigar não apenas os dados relacionados aos layouts utilizados no sistema, mas também para registrar e gerenciar os dados de login dos usuários.
+&emsp;&emsp;Como parte do desenvolvimento da aplicação web da solução proposta pelo grupo Violeta, foi feita uma base de dados para armazenar e gerenciar as informações essenciais para o funcionamento do projeto. Esta base de dados foi projetada para abrigar os dados relacionados aos layouts utilizados no sistema.
 
 ## 1. Tabelas:
 
@@ -30,17 +32,6 @@ Abaixo seguem todas as tabelas contidas na base de dados e suas respectivas colu
 | numero_compartimento| INTEGER   | Número do compartimento do layout no qual o item deve ser colocado|
 | id_layout          | INTEGER    | Chave estrangeira referenciando o id da tabela "Layout"|
 | id_item            | INTEGER    | Chave do remédio a ser adicionado |
-
-### Tabela "Users":
-
-- **Descrição:** Armazena informações de aceso dos usuários do sistema.
-  
-| Coluna             | Tipo       | Descrição                                           |
-|--------------------|------------|-----------------------------------------------------|
-| id                 | INTEGER    | Chave primária única do usuário                     |
-| usuario            | varchar(255)| Nome do usuário                                     |
-| senha              | varchar(255)| Senha do usuário                                    |
-| nivel_prioridade   | INTEGER    | Nível de prioridade do usuário para controle de acesso |
 
 ## 2. Restrições:
 

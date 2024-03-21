@@ -24,6 +24,7 @@
     width: 30vw;
     height: 32vw;
     border-radius: 20px;
+    flex-direction: column;
 }
 
 .botaoAdd {

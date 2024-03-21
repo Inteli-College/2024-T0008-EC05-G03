@@ -19,27 +19,35 @@ function Montar() {
               <div className='carrinho'>
                 <h2 className='carrinhoTitle'>GAVETA DE <br /> REABASTECIMENTO</h2>
                 <div className='backgroundCarrinho'>
+                  <div className='itensColuna'>
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
+                  </div>
+                  <div className='itensColuna'>
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
+                  </div>
                 </div>
               </div>
               <div className='carrinho'>
                 <h2 className='carrinhoTitle'>GAVETA DO CARRINHO <br /> EMERGENCIAL</h2>
                 <div className='backgroundCarrinho'>
+                  <div className='itensColuna'>
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
+                  </div>
+                  <div className='itensColuna'>
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
+                  </div>
                 </div>
             </div>
             <div className='linhaVertical'></div>

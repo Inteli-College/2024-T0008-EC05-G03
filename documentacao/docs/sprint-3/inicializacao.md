@@ -10,7 +10,7 @@
 
 ## Passo a passo
 
-Para utilizar o sistema da solução desenvolvido até a sprint 3, deve-se seguir os seguintes passos:
+Para inicializar o sistema da solução desenvolvido até a sprint 3, deve-se seguir os seguintes passos:
 
 1 - Clone o repositório; para isso, abra um terminal no diretório desejado e digite o seguinte comando:
 
@@ -28,7 +28,7 @@ Para utilizar o sistema da solução desenvolvido até a sprint 3, deve-se segui
 
 ```py main.py```
 
-> Para maiores informações sobre a CLI, veja a [seção de sistema robótica](https://inteli-college.github.io/2024-T0008-EC05-G03/category/sistema-robótico) na documentação da sprint 2 do projeto.
+> Para maiores informações sobre a CLI, veja a [seção de sistema robótico](https://inteli-college.github.io/2024-T0008-EC05-G03/category/sistema-robótico) na documentação da sprint 2 do projeto.
 
 5 - Para iniciar o backend do sistema, digite o seguinte comando:
 

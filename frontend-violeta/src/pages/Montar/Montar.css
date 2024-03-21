@@ -1,0 +1,37 @@
+.pageContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin-left: 1.5vw;
+}
+
+.carrinhoUm {
+    margin-top: 10vh;
+}
+
+.carrinhoTitle {
+    margin-left: 0;
+}
+
+.backgroundCarrinho {
+    margin-top: 5vh;
+    background-color: #E3C6FF;
+    width: 30vw;
+    height: 32vw;
+}
+
+.painelDeControle {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-left: 2vw;
+}
+
+.buttonsPainel {
+    margin-left: 7vw;
+}

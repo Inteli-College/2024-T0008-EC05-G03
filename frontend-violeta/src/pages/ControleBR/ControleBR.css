@@ -1,0 +1,26 @@
+.mainCBR {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.openNavbar {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.logoSimples {
+  margin-left: 92vw;
+}
+
+.linhaHorizontal {
+  background-color: #9600DD;
+  height: 0.5vh;
+  width: 30vw;
+  margin-top: -1.8vh;
+}
+
+.botoesCBR {
+  margin-top: 5vh;
+}

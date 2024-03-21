@@ -19,6 +19,7 @@
 }
 
 .backgroundCarrinho {
+    display: flex;
     margin-top: 5vh;
     background-color: #E3C6FF;
     width: 30vw;
@@ -26,7 +27,7 @@
     border-radius: 20px;
 }
 
-.botaoAdd {
+.item {
     margin-top: 3vh;
     margin-left: 1.73vw;
     width: 12.5vw;
@@ -34,14 +35,19 @@
     background-color: #fff;
     border: none;
     border-radius: 20px;
-    cursor: pointer;
+}
+
+.itemTexto {
+    margin-left: 1vw;
+    margin-top: 2vh;
 }
 
 .painelDeControle {
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-left: 2vw;
+    margin-left: 67vw;
+    position: fixed;
 }
 
 .armBackground {
@@ -56,22 +62,11 @@
     margin-left: 3vw;
 }
 
-.formName {
-    margin-top: 5vh;
-    margin-left: 10vw;
-}
-
-.insertName {
-    border-radius: 15px;
+#layout {
+    width: 20vw;
     height: 4vh;
-}
-
-.saveName {
-    margin-left: 2vw;
-    background-color: #9600DD;
-    color: #fff;
-    border: none;
-    height: 4vh;
+    margin-top: 6vh;
+    margin-left: 7.5vw;
     border-radius: 15px;
 }
 

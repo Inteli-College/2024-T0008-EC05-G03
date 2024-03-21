@@ -1,27 +1,68 @@
 import './Montar.css'
 import React from 'react'
-import logoCompleta from '../../assets/logo_completa.svg'
+import robotArm from '../../assets/robot-arm.svg'
+import iconAdd from '../../assets/icon_add.svg'
+import Voltar from '../../components/voltar.jsx'
+
+function BotaoAdd() {
+  return (
+    <button className='botaoAdd'>
+      <img src={iconAdd} />
+    </button>
+  )
+}
 
 function Montar() {
   return (
       <div className='pageContent'>
             <div className='infoContainer'>
-              <div className='carrinhoUm'>
-                <h2 className='carrinhoTitle'>Gaveta de <br /> Reabastecimento</h2>
-                <div className='backgroundCarrinho'></div>
+              <div className='carrinho'>
+                <h2 className='carrinhoTitle'>GAVETA DE <br /> REABASTECIMENTO</h2>
+                <div className='backgroundCarrinho'>
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                </div>
               </div>
+              <div className='carrinho'>
+                <h2 className='carrinhoTitle'>GAVETA DO CARRINHO <br /> EMERGENCIAL</h2>
+                <div className='backgroundCarrinho'>
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                  <BotaoAdd />
+                </div>
             </div>
             <div className='linhaVertical'></div>
             <div className='painelDeControle'>
-                <img src={logoCompleta} />
+                <div className='armBackground'>
+                  <img src={robotArm} />
+                </div>
+                <form className='formName'>
+                  <label>
+                    Insira o nome do Layout: <br />
+                    <input type='text' className='insertName'/>
+                  </label>
+                  <input type="submit" value="Salvar" className='saveName'/>
+                </form>
                 <div className='buttonsPainel'>
-                    <form action='/novolayout'><button className='botaoPadrao'>Novo Layout</button></form>
-                    <form action='/exportarlayout'><button className='botaoPadrao'>Exportar Layout</button></form>
-                    <form action='/importarlayout'><button className='botaoPadrao'>Importar Layout</button></form>
+                    <form action='/iniciarmontagem'><button className='botaoPadrao'>Iniciar montagem</button></form>
                     <form action='/editarlayout'><button className='botaoPadrao'>Editar</button></form>
+                    <form action='/descartarlayout'><button className='botaoDelete'>Descartar Layout</button></form>
+                    <Voltar />
                 </div>
             </div>
         </div>
+    </div>
   )
 }
 

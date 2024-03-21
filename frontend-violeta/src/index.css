@@ -19,7 +19,7 @@ header {
   display: inline-block;;
   cursor: pointer;
   font-family: 'Public Sans', sans-serif;
-  width: 314px;
+  width: 21vw;
   height: 47px;
   margin-top: 5vh;
   font-size: 20px;
@@ -27,9 +27,27 @@ header {
 }
 
 .linhaVertical {
-  margin-left: 2vw;
+  margin-left: 70vw;
   margin-top: 10vh;
   height: 80vh;
   width: 1px;
   background-color: #9004D3;
+  position: fixed;
+}
+
+.btVoltar {
+  background-color: #D9D9D9;
+  border: none;
+  color: black;
+  padding: 2vh 8.5vw;
+  margin-left: 0.5vw;
+  cursor: pointer;
+  border-radius: 15px;
+  font-size: larger;
+  position: fixed;
+}
+
+.btVoltar:hover {
+  background-color: #B0B0B0;
+  color: white;
 }

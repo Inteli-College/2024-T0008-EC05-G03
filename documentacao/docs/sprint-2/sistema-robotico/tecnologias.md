@@ -37,7 +37,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../../static/img/sprint-2/sistema-robotico/arquitetura_tecnologias_sprint_2.png").default} style={{width: 300}} alt="Arquitetura da solução com tecnologias usadas na sprint 2" />
+        <img src={require("../../../static/img/sprint-2/sistema-robotico/arquitetura_tecnologias_sprint_2.png").default} style={{width: 400}} alt="Arquitetura da solução com tecnologias usadas na sprint 2" />
         <br />
     </div>
 </div>

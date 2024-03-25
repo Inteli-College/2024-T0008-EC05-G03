@@ -27,7 +27,7 @@ custom_edit_url: null
 
 ### Conclusão
 
-&nbsp;&nbsp;&nbsp;&nbsp;Em suma, a pesquisa exploratória e a pesquisa desk na imersão preliminar foram feitas por meio de fontes confiáveis e possibilitaram ao grupo guiar o processo de UX research de modo bem direcionado. Com base nas informações extraídas do kick-off com a representante do parceiro de projeto, optou-se por limitar o escopo do projeto apenas à implementação de um robô responsável por reabastecer os carrinhos de emergência, de modo que os demais fatores (bipagem e montagem de kits alheios) permanecerão no backlog do desenvolvimento.
+&nbsp;&nbsp;&nbsp;&nbsp;Concluindo, a pesquisa exploratória e a pesquisa desk na imersão preliminar foram feitas por meio de fontes confiáveis e possibilitaram ao grupo guiar o processo de UX research de modo bem direcionado. Com base nas informações extraídas do kick-off com a representante do parceiro de projeto, optou-se por limitar o escopo do projeto apenas à implementação de um robô responsável por reabastecer os carrinhos de emergência, de modo que os demais fatores (bipagem e montagem de kits alheios) permanecerão no backlog do desenvolvimento.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Contudo, o grupo percebeu o caráter indispensável da possibilidade de edição de layout dos carrinhos de parada pelos usuários da solução, o que, junto à acessibilidade, tende a ser um foco na idealização e desenvolvimento da solução. Cabe ressaltar, ainda, que ambas as fontes para as informações coletadas na etapa de imersão preliminar possuem credibilidade — a coordenadora da farmácia **por conta de sua atuação diretaa no setor ao qual a solução se refere** e o site de candidatura a vagas de emprego no Hospital Sírio-Libanês **por conta de seu caráter oficial da instituição**.
 

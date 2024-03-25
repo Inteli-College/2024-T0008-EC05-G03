@@ -3,6 +3,7 @@ sidebar_position: 4
 custom_edit_url: null
 ---
 
+
 # Proposta de arquitetura
 
 ## Requisitos da solução
@@ -47,7 +48,7 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;Em suma, os requisitos não funcionais delineados para o sistema são essenciais para garantir sua eficiência, confiabilidade e usabilidade. Desde a facilidade de atualização dos layouts até a detecção e correção automática de falhas, cada requisito foi cuidadosamente elaborado para promover uma operação fluida e segura. Além disso, a baixa latência e alta disponibilidade são elementos-chave para assegurar que o sistema esteja sempre pronto para uso, minimizando o tempo de inatividade não planejado. Ao adotar uma abordagem abrangente em relação aos requisitos não funcionais, podemos garantir que o sistema não apenas atenda às expectativas de desempenho, mas também ofereça uma experiência de usuário aprimorada e confiável.
+&emsp;&emsp;Em conclusão, os requisitos não funcionais delineados para o sistema são essenciais para garantir sua eficiência, confiabilidade e usabilidade. Desde a facilidade de atualização dos layouts até a detecção e correção automática de falhas, cada requisito foi cuidadosamente elaborado para promover uma operação fluida e segura. Além disso, a baixa latência e alta disponibilidade são elementos-chave para assegurar que o sistema esteja sempre pronto para uso, minimizando o tempo de inatividade não planejado. Ao adotar uma abordagem abrangente em relação aos requisitos não funcionais, podemos garantir que o sistema não apenas atenda às expectativas de desempenho, mas também ofereça uma experiência de usuário aprimorada e confiável.
 
 ## Diagrama de blocos
 
@@ -66,25 +67,26 @@ custom_edit_url: null
 
 O diagrama representa de forma geral todas as tecnologias envonvidas na solução do projeto e como eles se comunicam para definirem a nossa solução. Para isso, temos dois blocos maiores: o computador e o sistema de automação:
 
-- Computador: ele é responsável por toda a parte gráfica interagível do projeto além de fazer a maior parte do processamento que recebe as informações de entreda do usuário e retorna instruções processados para o sistema de automação, sendo eles ligados fisicamente por um cabo USB-A e USB-C.
+- Computador: responsável por toda a parte gráfica do projeto com a qual o usuário interage e pela maior parte do processamento que recebe as informações de entrada do usuário. Retorna instruções processadas para o sistema de automação, fisicamente conectados por um cabo USB-A e USB-C.
 
-  - Canva interativo: ele é a interface gráfica de prototipação da solução, permitindo que o ususário configure as posições dos itens a serem reabastecidos ao mostrar em escala a gaveta de reabastecimento e a gaveta do carrinho emergencial a ser reabastecida. Será por ele que o usuário poderá selecionar, fazer testes para verificar caso a posição dos elementos adicionados condiz com a posição real do elemento e permitirá que o programa seja executado. Planejamos criá-lo utilizando-se de HTML, CSS React e ReactFlow, fazendo requisições web com o backend para processar e armazenar as informações e com o script do robô para executá-lo.
-  - Backend: o backend é a parte da solução que rebece os dados enviados pelo usuário, os processa e armazena conforme o necessário para os retornar para o sistema de automação e ao canva interativo, utilizando-se de Node.js, JavaScript ou TypeScript para executá-lo e utilizando-se de requisições SQL para enviar os dados para o banco de dados. Ele é dividido entre o Script de Backend e o banco de dados.
+  - Canva interativo: a interface gráfica de prototipação da solução, permitindo que o usuário configure as posições dos itens a serem reabastecidos ao mostrar em escala a gaveta de reabastecimento e a gaveta do carrinho emergencial a ser reabastecida. Será por ele que o usuário poderá selecionar, fazer testes para verificar caso a posição dos elementos adicionados condiz com a posição real do elemento e permitirá que o programa seja executado. Planejamos criá-lo utilizando HTML, CSS, React e ReactFlow, fazendo requisições web com o backend para processar e armazenar as informações e com o script do robô para executá-lo.
   
-    - Script Backend: o script é a parte mais vital do projeto, processando todos os dados de entreada, modificando-os ou adaptando-os conforme o necessário, escrevendo-os ou alterando-os no banco de dados e retornando os resultados para o cliente pelo canva interativo. Ele será desenvolvido utilizando-se principalmente por TypeScript ou JavaScript e se comunicará com o canva por meio de requisições asíncronas, com o banco de dados fazendo requisições SQL e executando o script do robô chamando-o em sua pipeline.
+  - Backend: a parte da solução que rebece os dados enviados pelo usuário, os processa e armazena conforme o necessário para os retornar para o sistema de automação e ao canva interativo, utilizando Node.js, JavaScript ou TypeScript para executá-lo, e requisições SQL para enviar os dados para o banco de dados. Ele é dividido entre o Script de Backend e o banco de dados.
   
-    - Banco de dados: o banco de dados é a parte que armazena tudo sobre a nossa aplicação, sejam históricos de posições já feitas, layouts de reabastecimento criados previamente e perfis de utilização. Planejamos criá-lo utilizando MySQL e comunicá-lo com o script de backend por meio de requisições SQL.
+    - Script de Backend: a parte mais vital do projeto, processando todos os dados de entrada, modificando e adaptando-os conforme o necessário; escrevendo e alterando-os no banco de dados; e retornando os resultados para o cliente pelo canva interativo. Ele será desenvolvido principalmente com TypeScript ou JavaScript e se comunicará com o canva por meio de requisições assíncronas, com o banco de dados fazendo requisições SQL, e executando o script do robô chamando-o em sua pipeline.
+  
+    - Banco de dados: armazena tudo sobre a nossa aplicação, sejam históricos de posições já feitas, layouts de reabastecimento criados previamente e perfis de utilização. Planejamos criá-lo utilizando MySQL e comunicá-lo com o script de backend por meio de requisições SQL.
 
-  - Script do robo: este script que ditará as ações feitas pelo Magician Lite, fornecendo-o a quantidade de pontos a serem visitados, a quantidade de vezes que determinado ponto deve ser visitado e regindo o estado do robô (ventosa ativa ou não, robô ativo ou não, etc). Para isso, utilizaremos python e em específico, uma biblioteca chamada DobotEDU ou, como alternativa, a biblioteca pydobot. Ele se comunicará com o canva por meio de um microserviço ou script intermediário, com o backend por meio de requisições e com o robô pela própria biblioteca.
+  - Script do robô: ditará as ações feitas pelo Magician Lite, fornecendo-o a quantidade de pontos a serem visitados, a quantidade de vezes que determinado ponto deve ser visitado e regindo o estado do robô (ventosa ativa ou não, robô ativo ou não, etc). Para isso, utilizaremos Python e em específico, uma biblioteca chamada DobotEDU ou, como alternativa, a biblioteca pydobot. Ele se comunicará com o canva por meio de um micro-serviço ou script intermediário, com o backend por meio de requisições, e com o robô pela própria biblioteca.
 
 - Sistema de automação: o sistema de automação é a parte física completa da solução proposta, sendo capaz de realizar movimentos precisos e rápidos.
 
-  - Magician Lite: ele é o robô que utilizaremos como parte da solução do projeto. Ele consiste em uma garra mecânica que possui diferentes tipos de cabeças para usos diferentes e possui um software de utilização simplificado para entusiatas novatos. Sua rápida capacidade de movimento, precisão e diferentes possibilidades de utilização foram pontos vitais para a escolha neste projeto.
+  - Magician Lite: ele é o robô que utilizaremos como parte da solução do projeto. Ele consiste em uma garra mecânica que possui diferentes tipos de cabeças para diferentes usos e possui um software de utilização beginner-friendly. Sua rápida capacidade de movimento, precisão e diferentes possibilidades de utilização foram pontos vitais para a escolha neste projeto.
 
     - Microprocessador: o microprocessador é o cérebro do robô, ele quem traduz todo o código feito pelo script do robô pra ações que possam ser entendidas pelo Magician Lite e definindo tipos de movimento que podem serem feitos, como o Jump, o Move Joint, o Move Linear e o Arc.
 
-    - Juntas: as justas do Magician Lite são a parte responsável pelo movimento do robô, possuindo 3 graus de liberdade para aproveitar todo o envelope possível do robô.
+    - Juntas: responsáveis pelo movimento do robô, possuindo 3 graus de liberdade para aproveitar todo o potencial do robô.
 
-    - Ventosa: a ventosa é a parte que fará a maior parte da interação com o objeto a ser transportado pois, por uma pequena diferença de pressão causada com uma bomba de vácuo dentro do Magician Lite, ela é capaz de segurar diversos objetos e isso permite o transporte destes de um local ao outro.
+    - Ventosa: responsável pela maior parte da interação com o objeto a ser transportado. Uma bomba de vácuo dentro do robô gera uma diferença de pressão entre a ventosa e o ambiente, tornando-a capaz de segurar e transportar diversos objetos.
 
-  - Baterias externas: planejamos que o projeto tenha um grande tempo de duração e não dependa de cabos de energia para funcionar pois isso pode atrapalhar a velocidade de resposta para um paciente e tornar-se um empecilho para utilizar em locais diferentes. Com isso em mente, propomos duas baterias de 12V acopladas com o robô para aumentar seu tempo de uso.
+  - Baterias externas: planejamos que o projeto tenha um grande tempo de duração e não dependa de cabos de energia para funcionar pois isso pode atrapalhar a velocidade de resposta para um paciente e tornar-se um empecilho para utilizar em locais diferentes. Com isso em mente, propomos duas baterias de 12V acopladas ao robô para aumentar seu tempo de uso.

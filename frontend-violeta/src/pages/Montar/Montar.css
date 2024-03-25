@@ -50,6 +50,7 @@
     flex-direction: column;
     align-content: center;
     margin-left: 2vw;
+    position: fixed;
 }
 
 .armBackground {

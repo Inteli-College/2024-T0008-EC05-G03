@@ -1,6 +1,7 @@
 import '../Selecionado/Selecionado.css'
 import logoCompleta from '../../assets/logo_completa.svg'
 import React from 'react';
+import Voltar from '../../components/voltar';
 
 function Selecionar() {
     return (
@@ -31,10 +32,11 @@ function Selecionar() {
             <div className='painelDeControle'>
                 <img src={logoCompleta} className='logoCompleta'/>
                 <div className='buttonsPainel'>
-                    <form action='/novolayout'><button className='botaoPadrao'>Novo Layout</button></form>
+                    <form action='/montar'><button className='botaoPadrao'>Novo Layout</button></form>
                     <form action='/exportarlayout'><button className='botaoPadrao'>Exportar Layout</button></form>
                     <form action='/importarlayout'><button className='botaoPadrao'>Importar Layout</button></form>
                     <form action='/editarlayout'><button className='botaoPadrao'>Editar</button></form>
+                    <Voltar />
                 </div>
             </div>
         </div>

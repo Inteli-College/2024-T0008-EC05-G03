@@ -60,8 +60,6 @@ header {
 }
 
 .buttonsPainel {
-  position: inherit;
   margin-left: 9.5vw;
-  margin-top: 47vh;
   text-align: center;
 }

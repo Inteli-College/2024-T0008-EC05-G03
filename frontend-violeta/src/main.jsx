@@ -6,6 +6,7 @@ import Selecionado from './pages/Selecionado/Selecionado.jsx';
 import ControleBR from './pages/ControleBR/ControleBR.jsx';
 import Selecionar from './pages/Selecionar/Selecionar.jsx';
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
+import Modal from './components/modal/modal.jsx';
 
 // Criação do roteador com as rotas definidas
 const router = createBrowserRouter([

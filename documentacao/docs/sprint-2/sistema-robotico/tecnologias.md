@@ -28,3 +28,18 @@ custom_edit_url: null
 &nbsp;&nbsp;&nbsp;&nbsp;A biblioteca Yaspin é uma ferramenta Python que permite criar e personalizar facilmente spinners (indicadores de carregamento) e barras de progresso para tornar a experiência do usuário mais interativa durante a execução de tarefas demoradas no terminal, sendo possível adicionar spinners e barras de progresso de forma simples e elegante aos seus scripts Python, proporcionando uma melhor experiência visual para o usuário.
 
 &nbsp;&nbsp;&nbsp;&nbsp;A biblioteca permite personalizar os spinners, alterando tamanho e comportando, cores e estilos dos spinners e barras de progresso, também suporta a criação de barras de progresso e interação com threads e processos em Python.
+
+---
+
+&nbsp;&nbsp;&nbsp;&nbsp;Para melhor compreensão de em qual parte da solução cada tecnologia utilizada se encaixa, a equipe Violeta elaborou o seguinte diagrama com a [arquitetura da solução proposta na sprint 1](../../sprint-1/proposta-arq.md#diagrama-de-blocos) e as respectivas indicações de onde cada tecnologia é implementada.
+
+<p style={{textAlign: 'center'}}>Figura 1 - Arquitetura da solução com tecnologias usadas na sprint 2</p>
+
+<div style={{margin: 25}}>
+    <div style={{textAlign: 'center'}}>
+        <img src={require("../../../static/img/sprint-2/sistema-robotico/arquitetura_tecnologias_sprint_2.png").default} style={{width: 400}} alt="Arquitetura da solução com tecnologias usadas na sprint 2" />
+        <br />
+    </div>
+</div>
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>

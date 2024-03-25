@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+custom_edit_url: null
+---
+
 # Periféricos
 
 Documentação dos dispositivos periféricos integrados ao sistema.
@@ -22,7 +27,7 @@ Documentação dos dispositivos periféricos integrados ao sistema.
 
 <p style={{textAlign: 'center'}}>Figura 1 - Desenho esquemático do circuito</p>
 
-![Desenho esquemático do circuito](../../../static/img/sprint-3/circuito_desenho_esquematico.jpeg)
+![Desenho esquemático do circuito](../../../static/img/sprint-3/hardware-integracao/circuito_desenho_esquematico.jpeg)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 

@@ -1,0 +1,14 @@
+body {
+  background-color: white;
+}
+
+header {
+  background-color: #E3DAEC;
+  display: flex;
+  position: fixed;
+  margin-top: 0;
+}
+
+button {
+  cursor: pointer;
+}

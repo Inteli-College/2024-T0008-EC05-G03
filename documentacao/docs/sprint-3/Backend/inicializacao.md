@@ -47,6 +47,6 @@ Para inicializar o sistema da solução desenvolvido até a sprint 3, deve-se se
 
 6 - Para iniciar o backend do sistema, digite o seguinte comando:
 
-```py backend/routes.py```
+```py backend/run.py```
 
-> Para utilizar o backend puro (sem frontend), deve-se instalar um software próprio para testagem de API, como o [Postman](https://www.postman.com/), ou uma extensão do VS Code dedicada para tal, como o [Thunder Client](https://www.thunderclient.com/).
+> Para utilizar o backend puro (sem interface de frontend), deve-se instalar um software próprio para testagem de API, como o [Postman](https://www.postman.com/), ou uma extensão do VS Code dedicada para tal, como o [Thunder Client](https://www.thunderclient.com/).

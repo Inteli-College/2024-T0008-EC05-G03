@@ -27,6 +27,11 @@ function Selecionar() {
                     Data de criação: 20/03/2024 <br />
                     Itens: xxxxxx, xxxxxxx, xxxxxx
                 </button>
+                <button className='layoutInfo'>
+                    Layout X <br />
+                    Data de criação: 20/03/2024 <br />
+                    Itens: xxxxxx, xxxxxxx, xxxxxx
+                </button>
             </div>
             <div className='linhaVertical'></div>
             <div className='painelDeControle'>

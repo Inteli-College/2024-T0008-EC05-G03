@@ -7,7 +7,7 @@ function Selecionar() {
     return (
         <div className='pageContent'>
             <div className='layoutsContainer'>
-                <button className='layoutInfo'>
+                <form action="/selecionado"><button className='layoutInfo'>
                     Layout X <br />
                     Data de criação: 20/03/2024 <br />
                     Itens: xxxxxx, xxxxxxx, xxxxxx
@@ -32,6 +32,7 @@ function Selecionar() {
                     Data de criação: 20/03/2024 <br />
                     Itens: xxxxxx, xxxxxxx, xxxxxx
                 </button>
+                </form>
             </div>
             <div className='linhaVertical'></div>
             <div className='painelDeControle'>

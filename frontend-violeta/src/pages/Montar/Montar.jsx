@@ -59,7 +59,7 @@ function Montar() {
                   <label>
                     Insira o nome do Layout: <br />
                     <input type='text' className='insertName'/>
-                  </label>
+                  </label><br/>
                   <input type="submit" value="Salvar" className='saveName'/>
                 </form>
                 <div className='buttonsPainel'>

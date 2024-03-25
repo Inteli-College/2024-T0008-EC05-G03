@@ -7,6 +7,6 @@ import ControleBR from './pages/ControleBR/ControleBR.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ControleBR />
+    <Selecionado />
   </React.StrictMode>,
 )

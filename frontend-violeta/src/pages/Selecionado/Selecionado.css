@@ -23,7 +23,7 @@
     margin-top: 5vh;
     background-color: #E3C6FF;
     width: 30vw;
-    height: 32vw;
+    height: 30.4vw;
     border-radius: 20px;
 }
 
@@ -55,6 +55,7 @@
     border-radius: 50px;
     width: 12vw;
     margin-left: 11vw;
+    margin-top: 13vh;
 }
 
 .armBackground img {
@@ -63,11 +64,11 @@
 }
 
 #layout {
-    width: 20vw;
-    height: 4vh;
+    width: 16vw;
+    height: 3vw;
     margin-top: 6vh;
     margin-left: 7.5vw;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .buttonsPainel {
@@ -79,8 +80,8 @@
     border: none;
     color: white;
     margin-top: 5vh;
-    width: 21vw;
-    height: 8vh;
+    width: 16vw;
+    height: 3vw;
     border-radius: 15px;
     font-family: 'Public Sans', sans-serif;
     font-size: 20px;
@@ -92,6 +93,3 @@
     color: white;
 }
 
-.btVoltar {
-    margin-top: 20vh;
-}

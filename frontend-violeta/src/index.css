@@ -1,6 +1,7 @@
 body {
   background-color: white;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 header {
@@ -19,18 +20,23 @@ header {
   display: inline-block;;
   cursor: pointer;
   font-family: 'Public Sans', sans-serif;
-  width: 21vw;
-  height: 47px;
+  width: 16vw;
+  height: 3vw;
   margin-top: 5vh;
   font-size: 20px;
   border-radius: 15px;
 }
 
+.botaoPadrao:hover{
+  background-color: #CF80FF;
+  color: white
+}
+
 .linhaVertical {
-  margin-left: 70vw;
+  margin-left: 70.5vw;
   margin-top: 10vh;
   height: 80vh;
-  width: 1px;
+  width: 2px;
   background-color: #9004D3;
   position: fixed;
 }
@@ -44,7 +50,9 @@ header {
   cursor: pointer;
   border-radius: 15px;
   font-size: larger;
-  position: fixed;
+  width: 16vw;
+  height: 3vw;
+  margin-top: 10vh;
 }
 
 .btVoltar:hover {

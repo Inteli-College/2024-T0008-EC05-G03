@@ -7,6 +7,7 @@
     display: flex;
     width: 60vw;
     margin-left: 1.5vw;
+    
 }
 
 .carrinho {
@@ -16,13 +17,14 @@
 
 .carrinhoTitle {
     margin-left: 0;
+    text-align: center;
 }
 
 .backgroundCarrinho {
     margin-top: 5vh;
     background-color: #E3C6FF;
     width: 30vw;
-    height: 32vw;
+    height: 30.4vw;
     border-radius: 20px;
     flex-direction: column;
 }
@@ -38,6 +40,11 @@
     cursor: pointer;
 }
 
+.botaoAdd:hover {
+    background-color: #B456E2;
+    color: white;
+}
+
 .painelDeControle {
     display: flex;
     flex-direction: column;
@@ -50,6 +57,7 @@
     border-radius: 50px;
     width: 12vw;
     margin-left: 11vw;
+    margin-top: 13vh;
 }
 
 .armBackground img {
@@ -60,24 +68,28 @@
 .formName {
     margin-top: 5vh;
     margin-left: 10vw;
+    text-align: center;
 }
 
 .insertName {
-    border-radius: 15px;
+    border-radius: 10px;
     height: 4vh;
+    width: 35vh;
 }
 
 .saveName {
-    margin-left: 2vw;
+    margin-left: vw;
+    margin-top: 1vw;
     background-color: #9600DD;
     color: #fff;
     border: none;
     height: 4vh;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .buttonsPainel {
     margin-left: 7vw;
+    text-align: center;
 }
 
 .botaoDelete {
@@ -85,8 +97,8 @@
     border: none;
     color: white;
     margin-top: 5vh;
-    width: 21vw;
-    height: 8vh;
+    width: 16vw;
+    height: 3vw;
     border-radius: 15px;
     font-family: 'Public Sans', sans-serif;
     font-size: 20px;
@@ -98,6 +110,3 @@
     color: white;
 }
 
-.btVoltar {
-    margin-top: 20vh;
-}

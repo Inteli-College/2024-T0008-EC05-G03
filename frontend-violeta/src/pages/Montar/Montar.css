@@ -71,25 +71,21 @@
     text-align: center;
 }
 
+
 .insertName {
     border-radius: 10px;
     height: 4vh;
-    width: 35vh;
+    width: 32vh;
 }
 
 .saveName {
-    margin-left: vw;
+    margin-left: -1vw;
     margin-top: 1vw;
     background-color: #9600DD;
     color: #fff;
     border: none;
     height: 4vh;
     border-radius: 10px;
-}
-
-.buttonsPainel {
-    margin-left: 7vw;
-    text-align: center;
 }
 
 .botaoDelete {

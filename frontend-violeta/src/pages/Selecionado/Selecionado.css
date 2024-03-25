@@ -20,10 +20,11 @@
 
 .backgroundCarrinho {
     display: flex;
+    flex-direction: row;
     margin-top: 5vh;
     background-color: #E3C6FF;
-    width: 30vw;
-    height: 30.4vw;
+    width: 32vw;
+    height: 32.4vw;
     border-radius: 20px;
 }
 
@@ -71,10 +72,6 @@
     border-radius: 10px;
 }
 
-.buttonsPainel {
-    margin-left: 7vw;
-}
-
 .botaoDelete {
     background-color: #FA0707;
     border: none;
@@ -91,5 +88,35 @@
 .botaoDelete:hover {
     background-color: #D40000;
     color: white;
+}
+
+/* Selecionar.css */
+
+.pageContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.layoutsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    margin-left: 1.5vw;
+}
+
+.layoutInfo {
+    width: 60vw;
+    height: 10vh;
+    border-radius: 15px;
+    text-align: left;
+    border-color: #B49EBF;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    margin-top: 2vh;
+}
+
+.logoCompleta {
+    width: 25vw;
+    margin-left: 5vw;
 }
 

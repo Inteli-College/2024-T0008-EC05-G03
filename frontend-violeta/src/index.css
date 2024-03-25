@@ -33,7 +33,7 @@ header {
 }
 
 .linhaVertical {
-  margin-left: 70.5vw;
+  margin-left: 72vw;
   margin-top: 10vh;
   height: 80vh;
   width: 2px;
@@ -45,17 +45,23 @@ header {
   background-color: #D9D9D9;
   border: none;
   color: black;
-  padding: 2vh 8.5vw;
   margin-left: 0.5vw;
   cursor: pointer;
   border-radius: 15px;
   font-size: larger;
   width: 16vw;
   height: 3vw;
-  margin-top: 10vh;
+  margin-top: 7vh;
 }
 
 .btVoltar:hover {
   background-color: #B0B0B0;
   color: white;
+}
+
+.buttonsPainel {
+  position: inherit;
+  margin-left: 9.5vw;
+  margin-top: 47vh;
+  text-align: center;
 }

@@ -1,5 +1,6 @@
-import './Selecionar.css'
+import '../Selecionado/Selecionado.css'
 import logoCompleta from '../../assets/logo_completa.svg'
+import React from 'react';
 
 function Selecionar() {
     return (
@@ -28,7 +29,7 @@ function Selecionar() {
             </div>
             <div className='linhaVertical'></div>
             <div className='painelDeControle'>
-                <img src={logoCompleta} />
+                <img src={logoCompleta} className='logoCompleta'/>
                 <div className='buttonsPainel'>
                     <form action='/novolayout'><button className='botaoPadrao'>Novo Layout</button></form>
                     <form action='/exportarlayout'><button className='botaoPadrao'>Exportar Layout</button></form>

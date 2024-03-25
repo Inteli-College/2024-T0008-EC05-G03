@@ -21,23 +21,32 @@ Para inicializar o sistema da solução desenvolvido até a sprint 3, deve-se se
 
 ```git clone git@github.com:Inteli-College/2024-T0008-EC05-G03.git```
 
-2 - Para instalar as bibliotecas utilizadas na solução, digite o seguinte comando:
+2 - Digite os seguintes comandos para entrar no diretório do repositório clonado e criar e ativar um ambiente virtual para instalação de bibiotecas:
 
-```pip install -r 2024-T0008-EC05-G03/requirements.txt```
+```cd 2024-T0008-EC05-G03```
 
-3 - Na mesma janela de terminal, digite o seguinte comando:
+```pip install venv venv```
 
-```cd 2024-T0008-EC05-G03/src```
+```venv\Scripts\activate```
 
-4 - Para iniciar a CLI do sistema, digite o seguinte comando:
+> **IMPORTANTE:** o processo de instalação do ambiente virtual pode variar de acordo com seu sistema operacional. Para maiores informações, cheque a [documentação oficial do Python](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/).
+
+3 - Para instalar as bibliotecas utilizadas na solução, digite o seguinte comando:
+
+```pip install -r requirements.txt```
+
+4 - Na mesma janela de terminal, digite o seguinte comando:
+
+```cd src```
+
+5 - Para iniciar a CLI do sistema, digite o seguinte comando:
 
 ```py main.py```
 
 > Para maiores informações sobre a CLI, veja a [seção de sistema robótico](https://inteli-college.github.io/2024-T0008-EC05-G03/category/sistema-robótico) na documentação da sprint 2 do projeto.
 
-5 - Para iniciar o backend do sistema, digite o seguinte comando:
+6 - Para iniciar o backend do sistema, digite o seguinte comando:
 
 ```py backend/routes.py```
 
 > Para utilizar o backend puro (sem frontend), deve-se instalar um software próprio para testagem de API, como o [Postman](https://www.postman.com/), ou uma extensão do VS Code dedicada para tal, como o [Thunder Client](https://www.thunderclient.com/).
-

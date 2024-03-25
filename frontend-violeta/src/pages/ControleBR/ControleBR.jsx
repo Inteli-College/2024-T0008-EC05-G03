@@ -1,6 +1,5 @@
 import './ControleBR.css'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 function ControleBR() {
   return (

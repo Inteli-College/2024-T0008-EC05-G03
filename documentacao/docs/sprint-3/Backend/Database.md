@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+custom_edit_url: null
+---
+
 # Base de dados
 
 &emsp;&emsp;Bases de dados, no contexto da computação, são conjuntos de informações de tipos que podem ser variados ou não. Esses mesmos dados podem ser estruturados (quando são organizados por tipos, tabelas, colunas e linhas) ou não-estruturados (quando há mais de um tipo de dado em um arquivo que contém texto, imagens e vídeos, por exemplo).

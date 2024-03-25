@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+custom_edit_url: null
+---
+
 # Rotina de verificação
 
 Documentação da rotina de verificação desenvolvida para o robô de braço mecânico.

@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+custom_edit_url: null
+---
+
 # Periféricos
 
 Documentação dos dispositivos periféricos integrados ao sistema.

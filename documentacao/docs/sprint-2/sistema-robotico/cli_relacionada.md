@@ -13,7 +13,7 @@ custom_edit_url: null
 
 ### Vídeo de demonstração
 
-&emsp;&emsp;De forma complementar à documentação desta seção, para melhor entendimento da CLI e de como essa interface interage no contexto do projeto, a equipe Violeta elaborou um vídeo de demonstração de interação de usuário com a CLI para controle do robô de braço mecânico. O vídeo está disponível [aqui](https://drive.google.com/file/d/1ynMGicTpoRex3CTolScaMUrtvVt18S8O/view?usp=drive_link). 
+&emsp;&emsp;De forma complementar à documentação desta seção, para melhor entendimento da CLI e de como essa interface interage no contexto do projeto, a equipe Violeta elaborou dois vídeos de demonstração de interação de usuário com a CLI para controle do robô de braço mecânico. Um dos vídeos é focado na atuação do robô de braço mecânico e está disponível [aqui](https://drive.google.com/file/d/1ynMGicTpoRex3CTolScaMUrtvVt18S8O/view?usp=drive_link), enquanto o outro dá ênfase na CLI para controle do robô e está disponível [aqui](https://drive.google.com/file/d/1wkk0EIFfTO1JKLyZnhKsAN2d60DlYckP/view?usp=sharing). 
 
 
 > Até o final da sprint 2, o arquivo principal com o código da CLI desenvolvida para a solução se encontra, dentro da estrutura de pastas do repositório do projeto, em: ```./src/ main.py```.

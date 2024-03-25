@@ -3,6 +3,6 @@
     "position": 4,
     "link": {
       "type": "generated-index",
-      "description": "Documentação da terceira sprint."
+      "description": "A terceira sprint focou na implementação de dispositivos periféricos como auxiliares na atuação do robô de braço mecânico. Contudo, a equipe Violeta também trabalhou no desenvolvimento prévio do backend da parte da solução que envolve a aplicação web."
     }
   }

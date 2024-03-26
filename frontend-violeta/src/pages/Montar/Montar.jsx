@@ -17,7 +17,7 @@ function Montar() {
       <div className='pageContent'>
             <div className='infoContainer'>
               <div className='carrinho'>
-                <h2 className='carrinhoTitle'>GAVETA DE <br /> REABASTECIMENTO</h2>
+                <div className='carrinhoTitle1'></div>
                 <div className='backgroundCarrinho'>
                   <div className='itensColuna'>
                   <BotaoAdd />
@@ -25,7 +25,7 @@ function Montar() {
                   <BotaoAdd />
                   <BotaoAdd />
                   </div>
-                  <div className='itensColuna'>
+                  <div className='itensColuna1'>
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />
@@ -34,7 +34,7 @@ function Montar() {
                 </div>
               </div>
               <div className='carrinho'>
-                <h2 className='carrinhoTitle'>GAVETA DO CARRINHO <br /> EMERGENCIAL</h2>
+                <div className='carrinhoTitle2'></div>
                 <div className='backgroundCarrinho'>
                   <div className='itensColuna'>
                   <BotaoAdd />
@@ -42,7 +42,7 @@ function Montar() {
                   <BotaoAdd />
                   <BotaoAdd />
                   </div>
-                  <div className='itensColuna'>
+                  <div className='itensColuna1'>
                   <BotaoAdd />
                   <BotaoAdd />
                   <BotaoAdd />

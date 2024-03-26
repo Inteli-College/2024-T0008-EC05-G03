@@ -7,41 +7,21 @@ function Selecionar() {
     return (
         <div className='pageContent'>
             <div className='layoutsContainer'>
-                <form action="/selecionado"><button className='layoutInfo'>
-                    Layout X <br />
-                    Data de criação: 20/03/2024 <br />
-                    Itens: xxxxxx, xxxxxxx, xxxxxx
-                </button>
-                <button className='layoutInfo'>
-                    Layout X <br />
-                    Data de criação: 20/03/2024 <br />
-                    Itens: xxxxxx, xxxxxxx, xxxxxx
-                </button>
-                <button className='layoutInfo'>
-                    Layout X <br />
-                    Data de criação: 20/03/2024 <br />
-                    Itens: xxxxxx, xxxxxxx, xxxxxx
-                </button>
-                <button className='layoutInfo'>
-                    Layout X <br />
-                    Data de criação: 20/03/2024 <br />
-                    Itens: xxxxxx, xxxxxxx, xxxxxx
-                </button>
-                <button className='layoutInfo'>
-                    Layout X <br />
-                    Data de criação: 20/03/2024 <br />
-                    Itens: xxxxxx, xxxxxxx, xxxxxx
-                </button>
+                <form action="/selecionado"><button className='layoutInfo botaoPersonalizado'></button>
+                <button className='layoutInfo botaoPersonalizado'></button>
+                <button className='layoutInfo botaoPersonalizado'></button>
+                <button className='layoutInfo botaoPersonalizado'></button>
+                <button className='layoutInfo botaoPersonalizado'></button>
                 </form>
             </div>
             <div className='linhaVertical'></div>
             <div className='painelDeControle'>
                 <img src={logoCompleta} className='logoCompleta'/>
                 <div className='buttonsPainel'>
-                    <form action='/montar'><button className='botaoPadrao'>Novo Layout</button></form>
-                    <form action='/exportarlayout'><button className='botaoPadrao'>Exportar Layout</button></form>
-                    <form action='/importarlayout'><button className='botaoPadrao'>Importar Layout</button></form>
-                    <form action='/editarlayout'><button className='botaoPadrao'>Editar</button></form>
+                    <form action='/montar'><button className='botaoPadrao botaoNovoLayout'></button></form>
+                    <form action='/exportarlayout'><button className='botaoPadrao botaoExportarLayout'></button></form>
+                    <form action='/importarlayout'><button className='botaoPadrao botaoImportarLayout'></button></form>
+                    <form action='/editarlayout'><button className='botaoPadrao botaoEditarLayout'></button></form>
                     <Voltar />
                 </div>
             </div>

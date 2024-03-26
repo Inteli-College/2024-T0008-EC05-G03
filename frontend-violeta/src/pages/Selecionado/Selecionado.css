@@ -14,34 +14,70 @@
     margin-left: 2vw;
 }
 
-.carrinhoTitle {
-    margin-left: 0;
+.carrinhoTitle1::before {
+    content: "GAVETA DE\A REABASTECIMENTO";
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7vw;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.carrinhoTitle2::before {
+    content: "GAVETA DO CARRINHO\A EMERGENCIAL";
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7vw;
+    white-space: pre-wrap;
+    text-align: center;
 }
 
 .backgroundCarrinho {
+    align-items: center;
     display: flex;
     flex-direction: row;
     margin-top: 5vh;
+
     background-color: #E3C6FF;
-    width: 32vw;
-    height: 32.4vw;
-    border-radius: 20px;
+    width: 30vw;
+    height: 30.4vw;
+    border-radius: 1.25rem;
+    width: fit-content;
+    height: fit-content;
 }
 
 .item {
+    font-size: 1vw;
     margin-top: 3vh;
+    font-size: 1vw;
     margin-left: 1.73vw;
+    margin-right: 1.73vw;
     width: 12.5vw;
     height: 13vh;
     background-color: #fff;
     border: none;
-    border-radius: 20px;
+    border-radius: 1.25rem;
 }
 
-.itemTexto {
+
+.nomeItem::before{
+    content: "Nome do Item";
+    display: block;
+    font-size: 1.08em;
+    font-weight: bold;
     margin-left: 1vw;
     margin-top: 2vh;
+    padding-top: 1vh;
 }
+
+.quantidadeItem::before{
+    content: "Quantidade do Item";
+    display: block;
+    font-size: 1em;
+    margin-left: 1vw;
+    margin-top: 1.6vh;
+}
+
 
 .painelDeControle {
     display: flex;
@@ -53,7 +89,7 @@
 
 .armBackground {
     background-color: #B56BFF;
-    border-radius: 50px;
+    border-radius: 3.125rem;
     width: 12vw;
     margin-left: 11vw;
     margin-top: 13vh;
@@ -68,8 +104,8 @@
     width: 16vw;
     height: 3vw;
     margin-top: 6vh;
-    margin-left: 7.5vw;
-    border-radius: 10px;
+    margin-left: 9.7vw;
+    border-radius: 15px;
 }
 
 .botaoDelete {
@@ -79,9 +115,9 @@
     margin-top: 5vh;
     width: 16vw;
     height: 3vw;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
     font-family: 'Public Sans', sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     cursor: pointer;
 }
 
@@ -107,18 +143,67 @@
 }
 
 .layoutInfo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vw;
     width: 60vw;
     height: 12vh;
-    border-radius: 15px;
     text-align: left;
     border-color: #B49EBF;
     cursor: pointer;
     background-color: #FFFFFF;
     margin-top: 2vh;
 }
+.layoutSub{
+    font-size: 14px;
+    margin-top: -0.2vw;
+}
 
 .logoCompleta {
     width: 25vw;
     margin-left: 5vw;
 }
+
+.selecionar{
+    align-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.selecionar:hover{
+    background-color: #A06EE0;
+    color: white;
+}
+
+.botaoPersonalizado {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4vw;
+    width: 60vw;
+    height: 12vh;
+    border-radius: 1vw;
+    text-align: left;
+    border-color: #B49EBF;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    margin-top: 2vh;
+    padding: 1vw;
+    position: relative; 
+}
+
+.botaoPersonalizado::before {
+    content: 'Layout X';
+    display: block;
+    margin-bottom: 0.5vw;
+}
+
+.botaoPersonalizado::after {
+    content: 'Data de criação: 20/03/2024 Itens: xxxxxx, xxxxxxx, xxxxxx';
+    display: block;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+}
+
+.botaoPersonalizado:hover {
+    background-color: #A06EE0;
+    color: white;
+}
+
 

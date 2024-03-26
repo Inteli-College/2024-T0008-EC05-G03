@@ -5,11 +5,36 @@
   margin-top: 13vh;
 }
 
-.openNavbar {
-  background: none;
-  outline: none;
-  border: none;
+.titulo::before{
+  content: "Controle do Braço Robótico";
+  display: block;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  padding-bottom: 1vw;
 }
+
+.botoesCBR form:nth-child(1) button::before {
+  content: "Home";
+  font-size: 1.4vw
+}
+
+.botoesCBR form:nth-child(2) button::before {
+  content: "Posição Atual";
+  font-size: 1.4vw
+}
+
+.botoesCBR form:nth-child(3) button::before {
+  content: "Ligar Ferramenta";
+  font-size: 1.4vw
+}
+
+.botoesCBR form:nth-child(4) button::before {
+  content: "Selecionar Layout";
+  font-size: 1.4vw
+}
+
 
 .logoSimples {
   margin-left: 92vw;
@@ -19,7 +44,7 @@
   background-color: #9600DD;
   height: 0.5vh;
   width: 30vw;
-  margin-top: -1.8vh;
+  margin-top: 0.02vw;
 }
 
 .botoesCBR {

@@ -6,8 +6,8 @@ import Voltar from '../../components/voltar.jsx'
 function Item() {
     return (
         <div className='item'>
-            <h3 className='itemTexto'>Nome do item</h3>
-            <p className='itemTexto'>Quantidade do item</p>
+            <div className='nomeItem'></div>
+            <div className='quantidadeItem'></div>
         </div>
     )
 }
@@ -18,7 +18,7 @@ function Selecionado() {
         <div className='pageContent'>
                 <div className='infoContainer'>
                 <div className='carrinho'>
-                    <h2 className='carrinhoTitle'>GAVETA DE <br /> REABASTECIMENTO</h2>
+                    <div className='carrinhoTitle1'></div>
                     <div className='backgroundCarrinho'>
                         <div className='itensColuna'>
                             <Item />
@@ -35,7 +35,7 @@ function Selecionado() {
                     </div>
                 </div>
                 <div className='carrinho'>
-                    <h2 className='carrinhoTitle'>GAVETA DO CARRINHO <br /> EMERGENCIAL</h2>
+                    <div className='carrinhoTitle2'></div>
                     <div className='backgroundCarrinho'>
                         <div className='itensColuna'>
                             <Item />
@@ -56,7 +56,7 @@ function Selecionado() {
                     <div className='armBackground'>
                     <img src={robotArm} />
                     </div>
-                    <select name="layoutPicker" id="layout">
+                    <select name="layoutPicker" id="layout" className='selecionar'>
                         <option disabled selected>Selecionar Layout</option>
                         <option value="layout1">Layout 1</option>
                         <option value="layout2">Layout 2</option>

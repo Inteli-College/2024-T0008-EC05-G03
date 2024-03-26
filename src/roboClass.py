@@ -9,8 +9,8 @@ import requests
 import time
 import serial
 
+#Classe para mexer o robô (o instanciamento precisa de duas matrizes do formato [[id, nome, qtd],...])
 class Robo: 
-
     def __init__(self, reab, gav):
         if len(reab) == len(gav) and len(reab[0]) == len(gav[0]):
             data = None
@@ -32,6 +32,7 @@ class Robo:
         else:
             raise Exception("Gavetas de tamanhos diferentes")
     
+    # Função para mover para a posição designada e verificar se pegou algo
     def mover(self,x,y):
         self.device.speed(300,100)
         leitura = []
@@ -45,6 +46,7 @@ class Robo:
         self.device.speed(100,100)
         return "True" in leitura  # Se pegou ou não
     
+    #Primeiro tipo de verificação
     def espiral(self, pc, cx, cy, p):
         div = 2*p + 1
         matRot = np.array([[0.0, 1.0], [-1.0, 0.0]])
@@ -71,6 +73,7 @@ class Robo:
                 break
         return pegou
     
+    #Segundo tipo de verificação
     def cobrinha (self, pc, cx, cy, qx, qy):
         dx, dy = round(2*cx/(qx-1),2), round(2*cy/qy,2)
         xVal = -1
@@ -91,7 +94,7 @@ class Robo:
             xVal *= -1
         return achou
     
-
+    #Função que arruma com base nos dados do objeto (o modo pode ser: 0 - nenhuma verificação, 1 - espiral, 2 - cobrinha, 3 - as duas)
     def reabastecer(self, mode: int):
         caminho = []
         destino = []
@@ -145,6 +148,8 @@ class Robo:
                             segVer = self.cobrinha([xi,yi],18,40,3,3)
                             if not segVer:
                                 raise Exception("Não achou nada")
+                else:
+                    raise Exception("Modo inválido")
                 self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
                 #Colocar
                 destino_coords = self.destinos["destino"+str(destino[0][0])]
@@ -154,13 +159,26 @@ class Robo:
             caminho.pop(0)
             destino.pop(0)
 
-        
+    #Função para voltar a posição inicial
+    def inicial(self):
+        self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
+    
+    #Função para pegar a posição atual
+    def posicao(self):
+        return self.device.pose()
 
+    #Função para fechar o programa
+    def fechar(self):
+        self.device.close()
+        self.serial.close()
+
+#Teste quando exercutar o código diretamente
 if __name__ == "__main__":
-    m1 = [[1,"sla",3],
-          [3,"cu",2],
-          ]
-    m2 = [[4,"cu",1],
-          [3,"sla",3]]
+    m1 = [[1,"test1",3],
+          [3,"test2",2]]
+    
+    m2 = [[4,"test2",1],
+          [3,"test1",3]]
+    
     a = Robo(m1,m2)
     a.reabastecer(3)

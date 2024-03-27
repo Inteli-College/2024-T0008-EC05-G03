@@ -4,11 +4,12 @@ from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
 from .models import db, Layout, Compartment
+from roboClass import Robo
 
 main = Blueprint('main', __name__)
 
 # Rotas referentes às tabelas Compartment e Layout
-
+robo = Robo([[]],[[]])
 # Rota para puxar nome e quantidade de todos os remédios da tabela Compartment
 @main.route('/get_all_compartments_medication', methods=['GET'])
 def get_all_compartments_medication():
@@ -216,4 +217,53 @@ def get_layouts():
         
     return jsonify(layouts_list)
 
+# Rotas referentes ao robo
 
+@main.route('/robo_position', methods=['GET'])
+def get_pos():
+    try: 
+        global robo
+        position = robo.posicao()
+        
+        position_data = {
+            'x': position[0],
+            'y': position[1],
+            'z': position[2],
+            'r': position[3]
+        }
+        
+    
+        return jsonify(position_data)
+    
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500
+    
+@main.route('/home', methods=['GET'])
+def home():
+    try:
+        global robo
+        robo.inicial()
+        return jsonify({'success': True, 'message': 'Robo moved to home position'})
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500
+    
+@main.route('/refill/<int:mode>', methods=['POST'])
+def refill(mode):
+        try:
+            data = request.get_json()
+            m1 = data.get('m1')
+            m2 = data.get('m2')
+
+            if not m1 or not m2:
+                return jsonify({"error": "Missing m1 or m2 in the request"}), 400
+
+            robo = Robo(m1, m2)
+            robo.reabastecer(mode)
+            
+            robo.fechar()
+            return jsonify({"message": "Reabastecimento completed successfully with mode {}".format(mode)}), 200
+
+        except Exception as e:
+            robo.fechar()
+            return jsonify({"error": str(e)}), 500
+        

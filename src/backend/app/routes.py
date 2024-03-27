@@ -251,8 +251,13 @@ def home():
 def refill(mode):
         try:
             data = request.get_json()
-            m1 = data.get('m1')
-            m2 = data.get('m2')
+            
+            reabastecimento_dict = data.get('reabastecimento', {})
+            gaveta_dict = data.get('gaveta', {})
+            
+            m1 = [[int(key), value['nome'], value['qtd']] for key, value in reabastecimento_dict.items()]
+            m2 = [[int(key), value['nome'], value['qtd']] for key, value in gaveta_dict.items()]
+
 
             if not m1 or not m2:
                 return jsonify({"error": "Missing m1 or m2 in the request"}), 400

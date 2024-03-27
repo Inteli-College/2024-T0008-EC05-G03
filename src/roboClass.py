@@ -1,11 +1,7 @@
-import csv
+
 import pydobot
 import json
-from serial.tools import list_ports
-import inquirer  
-from yaspin import yaspin
 import numpy as np
-import requests
 import time
 import serial
 
@@ -177,10 +173,12 @@ class Robo:
         self.device.close()
         self.serial.close()
 
+
     def ferramenta(self, state: bool):
         self.device.suck(state)
 
 #Teste quando exercutar o código diretamente
+
 if __name__ == "__main__":
     m1 = [[1,"test1",3],
           [3,"test2",2]]

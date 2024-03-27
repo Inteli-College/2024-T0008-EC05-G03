@@ -1,4 +1,4 @@
-import '../Selecionado/Selecionado.css'
+// import '../Selecionado/Selecionado.css'
 import logoCompleta from '../../assets/logo_completa.svg'
 import React from 'react';
 import Voltar from '../../components/voltar';

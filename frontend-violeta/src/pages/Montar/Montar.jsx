@@ -67,7 +67,7 @@ function Montar() {
                 <div className='buttonsPainel'>
                     <form action='/iniciarmontagem'><button className='botaoPadrao'></button></form>
                     <form action='/editarlayout'><button className='botaoPadrao'></button></form>
-                    <form action='/descartarlayout'><button className='botaoDelete'></button></form>
+                    <form action='/deletar'><button className='botaoDelete'></button></form>
                     <Voltar />
                 </div>
             </div>

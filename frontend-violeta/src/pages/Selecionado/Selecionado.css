@@ -37,7 +37,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 5vh;
-
+    padding-bottom: 2.9vh;
     background-color: #E3C6FF;
     width: 30vw;
     height: 30.4vw;
@@ -49,14 +49,13 @@
 .item {
     font-size: 1vw;
     margin-top: 3vh;
-    font-size: 1vw;
     margin-left: 1.73vw;
     margin-right: 1.73vw;
     width: 12.5vw;
     height: 13vh;
+    border-radius: 1.25rem;
     background-color: #fff;
     border: none;
-    border-radius: 1.25rem;
 }
 
 
@@ -126,6 +125,21 @@
     color: white;
 }
 
+.buttonsPainel form:nth-child(1) button::before{
+    content: "Iniciar Montagem";
+    font-size: 1.4vw;
+}
+
+.buttonsPainel form:nth-child(2) button::before{
+    content: "Editar";
+    font-size: 1.4vw;
+}
+
+.buttonsPainel form:nth-child(3) button::before{
+    content: "Descartar Layout";
+    font-size: 1.4vw;
+}
+
 /* Selecionar.css */
 
 .pageContent {
@@ -164,6 +178,9 @@
 }
 
 .selecionar{
+    color: #999;
+    font-size: 1rem;
+    font-style: italic; 
     align-content: center;
     font-family: 'Poppins', sans-serif;
 }

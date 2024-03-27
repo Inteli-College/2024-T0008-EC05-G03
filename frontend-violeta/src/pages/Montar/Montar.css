@@ -44,14 +44,13 @@
     align-items: center;
     font-size: 1vw;
     margin-top: 3vh;
-    font-size: 1vw;
     margin-left: 1.73vw;
     border-radius: 1.25rem;
     width: 12.5vw;
     height: 13vh;
+    border-radius: 1.25rem;
     background-color: #fff;
     border: none;
-    border-radius: 1.25rem;
     cursor: pointer;
 }
 
@@ -101,6 +100,7 @@
 }
 
 .saveName {
+    font-size: 1rem;
     margin-left: -1vw;
     margin-top: 0.5vw;
     margin-bottom: -1vw;
@@ -108,7 +108,7 @@
     color: #fff;
     border: none;
     height: 4vh;
-    border-radius: 10px;
+    border-radius: 0.625rem;
 }
 
 .botaoDelete {

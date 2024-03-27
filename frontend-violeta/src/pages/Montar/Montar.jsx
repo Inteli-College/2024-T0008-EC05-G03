@@ -63,9 +63,9 @@ function Montar() {
                   <input type="submit" value="Salvar" className='saveName'/>
                 </form>
                 <div className='buttonsPainel'>
-                    <form action='/iniciarmontagem'><button className='botaoPadrao'>Iniciar montagem</button></form>
-                    <form action='/editarlayout'><button className='botaoPadrao'>Editar</button></form>
-                    <form action='/descartarlayout'><button className='botaoDelete'>Descartar Layout</button></form>
+                    <form action='/iniciarmontagem'><button className='botaoPadrao'></button></form>
+                    <form action='/editarlayout'><button className='botaoPadrao'></button></form>
+                    <form action='/descartarlayout'><button className='botaoDelete'></button></form>
                     <Voltar />
                 </div>
             </div>

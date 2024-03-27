@@ -64,9 +64,9 @@ function Selecionado() {
                         <option value="layout4">Layout 4</option>
                     </select>
                     <div className='buttonsPainel'>
-                        <form action='/iniciarmontagem'><button className='botaoPadrao'>Iniciar montagem</button></form>
-                        <form action='/editarlayout'><button className='botaoPadrao'>Editar</button></form>
-                        <form action='/descartarlayout'><button className='botaoDelete'>Descartar Layout</button></form>
+                        <form action='/iniciarmontagem'><button className='botaoPadrao'></button></form>
+                        <form action='/editarlayout'><button className='botaoPadrao'></button></form>
+                        <form action='/descartarlayout'><button className='botaoDelete'></button></form>
                         <Voltar />
                     </div>
                 </div>

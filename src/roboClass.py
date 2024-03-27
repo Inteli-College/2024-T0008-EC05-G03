@@ -120,6 +120,7 @@ class Robo:
                     if "True" not in pegou:
                         primVer = self.espiral(np.array([remedio["x"],remedio["y"]]),20,40,1)
                         if not primVer:
+                            self.device.suck(False)
                             raise Exception("Não achou nada")
                 elif mode == 2:
                     pegou = []
@@ -130,6 +131,7 @@ class Robo:
                     if "True" not in pegou:
                         primVer = self.cobrinha(np.array([remedio["x"] + 18,remedio["y"]+ 40]),18,40,3,3)
                         if not primVer:
+                            self.device.suck(False)
                             raise Exception("Não achou nada")
                 elif mode == 3:
                     pegou = []
@@ -143,8 +145,10 @@ class Robo:
                             xi, yi, _,_,_,_,_,_ = self.device.pose()
                             segVer = self.cobrinha([xi,yi],18,40,3,3)
                             if not segVer:
+                                self.device.suck(False)
                                 raise Exception("Não achou nada")
                 else:
+                    self.device.suck(False)
                     raise Exception("Modo inválido")
                 self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
                 #Colocar
@@ -154,6 +158,7 @@ class Robo:
                 self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
             caminho.pop(0)
             destino.pop(0)
+        
 
     #Função para voltar a posição inicial
     def inicial(self):
@@ -168,7 +173,12 @@ class Robo:
         self.device.close()
         self.serial.close()
 
-#Teste quando executar o código diretamente
+
+    def ferramenta(self, state: bool):
+        self.device.suck(state)
+
+#Teste quando exercutar o código diretamente
+
 if __name__ == "__main__":
     m1 = [[1,"test1",3],
           [3,"test2",2]]

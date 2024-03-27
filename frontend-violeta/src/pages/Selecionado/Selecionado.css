@@ -149,6 +149,7 @@
     width: 60vw;
     margin-left: 4.5vw;
     margin-top: 18vh;
+    z-index: -1;
 }
 
 .layoutInfo {

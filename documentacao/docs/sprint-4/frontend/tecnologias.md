@@ -13,7 +13,11 @@ custom_edit_url: null
 
 &emsp;&emsp;React é uma biblioteca de desenvolvimento frontend baseada na criação e implementação facilitadas de componentes. Componentes são partes visuais simples do frontend de um sistema que podem possuir comportamentos independentes e, juntos, formar uma interface complexa. No contexto da solução desenvolvida pela equipe Violeta, essa funcionalidade permitiu, por exemplo, a criação de componentes que representam compartimentos dos layouts dos carrinhos de emergência que são reabastecidos pelo robô de braço mecânico.
 
-## 3. CSS
+## 3. Font Awesome
+
+&emsp;&emsp;Font Awesome é uma biblioteca que disponibiliza ícones, fontes, entre outros itens visuais para desenvolvimento frontend. No projeto, ela foi utilizada em conjunto com o React para, principalmente, a implementação de ícones nas páginas da aplicação web da solução web.
+
+## 4. CSS
 
 &emsp;&emsp;CSS (Cascade Style Sheets) é uma linguagem para definição de estilo em páginas web. Sua função não é criar algoritmos por meio de programação ou definir a estrutura de uma página web, mas sim como é apresentado o estilo visual dessa estrutura que está ligada à parte de programação. Dentro do projeto desenvolvido, o CSS foi utilizado para ajustar cores, tamanho, formato, entre outras características dos componentes feitos a partir de React.
 

@@ -8,7 +8,7 @@ custom_edit_url: null
 ## Pré-requisitos
 
 - Python instalado
-- PIP instaldo
+- PIP instalado
 - Git instalado
 - Chave SSH configurada na sua conta do GitHub
 - Robô Dobot Magician conectado ao computador via USB

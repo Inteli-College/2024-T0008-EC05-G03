@@ -14,7 +14,7 @@ function NavBar(){
     return (
         <header>
             <nav ref={navRef}>
-                <a href="#">Home</a>
+                <a href="/">Página Inicial</a>
                 <a href="#">Desligar robô</a>
                 <a href="#">Registro de atividades</a>
                 <button className="nav-btn nav-close-btn" onClick={showNavBar}>

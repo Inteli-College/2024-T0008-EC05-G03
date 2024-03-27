@@ -7,6 +7,7 @@ import ControleBR from './pages/ControleBR/ControleBR.jsx';
 import Selecionar from './pages/Selecionar/Selecionar.jsx';
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 import Modal from './components/modal/modal.jsx';
+import NavBar from './components/navbar/navbar.jsx';
 
 // Criação do roteador com as rotas definidas
 const router = createBrowserRouter([
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <NavBar />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

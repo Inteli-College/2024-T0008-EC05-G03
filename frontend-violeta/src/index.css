@@ -34,11 +34,12 @@ header {
 
 .linhaVertical {
     margin-left: 72vw;
-    margin-top: 10vh;
+    margin-top: 15vh;
     height: 80vh;
     width: 0.125rem;
     background-color: #9004D3;
     position: fixed;
+    z-index: -1;
 }
 
 .btVoltar {
@@ -64,13 +65,19 @@ header {
     flex-direction: column;
     align-content: center;
     margin-left: 67vw;
+    margin-top: 5vh;
     position: fixed;
     top: 0;
+    z-index: -1;
 }
 
 .logoCompleta {
     width: 25vw;
     margin-left: 5vw;
+}
+
+.logoSimples {
+    height: 10vh;
 }
 
 .buttonsPainel {

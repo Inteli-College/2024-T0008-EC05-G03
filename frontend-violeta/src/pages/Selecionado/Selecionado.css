@@ -77,15 +77,6 @@
     margin-top: 1.6vh;
 }
 
-
-.painelDeControle {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin-left: 67vw;
-    position: fixed;
-}
-
 .armBackground {
     background-color: #B56BFF;
     border-radius: 3.125rem;

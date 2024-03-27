@@ -1,6 +1,8 @@
 import { useRef} from "react"; 
 import {FaBars, FaTimes} from "react-icons/fa";
-import "navbar.css";
+import "./navbar.css";
+import React from 'react';
+import logoSimples from '../../assets/logo_simplificada.svg';
 
 function NavBar(){
     const navRef = useRef();
@@ -11,7 +13,6 @@ function NavBar(){
 
     return (
         <header>
-            <h3>Logo</h3>
             <nav ref={navRef}>
                 <a href="#">Home</a>
                 <a href="#">Desligar robô</a>
@@ -23,6 +24,7 @@ function NavBar(){
             <button className="nav-btn" onClick={showNavBar}>
                 <FaBars/>
             </button>
+            <img className="logoSimples" src={logoSimples} alt="Logo do grupo Violeta"/>
         </header>
     );
 }

@@ -1,13 +1,15 @@
 import './Montar.css'
 import React from 'react'
 import robotArm from '../../assets/robot-arm.svg'
-import iconAdd from '../../assets/icon_add.svg'
 import Voltar from '../../components/voltar.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 function BotaoAdd() {
   return (
     <button className='botaoAdd'>
-      <img src={iconAdd} />
+      <FontAwesomeIcon icon={faPlus} />
     </button>
   )
 }

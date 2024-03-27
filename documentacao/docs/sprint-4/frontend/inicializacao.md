@@ -52,8 +52,12 @@ Para inicializar o sistema da solução desenvolvido até a sprint 3, deve-se se
 
 > Para utilizar o backend puro (sem interface de frontend), deve-se instalar um software próprio para testagem de API, como o [Postman](https://www.postman.com/), ou uma extensão do VS Code dedicada para tal, como o [Thunder Client](https://www.thunderclient.com/).
 
-7 - Para iniciar o frontend do sistema, digite o seguinte comando:
+7 - Para iniciar o frontend do sistema, digite os seguintes comandos:
 
-```aasasasas```
+```cd ../frontend-violeta```
 
->
+```npm i```
+
+```npm run dev```
+
+> Ao digitar esses comandos, você estará instalando as dependências necessárias para executar o frontend do sistema e, logo depois, executando-o. Dessa forma, uma url aparecerá no terminal e você poderá acessá-la num navegador da web para utilizar o frontend.

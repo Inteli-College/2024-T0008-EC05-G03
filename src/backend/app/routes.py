@@ -8,8 +8,13 @@ from roboClass import Robo
 
 main = Blueprint('main', __name__)
 
-# Rotas referentes às tabelas Compartment e Layout
+
+state = False
+
 robo = Robo([[]],[[]])
+
+# Rotas referentes às tabelas Compartment e Layout
+
 # Rota para puxar nome e quantidade de todos os remédios da tabela Compartment
 @main.route('/get_all_compartments_medication', methods=['GET'])
 def get_all_compartments_medication():
@@ -244,6 +249,17 @@ def home():
         global robo
         robo.inicial()
         return jsonify({'success': True, 'message': 'Robo moved to home position'})
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)}), 500
+    
+@main.route('/actuator', methods=['GET'])
+def actuator():
+    try:
+        global robo, state
+        
+        state = not state
+        robo.ferramenta(state)
+        return jsonify({'success': True, 'message': 'Actuator activated'})
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
     

@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+custom_edit_url: null
+---
+
 # Inicialização Frontend
 
 Para inicializar apenas o frontend da aplicação do projeto é simples. Siga os seguintes passos:

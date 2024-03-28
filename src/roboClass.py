@@ -6,6 +6,19 @@ import time
 import serial
 
 #Classe para mexer o robô (o instanciamento precisa de duas matrizes do formato [[id, nome, qtd],...])
+
+# class RoboSingleton(type):
+#     _instance = None
+
+#     def __init__(self):
+#         self.some_attribute = None
+
+#     @classmethod
+#     def instance(cls):
+#         if cls._instance is None:
+#             cls._instance = cls()
+#         return cls._instance
+    
 class Robo: 
     def __init__(self, reab, gav):
         if len(reab) == len(gav) and len(reab[0]) == len(gav[0]):
@@ -22,7 +35,7 @@ class Robo:
                 self.mA = gav
                 self.device = pydobot.Dobot(port="COM12", verbose=False)
                 self.serial = serial.Serial('COM15', 9600, timeout=1)
-                self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
+                #self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
             except:
                 raise Exception("Port já está sendo utilizado")
         else:
@@ -101,6 +114,7 @@ class Robo:
                     destino.append(gav)
                     break
         
+        self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
         while len(caminho) != 0:
             for i in range(destino[0][2]):
                 remedio = self.remedios["remedio"+str(caminho[0][0])]
@@ -110,7 +124,7 @@ class Robo:
                 self.device.wait(200)
                 self.device.move_to(remedio['x'], remedio['y'], 55.64, -144, wait=True)
                 if mode == 0:
-                    continue
+                    pass
                 elif mode == 1:
                     pegou = []
                     self.device.move_to(remedio['x'], remedio['y'], 55.64, 144, wait=False)
@@ -187,4 +201,8 @@ if __name__ == "__main__":
           [3,"test1",3]]
     
     a = Robo(m1,m2)
-    a.reabastecer(3)
+    a.reabastecer(1)
+    a.fechar()
+
+    b = Robo(m1,m2)
+    b.reabastecer(2)

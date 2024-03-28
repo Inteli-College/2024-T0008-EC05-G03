@@ -4,6 +4,12 @@ from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
 from .models import db, Layout, Compartment
+import sys
+import os
+
+# Append the directory of roboclass.py to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
 from roboClass import Robo
 
 main = Blueprint('main', __name__)
@@ -11,7 +17,7 @@ main = Blueprint('main', __name__)
 
 state = False
 
-robo = Robo([[]],[[]])
+
 
 # Rotas referentes às tabelas Compartment e Layout
 
@@ -227,17 +233,17 @@ def get_layouts():
 @main.route('/robo_position', methods=['GET'])
 def get_pos():
     try: 
-        global robo
+        robo = Robo([[]],[[]])
         position = robo.posicao()
         
         position_data = {
-            'x': position[0],
-            'y': position[1],
-            'z': position[2],
-            'r': position[3]
+            'x': round(position[0],2),
+            'y': round(position[1],2),
+            'z': round(position[2],2),
+            'r': round(position[3],2)
         }
         
-    
+        robo.fechar()
         return jsonify(position_data)
     
     except Exception as e:
@@ -246,8 +252,9 @@ def get_pos():
 @main.route('/home', methods=['GET'])
 def home():
     try:
-        global robo
+        robo = Robo([[]],[[]])
         robo.inicial()
+        robo.fechar()
         return jsonify({'success': True, 'message': 'Robo moved to home position'})
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
@@ -255,10 +262,11 @@ def home():
 @main.route('/actuator', methods=['GET'])
 def actuator():
     try:
-        global robo, state
-        
+        global state
+        a = Robo([[]],[[]])
         state = not state
-        robo.ferramenta(state)
+        a.ferramenta(state)
+        a.fechar()
         return jsonify({'success': True, 'message': 'Actuator activated'})
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500
@@ -266,6 +274,7 @@ def actuator():
 @main.route('/refill/<int:mode>', methods=['POST'])
 def refill(mode):
         try:
+            global state
             data = request.get_json()
             
             reabastecimento_dict = data.get('reabastecimento', {})
@@ -280,11 +289,10 @@ def refill(mode):
 
             robo = Robo(m1, m2)
             robo.reabastecer(mode)
-            
+            state = False
             robo.fechar()
             return jsonify({"message": "Reabastecimento completed successfully with mode {}".format(mode)}), 200
 
         except Exception as e:
-            robo.fechar()
             return jsonify({"error": str(e)}), 500
         

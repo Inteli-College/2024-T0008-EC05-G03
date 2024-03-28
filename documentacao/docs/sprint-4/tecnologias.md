@@ -25,13 +25,13 @@ custom_edit_url: null
 
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp;Para melhor compreensão de em qual parte da solução cada tecnologia utilizada se encaixa, a equipe Violeta elaborou o seguinte diagrama com a [arquitetura da solução proposta na sprint 1](../../sprint-1/proposta-arq.md#diagrama-de-blocos) e as respectivas indicações de onde cada tecnologia é implementada.
+&nbsp;&nbsp;&nbsp;&nbsp;Para melhor compreensão de em qual parte da solução cada tecnologia utilizada se encaixa, a equipe Violeta elaborou o seguinte diagrama com a [arquitetura da solução proposta na sprint 1](../sprint-1/proposta-arq.md#diagrama-de-blocos) e as respectivas indicações de onde cada tecnologia é implementada.
 
 <p style={{textAlign: 'center'}}>Figura 1 - Arquitetura da solução com tecnologias usadas na sprint 4</p>
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../../static/img/sprint-4/frontend/arquitetura_tecnologias_sprint_4.png").default} style={{width: 400}} alt="Arquitetura da solução com tecnologias usadas na sprint 4" />
+        <img src={require("../../static/img/sprint-4/frontend/arquitetura_tecnologias_sprint_4.png").default} style={{width: 400}} alt="Arquitetura da solução com tecnologias usadas na sprint 4" />
         <br/>
     </div>
 </div>

@@ -7,18 +7,6 @@ import serial
 
 #Classe para mexer o robô (o instanciamento precisa de duas matrizes do formato [[id, nome, qtd],...])
 
-# class RoboSingleton(type):
-#     _instance = None
-
-#     def __init__(self):
-#         self.some_attribute = None
-
-#     @classmethod
-#     def instance(cls):
-#         if cls._instance is None:
-#             cls._instance = cls()
-#         return cls._instance
-    
 class Robo: 
     def __init__(self, reab, gav):
         if len(reab) == len(gav) and len(reab[0]) == len(gav[0]):
@@ -113,6 +101,8 @@ class Robo:
                 if med[1] == gav[1]:
                     destino.append(gav)
                     break
+                elif gav == self.mA[-1] and med[1] != gav[1]:
+                    raise Exception(f"Remédio {gav[1]} não encontrado na gaveta de reabastecimento")
         
         self.device.move_to_J(self.home['x'], self.home['y'], self.home['z'], self.home['r'], wait=True)
         while len(caminho) != 0:

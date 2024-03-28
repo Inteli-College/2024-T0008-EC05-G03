@@ -48,13 +48,20 @@ A documentação do projeto pode ser encontrada [aqui](https://inteli-college.gi
 │   ├── docs
 |   │   ├── sprint-1
 |   │   ├── sprint-2
+|   │   ├── sprint-3 
 │   ├── src
 |   │   ├── components
 |   │   ├── css
 |   │   ├── pages
 │   ├── static
 └── src
+|   ├── backend
+|   │   ├── app
+|   ├── database
+|   ├── micropython
+|   ├── pydobot
 ```
+
 
 ## Inicialização
 

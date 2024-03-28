@@ -1,7 +1,7 @@
 import './Selecionado.css'
 import React from 'react'
 import robotArm from '../../assets/robot-arm.svg'
-import Voltar from '../../components/voltar.jsx'
+import ButtonsPainelSelecionado from '../../components/ButtonsPainel/ButtonsPainelSelecionado/ButtonsPainelSelecionado.jsx'
 
 function Item() {
     return (
@@ -52,25 +52,7 @@ function Selecionado() {
                     </div>
                 </div>
                 <div className='linhaVertical'></div>
-                <div className='painelDeControle'>
-                    <div className='armBackground'>
-                    <img src={robotArm} />
-                    </div>
-                    <select name="layoutPicker" id="layout" className='selecionar'>
-                        <option disabled selected>Selecionar Layout</option>
-                        <option value="layout1">Layout 1</option>
-                        <option value="layout2">Layout 2</option>
-                        <option value="layout3">Layout 3</option>
-                        <option value="layout4">Layout 4</option>
-                    </select>
-                    <div className='buttonsPainel'>
-                        <form action='/iniciarmontagem'><button className='botaoPadrao'></button></form>
-                        <form action='/editarlayout'><button className='botaoPadrao'></button></form>
-                        <form action='/importarlayout'><button className='botaoPadrao'></button></form>
-                        <form action='/exportarlayout'><button className='botaoPadrao'></button></form>
-                        <Voltar />
-                    </div>
-                </div>
+                <ButtonsPainelSelecionado />
             </div>
         </div>
     </>

@@ -4,6 +4,7 @@ import robotArm from '../../assets/robot-arm.svg'
 import Voltar from '../../components/voltar.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import ButtonsPainelMontar from '../../components/ButtonsPainel/ButtonsPainelMontar.jsx'
 
 
 function BotaoAdd() {
@@ -53,24 +54,7 @@ function Montar() {
                 </div>
             </div>
             <div className='linhaVertical'></div>
-            <div className='painelDeControle'>
-                <div className='armBackground'>
-                  <img src={robotArm} />
-                </div>
-                <form className='formName'>
-                  <label>
-                    Insira o nome do Layout: <br />
-                    <input type='text' className='insertName'/>
-                  </label><br/>
-                  <input type="submit" value="Salvar" className='saveName'/>
-                </form>
-                <div className='buttonsPainel'>
-                    <form action='/iniciarmontagem'><button className='botaoPadrao'></button></form>
-                    <form action='/editarlayout'><button className='botaoPadrao'></button></form>
-                    <form action='/deletar'><button className='botaoDelete'></button></form>
-                    <Voltar />
-                </div>
-            </div>
+            <ButtonsPainelMontar />
         </div>
     </div>
   )

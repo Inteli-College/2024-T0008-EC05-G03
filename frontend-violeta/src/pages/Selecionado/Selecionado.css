@@ -77,72 +77,8 @@
     margin-top: 1.6vh;
 }
 
-.armBackground {
-    background-color: #B56BFF;
-    border-radius: 3.125rem;
-    width: 12vw;
-    margin-left: 11vw;
-    margin-top: 13vh;
-}
-
-.armBackground img {
-    margin-top: 1.5vh;
-    margin-left: 3vw;
-}
-
-#layout {
-    width: 16vw;
-    height: 3vw;
-    margin-top: 6vh;
-    margin-left: 9.7vw;
-    border-radius: 15px;
-}
-
-.botaoDelete {
-    background-color: #FA0707;
-    border: none;
-    color: white;
-    margin-top: 5vh;
-    width: 16vw;
-    height: 3vw;
-    border-radius: 0.9375rem;
-    font-family: 'Public Sans', sans-serif;
-    font-size: 1.25rem;
-    cursor: pointer;
-}
-
-.botaoDelete:hover {
-    background-color: #D40000;
-    color: white;
-}
-
-.buttonsPainel form:nth-child(1) button::before{
-    content: "Iniciar Montagem";
-    font-size: 1.4vw;
-}
-
-.buttonsPainel form:nth-child(2) button::before{
-    content: "Editar";
-    font-size: 1.4vw;
-}
-
-.buttonsPainel form:nth-child(3) button::before{
-    content: "Importar Layout";
-    font-size: 1.4vw;
-}
-
-.buttonsPainel form:nth-child(4) button::before{
-    content: "Exportar Layout";
-    font-size: 1.4vw;
-}
 
 /* Selecionar.css */
-
-.pageContent {
-    display: flex;
-    flex-direction: row;
-}
-
 .layoutsContainer {
     display: flex;
     flex-direction: column;
@@ -150,7 +86,6 @@
     position: fixed;
     margin-left: 4.5vw;
     margin-top: 18vh;
-    z-index: -1;
 }
 
 .layoutInfo {
@@ -172,19 +107,6 @@
 .logoCompleta {
     width: 25vw;
     margin-left: 5vw;
-}
-
-.selecionar{
-    color: #999;
-    font-size: 1rem;
-    font-style: italic; 
-    align-content: center;
-    font-family: 'Poppins', sans-serif;
-}
-
-.selecionar:hover{
-    background-color: #A06EE0;
-    color: white;
 }
 
 .botaoPersonalizado {

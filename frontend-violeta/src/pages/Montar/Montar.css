@@ -63,19 +63,6 @@
     color: white;
 }
 
-.armBackground {
-    background-color: #B56BFF;
-    border-radius: 50px;
-    width: 12vw;
-    margin-left: 11vw;
-    margin-top: 13vh;
-}
-
-.armBackground img {
-    margin-top: 1.5vh;
-    margin-left: 3vw;
-}
-
 .formName {
     align-items: center;
     margin-top: 5vh;

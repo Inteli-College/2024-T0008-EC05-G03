@@ -60,17 +60,6 @@ header {
 }
 
 
-.painelDeControle {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin-left: 67vw;
-    margin-top: 5vh;
-    position: fixed;
-    top: 0;
-    z-index: -1;
-}
-
 .logoCompleta {
     width: 25vw;
     margin-left: 5vw;
@@ -78,12 +67,6 @@ header {
 
 .logoSimples {
     height: 9vh;
-}
-
-.buttonsPainel {
-    margin-left: 9.5vw;
-    margin-top: -1.5vh;
-    text-align: center;
 }
 
 .botaoNovoLayout::before {

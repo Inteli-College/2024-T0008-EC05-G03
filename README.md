@@ -62,6 +62,7 @@ A documentação do projeto pode ser encontrada [aqui](https://inteli-college.gi
 |   ├── pydobot
 ```
 
+
 ## Inicialização
 
 #### CLI (Command Line Interface)

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Frontend
 
-&emsp;&emsp;Frontend é a parte de uma aplicação ou website com a qual os usuários interagem diretamente em seus navegadores. Envolve o design, a estrutura e a funcionalidade visível ao usuário, incluindo elementos como layout, botões, formulários e animações. Essa sessão irá tratar do frontend da aplicação Violeta, descrevendo as tecnologias utilizada no processo e todos os componentes e páginas feitas.
+&emsp;&emsp;Frontend é a parte de uma aplicação ou website com a qual os usuários interagem diretamente em seus navegadores. Envolve o design, a estrutura e a funcionalidade visível ao usuário, incluindo elementos como layout, botões, formulários e animações. Essa seção irá tratar do frontend da aplicação Violeta, descrevendo as tecnologias utilizadas no processo e todos os componentes e páginas feitas.
 
 ## Vite
 

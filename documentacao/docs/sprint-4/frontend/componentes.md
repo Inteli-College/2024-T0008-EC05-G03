@@ -6,8 +6,11 @@ custom_edit_url: null
 # Componentes 
 
 &emsp;&emsp;No React, os componentes são blocos fundamentais de construção de interfaces de usuário reutilizáveis e modulares. Eles encapsulam partes específicas da interface do usuário e seu comportamento associado, permitindo que você construa e mantenha interfaces complexas de forma mais eficiente e organizada. Os componentes no React podem ser pensados como peças de LEGO que você pode juntar para criar uma aplicação completa.
+
 &emsp;&emsp;Existem dois tipos principais de componentes no React: componentes de função e componentes de classe.
+
 - Componentes de Função: Também conhecidos como componentes funcionais, são funções JavaScript que recebem um conjunto de propriedades (props) e retornam elementos React que descrevem o que deve ser exibido na interface do usuário. Esses componentes são mais simples e geralmente utilizados quando não precisam de estado interno ou de métodos de ciclo de vida.
+
 - Componentes de Classe: São classes JavaScript que estendem a classe React.Component. Esses componentes podem conter estado interno e métodos de ciclo de vida, o que os torna mais poderosos e flexíveis em comparação com os componentes de função. Eles são úteis quando você precisa gerenciar estados ou quando precisa acessar os métodos do ciclo de vida do React.
 
 &emsp;&emsp;A seguir, apresentamos os componentes feitos para o frontend do Violeta:
@@ -21,7 +24,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/sprint-4/frontend/botão-jsx.png").default} style={{width: 400}}/>
+        <img src={require("../../../static/img/sprint-4/frontend/botao-jsx.png").default} style={{width: 400}}/>
         <br/>
     </div>
 </div>
@@ -32,7 +35,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/sprint-4/frontend/botão-css.png").default} style={{width: 400}}/>
+        <img src={require("../../../static/img/sprint-4/frontend/botao-css.png").default} style={{width: 400}}/>
         <br/>
     </div>
 </div>
@@ -48,7 +51,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/sprint-4/frontend/navbar-jsx.png").default} style={{width: 400}}/>
+        <img src={require("../../../static/img/sprint-4/frontend/navbar-jsx.png").default} style={{width: 400}}/>
         <br/>
     </div>
 </div>
@@ -59,7 +62,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/sprint-4/frontend/navbar-css.png").default} style={{width: 400}}/>
+        <img src={require("../../../static/img/sprint-4/frontend/navbar-css.png").default} style={{width: 400}}/>
         <br/>
     </div>
 </div>
@@ -75,7 +78,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/sprint-4/frontend/modal-jsx.png").default} style={{width: 400}}/>
+        <img src={require("../../../static/img/sprint-4/frontend/modal-jsx.png").default} style={{width: 400}}/>
         <br/>
     </div>
 </div>
@@ -86,7 +89,7 @@ custom_edit_url: null
 
 <div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
-        <img src={require("../../static/img/sprint-4/frontend/modal-css.png").default} style={{width: 400}}/>
+        <img src={require("../../../static/img/sprint-4/frontend/modal-css.png").default} style={{width: 400}}/>
         <br/>
     </div>
 </div>

@@ -10,20 +10,21 @@
 
 &emsp;&emsp;A classe Robo possui uma série de atributos que são declarados no início de sua estrutura. Tais atributos podem ser observados na figura 1.
 
-<p style={{textAlign: 'center'}}>Figura 1 - Métodos da classe Robo</p>
+<p style={{textAlign: 'center'}}>Figura 1 - Atributos da classe Robo</p>
 
-<!-- <div style={{margin: 25}}>
+<div style={{margin: 25}}>
     <div style={{textAlign: 'center'}}>
         <img src={require("../../../static/img/sprint-4/backend/robo_atributos.png").default} style={{width: 400}} alt="Métodos da classe Robo" />
         <br/>
     </div>
-</div> -->
+</div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 - Os atributos ```mR``` e ```mA``` referem-se às duas matrizes que devem constar no instanciamento de um objeto da classe e que contêm o id do compartimento, o nome e a quantidade de um determinado item em um determinado compartimento do layout de um carrinho.
 
 > ```mR``` -> matriz de Rebastecimento (refere-se à gaveta/bandeja de origem dos itens do carrinho)
+
 > ```mA``` -> matriz de Abastecimento (refere-se à gaveta/bandeja de destino dos itens do carrinho)
 
 - O atributo ```device``` trata-se de uma instância da classe ```Dobot``` contida na biblioteca Pydobot. Essa classe representa a comunicação com o próprio robô e oferece suporte para todas as funções ligadas a movimentação do braço mecânico.
@@ -36,7 +37,12 @@
 
 <p style={{textAlign: 'center'}}>Figura 2 - Método mover</p>
 
-<!-- ![Método mover da classe Robo](../../../static/img/sprint-4/backend/robo_metodo_1.png) -->
+<div style={{margin: 25}}>
+    <div style={{textAlign: 'center'}}>
+        <img src={require("../../../static/img/sprint-4/backend/robo_metodo_1.png").default} style={{width: 400}} alt="Método mover da classe Robo" />
+        <br/>
+    </div>
+</div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -54,7 +60,12 @@
 
 <p style={{textAlign: 'center'}}>Figura 3 - Método reabastecer</p>
 
-![Método reabastecer da classe Robo](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
+<div style={{margin: 25}}>
+    <div style={{textAlign: 'center'}}>
+        <img src={require("../../../static/img/sprint-4/backend/robo_metodo_2.png").default} style={{width: 800}} alt="Método reabastecer da classe Robo" />
+        <br/>
+    </div>
+</div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -75,7 +86,7 @@
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;Com as rotinas de verificação, o robô é capaz de detectar quando um objeto é pego e, então, levá-lo para sua posição de destino no respectivo compartimento do layout de destino previamente definido na aplicação web. Após essa transposição, as respectivas posições de caminho e destino armazenadas nas variáveis homônimas passam a ser desconsideradas pelo programa, de modo que o loop definido na linha 108 não se torne infinito.
+&emsp;&emsp;Com as rotinas de verificação, o robô é capaz de detectar quando um objeto é pego e, então, levá-lo para sua posição de destino no respectivo compartimento do layout de destino previamente definido na aplicação web. Após essa transposição, as respectivas posições de caminho e destino armazenadas nas variáveis homônimas passam a ser desconsideradas pelo programa, de modo que o loop definido na linha 14 não se torne infinito.
 
 
 
@@ -83,7 +94,12 @@
 
 <p style={{textAlign: 'center'}}>Figura 4 - Método inicial</p>
 
-![Método inicial da classe Robo](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
+<div style={{margin: 25}}>
+    <div style={{textAlign: 'center'}}>
+        <img src={require("../../../static/img/sprint-4/backend/robo_metodo_3.png").default} style={{width: 400}} alt="Método inicial da classe Robo" />
+        <br/>
+    </div>
+</div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -95,7 +111,12 @@
 
 <p style={{textAlign: 'center'}}>Figura 5 - Método posicao</p>
 
-![Método inicial da classe Robo](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
+<div style={{margin: 25}}>
+    <div style={{textAlign: 'center'}}>
+        <img src={require("../../../static/img/sprint-4/backend/robo_metodo_4.png").default} style={{width: 400}} alt="Método posicao da classe Robo" />
+        <br/>
+    </div>
+</div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -107,7 +128,12 @@
 
 <p style={{textAlign: 'center'}}>Figura 6 - Método fechar</p>
 
-![Desenho esquemático da base de dados](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
+<div style={{margin: 25}}>
+    <div style={{textAlign: 'center'}}>
+        <img src={require("../../../static/img/sprint-4/backend/robo_metodo_5.png").default} style={{width: 400}} alt="Método fechar da classe Robo" />
+        <br/>
+    </div>
+</div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
@@ -119,19 +145,29 @@
 
 <p style={{textAlign: 'center'}}>Figura 7 - Método ferramenta</p>
 
-![Desenho esquemático da base de dados](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
+<div style={{margin: 25}}>
+    <div style={{textAlign: 'center'}}>
+        <img src={require("../../../static/img/sprint-4/backend/robo_metodo_6.png").default} style={{width: 400}} alt="Método ferramenta da classe Robo" />
+        <br/>
+    </div>
+</div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &emsp;&emsp;O método ferramenta faz com que a ferramenta (ventosa) fixada na extremidade do braço mecânico seja ativada ou desativada, de acordo com seu parâmetro booleano ```state```, que deve constar quando tal método é executado.
 
-## Integração com aplicação web
+## Integração com aplicação web (API)
 
-&emsp;&emsp;Para permitir a comunicação efetiva entre o backend da aplicação web da solução e o robô Dobot Magician Lite, a equipe Violeta definiu uma série de rotas para aplicação web que executam métodos da classe ```Robo``` listados acima. A tabela 2, a seguir, contém a relação entre cada rota em questão e os métodos da classe Robo executados em tal rota, bem como uma breve descrição da relação em cada linha.
+&emsp;&emsp;Para permitir a comunicação efetiva entre o backend da aplicação web da solução e o robô Dobot Magician Lite, a equipe Violeta definiu uma série de rotas para API que executam métodos da classe ```Robo``` listados acima. A tabela 2, a seguir, contém a relação entre cada rota em questão e os métodos da classe Robo executados em tal rota, bem como uma breve descrição da relação em cada linha.
 
-| **Rota**           | **Método da classe Robo** | **Descrição**                                                                                                                                                                                           |
+<p style={{textAlign: 'center'}}>Tabela 2 - Relação entre rotas da aplicação web e métodos da classe Robo</p>
+
+
+| **Rota da API**           | **Método da classe Robo** | **Descrição**                                                                                                                                                                                           |
 |--------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | /robo_position     | posicao                   | Retorna a posição atual do braço mecânico em cada eixo (x, y, z & r).                                                                                                                                   |
 | /home              | inicial                   | Move o braço mecânico para sua posição inicial.                                                                                                                                                         |
 | /actuator          | ferramenta                | Ativa ou desativa a ventosa fixa à extremidade do braço mecânico.                                                                                                                                       |
 | "/refill/```mode``` | reabastecer               | Executa o processo de reabastecimento de um carrinho; define se haverá e quais rotinas de verificação nesse processo de acordo com o valor inteiro entre 0 e 3 inserido na rota no lugar de ```mode```. |
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>

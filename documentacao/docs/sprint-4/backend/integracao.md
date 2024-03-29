@@ -21,7 +21,10 @@
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-- Os atributos ```mR``` e ```mA``` referem-se às duas matrizes que devem constar no instanciamento de um objeto da classe e que contêm o id, o nome e a quantidade de um determinado item em um determinado compartimento do layout de um carrinho.
+- Os atributos ```mR``` e ```mA``` referem-se às duas matrizes que devem constar no instanciamento de um objeto da classe e que contêm o id do compartimento, o nome e a quantidade de um determinado item em um determinado compartimento do layout de um carrinho.
+
+> ```mR``` -> matriz de Rebastecimento (refere-se à gaveta/bandeja de origem dos itens do carrinho)
+> ```mA``` -> matriz de Abastecimento (refere-se à gaveta/bandeja de destino dos itens do carrinho)
 
 - O atributo ```device``` trata-se de uma instância da classe ```Dobot``` contida na biblioteca Pydobot. Essa classe representa a comunicação com o próprio robô e oferece suporte para todas as funções ligadas a movimentação do braço mecânico.
 
@@ -55,7 +58,24 @@
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;O método reabastecer é responsável por executar a ação de reabastecimento do robô de braço mecânico. 
+&emsp;&emsp;O método reabastecer é responsável por executar a ação de reabastecimento do robô de braço mecânico. Esse método recebe o parâmetro ```mode``` do tipo int, que indica ao programa se e qual(is) rotina(s) de verificação será(ão) executada(s) de acordo com um valor que varia de 0 a 3.  
+
+&emsp;&emsp;Ao ser executado, o método reabastecer cria duas variáveis do tipo lista (```caminho``` e ```destino```) e verifica se existe uma posição de reabastecimento (```caminho```) adequada para cada posição de abastecimento (```destino```). Caso exista, sua execução prossegue com o início da movimentação do braço mecânico para reabastecimento enquanto houver posições definidas na variável ```caminho```.
+
+&emsp;&emsp;A partir disso, ao se dirigir à gaveta/bandeja de origem dos itens a serem usados para reabastecer um carrinho, de acordo com o valor do atributo ```mode```, ocorrem as rotinas de verificação, como indica a tabela a seguir.
+
+<p style={{textAlign: 'center'}}>Tabela 1 - Relação entre parâmetro mode e rotinas de verificação</p>
+
+| **Valor de mode** | **Rotina de verificação executada** |
+|-------------------|-------------------------------------|
+| 0                 | Nenhuma                             |
+| 1                 | Espiral                             |
+| 2                 | Cobrinha                            |
+| 3                 | Espiral e cobrinha                  |
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
+
+&emsp;&emsp;Com as rotinas de verificação, o robô é capaz de detectar quando um objeto é pego e, então, levá-lo para sua posição de destino no respectivo compartimento do layout de destino previamente definido na aplicação web. Após essa transposição, as respectivas posições de caminho e destino armazenadas nas variáveis homônimas passam a ser desconsideradas pelo programa, de modo que o loop definido na linha 108 não se torne infinito.
 
 
 
@@ -67,7 +87,7 @@
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;A classe Robo possui uma série de atributos que são declarados no início de sua estrutura. Tais atributos podem ser observados na figura 1.
+&emsp;&emsp;O método inicial faz com que o braço mecânico retorne a sua posição inicial.
 
 
 
@@ -79,7 +99,7 @@
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;A classe Robo possui uma série de atributos que são declarados no início de sua estrutura. Tais atributos podem ser observados na figura 1.
+&emsp;&emsp;O método fechar faz com que a conexão com o robô de braço mecânico seja terminada.
 
 
 
@@ -91,5 +111,4 @@
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;A classe Robo possui uma série de atributos que são declarados no início de sua estrutura. Tais atributos podem ser observados na figura 1.
-
+&emsp;&emsp;O método ferramenta faz com que a ferramenta (ventosa) fixada na extremidade do braço mecânico seja ativada ou desativada, de acordo com seu parâmetro booleano ```state```, que deve constar quando tal método é executado.

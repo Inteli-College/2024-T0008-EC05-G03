@@ -5,7 +5,7 @@ from .models import db
 from .routes import main as main_blueprint
 
 current_dir = os.path.dirname(__file__)
-database_uri = 'sqlite:///' + os.path.join(current_dir,'..', '..', 'database', 'database.db')
+database_uri = 'sqlite:///' + os.path.join(current_dir, '..', 'database', 'database.db')
 
 
 def create_app():

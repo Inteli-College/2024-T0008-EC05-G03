@@ -1,19 +1,28 @@
 
-from flask import request, jsonify, send_file, make_response, Blueprint
+from flask import request, jsonify, send_file, make_response, Blueprint, session
 from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
-from .models import db, Layout, Compartment
+from .models import db, Layout, Compartment, Users, UserLogin
 import sys
 import os
+from datetime import datetime
+import pytz
 
-# Append the directory of roboclass.py to the Python path
+spTmz = pytz.timezone('America/Sao_Paulo')
+
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from roboClass import Robo
 
 main = Blueprint('main', __name__)
 
+def utc_to_sp_time(utc_dt):
+    if utc_dt is None:
+        return None
+    sp_tz = pytz.timezone('America/Sao_Paulo')
+    return utc_dt.replace(tzinfo=pytz.utc).astimezone(sp_tz)
 
 state = False
 
@@ -296,3 +305,92 @@ def refill(mode):
         except Exception as e:
             return jsonify({"error": str(e)}), 500
         
+    # Rotas referentes ao user/login
+        
+@main.route('/login_user', methods=['POST'])
+def login_user():
+    username = request.json['username']
+    password = request.json['password']
+    user = Users.query.filter_by(username=username).first()
+    
+    if user and user.check_password(password):
+        new_login = UserLogin(user_id=user.id)
+        session['username'] = username
+        db.session.add(new_login)
+        db.session.commit()
+        
+        return jsonify({'message': f'User {username} logged in successfully'})
+    else:
+        return jsonify({'error': 'Invalid username or password'}), 401
+
+    
+@main.route('/logout_user', methods=['POST'])
+def logout_user():
+    username = request.json['username']
+    user = Users.query.filter_by(username=username).first()
+    if user:
+        last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
+        if last_login and last_login.logout_time is None:
+            last_login.logout_time = datetime.now(spTmz)
+            session.pop('username', default=None)
+            db.session.commit()
+            
+            return jsonify({'message': f'User {username} logged out successfully'})
+        else:
+            return jsonify({'error': 'User not logged in or already logged out'}), 400
+    else:
+        return jsonify({'error': 'User not found'}), 404
+
+
+@main.route('/get_users', methods=['GET'])
+def get_users():
+    users = Users.query.all()
+    users_data = [{
+        'username': user.username,
+        'logins': [{
+            'login_time': login.login_time.isoformat() if login.login_time else None,
+            'logout_time': login.logout_time.isoformat() if login.logout_time else None,
+        } for login in user.logins]
+    } for user in users]
+    return jsonify(users_data)
+
+    
+@main.route('/register_user', methods=['POST'])
+def register_user():
+    username = request.json['username']
+    password = request.json['password']
+    if Users.query.filter_by(username=username).first():
+        return jsonify({'error': 'Username already exists'}), 400
+
+    new_user = Users(username=username)
+    new_user.set_password(password)
+    db.session.add(new_user)
+    db.session.commit()
+    return jsonify({'message': 'User registered successfully'}), 201
+
+@main.route('/delete_user', methods=['DELETE'])
+def delete_user():
+    username = request.json['username']
+    user = Users.query.filter_by(username=username).first()
+    if user:
+        db.session.delete(user)
+        db.session.commit()
+        return jsonify({'message': f'User {username} deleted successfully'})
+    else:
+        return jsonify({'error': 'User not found'}), 404
+    
+@main.route('/update_user', methods=['PUT'])
+def update_user():
+    username = request.json['username']
+    new_password = request.json.get('new_password', None)
+
+    user = Users.query.filter_by(username=username).first()
+    if user:
+        if new_password:
+            user.set_password(new_password)
+            db.session.commit()
+            return jsonify({'message': 'User information updated successfully'})
+        else:
+            return jsonify({'error': 'No new information provided'}), 400
+    else:
+        return jsonify({'error': 'User not found'}), 404

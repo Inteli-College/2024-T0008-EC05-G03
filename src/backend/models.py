@@ -1,6 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, Text, ForeignKey
 from sqlalchemy.orm import relationship
+from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime, timezone
+import pytz
+
+spTmz = pytz.timezone('America/Sao_Paulo')
+
 
 db = SQLAlchemy()
 
@@ -18,3 +24,24 @@ class Compartment(db.Model):
     id_layout = Column(Integer, ForeignKey('Layout.id'), nullable=False)
     id_item = Column(Integer, nullable=False)
     layout = relationship("Layout")
+
+class Users(db.Model):
+    __tablename__ = 'Users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password_hash = db.Column(db.String(128))
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
+class UserLogin(db.Model):
+    __tablename__ = 'UserLogin'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
+    login_time = db.Column(db.DateTime, default=datetime.now(spTmz))
+    logout_time = db.Column(db.DateTime, nullable=True)
+
+    user = db.relationship('Users', backref=db.backref('logins', lazy=True))

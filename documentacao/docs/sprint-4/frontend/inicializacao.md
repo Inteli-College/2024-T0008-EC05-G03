@@ -9,9 +9,13 @@ Para inicializar apenas o frontend da aplicação do projeto é simples. Siga os
 
 - Abra o repositório na IDE de sua preferência
 - Abra o terminal e digite os seguintes comandos:
+
 ``cd frontend-violeta``
+
 ``npm install``
+
 ``npm install react-icons``
+
 ``npm run dev``
 
 Após digitar os comandos mostrados, o frontend será aberto em seu navegador.

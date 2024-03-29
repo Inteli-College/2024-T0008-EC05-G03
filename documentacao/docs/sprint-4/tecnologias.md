@@ -21,7 +21,7 @@ custom_edit_url: null
 
 &emsp;&emsp;CSS (Cascade Style Sheets) é uma linguagem para definição de estilo em páginas web. Sua função não é criar algoritmos por meio de programação ou definir a estrutura de uma página web, mas sim como é apresentado o estilo visual dessa estrutura que está ligada à parte de programação. Dentro do projeto desenvolvido, o CSS foi utilizado para ajustar cores, tamanho, formato, entre outras características dos componentes feitos a partir de React.
 
-> Para maiores informações sobre as tecnologias utilizadas para o desenvolvimento do backend, confira a seção sobre frontend desta documentação.
+> Para informações mais aprofundadas sobre as tecnologias utilizadas para o desenvolvimento do frontend, confira a seção sobre [frontend](./frontend/frontend.md) desta documentação.
 
 ---
 

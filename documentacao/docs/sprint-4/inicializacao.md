@@ -12,7 +12,7 @@ custom_edit_url: null
 - Git instalado
 - Chave SSH configurada na sua conta do GitHub
 - Robô Dobot Magician conectado ao computador via USB
-- Node instalado
+- Node.js instalado
 
 ## Passo a passo
 

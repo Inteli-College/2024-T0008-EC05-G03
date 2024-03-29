@@ -87,13 +87,25 @@
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-&emsp;&emsp;O método inicial faz com que o braço mecânico retorne a sua posição inicial.
+&emsp;&emsp;O método inicial faz com que o braço mecânico se mova à sua posição inicial.
+
+
+
+### Método posicao
+
+<p style={{textAlign: 'center'}}>Figura 5 - Método posicao</p>
+
+![Método inicial da classe Robo](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
+
+<p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
+
+&emsp;&emsp;O método posicao retorna a posição atual do braço mecânico.
 
 
 
 ### Método fechar
 
-<p style={{textAlign: 'center'}}>Figura 5 - Método fechar</p>
+<p style={{textAlign: 'center'}}>Figura 6 - Método fechar</p>
 
 ![Desenho esquemático da base de dados](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
 
@@ -105,10 +117,21 @@
 
 ### Método ferramenta
 
-<p style={{textAlign: 'center'}}>Figura 6 - Método ferramenta</p>
+<p style={{textAlign: 'center'}}>Figura 7 - Método ferramenta</p>
 
 ![Desenho esquemático da base de dados](../../../static/img/sprint-3/backend/base_dados/diagrama_base.png)
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &emsp;&emsp;O método ferramenta faz com que a ferramenta (ventosa) fixada na extremidade do braço mecânico seja ativada ou desativada, de acordo com seu parâmetro booleano ```state```, que deve constar quando tal método é executado.
+
+## Integração com aplicação web
+
+&emsp;&emsp;Para permitir a comunicação efetiva entre o backend da aplicação web da solução e o robô Dobot Magician Lite, a equipe Violeta definiu uma série de rotas para aplicação web que executam métodos da classe ```Robo``` listados acima. A tabela 2, a seguir, contém a relação entre cada rota em questão e os métodos da classe Robo executados em tal rota, bem como uma breve descrição da relação em cada linha.
+
+| **Rota**           | **Método da classe Robo** | **Descrição**                                                                                                                                                                                           |
+|--------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /robo_position     | posicao                   | Retorna a posição atual do braço mecânico em cada eixo (x, y, z & r).                                                                                                                                   |
+| /home              | inicial                   | Move o braço mecânico para sua posição inicial.                                                                                                                                                         |
+| /actuator          | ferramenta                | Ativa ou desativa a ventosa fixa à extremidade do braço mecânico.                                                                                                                                       |
+| "/refill/```mode``` | reabastecer               | Executa o processo de reabastecimento de um carrinho; define se haverá e quais rotinas de verificação nesse processo de acordo com o valor inteiro entre 0 e 3 inserido na rota no lugar de ```mode```. |

@@ -1,6 +1,11 @@
-# Documentação da API Flask
+---
+sidebar_position: 4
+custom_edit_url: null
+---
 
-### Servidor API em Flask
+# Documentação da API em Flask
+
+## API em Flask
 
 &emsp;&emsp;Esta API foi projetada com o objetivo de proporcionar uma gestão eficiente e sistemática de layouts e compartimentos, abrindo um leque de possibilidades para aplicações que requerem organização detalhada e acesso rápido a informações específicas. Com endpoints claros e objetivos, a API se apresenta como uma solução robusta para as necessidades de controle e administração de dados relacionados a layouts e seus componentes. Além de detalhar como deve-se executar o servidor Flask.
 
@@ -81,4 +86,4 @@
 
 ## Como executar
 
-&emsp;&emsp; Afim de se executar a aplicação em flask, deve se primeiro na pasta `root` do diretório executar na linha de comando o seguinte: ``` python -m pip install -r requirements.txt``` após executar tal comando e instalar todas as depêndencias, deve-se digitar ```python src/backend/run.py``` afim de iniciar o servidor.
+&emsp;&emsp;Para executar a API, siga os passos na seção de [inicialização do sistema](inicializacao.md) da documentação.

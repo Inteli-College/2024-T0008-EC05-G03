@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+custom_edit_url: null
+---
+
 # Base de dados
 
 ## Resumo
@@ -33,11 +38,7 @@ Abaixo seguem todas as tabelas contidas na base de dados e suas respectivas colu
 | id_layout          | INTEGER    | Chave estrangeira referenciando o id da tabela "Layout"|
 | id_item            | INTEGER    | Chave do remédio a ser adicionado |
 
-## 2. Restrições:
-
-- A tabela "Compartment" possui uma chave estrangeira ("id_layout") que referencia a tabela "Layout".
-
-## 3. Desenho esquemático da base de dados:
+## 2. Desenho esquemático da base de dados:
 
 &emsp;&emsp; Abaixo, há um desenho esquemático da base de dados desenvolvida, a fim de elucidar a modelagem desta no contexto da sprint 3.
 

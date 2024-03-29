@@ -1,5 +1,6 @@
 
 from flask import request, jsonify, send_file, make_response, Blueprint, session
+from flask_session import Session
 from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
@@ -307,39 +308,53 @@ def refill(mode):
         
     # Rotas referentes ao user/login
         
-@main.route('/login_user', methods=['POST'])
+@main.route('/login_user', methods=['POST', 'GET'])
 def login_user():
-    username = request.json['username']
-    password = request.json['password']
-    user = Users.query.filter_by(username=username).first()
-    
-    if user and user.check_password(password):
-        new_login = UserLogin(user_id=user.id)
-        session['username'] = username
-        db.session.add(new_login)
-        db.session.commit()
+    if request.method == 'POST':
+        username = request.json['username']
+        password = request.json['password']
+        user = Users.query.filter_by(username=username).first()
         
-        return jsonify({'message': f'User {username} logged in successfully'})
-    else:
-        return jsonify({'error': 'Invalid username or password'}), 401
-
-    
-@main.route('/logout_user', methods=['POST'])
-def logout_user():
-    username = request.json['username']
-    user = Users.query.filter_by(username=username).first()
-    if user:
-        last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
-        if last_login and last_login.logout_time is None:
-            last_login.logout_time = datetime.now(spTmz)
-            session.pop('username', default=None)
+        if user and user.check_password(password):
+            new_login = UserLogin(user_id=user.id)
+            session['username'] = username
+            db.session.add(new_login)
             db.session.commit()
             
-            return jsonify({'message': f'User {username} logged out successfully'})
+            return jsonify({'message': f'User {username} logged in successfully'})
         else:
-            return jsonify({'error': 'User not logged in or already logged out'}), 400
+            return jsonify({'error': 'Invalid username or password'}), 401
     else:
-        return jsonify({'error': 'User not found'}), 404
+        # RETORNAR A PAGINA DE LOGIN AQUI 
+        return jsonify({'error': 'Method not allowed'}), 405
+
+   
+    
+@main.route('/logout_user', methods=['POST', 'GET'])
+def logout_user():
+    if request.method == 'POST':
+       # CHECAR SE O USUARIO ESTA LOGADO
+       if not session.get("username"):
+           # REDIRECIONAR PAG DE LOGIN
+           return jsonify({'error': 'User not logged in'}), 401
+       else:
+            username = request.json['username']
+            user = Users.query.filter_by(username=username).first()
+            if user:
+                last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
+                if last_login and last_login.logout_time is None:
+                    last_login.logout_time = datetime.now(spTmz)
+                    session.pop('username', default=None)
+                    db.session.commit()
+                    
+                    return jsonify({'message': f'User {username} logged out successfully'})
+                else:
+                    return jsonify({'error': 'User not logged in or already logged out'}), 400
+            else:
+                return jsonify({'error': 'User not found'}), 404
+    else:
+        # RETORNAR A PAGINA DE LOGOUT AQUI
+        return jsonify({'error': 'Method not allowed'}), 405
 
 
 @main.route('/get_users', methods=['GET'])

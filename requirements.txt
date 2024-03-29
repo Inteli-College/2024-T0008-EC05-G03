@@ -1,11 +1,13 @@
 ansicon==1.89.0
 blessed==1.20.0
 blinker==1.7.0
+cachelib==0.12.0
 click==8.1.7
 colorama==0.4.6
 editor==1.6.6
 Flask==3.0.2
 Flask-Cors==4.0.0
+Flask-Session==0.8.0
 Flask-SQLAlchemy==3.1.1
 greenlet==3.0.3
 inquirer==3.2.4
@@ -14,19 +16,18 @@ itsdangerous==2.1.2
 Jinja2==3.1.3
 jinxed==1.2.1
 MarkupSafe==2.1.5
+msgspec==0.18.6
 numpy==1.26.4
 pydobot==1.3.2
 pyserial==3.4
+pytz==2024.1
 readchar==4.0.5
 runs==1.2.2
-setuptools==69.1.0
 six==1.16.0
 SQLAlchemy==2.0.28
 termcolor==2.4.0
-typer==0.9.0
 typing_extensions==4.10.0
 wcwidth==0.2.13
 Werkzeug==3.0.1
-wheel==0.42.0
 xmod==1.8.1
-yaspin==3.0.1
+yaspin @ https://github.com/pavdmyt/yaspin/archive/master.zip#sha256=4627fc8bd12c9919802b676dd813e8e2b1d2d035dac44bc3adef670dc0489438

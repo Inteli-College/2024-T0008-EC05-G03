@@ -9,13 +9,13 @@ custom_edit_url: null
 
 &emsp;&emsp;Node.js é um software que permite a execução de códigos em Javascript fora de um navegador web. Além de sua utilização para a confecção da documentação do projeto por meio do Docusaurus, o Node.js foi usado para o desenvolvimento do frontend da aplicação web da solução, uma vez que este permite a execução do React, que se baseia em Javascript.
 
-## 2. React
-
-&emsp;&emsp;React é uma biblioteca de desenvolvimento frontend baseada na criação e implementação facilitadas de componentes. Componentes são partes visuais simples do frontend de um sistema que podem possuir comportamentos independentes e, juntos, formar uma interface complexa. No contexto da solução desenvolvida pela equipe Violeta, essa funcionalidade permitiu, por exemplo, a criação de componentes que representam compartimentos dos layouts dos carrinhos de emergência que são reabastecidos pelo robô de braço mecânico.
-
-## 3. Font Awesome
+## 2. Font Awesome
 
 &emsp;&emsp;Font Awesome é uma biblioteca que disponibiliza ícones, fontes, entre outros itens visuais para desenvolvimento frontend. No projeto, ela foi utilizada em conjunto com o React para, principalmente, a implementação de ícones nas páginas da aplicação web da solução web.
+
+## 3. React
+
+&emsp;&emsp;React é uma biblioteca de desenvolvimento frontend baseada na criação e implementação facilitadas de componentes. Componentes são partes visuais simples do frontend de um sistema que podem possuir comportamentos independentes e, juntos, formar uma interface complexa. No contexto da solução desenvolvida pela equipe Violeta, essa funcionalidade permitiu, por exemplo, a criação de componentes que representam compartimentos dos layouts dos carrinhos de emergência que são reabastecidos pelo robô de braço mecânico.
 
 ## 4. CSS
 

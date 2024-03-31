@@ -2,6 +2,8 @@
 
 &emsp;&emsp;Para que todas as diferentes partes da solução se comuniquem adequadamente entre si, é necessário que o robô de braço mecânico (Dobot Magician Lite) e o backend da aplicação web da solução estejam interligados. Com base nisso, durante a sprint 4, a equipe Violeta focou em integrar o script do robô com o backend da solução.
 
+>As tecnologias usadas para o desenvolvimento do backend e para integração com o robô foram as mesmas usadas para o desenvolvimento de backend na [sprint 2](../../sprint-2/sistema-robotico/tecnologias.md) e [sprint 3](../../sprint-3/Backend/tecnologias.md). O tutorial para inicialização do backend está disponível [aqui](../inicializacao.md).
+
 ## Classe de integração: ```Robo```
 
 &emsp;&emsp;Para integrar o robô com a API desenvolvida como parte do backend, foi necessário criar uma classe representante do robô chamada, a qual foi nomeada ```Robo``` e contém atributos e métodos ligados às suas ações de movimentação. Dentro da estrutura de pastas, o arquivo com essa classe está contido em ```./src/roboClass.py```.

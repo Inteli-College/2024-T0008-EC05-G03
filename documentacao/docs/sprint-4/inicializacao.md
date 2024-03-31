@@ -36,25 +36,21 @@ Para inicializar o sistema da solução desenvolvido até a sprint 3, deve-se se
 
 ```pip install -r requirements.txt```
 
-4 - Na mesma janela de terminal, digite o seguinte comando:
+4 - Para iniciar a CLI do sistema, digite o seguinte comando na mesma janela de terminal:
 
-```cd src```
-
-5 - Para iniciar a CLI do sistema, digite o seguinte comando:
-
-```py main.py```
+```py src/main.py```
 
 > Para maiores informações sobre a CLI, veja a [seção de sistema robótico](https://inteli-college.github.io/2024-T0008-EC05-G03/category/sistema-robótico) na documentação da sprint 2 do projeto.
 
-6 - Para iniciar o backend do sistema, digite o seguinte comando:
+5 - Para iniciar o backend do sistema, abra o diretório do repositório em outra janela de terminal e digite o seguinte comando:
 
-```py backend/run.py```
+```py src/backend/run.py```
 
 > Para utilizar o backend puro (sem interface de frontend), deve-se instalar um software próprio para testagem de API, como o [Postman](https://www.postman.com/), ou uma extensão do VS Code dedicada para tal, como o [Thunder Client](https://www.thunderclient.com/).
 
-7 - Para iniciar o frontend do sistema, digite os seguintes comandos:
+6 - Para iniciar o frontend do sistema, abra o diretório do repositório em outra janela de terminal e digite os seguintes comandos:
 
-```cd ../frontend-violeta```
+```cd frontend-violeta```
 
 ``npm install``
 

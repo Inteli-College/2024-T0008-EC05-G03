@@ -43,7 +43,7 @@ jobs:
 
     - name: Install and Build
       run: |
-        cd documentacao
+        cd src/frontend
         npm install
         npm run build
         mv build ../build

@@ -1,0 +1,59 @@
+/* Selecionado */
+
+.armBackgroundSelecionado {
+    background-color: #B56BFF;
+    border-radius: 50px;
+    width: 13vw;
+    height: 18vh;
+    margin-left: 12vw;
+    margin-top: 13vh;
+}
+
+.armBackgroundSelecionado img {
+    margin-top: 1.5vh;
+    margin-left: 3vw;
+}
+
+#layoutSelecionado {
+    width: 16vw;
+    height: 3vw;
+    margin-top: 6vh;
+    border-radius: 15px;
+    margin-left: -2vw;
+}
+
+.selecionar{
+    color: #999;
+    font-size: 1rem;
+    font-style: italic; 
+    align-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.selecionar:hover{
+    background-color: #A06EE0;
+    color: white;
+}
+
+.buttonsPainelSelecionado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -1vw;
+}
+
+.buttonsPainelSelecionado form:nth-child(1) button::before{
+    content: "Iniciar Montagem";
+    font-size: 1.4vw;
+}
+
+.buttonsPainelSelecionado form:nth-child(2) button::before{
+    content: "Editar Layout";
+    font-size: 1.4vw;
+}
+
+.buttonsPainelSelecionado form:nth-child(3) button::before{
+    content: "Descartar Layout";
+    font-size: 1.4vw;
+}

@@ -1,0 +1,110 @@
+.pageContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoContainer {
+    display: flex;
+    width: 60vw;
+    margin-left: 1.5vw;
+    
+}
+
+.carrinho {
+    margin-top: 10vh;
+    margin-left: 2vw;
+}
+
+.carrinhoTitle1::before {
+    content: "GAVETA DO CARRINHO \A EMERGENCIAL";
+    margin-left: 0;
+    text-align: center;
+}
+
+.carrinhoTitle2::before {
+    content: "GAVETA DE \A REABASTECIMENTO";
+    margin-left: 0;
+    text-align: center;
+}
+
+.backgroundCarrinho {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+    background-color: #E3C6FF;
+    width: 30vw;
+    height: 30.4vw;
+    border-radius: 1.25rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+.botaoAdd {
+    align-items: center;
+    font-size: 1vw;
+    margin-top: 3vh;
+    margin-left: 1.73vw;
+    border-radius: 1.25rem;
+    width: 12.5vw;
+    height: 13vh;
+    border-radius: 1.25rem;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.itensColuna1 {
+    margin-right: 1.73vw;
+}
+
+.botaoAdd:hover {
+    background-color: #B456E2;
+    color: white;
+}
+
+.formName {
+    align-items: center;
+    margin-top: 5vh;
+    margin-left: 10vw;
+    text-align: center;
+}
+
+
+.insertName {
+    border-radius: 15px;
+    width: 16vw;
+    height: 2.5vw;
+    align-items: center;
+}
+
+.saveName {
+    font-size: 1rem;
+    margin-left: -1vw;
+    margin-top: 0.5vw;
+    margin-bottom: -1vw;
+    background-color: #9600DD;
+    color: #fff;
+    border: none;
+    height: 4vh;
+    border-radius: 0.625rem;
+}
+
+.botaoDelete {
+    background-color: #FA0707;
+    border: none;
+    color: white;
+    margin-top: 5vh;
+    width: 16vw;
+    height: 3vw;
+    border-radius: 0.9375rem;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.botaoDelete:hover {
+    background-color: #D40000;
+    color: white;
+}
+

@@ -48,13 +48,23 @@ A documentação do projeto pode ser encontrada [aqui](https://inteli-college.gi
 │   ├── docs
 |   │   ├── sprint-1
 |   │   ├── sprint-2
+|   │   ├── sprint-3 
+|   │   ├── sprint-4 
+|   │   └── sprint-5
 │   ├── src
 |   │   ├── components
 |   │   ├── css
-|   │   ├── pages
-│   ├── static
-└── src
+|   │   └── pages
+│   └── static
+├── slides
+├── src
+|   ├── backend
+|   ├── database
+|   ├── micropython
+|   └── pydobot
+└──
 ```
+
 
 ## Inicialização
 
@@ -67,30 +77,36 @@ A documentação do projeto pode ser encontrada [aqui](https://inteli-college.gi
 
 #### Documentação
 
-Siga passo a passo para inciar a documentação:
+Siga passo a passo para inicializar a documentação:
 
 - Abra o repositório em seu dispositivo e em seguida abra o terminal.
 - Digite ```cd .\documentacao\``` para entrar na pasta referente.
 - Digite ```npm i``` para instalar todas dependências.
 - Por fim, digite ```npm start``` para inicializar o sistema.
 
+> Para inicializar as demais partes do sistema, siga as instruções na respectiva seção da documentação, [disponível aqui](https://inteli-college.github.io/2024-T0008-EC05-G03/sprint-4/inicializacao).
+
 ## Histórico de lançamentos
 
-- 0.1.0 - 16/02/24
+- 0.1.0 - 16/02/2024
   - Entendimento do negócio
   - Arquitetura do sistema
   - UX Research
   - Guia de estilos
-- 0.2.0 - 01/03/24
+- 0.2.0 - 01/03/2024
   - Wireframe (baixa e alta fidelidade)
   - Mapeamento do fluxo de utilização da solução
   - CLI (Command Line Interface)
   - Sistema básico de automação
-- 0.3.0 - 15/03/24
+- 0.3.0 - 15/03/2024
   - Implementação de rotina de dupla verificação com sensor infravermelho
   - Mockup 
   - Inicio do backend (Rotas)
   - Inicio do frontend
+- 0.4.0 - 28/03/2024
+  - Integração entre backend e robô de braço mecânico
+  - Desenvolvimento do frontend
+  - Integração inicial entre frontend e backend
 
 ##  Licença/License
 

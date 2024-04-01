@@ -7,6 +7,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.vite
+.react-icons
+.@fortawesome
+
 # C extensions
 *.so
 
@@ -176,3 +180,4 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python
 
 *.nix
+*.node_modules

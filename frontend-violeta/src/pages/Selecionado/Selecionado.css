@@ -1,0 +1,145 @@
+.pageContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoContainer {
+    display: flex;
+    width: 60vw;
+    margin-left: 1.5vw;
+}
+
+.carrinho {
+    margin-top: 10vh;
+    margin-left: 2vw;
+}
+
+.carrinhoTitle1::before {
+    content: "GAVETA DE\A REABASTECIMENTO";
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7vw;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.carrinhoTitle2::before {
+    content: "GAVETA DO CARRINHO\A EMERGENCIAL";
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7vw;
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.backgroundCarrinho {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5vh;
+    padding-bottom: 2.9vh;
+    background-color: #E3C6FF;
+    width: 30vw;
+    height: 30.4vw;
+    border-radius: 1.25rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+.item {
+    font-size: 1vw;
+    margin-top: 3vh;
+    margin-left: 1.73vw;
+    margin-right: 1.73vw;
+    width: 12.5vw;
+    height: 13vh;
+    border-radius: 1.25rem;
+    background-color: #fff;
+    border: none;
+}
+
+
+.nomeItem::before{
+    content: "Nome do Item";
+    display: block;
+    font-size: 1.08em;
+    font-weight: bold;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    padding-top: 1vh;
+}
+
+.quantidadeItem::before{
+    content: "Quantidade do Item";
+    display: block;
+    font-size: 1em;
+    margin-left: 1vw;
+    margin-top: 1.6vh;
+}
+
+
+/* Selecionar.css */
+.layoutsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    position: fixed;
+    margin-left: 4.5vw;
+    margin-top: 18vh;
+}
+
+.layoutInfo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vw;
+    width: 60vw;
+    height: 12vh;
+    text-align: left;
+    border-color: #B49EBF;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    margin-top: 2vh;
+}
+.layoutSub{
+    font-size: 14px;
+    margin-top: -0.2vw;
+}
+
+.logoCompleta {
+    width: 25vw;
+    margin-left: 5vw;
+}
+
+.botaoPersonalizado {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4vw;
+    width: 60vw;
+    height: 12vh;
+    border-radius: 1vw;
+    text-align: left;
+    border-color: #B49EBF;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    margin-top: 2vh;
+    padding: 1vw;
+    position: relative; 
+}
+
+.botaoPersonalizado::before {
+    content: 'Layout X';
+    display: block;
+    margin-bottom: 0.5vw;
+}
+
+.botaoPersonalizado::after {
+    content: 'Data de criação: 20/03/2024 Itens: xxxxxx, xxxxxxx, xxxxxx';
+    display: block;
+    font-size: 1vw;
+    margin-top: 0.5vw;
+}
+
+.botaoPersonalizado:hover {
+    background-color: #A06EE0;
+    color: white;
+}
+
+

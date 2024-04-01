@@ -16,6 +16,8 @@ O nosso projeto tem como cliente o Hospital Sírio-Libanês e visa desenvolver u
 
 Este documento compila a documentação detalhada desenvolvida pelo Grupo 3 - Violeta durante o quinto módulo do curso de Engenharia da Computação. Nosso projeto tem como cliente o Hospital Sírio-Libanês, uma instituição de referência na área da saúde, e visa a criação de uma ferramenta abrangente, composta por hardware e software. Essa ferramenta foi concebida com o propósito específico de otimizar os processos de reabastecimento e montagem dos carrinhos de emergência, visando à eficiência operacional e à melhoria dos serviços prestados. O sistema busca, ainda, oferecer flexibilidade para futuras modificações e aprimorar a conectividade com outras ferramentas essenciais no ambiente hospitalar.
 
+É possível encontrar as apresentações de slides referentes às entregas de cada sprint na pasta ```slides``` na raiz do repositório.
+
 ## Parceiro de projeto
 
 O Hospital Sírio-Libanês, renomado centro de saúde, é nosso parceiro de projeto. Reconhecido pela excelência no atendimento médico, o hospital compartilha conosco a necessidade de aprimorar seus processos internos, especificamente no que diz respeito ao reabastecimento e montagem dos carrinhos de emergência. A parceria visa proporcionar soluções inovadoras que contribuam para a eficiência e agilidade nos serviços prestados, alinhando-se com os padrões de qualidade já estabelecidos pela instituição.

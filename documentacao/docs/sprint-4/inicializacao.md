@@ -60,4 +60,4 @@ Para inicializar o sistema da solução desenvolvido até a sprint 3, deve-se se
 
 > Ao digitar esses comandos, você estará instalando as dependências necessárias para executar o frontend do sistema e, logo depois, executando-o. Dessa forma, uma url aparecerá no terminal e você poderá acessá-la num navegador da web para utilizar o frontend. 
 
-> O tutorial para inicializar o frontend também está diponível [aqui](./frontend/inicializacao.md).
+> O tutorial para inicializar o frontend também está diponível [aqui](frontend/inicializacao.md).

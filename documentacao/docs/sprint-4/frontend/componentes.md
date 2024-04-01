@@ -3,7 +3,7 @@ sidebar_position: 3
 custom_edit_url: null
 ---
 
-# Componentes 
+# Componentes
 
 &emsp;&emsp;No React, os componentes são blocos fundamentais de construção de interfaces de usuário reutilizáveis e modulares. Eles encapsulam partes específicas da interface do usuário e seu comportamento associado, permitindo que você construa e mantenha interfaces complexas de forma mais eficiente e organizada. Os componentes no React podem ser pensados como peças de LEGO que você pode juntar para criar uma aplicação completa.
 
@@ -14,7 +14,6 @@ custom_edit_url: null
 - Componentes de Classe: São classes JavaScript que estendem a classe React.Component. Esses componentes podem conter estado interno e métodos de ciclo de vida, o que os torna mais poderosos e flexíveis em comparação com os componentes de função. Eles são úteis quando você precisa gerenciar estados ou quando precisa acessar os métodos do ciclo de vida do React.
 
 &emsp;&emsp;A seguir, apresentamos os componentes feitos para o frontend do Violeta:
-
 
 ## Botão
 
@@ -42,7 +41,6 @@ custom_edit_url: null
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-
 ## NavBar
 
 &emsp;&emsp;No React, uma barra de navegação (navbar) é um componente comum utilizado para criar menus de navegação em uma aplicação web. A navbar geralmente contém links para diferentes partes da aplicação, permitindo que os usuários naveguem facilmente entre as páginas ou seções do site.
@@ -68,7 +66,6 @@ custom_edit_url: null
 </div>
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
-
 
 ## Modal
 

@@ -5,7 +5,7 @@ custom_edit_url: null
 
 # Tecnologias utilizadas
 
-## 1. Node.js 
+## 1. Node.js
 
 &emsp;&emsp;Node.js é um software que permite a execução de códigos em Javascript fora de um navegador web. Além de sua utilização para a confecção da documentação do projeto por meio do Docusaurus, o Node.js foi usado para o desenvolvimento do frontend da aplicação web da solução, uma vez que este permite a execução do React, que se baseia em Javascript.
 

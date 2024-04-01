@@ -30,4 +30,3 @@ custom_edit_url: null
 &emsp;&emsp;Além disso, a reutilização de componentes é uma parte fundamental da filosofia do React. Os desenvolvedores podem criar componentes independentes que encapsulam o comportamento e a aparência de partes específicas da interface do usuário, promovendo assim a modularidade do código e facilitando a manutenção.
 
 &emsp;&emsp;Outra vantagem do React é sua abordagem declarativa. Em vez de manipular diretamente o DOM para refletir as mudanças de estado da aplicação, os desenvolvedores simplesmente descrevem como a interface deve ser exibida em um determinado estado, e o React se encarrega de atualizá-la conforme necessário. Isso torna o código mais previsível, fácil de entender e menos propenso a erros.
-

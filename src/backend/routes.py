@@ -273,10 +273,10 @@ def home():
 def actuator():
     try:
         global state
-        a = Robo([[]],[[]])
+        robo = Robo([[]],[[]])
         state = not state
-        a.ferramenta(state)
-        a.fechar()
+        robo.ferramenta(state)
+        robo.fechar()
         return jsonify({'success': True, 'message': 'Actuator activated'})
     except Exception as e:
         return jsonify({'success': False, 'message': str(e)}), 500

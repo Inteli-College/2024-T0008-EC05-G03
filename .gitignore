@@ -181,3 +181,5 @@ pyrightconfig.json
 
 *.nix
 *.node_modules
+
+.vscode

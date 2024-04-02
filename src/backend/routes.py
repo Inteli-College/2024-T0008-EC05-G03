@@ -420,3 +420,13 @@ def update_user():
             return jsonify({'error': 'No new information provided'}), 400
     else:
         return jsonify({'error': 'User not found'}), 404
+    
+@main.route('/uso', methods=['GET'])
+def get_uso():
+    usos = Utilizacao.query.all()
+    usos_data = [{
+        'nome': uso.nome,
+        'abastecido_ultima': uso.abastecido_ultima,
+        'abastecido_tot': uso.abastecido_tot
+    } for uso in usos]
+    return jsonify(usos_data)

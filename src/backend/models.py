@@ -45,3 +45,10 @@ class UserLogin(db.Model):
     logout_time = db.Column(db.DateTime, nullable=True)
 
     user = db.relationship('Users', backref=db.backref('logins', lazy=True))
+
+class Utilizacao(db.Model):
+    _tablename_ = 'Utilizacao'
+    id_item = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    abastecido_ultima = db.Column(db.Text, nullable=False)
+    abastecido_tot = db.Column(db.Text, nullable=False)
+    nome = db.Column(db.Text, nullable=False)

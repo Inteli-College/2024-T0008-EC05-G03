@@ -10,7 +10,7 @@ function Selecionar() {
     return (
         <div className='pageContent'>
             <div className='layoutsContainer'>
-                <form action="/selecionado"><button className='layoutInfo botaoPersonalizado'></button>
+                <form action="/get_layouts"><button className='layoutInfo botaoPersonalizado'></button>
                 <button className='layoutInfo botaoPersonalizado'></button>
                 <button className='layoutInfo botaoPersonalizado'></button>
                 <button className='layoutInfo botaoPersonalizado'></button>

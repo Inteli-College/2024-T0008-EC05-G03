@@ -8,7 +8,7 @@ const ButtonsPainelSelecionar = () => {
     <div className='painelDeControleSelecionar'>
         <img src={logoCompleta} className='logoCompleta'/>
         <div className='buttonsPainelSelecionar'>
-        <form action='/montar'><button className='botaoPadrao'></button></form>
+        <form action='/add_layout'><button className='botaoPadrao'></button></form>
         <form action='/editarlayout'><button className='botaoPadrao'></button></form>
         <form action='/importarlayout'><button className='botaoPadrao'></button></form>
         <form action='/exportarlayout'><button className='botaoPadrao'></button></form>

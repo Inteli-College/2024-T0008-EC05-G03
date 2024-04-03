@@ -15,15 +15,15 @@ const router = createBrowserRouter([
     element: <ControleBR />
   },
   {
-    path: '/montar',
+    path: '/add_layout',
     element: <Montar />
   },
   {
-    path: '/selecionado',
+    path: '/get_layouts',
     element: <Selecionado />
   },
   {
-    path: '/selecionar',
+    path: '/get_compartments/<int:id_layout>',
     element: <Selecionar />
   }
 ]);

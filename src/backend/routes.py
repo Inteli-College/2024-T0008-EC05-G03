@@ -232,11 +232,12 @@ def get_layouts():
     layouts = Layout.query.all()
 
     layouts_list = [{
-            'id_layout': layout.id,
+            'id': layout.id,
             'nome_layout': layout.nome_layout,
         } for layout in layouts]
         
     return jsonify(layouts_list)
+
 
 # Rotas referentes ao robo
 

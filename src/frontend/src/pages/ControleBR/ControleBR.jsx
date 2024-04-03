@@ -1,49 +1,40 @@
-import './ControleBR.css'
-import React from 'react'
-import { useState } from 'react'
-import axios from "axios"
-
-const [profileData, setProfileData] = useState(null)
-
-function getData() {
-  axios({
-    method: "GET",
-    url:"/profile",
-  })
-  .then((response) => {
-    const res =response.data
-    setProfileData(({
-      profile_name: res.name,
-      about_me: res.about}))
-  }).catch((error) => {
-    if (error.response) {
-      console.log(error.response)
-      console.log(error.response.status)
-      console.log(error.response.headers)
-      }
-  })}
+import './ControleBR.css';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 
 function ControleBR() {
+  const [layouts, setLayouts] = useState([]);
+
+  useEffect(() => {
+    getLayouts();
+  }, []); // Executa uma vez quando o componente monta
+
+  function getLayouts() {
+    axios.get(`${import.meta.env.VITE_BACKEND}/get_layouts`, { headers: { "Content-Type": "application/json" } } )
+      .then((response) => {
+        const layoutsData = response.data;
+        setLayouts(layoutsData);
+        console.log("Layouts obtidos com sucesso:", layoutsData); // Corrigido para imprimir os layouts
+      })
+      .catch((error) => {
+        console.error("Erro ao obter dados do layout:", error);
+      });
+  }
+
   return (
     <>
       <div className='mainCBR'>
         <div className='titulo'></div>
         <div className='linhaHorizontal'></div>
         <div className='botoesCBR'>
-        <form action='/home'><button className='botaoPadrao'></button></form>
+          <form action='/home'><button className='botaoPadrao'></button></form>
           <form action='/posicaoatual'><button className='botaoPadrao'></button></form>
           <form action='/ligarferramenta'><button className='botaoPadrao'></button></form>
-          <form action='/get_compartments/<int:id_layout>'><button className='botaoPadrao'></button></form>
+          <form action="/get_compartments/<int:id_layout>"><button className='botaoPadrao' onClick={getLayouts}></button></form>
         </div>
       </div>
-      <p>To get your profile details: </p><button onClick={getData}>Click me</button>
-        {profileData && <div>
-              <p>Profile name: {profileData.profile_name}</p>
-              <p>About me: {profileData.about_me}</p>
-            </div>
-        }
     </>
-  )
+  );
 }
 
-export default ControleBR
+export default ControleBR;

@@ -5,6 +5,7 @@ import Montar from './pages/Montar/Montar.jsx';
 import Selecionado from './pages/Selecionado/Selecionado.jsx';
 import ControleBR from './pages/ControleBR/ControleBR.jsx';
 import Selecionar from './pages/Selecionar/Selecionar.jsx';
+import ControleRegistro from './pages/ControleRegistro/controleRegistro.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBar from './components/navbar/navbar.jsx';
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: '/selecionar',
     element: <Selecionar />
+  },
+  {
+    path: '/controle',
+    element: <ControleRegistro />
   }
 ]);
 
@@ -36,3 +41,8 @@ root.render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+
+
+
+

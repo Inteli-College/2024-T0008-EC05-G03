@@ -7,7 +7,7 @@ const FilterInput = ({ setFilterKeyword }) => {
   };
 
   return (
-    <input type="text" placeholder="Filtrar por palavra-chave" onChange={handleFilterChange} className="filter-input"/>
+    <input type="text" placeholder="🔎 Filtrar por palavra-chave" onChange={handleFilterChange} className="filter-input"/>
   );
 };
 

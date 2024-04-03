@@ -35,3 +35,8 @@
     overflow-y: auto; 
     margin-bottom: 20px;
   }
+
+  .activity-table, .activity-table th, .activity-table td {
+    border: 1px solid #9004D3; /* Sets the border color to light gray and thickness to 2px */
+  }
+  

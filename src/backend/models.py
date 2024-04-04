@@ -52,3 +52,10 @@ class Utilizacao(db.Model):
     abastecido_ultima = db.Column(db.Text, nullable=False)
     abastecido_tot = db.Column(db.Text, nullable=False)
     nome = db.Column(db.Text, nullable=False)
+
+class LayoutUsed(db.Model):
+    __tablename__ = 'LayoutUsed' 
+    ID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    User = db.Column(db.Text, db.ForeignKey('Users.username'), nullable=False)
+    Date = db.Column(db.DateTime, default=datetime.now(spTmz))
+    Layout = db.Column(db.Text, db.ForeignKey('Layout.nome_layout'), nullable=False)

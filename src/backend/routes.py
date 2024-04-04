@@ -4,7 +4,7 @@ from flask_session import Session
 from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
-from .models import db, Layout, Compartment, Users, UserLogin, Utilizacao
+from .models import db, Layout, Compartment, Users, UserLogin, Utilizacao, LayoutUsed
 import sys
 import os
 from datetime import datetime
@@ -285,7 +285,17 @@ def actuator():
 def refill(mode):
         try:
             global state
+            
+            username = session.get('username')
+            if not username:
+                return jsonify({"error": "User not logged in"}), 401
+            
+            
             data = request.get_json()
+            
+            layout = data.get('layout')
+            if not layout:
+                return jsonify({"error": "Layout not provided in the request"}), 400
             
             reabastecimento_dict = data.get('reabastecimento', {})
             gaveta_dict = data.get('gaveta', {})
@@ -311,6 +321,11 @@ def refill(mode):
             robo.reabastecer(mode)
             state = False
             robo.fechar()
+            
+            new_layout_use = LayoutUsed(User=username, Date=datetime.now(), Layout=layout)
+            db.session.add(new_layout_use)
+            db.session.commit()
+
             
             return jsonify({"message": "Reabastecimento completed successfully with mode {}".format(mode)}), 200
 
@@ -430,3 +445,36 @@ def get_uso():
         'abastecido_tot': uso.abastecido_tot
     } for uso in usos]
     return jsonify(usos_data)
+
+@main.route('/get_layouts_used', methods=['GET'])
+def get_layoutes_used():
+    layouts = LayoutUsed.query.all()
+    layouts_data = [{
+        'User': layout.User,
+        'Date': layout.Date.isoformat(),
+        'Layout': layout.Layout
+    } for layout in layouts]
+    return jsonify(layouts_data)
+
+@main.route('/add_layout_used', methods=['POST'])
+def add_layout_used():
+    # Extract data from the request's JSON body
+    data = request.get_json()
+    user = data.get('User')
+    layout = data.get('Layout')
+    # Optional: Handle the date if passed, otherwise use the current time
+    date_str = data.get('Date')
+    date = datetime.now(pytz.timezone('America/Sao_Paulo')) if not date_str else datetime.strptime(date_str, '%Y-%m-%d %H:%M:%S')
+
+    if not user or not layout:
+        return jsonify({"error": "Missing required fields: User or Layout"}), 400
+
+    # Assuming you've handled the existence check for User and Layout elsewhere or enforcing it via database constraints
+    layout_used = LayoutUsed(User=user, Date=date, Layout=layout)
+    db.session.add(layout_used)
+    try:
+        db.session.commit()
+        return jsonify({"message": "Layout used record added successfully."}), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500

@@ -4,7 +4,7 @@ from flask_session import Session
 from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
-from .models import db, Layout, Compartment, Users, UserLogin
+from .models import db, Layout, Compartment, Users, UserLogin, Utilizacao
 import sys
 import os
 from datetime import datetime
@@ -293,6 +293,16 @@ def refill(mode):
             m1 = [[int(key), value['nome'], value['qtd']] for key, value in reabastecimento_dict.items()]
             m2 = [[int(key), value['nome'], value['qtd']] for key, value in gaveta_dict.items()]
 
+            for linha in m2:
+                try:
+                    uso = Utilizacao.query.filter_by(nome=linha[1].lower()).first()
+                    setattr(uso, "abastecido_ultima", linha[2])
+                    setattr(uso, "abastecido_tot", uso.abastecido_tot + linha[2])
+                except:
+                    remedio = Utilizacao(nome=linha[1].lower(), abastecido_ultima=linha[2], abastecido_tot=linha[2])
+                    db.session.add(remedio)
+                db.session.commit()
+
 
             if not m1 or not m2:
                 return jsonify({"error": "Missing m1 or m2 in the request"}), 400
@@ -301,6 +311,7 @@ def refill(mode):
             robo.reabastecer(mode)
             state = False
             robo.fechar()
+            
             return jsonify({"message": "Reabastecimento completed successfully with mode {}".format(mode)}), 200
 
         except Exception as e:
@@ -409,3 +420,13 @@ def update_user():
             return jsonify({'error': 'No new information provided'}), 400
     else:
         return jsonify({'error': 'User not found'}), 404
+    
+@main.route('/uso', methods=['GET'])
+def get_uso():
+    usos = Utilizacao.query.all()
+    usos_data = [{
+        'nome': uso.nome,
+        'abastecido_ultima': uso.abastecido_ultima,
+        'abastecido_tot': uso.abastecido_tot
+    } for uso in usos]
+    return jsonify(usos_data)

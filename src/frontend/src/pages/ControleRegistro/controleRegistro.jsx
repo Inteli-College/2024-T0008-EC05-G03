@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import axios from 'axios';
 import SortDropdown from '../../components/controleRegistro/dropdown';
 import FilterInput from '../../components/controleRegistro/filtro';
 import ActivityTable from '../../components/controleRegistro/tabela';
@@ -7,13 +8,34 @@ import './controleRegistro.css';
 const ActivityLogPage = () => {
   const [sortOrder, setSortOrder] = useState('');
   const [filterKeyword, setFilterKeyword] = useState('');
+  const [activities, setActivities] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  const activities = useMemo(() => [
-    { date: '2023-01-01', time: '10:00', user: 'Alfonso', layout: 'Layout 2' },
-    { date: '2023-01-03', time: '10:00', user: 'CLEITON', layout: 'Layout 3' },
-    { date: '2023-01-04', time: '10:00', user: 'TicuTuca', layout: 'Layout 1' },
-  ], []);
+  useEffect(() => {
+    const fetchActivities = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const response = await axios.get('http://localhost:5012/get_layouts_used'); 
+        const data = response.data;
+        const formattedData = data.map(activity => ({
+          ...activity,
+          date: activity.Date.split('T')[0], 
+          time: activity.Date.split('T')[1].split('.')[0],
+          user: activity.User,
+          layout: activity.Layout,
+        }));
+        setActivities(formattedData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
+    fetchActivities();
+  }, []);
  
   const sortedActivities = useMemo(() => {
     const sortFunctions = {
@@ -43,6 +65,10 @@ const ActivityLogPage = () => {
       );
     });
   }, [sortedActivities, filterKeyword]);
+
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
   
   return (
     <div className="activity-log-page">

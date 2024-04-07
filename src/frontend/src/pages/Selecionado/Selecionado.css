@@ -90,6 +90,7 @@
     background-color: #fff;
     border: none;
     padding: 9%;
+    cursor: pointer;
 }
 
 
@@ -158,3 +159,6 @@
 }
 
 
+.delete-icon {
+    cursor: pointer;
+}

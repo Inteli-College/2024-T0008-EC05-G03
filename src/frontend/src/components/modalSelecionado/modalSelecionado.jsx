@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import axios from 'axios';
 import './modalSelecionado.css';
 
-const Modal = ({ onClose, layoutId, compartmentNumber, isRefill, isModify, currentItemData }) => {
-
-  
+const Modal = ({ onClose, layoutId, compartmentNumber, isRefill }) => {
     const [itemName, setItemName] = useState('');
     const [quantity, setQuantity] = useState('');
+    const [showValidationMessage, setShowValidationMessage] = useState(false);
   
     const handleSubmit = () => {
+
+      if (!itemName || quantity === '') {
+        setShowValidationMessage(true);
+        return;
+    }
 
       const endpoint = isRefill ? "/add_refill_compartment/" : "/add_compartment/";
       const data = {
@@ -16,6 +20,8 @@ const Modal = ({ onClose, layoutId, compartmentNumber, isRefill, isModify, curre
         quantidade_item: Number(quantity),
         numero_compartimento: compartmentNumber.numero_compartimento
       };
+
+      setShowValidationMessage(false);
 
       axios.post(`${import.meta.env.VITE_BACKEND}${endpoint}${layoutId}`, data, { headers: { "Content-Type": "application/json" } }).then((response) => {
         console.log('Sucesso', response);
@@ -54,6 +60,11 @@ const Modal = ({ onClose, layoutId, compartmentNumber, isRefill, isModify, curre
               type="number"
               placeholder="Digite a quantidade"
             />
+            {showValidationMessage && (
+                <div className="validation-message" style={{marginLeft: "22%", color: "red"}}>
+                  Adicione valores válidos
+                </div>
+              )}
           </div>
           <div className="modal-footer">
             <button onClick={handleSubmit} className="confirm-button">Confirmar</button>

@@ -5,7 +5,7 @@ import ConfirmModal from "../../modalDeleteLayout/modalDeleteLayout.jsx";
 import './ButtonsPainelSelecionado.css';
 import robotArm from '../../../assets/robot-arm.svg';
 
-const ButtonsPainelSelecionado = () => {
+const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode}) => {
     const [layouts, setLayouts] = useState([]);
 
     useEffect(() => {
@@ -76,7 +76,7 @@ const ButtonsPainelSelecionado = () => {
                     </select>
                     <div className='buttonsPainelSelecionado'>
                 <form action='/iniciarmontagem'><button className='botaoPadrao'></button></form>
-                <form action="/editarlayout"><button className='botaoPadrao'></button></form>
+               <button className='botaoPadrao' onClick={toggleDeleteMode} >{deleteMode ? "Desabilitar deletar" : "Habilitar deletar"}</button>
                 <form onSubmit={handleOpenModal}>
                     <button className='botaoDelete' type="submit"></button>
                 </form>

@@ -4,13 +4,26 @@ import axios from 'axios'
 import robotArm from '../../assets/robot-arm.svg'
 import ButtonsPainelSelecionado from '../../components/buttonsPainel/ButtonsPainelSelecionado/ButtonsPainelSelecionado';
 import Modal from '../../components/modalSelecionado/modalSelecionado';
+import ModifyModal from '../../components/modalSelecionado/modalUpdate';
+import { MdDelete } from 'react-icons/md';
 
 
-function Item({ nomeItem, quantidadeItem, onClick }) {
+function Item({ nomeItem, quantidadeItem, onClick, deleteMode, onDelete, isRefill }) {
     const isPlaceholder = !nomeItem || nomeItem === "+";
 
     return (
-        <div className='item' onClick={onClick}>
+        <div className='item' onClick={onClick} style={{ position: 'relative' }}>
+
+            {deleteMode && (
+                <button onClick={(e) => {
+                    e.stopPropagation(); 
+                    onDelete();
+
+                }} style={{ position: 'absolute', top: 0, right: 0, background: 'transparent', border: 'none', marginRight: "5%", marginTop: "4%" }} className='delete-icon'>
+                    <MdDelete size="1.5em" />
+                </button>
+            )}
+
             <div className={isPlaceholder ? 'placeholderVisible' : 'placeholderInvisible'}>
                 +
             </div>
@@ -28,10 +41,14 @@ const Selecionado = () => {
     const [compartments, setCompartments] = useState([]);
     const [refillCompartments, setRefillCompartments] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModifyModalOpen, setIsModifyModalOpen] = useState(false);
     const [selectedCompartment, setSelectedCompartment] = useState(null);
     const [isRefill, setIsRefill] = useState(false);
-    
+    const [deleteMode, setDeleteMode] = useState(false);
 
+
+    const toggleDeleteMode = () => setDeleteMode(!deleteMode);
+    
     const queryParams = new URLSearchParams(window.location.search);
     const layoutId = queryParams.get('layout');
 
@@ -89,14 +106,35 @@ const Selecionado = () => {
             setIsRefill(isRefillContext); 
             setIsModalOpen(true);
         } else {
-
+            console.log(compartment)
+            setSelectedCompartment(compartment)
+            setIsRefill(isRefillContext);
+            setIsModifyModalOpen(true);
         }
     };
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
     }
-  
+
+    const handleDeleteItem = (compartmentId, isRefill) => {
+        const endpoint = isRefill ? `/delete_refill_compartment/${compartmentId}` : `/delete_compartment/${compartmentId}`;
+
+            axios.delete(`${import.meta.env.VITE_BACKEND}${endpoint}`, {
+                headers: { "Content-Type": "application/json" }
+            })
+                .then(() => {
+                    if (isRefill) {
+                        setRefillCompartments(prev => prev.filter(item => item.id !== compartmentId));
+                    } else {
+                        setCompartments(prev => prev.filter(item => item.id !== compartmentId));
+                    }
+                window.location.reload();
+                })
+                .catch(error => {
+                    console.error('Error deleting compartment:', error);
+                });
+            };
 
     return (
         <>
@@ -108,11 +146,14 @@ const Selecionado = () => {
                         <div className='itensColuna'>
                         {columnOneRefillCompartments.map(compartment => (
                             <Item
-                                key={compartment.numero_compartimento}
-                                nomeItem={compartment.nome_item}
-                                quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
-                                onClick={() => handleItemClick(compartment, true)} 
-                            />
+                            key={compartment.numero_compartimento}
+                            nomeItem={compartment.nome_item}
+                            quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
+                            onClick={() => handleItemClick(compartment, true)}
+                            onDelete={() => handleDeleteItem(compartment.id, true)} // Pass true for refill items
+                            deleteMode={deleteMode}
+                            isRefill={true}
+                        />
                             ))}
                         </div>
                         <div className='itensColuna'>
@@ -121,8 +162,11 @@ const Selecionado = () => {
                             key={compartment.numero_compartimento}
                             nomeItem={compartment.nome_item}
                             quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
-                            onClick={() => handleItemClick(compartment, true)} 
-                            />
+                            onClick={() => handleItemClick(compartment, true)}
+                            onDelete={() => handleDeleteItem(compartment.id, true)} // Pass true for refill items
+                            deleteMode={deleteMode}
+                            isRefill={true}
+                        />
                             ))}
                         </div>
                     </div>
@@ -136,8 +180,11 @@ const Selecionado = () => {
                             key={compartment.numero_compartimento}
                             nomeItem={compartment.nome_item}
                             quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
-                            onClick={() => handleItemClick(compartment, false)} 
-                            />
+                            onClick={() => handleItemClick(compartment, false)}
+                            onDelete={() => handleDeleteItem(compartment.id, false)} // Pass false for regular items
+                            deleteMode={deleteMode}
+                            isRefill={false}
+                        />
                             ))}
                         </div>
                         <div className='itensColuna'>
@@ -146,14 +193,17 @@ const Selecionado = () => {
                               key={compartment.numero_compartimento}
                               nomeItem={compartment.nome_item}
                               quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
-                              onClick={() => handleItemClick(compartment, false)} 
-                            />
+                              onClick={() => handleItemClick(compartment, false)}
+                              onDelete={() => handleDeleteItem(compartment.id, false)} // Pass false for regular items
+                              deleteMode={deleteMode}
+                              isRefill={false}
+                          />
                             ))}
                         </div>
                     </div>
                     </div>
                     <div className='linhaVertical'></div>
-                    <ButtonsPainelSelecionado />
+                    <ButtonsPainelSelecionado toggleDeleteMode={toggleDeleteMode} deleteMode={deleteMode}/>
                 </div>
             </div>
         {isModalOpen && (
@@ -164,6 +214,14 @@ const Selecionado = () => {
             isRefill={isRefill}
             />
         )}
+        {isModifyModalOpen && (
+        <ModifyModal
+            onClose={() => setIsModifyModalOpen(false)}
+            compartmentDetails={selectedCompartment}
+            layoutId={layoutId}
+            isRefill={isRefill}
+        />
+         )}
         </>
     );
 };

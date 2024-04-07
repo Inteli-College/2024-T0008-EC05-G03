@@ -53,45 +53,52 @@ const Selecionado = () => {
     const layoutId = queryParams.get('layout');
 
     useEffect(() => {
-
         if (layoutId) {
             const fetchCompartments = axios.get(`${import.meta.env.VITE_BACKEND}/get_compartments/${layoutId}`, { headers: { "Content-Type": "application/json" } })
+                .then(response => ({ success: true, data: response.data }))
+                .catch(error => {
+                    if (error.response && error.response.status === 404) {
+                        return { success: false, data: [] };
+                    }
+                    throw error;
+                });
+    
             const fetchRefillCompartments = axios.get(`${import.meta.env.VITE_BACKEND}/get_refill_compartment/${layoutId}`, { headers: { "Content-Type": "application/json" } })
-            
-            Promise.all([fetchCompartments, fetchRefillCompartments]).then(values => {
-                const [compartmentsResponse, refillCompartmentsResponse] = values;
-
-                const compartmentsWithPlaceholders = Array.from({ length: 8 }, (_, index) => ({
-                    id: 'placeholder-' + (index + 1),
-                    nome_item: "+",
-                    quantidade_item: "",
-                    numero_compartimento: index + 1
-                }));
-
-                compartmentsResponse.data.forEach(item => {
-                    compartmentsWithPlaceholders[item.numero_compartimento - 1] = item;
+                .then(response => ({ success: true, data: response.data }))
+                .catch(error => {
+                    if (error.response && error.response.status === 404) {
+                        return { success: false, data: [] };
+                    }
+                    throw error;
                 });
-
-                const refillCompartmentsWithPlaceholders = Array.from({ length: 8 }, (_, index) => ({
-                    id: 'placeholder-' + (index + 1),
-                    nome_item: "+",
-                    quantidade_item: "",
-                    numero_compartimento: index + 1
-                }));
-
-                refillCompartmentsResponse.data.forEach(item => {
-                    refillCompartmentsWithPlaceholders[item.numero_compartimento - 1] = item;
+    
+            Promise.all([fetchCompartments, fetchRefillCompartments])
+                .then(values => {
+                    const [compartmentsResult, refillCompartmentsResult] = values;
+    
+                    
+                    const integrateWithPlaceholders = (data) => {
+                        return Array.from({ length: 8 }, (_, index) => {
+                            const numero_compartimento = index + 1;
+                            const existingItem = data.find(item => item.numero_compartimento === numero_compartimento);
+                            return existingItem || {
+                                id: 'placeholder-' + numero_compartimento,
+                                nome_item: "+",
+                                quantidade_item: "",
+                                numero_compartimento: numero_compartimento
+                            };
+                        });
+                    };
+    
+                    setCompartments(integrateWithPlaceholders(compartmentsResult.data));
+                    setRefillCompartments(integrateWithPlaceholders(refillCompartmentsResult.data));
+                })
+                .catch(error => {
+                    console.error('Error processing data:', error);
                 });
-
-                setCompartments(compartmentsWithPlaceholders);
-                setRefillCompartments(refillCompartmentsWithPlaceholders);
-            }).catch(error => {
-                console.error('Error fetching data:', error);
-                
-            });
         }
-    }, [window.location.search, layoutId]);
-
+    }, [layoutId]);
+    
     const columnOneCompartments = compartments.filter(c => c.numero_compartimento % 2 !== 0);
     const columnTwoCompartments = compartments.filter(c => c.numero_compartimento % 2 === 0);
 
@@ -129,7 +136,7 @@ const Selecionado = () => {
                     } else {
                         setCompartments(prev => prev.filter(item => item.id !== compartmentId));
                     }
-                window.location.reload();
+                window.location.reload()
                 })
                 .catch(error => {
                     console.error('Error deleting compartment:', error);

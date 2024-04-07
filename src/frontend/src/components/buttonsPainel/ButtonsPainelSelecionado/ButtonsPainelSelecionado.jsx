@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Voltar from "../../voltar/voltar.jsx";
+import ConfirmModal from "../../modalDeleteLayout/modalDeleteLayout.jsx";
 import './ButtonsPainelSelecionado.css';
 import robotArm from '../../../assets/robot-arm.svg';
 
@@ -24,7 +25,44 @@ const ButtonsPainelSelecionado = () => {
         window.location.reload();
     };
 
+    // Modal confirmar delete layout
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [layoutId, setLayoutId] = useState('');
 
+    useEffect(() => {
+        
+        const queryParams = new URLSearchParams(window.location.search);
+        const id = queryParams.get('layout');
+        if (id) {
+          setLayoutId(id);
+        }
+      }, []);
+
+    const handleOpenModal = (e) => {
+      e.preventDefault(); 
+      setIsModalOpen(true); 
+    };
+  
+    const handleCancel = () => {
+      setIsModalOpen(false); 
+    };
+  
+    const handleConfirm = () => {
+        
+
+        axios.delete(`${import.meta.env.VITE_BACKEND}/delete_layout/${layoutId}`, { headers: { "Content-Type": "application/json" } })
+          .then(response => {
+            console.log(response.data);
+            setIsModalOpen(false);
+            window.location.reload();
+            window.history.pushState({});
+          })
+          .catch(error => {
+            console.error('There was an error!', error);
+            
+          });
+      };
+    
     return (
         <>
         <div className='painelDeControleSelecionado'>
@@ -39,7 +77,15 @@ const ButtonsPainelSelecionado = () => {
                     <div className='buttonsPainelSelecionado'>
                 <form action='/iniciarmontagem'><button className='botaoPadrao'></button></form>
                 <form action="/editarlayout"><button className='botaoPadrao'></button></form>
-                <form action='/descartarlayout'><button className='botaoDelete'></button></form>
+                <form onSubmit={handleOpenModal}>
+                    <button className='botaoDelete' type="submit"></button>
+                </form>
+
+                <ConfirmModal 
+                    isOpen={isModalOpen}
+                    onCancel={handleCancel}
+                    onConfirm={handleConfirm}
+                />
                     <Voltar />
                 </div>
             </div>

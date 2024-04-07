@@ -60,7 +60,29 @@ def add_refill_compartment(id_layout):
     
     return jsonify({'message': 'compartment added successfully'})
 
+@main.route('/modify_refill_compartment/<int:id>', methods=['PUT', 'PATCH'])
+def modify_refill_compartment(id):
+    compartment = RefillCompartment.query.get(id)
+    if not compartment:
+        return jsonify({'message': 'Compartment not found'}), 404
 
+    data = request.json
+    for key, value in data.items():
+        setattr(compartment, key, value)
+
+    db.session.commit()
+    return jsonify({'message': 'Compartment modified successfully'})
+
+
+@main.route('/delete_refill_compartment/<int:id>', methods=['DELETE'])
+def delete_refill_compartment(id):
+    compartment = RefillCompartment.query.get(id)
+    if not compartment:
+        return jsonify({'message': 'Compartment not found'}), 404
+    else:
+        db.session.delete(compartment)
+        db.session.commit()
+        return jsonify({'message': 'Compartment deleted successfully'})
 # Rotas referentes às tabelas Compartment e Layout
 
 # Rota para puxar nome e quantidade de todos os remédios da tabela Compartment

@@ -8,6 +8,9 @@ import Selecionar from './pages/Selecionar/Selecionar.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBar from './components/navbar/navbar.jsx';
 
+import Login from './pages/Login/Login.jsx';
+import Cadastro from './pages/Cadastro/Cadastro.jsx';
+
 // Criação do roteador com as rotas definidas
 const router = createBrowserRouter([
   {
@@ -25,6 +28,14 @@ const router = createBrowserRouter([
   {
     path: '/selecionar',
     element: <Selecionar />
+  },
+  {
+    path: '/login',
+    element: <Login />
+  },
+  {
+    path: '/cadastro',
+    element: <Cadastro />
   }
 ]);
 

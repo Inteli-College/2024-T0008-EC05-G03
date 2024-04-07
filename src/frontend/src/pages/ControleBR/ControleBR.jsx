@@ -14,7 +14,7 @@ function ControleBR() {
       .then((response) => {
         const layoutsData = response.data;
         setLayouts(layoutsData);
-        console.log("Layouts obtidos com sucesso:", layoutsData); // Corrigido para imprimir os layouts
+        console.log("Layouts obtidos com sucesso:", layoutsData); 
       })
       .catch((error) => {
         console.error("Erro ao obter dados do layout:", error);

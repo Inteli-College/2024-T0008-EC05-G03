@@ -1,3 +1,19 @@
+.placeholderVisible {
+    display: flex; /* or "block" depending on your design */
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin-top: 3%;
+}
+
+.placeholderInvisible {
+    display: none;
+}
+
+.smallText {
+    font-size: 0.75em;
+  }
+
 .pageContent {
     display: flex;
     flex-direction: row;
@@ -13,6 +29,23 @@
     margin-top: 10vh;
     margin-left: 2vw;
 }
+
+.nomeItem {
+    font-size: 1.2em;
+    color: #333333; 
+    margin-left: 18%;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 200;
+    margin-top: 5%;
+  }
+
+  .quantidadeItem {
+    font-size: 0.8em; 
+    color: #666666; 
+    margin-left:27%;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 100;
+  }
 
 .carrinhoTitle1::before {
     content: "GAVETA DE\A REABASTECIMENTO";
@@ -56,25 +89,7 @@
     border-radius: 1.25rem;
     background-color: #fff;
     border: none;
-}
-
-
-.nomeItem::before{
-    content: "Nome do Item";
-    display: block;
-    font-size: 1.08em;
-    font-weight: bold;
-    margin-left: 1vw;
-    margin-top: 2vh;
-    padding-top: 1vh;
-}
-
-.quantidadeItem::before{
-    content: "Quantidade do Item";
-    display: block;
-    font-size: 1em;
-    margin-left: 1vw;
-    margin-top: 1.6vh;
+    padding: 9%;
 }
 
 

@@ -1,13 +1,29 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import './modalSelecionado.css';
 
-const Modal = ({ onClose }) => {
+const Modal = ({ onClose, layoutId, compartmentNumber, isRefill, isModify, currentItemData }) => {
+
+  
     const [itemName, setItemName] = useState('');
     const [quantity, setQuantity] = useState('');
   
     const handleSubmit = () => {
+
+      const endpoint = isRefill ? "/add_refill_compartment/" : "/add_compartment/";
+      const data = {
+        nome_item: itemName,
+        quantidade_item: Number(quantity),
+        numero_compartimento: compartmentNumber.numero_compartimento
+      };
+
+      axios.post(`${import.meta.env.VITE_BACKEND}${endpoint}${layoutId}`, data, { headers: { "Content-Type": "application/json" } }).then((response) => {
+        console.log('Sucesso', response);
+        window.location.reload();
+      }) .catch(err => {
+        console.log('Erro', err)
+      });
       
-      console.log(itemName, quantity);
       onClose(); 
     };
 

@@ -22,7 +22,15 @@ class Compartment(db.Model):
     quantidade_item = Column(Integer, nullable=False)
     numero_compartimento = Column(Integer, nullable=False)
     id_layout = Column(Integer, ForeignKey('Layout.id'), nullable=False)
-    id_item = Column(Integer, nullable=False)
+    layout = relationship("Layout")
+
+class RefillCompartment(db.Model):
+    __tablename__ = 'RefillCompartment'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nome_item = Column(Text, nullable=False)
+    quantidade_item = Column(Integer, nullable=False)
+    numero_compartimento = Column(Integer, nullable=False)
+    id_layout = Column(Integer, ForeignKey('Layout.id'), nullable=False)
     layout = relationship("Layout")
 
 class Users(db.Model):

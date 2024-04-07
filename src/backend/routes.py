@@ -4,7 +4,7 @@ from flask_session import Session
 from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
-from .models import db, Layout, Compartment, Users, UserLogin
+from .models import db, Layout, Compartment, Users, UserLogin, RefillCompartment
 import sys
 import os
 from datetime import datetime
@@ -28,6 +28,38 @@ def utc_to_sp_time(utc_dt):
 state = False
 
 
+# Rotas referentes a tabela RefillCompartment
+
+@main.route('/get_refill_compartment/<int:id_layout>', methods=['GET'])
+def get_refill_compartment(id_layout):
+    compartments = RefillCompartment.query.filter_by(id_layout=id_layout).all()
+    if compartments:
+        compartment_list = [{
+            'id': compartment.id,
+            'nome_item': compartment.nome_item,
+            'quantidade_item': compartment.quantidade_item,
+            'numero_compartimento': compartment.numero_compartimento,
+            'id_layout': compartment.id_layout
+        } for compartment in compartments]
+        return jsonify(compartment_list)
+    else:
+        return jsonify({'message': 'No compartments found for the given layout ID'}), 404
+    
+@main.route('/add_refill_compartment/<int:id_layout>', methods=['POST'])
+def add_refill_compartment(id_layout):
+    data = request.json
+    nome_item = data['nome_item']
+    quantidade_item = data['quantidade_item']
+    numero_compartimento = data['numero_compartimento']
+    
+    new_compartment = RefillCompartment(nome_item=nome_item, quantidade_item=quantidade_item,
+                        numero_compartimento=numero_compartimento, id_layout=id_layout)
+    
+    db.session.add(new_compartment)
+    db.session.commit()
+    
+    return jsonify({'message': 'compartment added successfully'})
+
 
 # Rotas referentes às tabelas Compartment e Layout
 
@@ -40,7 +72,6 @@ def get_all_compartments_medication():
             'id': compartment.id,
             'nome_item': compartment.nome_item,
             'quantidade_item': compartment.quantidade_item,
-            'id_item': compartment.id_item
         } for compartment in compartments]
         return jsonify(compartment_list)
     else:
@@ -54,10 +85,9 @@ def add_compartment(id_layout):
     nome_item = data['nome_item']
     quantidade_item = data['quantidade_item']
     numero_compartimento = data['numero_compartimento']
-    id_item = data['id_item']
     
     new_compartment = Compartment(nome_item=nome_item, quantidade_item=quantidade_item,
-                        numero_compartimento=numero_compartimento, id_layout=id_layout, id_item=id_item)
+                        numero_compartimento=numero_compartimento, id_layout=id_layout)
     
     db.session.add(new_compartment)
     db.session.commit()
@@ -77,7 +107,6 @@ def get_compartments(id_layout):
             'nome_item': compartment.nome_item,
             'quantidade_item': compartment.quantidade_item,
             'numero_compartimento': compartment.numero_compartimento,
-            'id_item': compartment.id_item
         } for compartment in compartments]
         return jsonify(compartment_list)
     else:
@@ -101,12 +130,11 @@ def download_compartment(id_layout):
         si = StringIO()
         cw = csv.writer(si)
         # Escrever o "Header"
-        cw.writerow(['id', 'id_item', 'nome_item', 'numero_compartimento', 'quantidade_item'])
+        cw.writerow(['id', 'nome_item', 'numero_compartimento', 'quantidade_item'])
         # Escrever dados
         for compartment in compartments:
             cw.writerow([
                 compartment.id,
-                compartment.id_item,
                 compartment.nome_item,
                 compartment.numero_compartimento,
                 compartment.quantidade_item
@@ -156,7 +184,6 @@ def upload_compartment():
                 nome_item=row['nome_item'],
                 quantidade_item=row['quantidade_item'],
                 numero_compartimento=row['numero_compartimento'],
-                id_item=row['id_item'],
                 id_layout=new_layout.id  # Associate with the new layout
             )
             db.session.add(new_compartment)

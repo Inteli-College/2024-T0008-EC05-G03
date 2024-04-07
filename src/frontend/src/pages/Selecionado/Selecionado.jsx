@@ -5,6 +5,7 @@ import robotArm from '../../assets/robot-arm.svg'
 import ButtonsPainelSelecionado from '../../components/buttonsPainel/ButtonsPainelSelecionado/ButtonsPainelSelecionado';
 import Modal from '../../components/modalSelecionado/modalSelecionado';
 
+
 function Item({ nomeItem, quantidadeItem, onClick }) {
     const isPlaceholder = !nomeItem || nomeItem === "+";
 
@@ -25,47 +26,72 @@ function Item({ nomeItem, quantidadeItem, onClick }) {
 
 const Selecionado = () => {
     const [compartments, setCompartments] = useState([]);
+    const [refillCompartments, setRefillCompartments] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedCompartment, setSelectedCompartment] = useState(null);
+    const [isRefill, setIsRefill] = useState(false);
+    
+
+    const queryParams = new URLSearchParams(window.location.search);
+    const layoutId = queryParams.get('layout');
 
     useEffect(() => {
-        const queryParams = new URLSearchParams(window.location.search);
-        const layoutId = queryParams.get('layout');
 
         if (layoutId) {
-            axios.get(`${import.meta.env.VITE_BACKEND}/get_compartments/${layoutId}`, { headers: { "Content-Type": "application/json" } })
-            .then(response => {
+            const fetchCompartments = axios.get(`${import.meta.env.VITE_BACKEND}/get_compartments/${layoutId}`, { headers: { "Content-Type": "application/json" } })
+            const fetchRefillCompartments = axios.get(`${import.meta.env.VITE_BACKEND}/get_refill_compartment/${layoutId}`, { headers: { "Content-Type": "application/json" } })
+            
+            Promise.all([fetchCompartments, fetchRefillCompartments]).then(values => {
+                const [compartmentsResponse, refillCompartmentsResponse] = values;
+
                 const compartmentsWithPlaceholders = Array.from({ length: 8 }, (_, index) => ({
                     id: 'placeholder-' + (index + 1),
                     nome_item: "+",
                     quantidade_item: "",
                     numero_compartimento: index + 1
                 }));
-    
-                response.data.forEach(item => {
+
+                compartmentsResponse.data.forEach(item => {
                     compartmentsWithPlaceholders[item.numero_compartimento - 1] = item;
                 });
-    
-                setCompartments(compartmentsWithPlaceholders);
-            })
-            .catch(error => {
-                console.error('Error fetching compartments:', error);
-                const placeholders = Array.from({ length: 8 }, (_, index) => ({
+
+                const refillCompartmentsWithPlaceholders = Array.from({ length: 8 }, (_, index) => ({
+                    id: 'placeholder-' + (index + 1),
                     nome_item: "+",
                     quantidade_item: "",
-                    numero_compartimento: index + 1,
+                    numero_compartimento: index + 1
                 }));
-                setCompartments(placeholders);
+
+                refillCompartmentsResponse.data.forEach(item => {
+                    refillCompartmentsWithPlaceholders[item.numero_compartimento - 1] = item;
+                });
+
+                setCompartments(compartmentsWithPlaceholders);
+                setRefillCompartments(refillCompartmentsWithPlaceholders);
+            }).catch(error => {
+                console.error('Error fetching data:', error);
+                
             });
         }
-    }, [window.location.search]);
+    }, [window.location.search, layoutId]);
 
     const columnOneCompartments = compartments.filter(c => c.numero_compartimento % 2 !== 0);
     const columnTwoCompartments = compartments.filter(c => c.numero_compartimento % 2 === 0);
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const columnOneRefillCompartments = refillCompartments.filter(c => c.numero_compartimento % 2 !== 0);
+    const columnTwoRefillCompartments = refillCompartments.filter(c => c.numero_compartimento % 2 === 0);
 
-    const handleItemClick = () => {
-        setIsModalOpen(true);
-    }
+
+
+    const handleItemClick = (compartment, isRefillContext) => {
+        if (compartment.nome_item === "+") {
+            setSelectedCompartment(compartment);
+            setIsRefill(isRefillContext); 
+            setIsModalOpen(true);
+        } else {
+
+        }
+    };
 
     const handleCloseModal = () => {
         setIsModalOpen(false);
@@ -80,16 +106,24 @@ const Selecionado = () => {
                     <div className='carrinhoTitle1'></div>
                     <div className='backgroundCarrinho'>
                         <div className='itensColuna'>
-                            <Item />
-                            <Item />
-                            <Item />
-                            <Item />
+                        {columnOneRefillCompartments.map(compartment => (
+                            <Item
+                                key={compartment.numero_compartimento}
+                                nomeItem={compartment.nome_item}
+                                quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
+                                onClick={() => handleItemClick(compartment, true)} 
+                            />
+                            ))}
                         </div>
                         <div className='itensColuna'>
-                            <Item />
-                            <Item />
-                            <Item />
-                            <Item />
+                        {columnTwoRefillCompartments.map(compartment => (
+                            <Item
+                            key={compartment.numero_compartimento}
+                            nomeItem={compartment.nome_item}
+                            quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
+                            onClick={() => handleItemClick(compartment, true)} 
+                            />
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -99,20 +133,20 @@ const Selecionado = () => {
                         <div className='itensColuna'>
                             {columnOneCompartments.map(compartment => (
                             <Item
-                                key={compartment.numero_compartimento}
-                                nomeItem={compartment.nome_item}
-                                quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
-                                onClick={handleItemClick}
+                            key={compartment.numero_compartimento}
+                            nomeItem={compartment.nome_item}
+                            quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
+                            onClick={() => handleItemClick(compartment, false)} 
                             />
                             ))}
                         </div>
                         <div className='itensColuna'>
                             {columnTwoCompartments.map(compartment => (
-                            <Item
-                                key={compartment.numero_compartimento}
-                                nomeItem={compartment.nome_item}
-                                quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
-                                onClick={handleItemClick}
+                              <Item
+                              key={compartment.numero_compartimento}
+                              nomeItem={compartment.nome_item}
+                              quantidadeItem={compartment.quantidade_item ? compartment.quantidade_item + ' Unidades' : ''}
+                              onClick={() => handleItemClick(compartment, false)} 
                             />
                             ))}
                         </div>
@@ -122,7 +156,14 @@ const Selecionado = () => {
                     <ButtonsPainelSelecionado />
                 </div>
             </div>
-            {isModalOpen && <Modal onClose={handleCloseModal} />}
+        {isModalOpen && (
+            <Modal
+            onClose={() => setIsModalOpen(false)}
+            layoutId={layoutId}
+            compartmentNumber={selectedCompartment}
+            isRefill={isRefill}
+            />
+        )}
         </>
     );
 };

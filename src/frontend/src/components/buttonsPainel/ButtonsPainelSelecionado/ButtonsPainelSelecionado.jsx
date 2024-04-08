@@ -108,7 +108,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
         }
 
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BACKEND}/refill/${mode}`, json, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND}/refill/${mode}`, json, { withCredentials: true }, {
                 headers: { "Content-Type": "application/json" }
             });
             console.log('Response:', response.data);

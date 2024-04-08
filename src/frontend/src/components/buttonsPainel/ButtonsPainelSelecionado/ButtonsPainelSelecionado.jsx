@@ -6,12 +6,13 @@ import ModalModo from "../../modalModo/modalModo.jsx";
 import './ButtonsPainelSelecionado.css';
 import robotArm from '../../../assets/robot-arm.svg';
 
-const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode}) => {
+const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
     const [layouts, setLayouts] = useState([]);
     const [isModeSelectorOpen, setIsModeSelectorOpen] = useState(false);
     const [generatedJson, setGeneratedJson] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [layoutId, setLayoutId] = useState('');
+    const [selectedLayoutName, setSelectedLayoutName] = useState('');
 
     useEffect(() => {
         axios.get(`${import.meta.env.VITE_BACKEND}/get_layouts`, { headers: { "Content-Type": "application/json" } })
@@ -31,9 +32,17 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode}) => {
         }
     }, []);
 
+    useEffect(() => {
+        const selectedLayout = layouts.find(layout => layout.id === layoutId);
+        if (selectedLayout) {
+            setSelectedLayoutName(selectedLayout.nome_layout);
+        }
+    }, [layoutId, layouts]);
+
     const handleChange = (event) => {
-        const selectedLayout = event.target.value;
-        window.history.pushState({}, '', `?layout=${selectedLayout}`);
+        const selectedLayoutId = event.target.value;
+        setLayoutId(selectedLayoutId);
+        window.history.pushState({}, '', `?layout=${selectedLayoutId}`);
         window.location.reload();
     };
 
@@ -112,12 +121,13 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode}) => {
             <div className='painelDeControleSelecionado'>
                 <div className='armBackgroundSelecionado'>
                     <img src={robotArm} alt="Robot Arm" />
-                    <select name="layoutPicker" id="layoutSelecionado" className='selecionar' onChange={handleChange} defaultValue="">
+                    <select name="layoutPicker" id="layoutSelecionado" className='selecionar' onChange={handleChange} value={layoutId}>
                         <option disabled value="">Selecionar Layout</option>
                         {layouts.map(layout => (
                             <option key={layout.id} value={layout.id}>{layout.nome_layout}</option>
                         ))}
                     </select>
+                    <div className='selectedLayoutName'>{selectedLayoutName}</div> {/* Exibindo o nome do layout selecionado */}
                     <div className='buttonsPainelSelecionado'>
                         <button className='botaoPadrao' onClick={handleGeneratedJson}>Iniciar Montagem</button>
                         <button className='botaoPadrao' onClick={toggleDeleteMode}>{deleteMode ? "Desabilitar deletar" : "Habilitar deletar"}</button>

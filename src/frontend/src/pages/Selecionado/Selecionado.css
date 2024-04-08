@@ -33,7 +33,6 @@
 .nomeItem {
     font-size: 1.2em;
     color: #333333; 
-    margin-left: 18%;
     font-family: 'Public Sans', sans-serif;
     font-weight: 200;
     margin-top: 5%;
@@ -42,7 +41,6 @@
   .quantidadeItem {
     font-size: 0.8em; 
     color: #666666; 
-    margin-left:27%;
     font-family: 'Public Sans', sans-serif;
     font-weight: 100;
   }
@@ -91,6 +89,14 @@
     border: none;
     padding: 9%;
     cursor: pointer;
+    text-align: center;
+    padding-top: 17%;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.item:hover {
+    background-color: #A06EE0; 
+    color: white; 
 }
 
 

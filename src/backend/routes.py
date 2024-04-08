@@ -341,9 +341,9 @@ def logout_user():
     if user:
         last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
         if last_login:
-            session.pop('username', None)
             last_login.logout_time = datetime.now(spTmz)  
             db.session.commit()
+            session.pop('username', None)
             
               # Clear the session
             return jsonify({'message': f'User {username} logged out successfully'})

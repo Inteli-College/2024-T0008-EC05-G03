@@ -1,49 +1,78 @@
-import './Login.css';
 import React, { useState } from "react";
-import logo_completa from '../../assets/logo_completa.svg'
+import axios from 'axios';
+import './Login.css';
+import logo_completa from '../../assets/logo_completa.svg';
 
 function Login() {
-
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
     const [showLoginForm, setShowLoginForm] = useState(false);
+    const [error, setError] = useState(''); 
 
     const handleLoginClick = () => {
         setShowLoginForm(true);
     }
 
-    const handleLoginFormSubmit = (event) => {
-        event.preventDefault(); //Faz o botão de confirmar login não redirecionar o usuário para a tela anterior
+    const handleLoginFormSubmit = async (event) => {
+        event.preventDefault();
+        setError(''); 
+
+        try {
+            const response = await axios.post('http://localhost:5000/login_user', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+                username: username,
+                password: password
+            }, { withCredentials: true }); 
+            console.log(response.data.message);
+             window.location.href = '/';
+        } catch (error) {
+            if (error.response) {
+                
+                setError(error.response.data.error);
+            } else {
+                setError('Error logging in.');
+                console.log('Error logging in', error);
+            }
+        }
     }
 
     return (
         <>
             <div className="loginPageContent">
                 <div className='loginMainContent'>
-                    <img src={logo_completa} alt="Logo" className="logo"></img>
+                    <img src={logo_completa} alt="Logo" className="logo" />
 
-                    { showLoginForm ? ( 
-
-                        //Botão de login apertado    
+                    {showLoginForm ? (
                         <form className="loginForm" onSubmit={handleLoginFormSubmit}>
-                            <input type="text" placeholder="Usuário"></input>
-                            <input type="password" placeholder="Senha"></input>
+                            <input 
+                                type="text"
+                                placeholder="Usuário"
+                                value={username}
+                                onChange={e => setUsername(e.target.value)}
+                            />
+                            <input 
+                                type="password"
+                                placeholder="Senha"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
                             <button type="submit" className='confirmLoginButton'>Login</button>
-                            <a href="http://localhost:5173/cadastro">Não tem uma conta? Clique aqui!</a>
+                            {error && <div className="error">{error}</div>}
+                            <a href="/cadastro">Não tem uma conta? Clique aqui!</a>
                         </form>
-                        
                     ) : (
-
-                        //Botão de login não apertado
                         <div className="buttonContainer">
                             <button className="loginButton" onClick={handleLoginClick}>Login</button>
                             <button className="signupButton">Criar conta</button>
                         </div>
-                        
                     )}
-
                 </div>
             </div>
         </>
-    )
+    );
 }
 
 export default Login;

@@ -88,6 +88,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
                 }, {});
 
                 const finalJson = {
+                    layout: layoutId,
                     reabastecimento: refillCompartmentsJson,
                     gaveta: compartmentsJson
                 };

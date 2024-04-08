@@ -147,13 +147,16 @@ def download_compartment(id_layout):
     
     # Filtrar todos as linhas da tabela compartment com o id layout igual ao id_layout da URL
     compartments = Compartment.query.filter_by(id_layout=id_layout).all()
-    if compartments:
-        # Criar um CSV na memória
+    refillCompartments = RefillCompartment.query.filter_by(id_layout=id_layout).all()
+    if compartments and refillCompartments:
+        # Create a CSV in memory
         si = StringIO()
         cw = csv.writer(si)
-        # Escrever o "Header"
+        
+        # Write the Header
         cw.writerow(['id', 'nome_item', 'numero_compartimento', 'quantidade_item'])
-        # Escrever dados
+        
+        # Write compartments data
         for compartment in compartments:
             cw.writerow([
                 compartment.id,
@@ -162,10 +165,19 @@ def download_compartment(id_layout):
                 compartment.quantidade_item
             ])
         
-        # Resetar o ponteiro da memória do arquivo para o início
+        # Write refill compartments data
+        for refill_compartment in refillCompartments:
+            cw.writerow([
+                refill_compartment.id,
+                refill_compartment.nome_item,
+                refill_compartment.numero_compartimento,
+                refill_compartment.quantidade_item
+            ])
+        
+        # Reset the file memory pointer to the beginning
         si.seek(0)
         
-        # Formatar o nome do layout para adicionar ao arquivo
+        # Format the layout name to add to the file
         formatted_layout_name = nome_layout.replace(" ", "_")
         filename = f"{formatted_layout_name}.csv"
         
@@ -188,33 +200,46 @@ def upload_compartment():
     if file:
         filename = secure_filename(file.filename)
 
-        # Pegar o nome do layout através do nome do arquivo
+        # Get the layout name from the file name
         layout_name = filename.rsplit('.', 1)[0]
 
-        # Criar uma nova coluna na tabela Layout
+        # Create a new entry in the Layout table
         new_layout = Layout(nome_layout=layout_name)
         db.session.add(new_layout)
         db.session.flush()
         
-        # Ler o arquivo CSV
+        # Read the CSV file
         stream = StringIO(file.stream.read().decode("UTF8"), newline=None)
         csv_reader = csv.DictReader(stream)
         
-        # Adicionar novas linhas na tabela Compartment
+        compartments = []
+        refill_compartments = []
         for row in csv_reader:
-            new_compartment = Compartment(
-                nome_item=row['nome_item'],
-                quantidade_item=row['quantidade_item'],
-                numero_compartimento=row['numero_compartimento'],
-                id_layout=new_layout.id  # Associate with the new layout
-            )
-            db.session.add(new_compartment)
+            # Check if the row belongs to refill compartments
+            if 'refill' in row:
+                refill_compartments.append(RefillCompartment(
+                    nome_item=row['nome_item'],
+                    quantidade_item=row['quantidade_item'],
+                    numero_compartimento=row['numero_compartimento'],
+                    id_layout=new_layout.id  # Associate with the new layout
+                ))
+            else:
+                compartments.append(Compartment(
+                    nome_item=row['nome_item'],
+                    quantidade_item=row['quantidade_item'],
+                    numero_compartimento=row['numero_compartimento'],
+                    id_layout=new_layout.id  # Associate with the new layout
+                ))
         
+        # Add compartments and refill compartments to the database
+        db.session.add_all(compartments)
+        db.session.add_all(refill_compartments)
         db.session.commit()  # Commit all changes to the database
         
         return jsonify({'message': 'File uploaded and processed successfully'}), 201
     
     return jsonify({'message': 'Error processing file'}), 400
+
 
     
 # Rota para modificar um compartimento de acordo com a id do compartimento na url
@@ -337,6 +362,7 @@ def refill(mode):
             global state
             data = request.get_json()
             
+            layout_id = data.get('layout_id', None)
             reabastecimento_dict = data.get('reabastecimento', {})
             gaveta_dict = data.get('gaveta', {})
             
@@ -351,6 +377,8 @@ def refill(mode):
             robo.reabastecer(mode)
             state = False
             robo.fechar()
+            
+            layout = Layout.query.filter_by(id_layout=layout_id).all()
             return jsonify({"message": "Reabastecimento completed successfully with mode {}".format(mode)}), 200
 
         except Exception as e:

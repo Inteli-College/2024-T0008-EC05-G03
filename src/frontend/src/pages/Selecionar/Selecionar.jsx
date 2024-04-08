@@ -1,26 +1,43 @@
-// import '../Selecionado/Selecionado.css'
-import logoCompleta from '../../assets/logo_completa.svg'
-import React from 'react';
-import Voltar from '../../components/voltar/voltar.jsx';
-// import ButtonsPainel from '../../components/buttonsPainel';
-import ButtonsPainelSelecionado from '../../components/buttonsPainel/ButtonsPainelSelecionado/ButtonsPainelSelecionado';
+import React, { useState, useEffect } from 'react';
 import ButtonsPainelSelecionar from '../../components/buttonsPainel/ButtonsPainelSelecionar/ButtonsPainelSelecionar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileExport } from '@fortawesome/free-solid-svg-icons';
 
-function Selecionar() { 
+function Selecionar() {
+    const [layouts, setLayouts] = useState([]);
+    const [showExportIcon, setShowExportIcon] = useState(false);
+    const [showEditIcon, setShowEditIcon] = useState(false);
+
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_BACKEND}/get_layouts`)
+            .then(response => response.json())
+            .then(data => setLayouts(data))
+            .catch(error => console.error('Error fetching layouts:', error));
+    }, []);
+
+    const handleButtonClick = (layoutId) => {
+
+        window.location.href = `/selecionado?layout=${layoutId}`;
+    }
+
     return (
         <div className='pageContent'>
             <div className='layoutsContainer'>
-                <form action="/get_layouts"><button className='layoutInfo botaoPersonalizado'></button>
-                <button className='layoutInfo botaoPersonalizado'></button>
-                <button className='layoutInfo botaoPersonalizado'></button>
-                <button className='layoutInfo botaoPersonalizado'></button>
-                <button className='layoutInfo botaoPersonalizado'></button>
-                </form>
+                    {layouts.map(layout => (
+                        <button key={layout.id} className='layoutInfo botaoPersonalizado' onClick={() => handleButtonClick(layout.id)}>
+                            {layout.nome_layout}
+                            {showExportIcon && <FontAwesomeIcon icon={faFileExport} />}
+                            {showEditIcon && <FontAwesomeIcon icon="fa-solid fa-pen" />}
+                        </button>
+                    ))}
             </div>
             <div className='linhaVertical'></div>
-            <ButtonsPainelSelecionar />
+            <ButtonsPainelSelecionar 
+                onExportClick={() => setShowExportIcon(prevState => !prevState)}
+                onEditClick={() => setShowEditIcon(prevState => !prevState)}
+            />
         </div>
-    )
+    );
 }
 
 export default Selecionar;

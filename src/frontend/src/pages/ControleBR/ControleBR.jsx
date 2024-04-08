@@ -63,7 +63,7 @@ function ControleBR() {
           <button className='botaoPadrao'onClick={goHome}>Home</button>
           <form><button className='botaoPadrao' onClick={actualPos}></button></form>
           <button className='botaoPadrao' onClick={turnActuator}>Ligar Ferramenta</button>
-          <form action="/get_compartments/<int:id_layout>"><button className='botaoPadrao' onClick={getLayouts}></button></form>
+          <form action="/selecionar"><button className='botaoPadrao' onClick={getLayouts}></button></form>
         </div>
       </div>
     </>

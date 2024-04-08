@@ -100,12 +100,6 @@ header {
     position: relative;
 }
 
-.layoutInfo::before {
-    content: 'Layout X';
-    display: block;
-    margin-bottom: 0.5vw;
-}
-
 .layoutInfo::after {
     content: 'Data de criação: 20/03/2024 Itens: xxxxxx, xxxxxxx, xxxxxx';
     display: block;

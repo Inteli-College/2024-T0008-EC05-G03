@@ -19,11 +19,11 @@ const router = createBrowserRouter([
     element: <Montar />
   },
   {
-    path: '/get_layouts',
+    path: '/selecionado',
     element: <Selecionado />
   },
   {
-    path: '/get_compartments/<int:id_layout>',
+    path: '/selecionar',
     element: <Selecionar />
   }
 ]);

@@ -410,29 +410,26 @@ def login_user():
     
 @main.route('/logout_user', methods=['POST', 'GET'])
 def logout_user():
-    if request.method == 'POST':
-       # CHECAR SE O USUARIO ESTA LOGADO
-       if not session.get("username"):
-           # REDIRECIONAR PAG DE LOGIN
-           return jsonify({'error': 'User not logged in'}), 401
-       else:
-            username = request.json['username']
-            user = Users.query.filter_by(username=username).first()
-            if user:
-                last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
-                if last_login and last_login.logout_time is None:
-                    last_login.logout_time = datetime.now(spTmz)
-                    session.pop('username', default=None)
-                    db.session.commit()
-                    
-                    return jsonify({'message': f'User {username} logged out successfully'})
-                else:
-                    return jsonify({'error': 'User not logged in or already logged out'}), 400
-            else:
-                return jsonify({'error': 'User not found'}), 404
+    if 'username' not in session:
+        return jsonify({'error': 'User not logged in'}), 401
+    
+    username = session.get('username')
+    
+    user = Users.query.filter_by(username=username).first()
+    if user:
+        last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
+        if last_login:
+            last_login.logout_time = datetime.now(spTmz)  
+            db.session.commit()
+            session.pop('username', None)
+            
+              # Clear the session
+            return jsonify({'message': f'User {username} logged out successfully'})
+        else:
+            return jsonify({'error': 'User not logged in or already logged out'}), 400
     else:
-        # RETORNAR A PAGINA DE LOGOUT AQUI
-        return jsonify({'error': 'Method not allowed'}), 405
+        return jsonify({'error': 'User not found'}), 404
+
 
 
 @main.route('/get_users', methods=['GET'])
@@ -487,3 +484,10 @@ def update_user():
             return jsonify({'error': 'No new information provided'}), 400
     else:
         return jsonify({'error': 'User not found'}), 404
+    
+@main.route('/check_session', methods=['GET'])
+def check_session():
+    if 'username' in session:
+        return jsonify({'isAuthenticated': True, 'username': session['username']})
+    else:
+        return jsonify({'isAuthenticated': False})

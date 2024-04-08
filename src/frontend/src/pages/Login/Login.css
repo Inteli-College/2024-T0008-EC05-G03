@@ -1,0 +1,104 @@
+.loginPageContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginMainContent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buttonContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginButton {
+    margin-top: 10px;
+    background-color: #9004d3;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20vw;
+}
+
+.loginButton:hover {
+background-color: #6d0288;
+}
+
+.loginButton:active {
+background-color: #520461;
+}
+
+.confirmLoginButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #9004d3;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 20vw;
+    height: 30px;
+}
+
+.confirmLoginButton:hover {
+    background-color: #6d0288;
+}
+    
+.confirmLoginButton:active {
+    background-color: #520461;
+}
+  
+.signupButton {
+margin-top: 10px;
+background-color: #D9D9D9;
+color: #000000;
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+width: 20vw;
+}
+
+.logo {
+    width: 30vw;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.loginForm input {
+    margin-bottom: 10px;
+    padding: 5px;
+    height: 30px;
+    width: 25vw;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+}
+
+::placeholder {
+    color: #000000;
+}

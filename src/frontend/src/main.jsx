@@ -7,24 +7,36 @@ import ControleBR from './pages/ControleBR/ControleBR.jsx';
 import Selecionar from './pages/Selecionar/Selecionar.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBar from './components/navbar/navbar.jsx';
+import RotaProtegida from './components/rotaProtegida/rotaProtegida.jsx';
+
+import Login from './pages/Login/Login.jsx';
+import Cadastro from './pages/Cadastro/Cadastro.jsx';
 
 // Criação do roteador com as rotas definidas
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <ControleBR />
+    element: <RotaProtegida><ControleBR /></RotaProtegida>
   },
   {
     path: '/add_layout',
-    element: <Montar />
+    element: <RotaProtegida><Montar /></RotaProtegida>
   },
   {
     path: '/selecionado',
-    element: <Selecionado />
+    element: <RotaProtegida><Selecionado /></RotaProtegida>
   },
   {
     path: '/selecionar',
-    element: <Selecionar />
+    element: <RotaProtegida><Selecionar /></RotaProtegida>
+  },
+  {
+    path: '/login',
+    element: <Login />
+  },
+  {
+    path: '/cadastro',
+    element: <Cadastro />
   }
 ]);
 

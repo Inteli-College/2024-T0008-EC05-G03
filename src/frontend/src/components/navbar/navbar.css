@@ -25,6 +25,7 @@ header {
     color: var(--textColor);
     position: fixed;
     top: 0;
+    z-index: 1000;
 }
 
 nav a{

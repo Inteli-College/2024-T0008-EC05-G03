@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ButtonsPainelSelecionar from '../../components/buttonsPainel/ButtonsPainelSelecionar/ButtonsPainelSelecionar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faFileExport } from '@fortawesome/free-solid-svg-icons';
 
 function Selecionar() {
@@ -27,7 +28,7 @@ function Selecionar() {
                         <button key={layout.id} className='layoutInfo botaoPersonalizado' onClick={() => handleButtonClick(layout.id)}>
                             {layout.nome_layout}
                             {showExportIcon && <FontAwesomeIcon icon={faFileExport} />}
-                            {showEditIcon && <FontAwesomeIcon icon="fa-solid fa-pen" />}
+                            {showEditIcon && <FontAwesomeIcon icon={faPen} />}
                         </button>
                     ))}
             </div>

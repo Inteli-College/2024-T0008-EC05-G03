@@ -54,6 +54,39 @@ function ControleBR() {
       });
   }
 
+  function goHome() {
+    axios.get(`${import.meta.env.VITE_BACKEND}/home`, { headers: { "Content-Type": "application/json" } } )
+      .then((response) => {
+        console.log('Sucesso posição Home:', response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao ir para Home:", error);
+      
+      });
+  }
+
+  function actualPos(){
+    axios.get(`${import.meta.env.VITE_BACKEND}/robo_position`, { headers: { "Content-Type": "application/json" } } )
+      .then((response) => {
+        console.log('Sucesso posição atual:', response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao obter posição atual:", error);
+      
+      });
+  }
+
+  function turnActuator(){
+    axios.get(`${import.meta.env.VITE_BACKEND}/actuator`, { headers: { "Content-Type": "application/json" } } )
+      .then((response) => {
+        console.log('Sucesso ao ligar ferramenta:', response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao ligar ferramenta:", error);
+      
+      });
+  }
+
   return (
     <>
       <div className='mainCBR'>

@@ -8,6 +8,7 @@ import Selecionar from './pages/Selecionar/Selecionar.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import NavBar from './components/navbar/navbar.jsx';
 import RotaProtegida from './components/rotaProtegida/rotaProtegida.jsx';
+import ControleRegistro from './pages/ControleRegistro/controleRegistro.jsx';
 
 import Login from './pages/Login/Login.jsx';
 import Cadastro from './pages/Cadastro/Cadastro.jsx';
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: '/cadastro',
     element: <Cadastro />
+  },
+  {
+    path: '/controle_registro',
+    element: <RotaProtegida><ControleRegistro /></RotaProtegida>
   }
 ]);
 

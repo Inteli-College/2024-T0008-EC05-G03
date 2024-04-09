@@ -498,3 +498,15 @@ def check_session():
         return jsonify({'isAuthenticated': True, 'username': session['username']})
     else:
         return jsonify({'isAuthenticated': False})
+    
+@main.route('/get_uso', methods=['GET'])
+def get_uso():
+    usos = Uso.query.all()
+    usos_list = [{
+        'id_uso': uso.id_uso,
+        'id': uso.id,
+        'nome_layout': uso.nome_layout,
+        'horario': uso.horario,
+        'username': uso.username
+    } for uso in usos]
+    return jsonify(usos_list)

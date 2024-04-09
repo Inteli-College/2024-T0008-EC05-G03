@@ -3,6 +3,7 @@ from flask import request, jsonify, send_file, make_response, Blueprint, session
 from flask_session import Session
 from werkzeug.utils import secure_filename
 from io import StringIO
+import io
 import csv
 from .models import db, Layout, Compartment, Users, UserLogin, RefillCompartment, Uso
 import sys
@@ -134,112 +135,97 @@ def get_compartments(id_layout):
     else:
         return jsonify({'message': 'No compartments found for the given layout ID'}), 404
     
+# Download Route
+# Download Route
 @main.route('/download_compartment/<int:id_layout>', methods=['GET'])
 def download_compartment(id_layout):
-    # Adquirir o nome do layout através do id do layout
-    layout = Layout.query.filter_by(id=id_layout).first()
+    # Find the layout by id
+    layout = Layout.query.get(id_layout)
     
-    # Se não  haver layout
-    if layout is None:
+    if not layout:
         return jsonify({'message': 'Layout not found'}), 404
     
-    nome_layout = layout.nome_layout  
+    nome_layout = layout.nome_layout
     
-    # Filtrar todos as linhas da tabela compartment com o id layout igual ao id_layout da URL
+    # Get all compartments and refill compartments associated with the layout
     compartments = Compartment.query.filter_by(id_layout=id_layout).all()
-    refillCompartments = RefillCompartment.query.filter_by(id_layout=id_layout).all()
-    if compartments and refillCompartments:
-        # Create a CSV in memory
-        si = StringIO()
-        cw = csv.writer(si)
-        
-        # Write the Header
-        cw.writerow(['id', 'nome_item', 'numero_compartimento', 'quantidade_item'])
-        
-        # Write compartments data
-        for compartment in compartments:
-            cw.writerow([
-                compartment.id,
-                compartment.nome_item,
-                compartment.numero_compartimento,
-                compartment.quantidade_item
-            ])
-        
-        # Write refill compartments data
-        for refill_compartment in refillCompartments:
-            cw.writerow([
-                refill_compartment.id,
-                refill_compartment.nome_item,
-                refill_compartment.numero_compartimento,
-                refill_compartment.quantidade_item
-            ])
-        
-        # Reset the file memory pointer to the beginning
-        si.seek(0)
-        
-        # Format the layout name to add to the file
-        formatted_layout_name = nome_layout.replace(" ", "_")
-        filename = f"{formatted_layout_name}.csv"
-        
-        output = make_response(si.getvalue())
-        output.headers["Content-Disposition"] = f"attachment; filename={filename}"
-        output.headers["Content-type"] = "text/csv"
-        return output
-    else:
-        return jsonify({'message': 'No compartments found for the given layout ID'}), 404
+    refill_compartments = RefillCompartment.query.filter_by(id_layout=id_layout).all()
+    
+    # Create CSV data
+    output_data = []
+    output_data.append(['id', 'nome_item', 'numero_compartimento', 'quantidade_item', 'refill'])
+    
+    for compartment in compartments:
+        output_data.append([str(compartment.id), compartment.nome_item, compartment.numero_compartimento, compartment.quantidade_item, ''])
+    
+    for refill_compartment in refill_compartments:
+        output_data.append([str(refill_compartment.id), refill_compartment.nome_item, refill_compartment.numero_compartimento, refill_compartment.quantidade_item, 'refill'])
+    
+    # Create response
+    response = make_response('\n'.join([','.join(map(str, row)) for row in output_data]))
+    
+    # Set headers
+    response.headers["Content-Disposition"] = f"attachment; filename={nome_layout}.csv"
+    response.headers["Content-Type"] = "text/csv"
+    
+    return response
+
     
 # Rota para ler arquivo CSV e adicionar a base de dados
 
+# Upload Route
 @main.route('/upload_compartment', methods=['POST'])
 def upload_compartment():
     if 'file' not in request.files:
         return jsonify({'message': 'No file part'}), 400
+    
     file = request.files['file']
+    
     if file.filename == '':
         return jsonify({'message': 'No selected file'}), 400
-    if file:
-        filename = secure_filename(file.filename)
-
-        # Get the layout name from the file name
-        layout_name = filename.rsplit('.', 1)[0]
-
-        # Create a new entry in the Layout table
-        new_layout = Layout(nome_layout=layout_name)
-        db.session.add(new_layout)
-        db.session.flush()
-        
-        # Read the CSV file
-        stream = StringIO(file.stream.read().decode("UTF8"), newline=None)
-        csv_reader = csv.DictReader(stream)
-        
-        compartments = []
-        refill_compartments = []
-        for row in csv_reader:
-            # Check if the row belongs to refill compartments
-            if 'refill' in row:
-                refill_compartments.append(RefillCompartment(
-                    nome_item=row['nome_item'],
-                    quantidade_item=row['quantidade_item'],
-                    numero_compartimento=row['numero_compartimento'],
-                    id_layout=new_layout.id  # Associate with the new layout
-                ))
-            else:
-                compartments.append(Compartment(
-                    nome_item=row['nome_item'],
-                    quantidade_item=row['quantidade_item'],
-                    numero_compartimento=row['numero_compartimento'],
-                    id_layout=new_layout.id  # Associate with the new layout
-                ))
-        
-        # Add compartments and refill compartments to the database
-        db.session.add_all(compartments)
-        db.session.add_all(refill_compartments)
-        db.session.commit()  # Commit all changes to the database
-        
-        return jsonify({'message': 'File uploaded and processed successfully'}), 201
     
-    return jsonify({'message': 'Error processing file'}), 400
-
+    # Extract filename without extension to use as layout name
+    filename = secure_filename(file.filename)
+    layout_name = os.path.splitext(filename)[0]
+    
+    # Read the uploaded CSV file in text mode
+    csv_data = csv.DictReader(io.StringIO(file.stream.read().decode('utf-8')), delimiter=',')
+    
+    # Get current timestamp
+    current_time = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+    
+    # Create a new layout for the compartments from the uploaded file
+    layout = Layout(nome_layout=layout_name, criado=current_time)
+    db.session.add(layout)
+    db.session.flush()
+    
+    # Separate compartments and refill compartments
+    compartments = []
+    refill_compartments = []
+    for row in csv_data:
+        if 'refill' in row and row['refill'] == 'refill':
+            # It's a refill compartment
+            refill_compartments.append(RefillCompartment(
+                nome_item=row['nome_item'],
+                quantidade_item=int(row['quantidade_item']),
+                numero_compartimento=int(row['numero_compartimento']),
+                id_layout=layout.id
+            ))
+        else:
+            # It's a normal compartment
+            compartments.append(Compartment(
+                nome_item=row['nome_item'],
+                quantidade_item=int(row['quantidade_item']),
+                numero_compartimento=int(row['numero_compartimento']),
+                id_layout=layout.id
+            ))
+    
+    # Add compartments and refill compartments to the database
+    db.session.add_all(compartments)
+    db.session.add_all(refill_compartments)
+    db.session.commit()
+    
+    return jsonify({'message': 'File uploaded and processed successfully'}), 201
 
     
 # Rota para modificar um compartimento de acordo com a id do compartimento na url

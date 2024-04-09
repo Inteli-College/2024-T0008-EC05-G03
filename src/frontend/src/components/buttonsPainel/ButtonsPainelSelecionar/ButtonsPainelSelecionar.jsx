@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useRef } from 'react'
+import React, { useState, useRef } from "react";
+import axios from 'axios';
 import Voltar from "../../voltar/voltar.jsx";
 import './ButtonsPainelSelecionar.css';
 import logoCompleta from '../../../assets/logo_completa.svg';
@@ -12,19 +12,21 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
+        handleUpload(event.target.files[0]);
     }
 
-    const handleUpload = async () => {
-        if (selectedFile) {
+    const handleUpload = async (file) => {
+        if (file) {
             const formData = new FormData();
-            formData.append('file', selectedFile);
+            formData.append('file', file);
 
             try {
-                const response = await fetch(`${import.meta.env.VITE_BACKEND}/upload_compartment`, {
-                    method: 'POST',
-                    body: formData
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND}/upload_compartment`, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
                 });
-                if (response.ok) {
+                if (response.status === 201) {
                     alert('File uploaded successfully!');
                     window.location.reload();
                 } else {
@@ -65,10 +67,10 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
         </form>
         <button className='botaoPadrao' onClick={handleClick}>Importar Layout</button>
         <input
-                    type="file"
-                    ref={fileInputRef}
-                    onChange={handleFileChange}
-                    style={{ display: "none" }}
+            type="file"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            style={{ display: "none" }}
         />
         {/* <form action='/editarlayout'>
             <button type='button' className='botaoPadrao' onClick={(event) => {

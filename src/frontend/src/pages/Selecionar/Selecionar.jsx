@@ -35,7 +35,7 @@ function Selecionar() {
     
     return (
         <div className='pageContent'>
-            <div className='layoutsContainer'>
+            <div className='layoutsContainer' style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 200px)' }}>
                 {layouts.map(layout => (
                     <button key={layout.id} className='layoutInfo botaoPersonalizado' onClick={() => handleButtonClick(layout.id)}
                         horario={layout.criado}>

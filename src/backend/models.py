@@ -53,3 +53,13 @@ class UserLogin(db.Model):
     logout_time = db.Column(db.DateTime, nullable=True)
 
     user = db.relationship('Users', backref=db.backref('logins', lazy=True))
+
+class Uso(db.Model):
+    __tablename__ = 'Uso'
+    id_uso = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
+    nome_layout = db.Column(db.Text, db.ForeignKey("Layout.nome_layout"), nullable=False)
+    horario = db.Column(db.Text, nullable=False)
+    username = db.Column(db.Text, db.ForeignKey("Users.username"), nullable=False)
+
+

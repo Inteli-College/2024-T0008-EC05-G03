@@ -4,7 +4,7 @@ from flask_session import Session
 from werkzeug.utils import secure_filename
 from io import StringIO
 import csv
-from .models import db, Layout, Compartment, Users, UserLogin, RefillCompartment
+from .models import db, Layout, Compartment, Users, UserLogin, RefillCompartment, Uso
 import sys
 import os
 from datetime import datetime
@@ -361,14 +361,21 @@ def refill(mode):
         try:
             global state
             data = request.get_json()
-            
-            layout_id = data.get('layout_id', None)
+            user = session['username']
+            layout_id = data.get('layout', None)
             reabastecimento_dict = data.get('reabastecimento', {})
             gaveta_dict = data.get('gaveta', {})
             
             m1 = [[int(key), value['nome'], value['qtd']] for key, value in reabastecimento_dict.items()]
             m2 = [[int(key), value['nome'], value['qtd']] for key, value in gaveta_dict.items()]
 
+            layout = Layout.query.filter_by(id=layout_id).first()
+            user_data = Users.query.filter_by(username=user).first()
+
+            uso = Uso(id=user_data.id, nome_layout=layout.nome_layout, horario=str(datetime.now().strftime("%d/%m/%Y, %H:%M:%S")), username=user_data.username)
+
+            db.session.add(uso)
+            db.session.commit()
 
             if not m1 or not m2:
                 return jsonify({"error": "Missing m1 or m2 in the request"}), 400
@@ -377,8 +384,7 @@ def refill(mode):
             robo.reabastecer(mode)
             state = False
             robo.fechar()
-            
-            layout = Layout.query.filter_by(id_layout=layout_id).all()
+
             return jsonify({"message": "Reabastecimento completed successfully with mode {}".format(mode)}), 200
 
         except Exception as e:

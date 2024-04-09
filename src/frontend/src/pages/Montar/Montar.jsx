@@ -75,7 +75,7 @@ function Montar() {
           <div className='linhaVertical'></div>
           <ButtonsPainelMontar />
         </div>
-        <ModalAdicionar idLayout={yourLayoutId} /> {/* Renderize o modal */}
+        <ModalAdicionar /> {/* Renderize o modal */}
       </div>
     </ModalProvider>
   );

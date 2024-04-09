@@ -99,11 +99,11 @@ const Selecionado = () => {
         }
     }, [layoutId]);
     
-    const columnOneCompartments = compartments.filter(c => c.numero_compartimento % 2 !== 0);
-    const columnTwoCompartments = compartments.filter(c => c.numero_compartimento % 2 === 0);
+    const columnOneCompartments = compartments.filter(c => c.numero_compartimento < 5 ).reverse();
+    const columnTwoCompartments = compartments.filter(c => c.numero_compartimento >= 5).reverse();
 
-    const columnOneRefillCompartments = refillCompartments.filter(c => c.numero_compartimento % 2 !== 0);
-    const columnTwoRefillCompartments = refillCompartments.filter(c => c.numero_compartimento % 2 === 0);
+    const columnOneRefillCompartments = refillCompartments.filter(c => c.numero_compartimento < 5).reverse();
+    const columnTwoRefillCompartments = refillCompartments.filter(c => c.numero_compartimento >= 5).reverse();
 
 
 

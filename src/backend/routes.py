@@ -292,7 +292,7 @@ def add_layout():
     data = request.json
     nome_layout = data['nome_layout']
     
-    new_layout = Layout(nome_layout=nome_layout)
+    new_layout = Layout(nome_layout=nome_layout, criado=str(datetime.now().strftime("%d/%m/%Y, %H:%M:%S")))
     
     db.session.add(new_layout)
     db.session.commit()
@@ -308,6 +308,7 @@ def get_layouts():
     layouts_list = [{
             'id': layout.id,
             'nome_layout': layout.nome_layout,
+            "criado": layout.criado,
         } for layout in layouts]
         
     return jsonify(layouts_list)

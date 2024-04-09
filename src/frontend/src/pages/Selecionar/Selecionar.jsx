@@ -21,11 +21,13 @@ function Selecionar() {
         window.location.href = `/selecionado?layout=${layoutId}`;
     }
 
+
     return (
         <div className='pageContent'>
             <div className='layoutsContainer'>
                     {layouts.map(layout => (
-                        <button key={layout.id} className='layoutInfo botaoPersonalizado' onClick={() => handleButtonClick(layout.id)}>
+                        <button key={layout.id} className='layoutInfo botaoPersonalizado' onClick={() => handleButtonClick(layout.id)}
+                        horario={layout.criado}>
                             {layout.nome_layout}
                             {showExportIcon && <FontAwesomeIcon icon={faFileExport} />}
                             {showEditIcon && <FontAwesomeIcon icon={faPen} />}

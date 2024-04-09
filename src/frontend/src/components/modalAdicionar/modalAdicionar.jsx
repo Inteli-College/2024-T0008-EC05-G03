@@ -11,7 +11,7 @@
         if (!layout === '') {
           setShowValidationMessage(true);
           return;
-      }
+        }
 
         const data = {
           nome_layout: layout,

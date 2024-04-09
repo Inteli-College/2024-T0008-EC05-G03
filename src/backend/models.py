@@ -14,6 +14,7 @@ class Layout(db.Model):
     __tablename__ = 'Layout'
     id = Column(Integer, primary_key=True)
     nome_layout = Column(Text, nullable=False)
+    criado = Column(Text)
     
 class Compartment(db.Model):
     __tablename__ = 'Compartment'

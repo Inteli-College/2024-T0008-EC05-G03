@@ -147,7 +147,7 @@
 }
 
 .botaoPersonalizado::after {
-    content: 'Data de criação: 20/03/2024 Itens: xxxxxx, xxxxxxx, xxxxxx';
+    content: 'Horário de criação: 'attr(horario)'';
     display: block;
     font-size: 1vw;
     margin-top: 0.5vw;

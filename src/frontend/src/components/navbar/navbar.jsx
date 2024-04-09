@@ -21,7 +21,7 @@ function NavBar() {
                 <div className="buttonsHeader">
                     <a href="/">Página Inicial</a>
                     <a href="#">Desligar robô</a>
-                    <a href="#">Registro de atividades</a>
+                    <a href="/controle_registro">Registro de atividades</a>
                 </div>
                 <button className="nav-btn" onClick={handleLogout}>Logout</button>
         </header>

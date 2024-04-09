@@ -13,7 +13,7 @@ const ModalModo = ({ onClose, onModeSelect, json }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <p className="modal-text">Qual modo a ser utilizado?</p>
+        <p className="modal-text">Qual modo de verificação a ser utilizado?</p>
         <div className="modal-buttons">
           <button className="modal-button" onClick={() => handleModeSelect(0)}>Modo 0</button>
           <button className="modal-button" onClick={() => handleModeSelect(1)}>Modo 1</button>

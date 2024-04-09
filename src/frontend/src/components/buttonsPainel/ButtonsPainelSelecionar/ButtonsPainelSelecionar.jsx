@@ -20,7 +20,7 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
             formData.append('file', selectedFile);
 
             try {
-                const response = await fetch('/upload_compartment', {
+                const response = await fetch(`${import.meta.env.VITE_BACKEND}/upload_compartment`, {
                     method: 'POST',
                     body: formData
                 });
@@ -46,6 +46,7 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
     const click = () => {
         setIsModalOpen(true);
     }
+
     return (
     <div className='painelDeControleSelecionar'>
         <img src={logoCompleta} className='logoCompleta'/>

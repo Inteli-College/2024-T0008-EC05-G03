@@ -26,7 +26,7 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
                 });
                 if (response.ok) {
                     alert('File uploaded successfully!');
-                    // Optionally, you can do something after successful upload
+                    window.location.reload();
                 } else {
                     alert('Error uploading file');
                 }

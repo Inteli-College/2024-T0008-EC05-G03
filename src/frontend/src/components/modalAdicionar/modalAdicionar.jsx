@@ -1,77 +1,66 @@
-import React, { useState } from 'react';
-import './modalAdicionar.css';
-import { useModal } from './modalContext.jsx';
+  import React, { useState } from "react";
+  import axios from 'axios';
+  import './modalAdicionar.css';
 
-const ModalAdicionar = ({ idLayout }) => {
-  const { modalOpen, closeModal } = useModal(); // Use o estado e a função closeModal do contexto
-  const [nomeItem, setNomeItem] = useState('');
-  const [quantidadeItem, setQuantidadeItem] = useState('');
-  const [numeroCompartimento, setNumeroCompartimento] = useState('');
+  const ModalAdicionar = ({ onClose}) => {
+      const [layout, setLayout] = useState('');
+      const [showValidationMessage, setShowValidationMessage] = useState(false);
+    
+      const handleSubmit = () => {
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      nome_item: nomeItem,
-      quantidade_item: quantidadeItem,
-      numero_compartimento: numeroCompartimento
-    };
-
-    try {
-      const response = await fetch(`/add_compartment/${idLayout}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const responseData = await response.json();
-      if (response.ok) {
-        alert(responseData.message); // Ou outra lógica de tratamento de sucesso
-        closeModal(); // Fechar o modal após sucesso
-      } else {
-        throw new Error(responseData.message);
+        if (!layout === '') {
+          setShowValidationMessage(true);
+          return;
       }
-    } catch (error) {
-      console.error('Houve um erro ao adicionar o compartimento:', error);
-    }
-  };
 
-  return (
-    <>
-      {modalOpen && (
-        <div className="modal">
+        const data = {
+          nome_layout: layout,
+        };
+        console.log(layout)
+
+        setShowValidationMessage(false);
+
+        axios.post(`${import.meta.env.VITE_BACKEND}/add_layout`, data, { headers: { "Content-Type": "application/json" } }).then((response) => {
+          console.log('Sucesso', response);
+          window.location.reload();
+        }) .catch(err => {
+          console.log('Erro', err)
+        });
+        
+        onClose(); 
+      };
+
+      const handleOutsideClick = (event) => {
+          
+          if (event.target.classList.contains('modal')) {
+            onClose();
+          }
+        };
+    
+      return (
+        <div className="modal" onClick={handleOutsideClick}>
           <div className="modal-content">
-            <span className="close" onClick={closeModal}>×</span>
-            <form onSubmit={handleSubmit}>
+            <div className="modal-body">
+              <label htmlFor="nome_layout">Qual o nome do layout?</label>
               <input
+                id="nome_layout"
+                value={layout}
                 type="text"
-                value={nomeItem}
-                onChange={(e) => setNomeItem(e.target.value)}
-                placeholder="Nome do Item"
-                required
+                placeholder="Digite o nome do layout"
+                onChange={(e) => setLayout(e.target.value)}
               />
-              <input
-                type="number"
-                value={quantidadeItem}
-                onChange={(e) => setQuantidadeItem(e.target.value)}
-                placeholder="Quantidade do Item"
-                required
-              />
-              <input
-                type="number"
-                value={numeroCompartimento}
-                onChange={(e) => setNumeroCompartimento(e.target.value)}
-                placeholder="Número do Compartimento"
-                required
-              />
-              <button type="submit">Enviar</button>
-            </form>
+              {showValidationMessage && (
+                  <div className="validation-message" style={{marginLeft: "22%", color: "red"}}>
+                    Adicione valores válidos
+                  </div>
+                )}
+            </div>
+            <div className="modal-footer">
+              <button onClick={handleSubmit} className="confirm-button">Confirmar</button>
+            </div>
           </div>
         </div>
-      )}
-    </>
-  );
-};
-
-export default ModalAdicionar;
+      );
+    };
+    
+    export default ModalAdicionar;

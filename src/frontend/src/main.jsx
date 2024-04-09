@@ -11,6 +11,7 @@ import RotaProtegida from './components/rotaProtegida/rotaProtegida.jsx';
 
 import Login from './pages/Login/Login.jsx';
 import Cadastro from './pages/Cadastro/Cadastro.jsx';
+import ModalAdicionar from './components/modalAdicionar/modalAdicionar.jsx';
 
 // Criação do roteador com as rotas definidas
 const router = createBrowserRouter([
@@ -18,10 +19,10 @@ const router = createBrowserRouter([
     path: '/',
     element: <RotaProtegida><ControleBR /></RotaProtegida>
   },
-  {
-    path: '/add_layout',
-    element: <RotaProtegida><Montar /></RotaProtegida>
-  },
+  // {
+  //   path: '/add_layout',
+  //   element: <RotaProtegida><ModalAdicionar /></RotaProtegida>
+  // },
   {
     path: '/selecionado',
     element: <RotaProtegida><Selecionado /></RotaProtegida>

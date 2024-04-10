@@ -17,11 +17,14 @@ const ModalModo = ({ onClose, onModeSelect, json }) => {
       <div className="modal-container">
         <p className="modal-text">Qual modo de verificação a ser utilizado?</p>
         <div className="modal-buttons">
-          <button className="modal-button" onClick={() => handleModeSelect(0)}>Modo 0</button>
-          <button className="modal-button" onClick={() => handleModeSelect(1)}>Modo 1</button>
-          <button className="modal-button" onClick={() => handleModeSelect(2)}>Modo 2</button>
-          <button className="modal-button" onClick={() => handleModeSelect(3)}>Modo 3</button>
+          <button className="modal-button" onClick={() => handleModeSelect(0)}>Modo 0 </button>
+          <button className="modal-button" onClick={() => handleModeSelect(1)}>Modo 1 </button>
+          <button className="modal-button" onClick={() => handleModeSelect(2)}>Modo 2 </button>
+          <button className="modal-button" onClick={() => handleModeSelect(3)}>Modo 3 </button>
         </div>
+        <p style={{fontSize:10}}>0: Nenhuma verificação, 1: Verificação em espiral,</p>
+        <p style={{fontSize:10}}>2: Verificação em cobrinha, 3: Ambas verificações</p><br></br>
+        
         <button className="modal-confirm" onClick={onClose}>Confirmar</button>
       </div>
     </div>

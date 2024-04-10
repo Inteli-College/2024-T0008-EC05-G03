@@ -10,6 +10,7 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const fileInputRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isExportButtonActive, setIsExportButtonActive] = useState(false);
 
     // Função para lidar com a mudança de arquivo
     const handleFileChange = (event) => {
@@ -65,8 +66,9 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
         )}
         <button className='botaoPadrao' onClick={click}>Adicionar Layout</button>
         <form action='/download_compartment/<int:id_layout>'>
-            <button type='button' className='botaoPadrao' onClick={(event) => {
+            <button type='button' className={`botaoPadrao ${isExportButtonActive ? 'botaoAtivo' : ''}`} onClick={(event) => {
                 event.preventDefault();
+                setIsExportButtonActive(!isExportButtonActive);
                 onExportClick(prevState => !prevState);
             }}></button>
         </form>

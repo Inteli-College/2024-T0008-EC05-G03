@@ -231,6 +231,9 @@ const Selecionado = () => {
             isRefill={isRefill}
         />
          )}
+        <footer className="footer">
+        <p>O layout é salvo automaticamente</p>
+        </footer>
         </>
     );
 };

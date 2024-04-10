@@ -1,8 +1,10 @@
 import React from 'react';
 import './modalModo.css'; // Make sure to create a Modal.css file in the same directory
 
+// Função geral JSX para o componente ModalModo
 const ModalModo = ({ onClose, onModeSelect, json }) => {
 
+  // Função para selecionar o modo de verificação
     const handleModeSelect = (mode) => {
         onModeSelect(mode, json)
         onClose()

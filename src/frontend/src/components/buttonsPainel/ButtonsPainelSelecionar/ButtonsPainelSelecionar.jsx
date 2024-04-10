@@ -5,16 +5,19 @@ import './ButtonsPainelSelecionar.css';
 import logoCompleta from '../../../assets/logo_completa.svg';
 import ModalAdicionar from "../../modalAdicionar/modalAdicionar.jsx";
 
+// Função geral JSX para o componente ButtonsPainelSelecionar
 const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const fileInputRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    // Função para lidar com a mudança de arquivo
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
         handleUpload(event.target.files[0]);
     }
 
+    // Função para lidar com o upload de arquivo
     const handleUpload = async (file) => {
         if (file) {
             const formData = new FormData();
@@ -41,10 +44,12 @@ const ButtonsPainelSelecionar = ({ onExportClick, onEditClick }) => {
         }
     }
 
+    // Função para lidar com o clique no botão de arquivo
     const handleClick = () => {
         fileInputRef.current.click();
     }
 
+    // Função para lidar com o clique no botão de adicionar layout
     const click = () => {
         setIsModalOpen(true);
     }

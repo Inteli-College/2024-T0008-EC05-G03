@@ -2,10 +2,12 @@
   import axios from 'axios';
   import './modalAdicionar.css';
 
+  // Função geral JSX para o componente ModalAdicionar
   const ModalAdicionar = ({ onClose}) => {
       const [layout, setLayout] = useState('');
       const [showValidationMessage, setShowValidationMessage] = useState(false);
     
+      // Função para enviar o layout para o backend
       const handleSubmit = () => {
 
         if (!layout === '') {
@@ -20,6 +22,7 @@
 
         setShowValidationMessage(false);
 
+        // Envia o layout para o backend
         axios.post(`${import.meta.env.VITE_BACKEND}/add_layout`, data, { headers: { "Content-Type": "application/json" } }).then((response) => {
           console.log('Sucesso', response);
           window.location.reload();

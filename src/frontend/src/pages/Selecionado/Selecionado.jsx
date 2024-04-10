@@ -7,7 +7,7 @@ import Modal from '../../components/modalSelecionado/modalSelecionado';
 import ModifyModal from '../../components/modalSelecionado/modalUpdate';
 import { MdDelete } from 'react-icons/md';
 
-
+// Função item JSX para a página de Selecionado
 function Item({ nomeItem, quantidadeItem, onClick, deleteMode, onDelete, isRefill }) {
     const isPlaceholder = !nomeItem || nomeItem === "+";
 
@@ -36,7 +36,7 @@ function Item({ nomeItem, quantidadeItem, onClick, deleteMode, onDelete, isRefil
         </div>
     );
 }
-
+// Função geral JSX para a página de Selecionado
 const Selecionado = () => {
     const [compartments, setCompartments] = useState([]);
     const [refillCompartments, setRefillCompartments] = useState([]);
@@ -46,7 +46,7 @@ const Selecionado = () => {
     const [isRefill, setIsRefill] = useState(false);
     const [deleteMode, setDeleteMode] = useState(false);
 
-
+    // Função para alternar o modo de exclusão
     const toggleDeleteMode = () => setDeleteMode(!deleteMode);
     
     const queryParams = new URLSearchParams(window.location.search);
@@ -54,6 +54,7 @@ const Selecionado = () => {
 
     useEffect(() => {
         if (layoutId) {
+            // Função para obter os compartimentos
             const fetchCompartments = axios.get(`${import.meta.env.VITE_BACKEND}/get_compartments/${layoutId}`, { headers: { "Content-Type": "application/json" } })
                 .then(response => ({ success: true, data: response.data }))
                 .catch(error => {
@@ -63,6 +64,7 @@ const Selecionado = () => {
                     throw error;
                 });
     
+                // Função para obter os compartimentos de recarga
             const fetchRefillCompartments = axios.get(`${import.meta.env.VITE_BACKEND}/get_refill_compartment/${layoutId}`, { headers: { "Content-Type": "application/json" } })
                 .then(response => ({ success: true, data: response.data }))
                 .catch(error => {
@@ -76,7 +78,7 @@ const Selecionado = () => {
                 .then(values => {
                     const [compartmentsResult, refillCompartmentsResult] = values;
     
-                    
+                    // Função para integrar os compartimentos com espaços reservados
                     const integrateWithPlaceholders = (data) => {
                         return Array.from({ length: 8 }, (_, index) => {
                             const numero_compartimento = index + 1;
@@ -106,7 +108,7 @@ const Selecionado = () => {
     const columnTwoRefillCompartments = refillCompartments.filter(c => c.numero_compartimento >= 5).reverse();
 
 
-
+    // Função para lidar com o clique no item
     const handleItemClick = (compartment, isRefillContext) => {
         if (compartment.nome_item === "+") {
             setSelectedCompartment(compartment);
@@ -123,7 +125,7 @@ const Selecionado = () => {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     }
-
+    // Função para deletar um item
     const handleDeleteItem = (compartmentId, isRefill) => {
         const endpoint = isRefill ? `/delete_refill_compartment/${compartmentId}` : `/delete_compartment/${compartmentId}`;
 

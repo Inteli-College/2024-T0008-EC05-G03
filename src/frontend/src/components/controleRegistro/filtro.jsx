@@ -1,6 +1,7 @@
 import React from 'react';
 import './filtro.css'
 
+// Função geral JSX para o componente FilterInput
 const FilterInput = ({ setFilterKeyword }) => {
   const handleFilterChange = (e) => {
     setFilterKeyword(e.target.value);

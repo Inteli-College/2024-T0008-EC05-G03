@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import './modalSelecionado.css';
 
+// Função geral JSX para o componente Modal
 const Modal = ({ onClose, layoutId, compartmentNumber, isRefill }) => {
     const [itemName, setItemName] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -14,6 +15,7 @@ const Modal = ({ onClose, layoutId, compartmentNumber, isRefill }) => {
         return;
     }
 
+    // Envia os dados para o backend
       const endpoint = isRefill ? "/add_refill_compartment/" : "/add_compartment/";
       const data = {
         nome_item: itemName,

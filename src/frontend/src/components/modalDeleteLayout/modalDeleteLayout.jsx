@@ -1,6 +1,7 @@
 import React from 'react';
 import './modalDeleteLayout.css';
 
+// Função geral JSX para o componente ConfirmModal
 const ConfirmModal = ({ isOpen, onCancel, onConfirm }) => {
   if (!isOpen) return null;
 

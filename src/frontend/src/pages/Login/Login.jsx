@@ -3,22 +3,25 @@ import axios from 'axios';
 import './Login.css';
 import logo_completa from '../../assets/logo_completa.svg';
 
+// Função geral JSX para a página de Login
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showLoginForm, setShowLoginForm] = useState(false);
     const [error, setError] = useState(''); 
 
+    // Função para lidar com o clique no botão de login
     const handleLoginClick = () => {
         setShowLoginForm(true);
     }
 
+    // Função para lidar com o envio do formulário de login
     const handleLoginFormSubmit = async (event) => {
         event.preventDefault();
         setError(''); 
 
         try {
-            const response = await axios.post('http://localhost:5000/login_user', {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND}/login_user`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': '*'

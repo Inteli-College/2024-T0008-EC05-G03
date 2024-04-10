@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './Cadastro.css';
 import axios from 'axios';
 
+// Função geral JSX para a página de cadastro
 function Cadastro(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -9,6 +10,7 @@ function Cadastro(){
     const [errorMessage, setErrorMessage] = useState('');
     const [showForm, setShowForm] = useState(true);
 
+    // Função para lidar com o envio do formulário de cadastro
     const handleRegister = async (event) => {
         event.preventDefault();
 

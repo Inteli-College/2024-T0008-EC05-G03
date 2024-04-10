@@ -4,6 +4,7 @@ import {FaBars, FaTimes} from "react-icons/fa";
 import "./navbar.css";
 import logoSimples from '../../assets/logo_simplificada.svg';
 
+// Função geral JSX para o componente NavBar
 function NavBar() {
     const handleLogout = async () => {
         try {

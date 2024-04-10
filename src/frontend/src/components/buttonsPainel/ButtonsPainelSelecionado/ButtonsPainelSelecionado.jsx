@@ -5,6 +5,8 @@ import ConfirmModal from "../../modalDeleteLayout/modalDeleteLayout.jsx";
 import ModalModo from "../../modalModo/modalModo.jsx";
 import './ButtonsPainelSelecionado.css';
 import robotArm from '../../../assets/robot-arm.svg';
+
+// Função geral JSX para o componente ButtonsPainelSelecionado
 const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
     const [layouts, setLayouts] = useState([]);
     const [isModeSelectorOpen, setIsModeSelectorOpen] = useState(false);
@@ -13,6 +15,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
     const [layoutId, setLayoutId] = useState('');
     const [selectedLayoutName, setSelectedLayoutName] = useState('');
     useEffect(() => {
+        // Obtendo os layouts disponíveis
         axios.get(`${import.meta.env.VITE_BACKEND}/get_layouts`, { headers: { "Content-Type": "application/json" } })
             .then(response => {
                 setLayouts(response.data);
@@ -22,6 +25,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
             });
     }, []);
     useEffect(() => {
+        // Obtendo o ID do layout da URL
         const queryParams = new URLSearchParams(window.location.search);
         const id = queryParams.get('layout');
         if (id) {
@@ -29,12 +33,14 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
         }
     }, []);
     useEffect(() => {
+        // Obtendo o nome do layout selecionado
         const selectedLayout = layouts.find(layout => layout.id === layoutId);
         if (selectedLayout) {
             setSelectedLayoutName(selectedLayout.nome_layout);
         }
     }, [layoutId, layouts]);
     const handleChange = (event) => {
+        // Atualizando o ID do layout selecionado
         const selectedLayoutId = event.target.value;
         setLayoutId(selectedLayoutId);
         window.history.pushState({}, '', `?layout=${selectedLayoutId}`);
@@ -48,6 +54,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
         setIsModalOpen(false);
     };
     const handleConfirm = () => {
+        // Deletando o layout selecionado
         axios.delete(`${import.meta.env.VITE_BACKEND}/delete_layout/${layoutId}`, { headers: { "Content-Type": "application/json" } })
             .then(response => {
                 setIsModalOpen(false);
@@ -58,6 +65,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
             });
     };
     const handleGeneratedJson = async () => {
+        // Gerando o JSON para o layout selecionado
         const queryParams = new URLSearchParams(window.location.search);
         const layoutId = queryParams.get('layout');
         if (layoutId) {
@@ -86,6 +94,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
             }
         }
     };
+    // Função para lidar com a seleção do modo
     const handleModeSelect = async (mode, json) => {
         if (!json) {
             console.error('JSON data is not set before sending the POST request.');

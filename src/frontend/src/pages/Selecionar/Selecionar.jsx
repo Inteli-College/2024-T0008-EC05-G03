@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faFileExport } from '@fortawesome/free-solid-svg-icons'; 
 import axios from 'axios';
 
+// Função geral JSX para a página de Selecionar
 function Selecionar() {
     const [layouts, setLayouts] = useState([]);
     const [showExportIcon, setShowExportIcon] = useState(false); 
@@ -16,6 +17,7 @@ function Selecionar() {
             .catch(error => console.error('Error fetching layouts:', error));
     }, []);
 
+    // Função para lidar com o clique no botão de layout
     const handleButtonClick = async (layoutId) => {
         if (!showExportIcon && !showEditIcon) { 
             window.location.href = `/selecionado?layout=${layoutId}`;

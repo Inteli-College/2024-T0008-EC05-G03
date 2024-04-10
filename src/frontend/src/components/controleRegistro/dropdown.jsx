@@ -1,6 +1,7 @@
 import React from 'react';
 import './dropdown.css';
 
+// Função geral JSX para o componente SortDropdown
 const SortDropdown = ({ setSortOrder }) => {
     const handleSortChange = (e) => {
       setSortOrder(e.target.value);

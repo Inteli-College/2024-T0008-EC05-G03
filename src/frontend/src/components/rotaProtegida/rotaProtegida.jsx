@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 
+// Função geral JSX para a rota protegida
 const RotaProtegida = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Função para verificar a sessão
   useEffect(() => {
     const verifySession = async () => {
       try {

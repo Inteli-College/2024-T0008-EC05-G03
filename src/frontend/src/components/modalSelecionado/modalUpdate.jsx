@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from 'axios';
 import './modalSelecionado.css';
 
+// Função geral JSX para o componente ModifyModal
 const ModifyModal = ({ onClose, compartmentDetails, isRefill }) => {
     const [itemName, setItemName] = useState('');
     const [quantity, setQuantity] = useState('');
     const [showValidationMessage, setShowValidationMessage] = useState(false);
   
+    // Função para manipular o envio de dados do formulário
     const handleSubmit = () => {
 
         if (!itemName || quantity === '') {
@@ -14,6 +16,7 @@ const ModifyModal = ({ onClose, compartmentDetails, isRefill }) => {
             return;
         }
 
+        // Envia os dados para o backend
       const endpoint = isRefill ? "/modify_refill_compartment/" : "/modify_compartment/";
       console.log(compartmentDetails)
       const idCompartment = compartmentDetails.id;

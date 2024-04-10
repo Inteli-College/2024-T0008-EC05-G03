@@ -1,6 +1,7 @@
 import React from 'react';
 import './tabela.css';
 
+// Função geral JSX para o componente ActivityTable
 const ActivityTable = ({ activities }) => {
   return (
    <div className="table-container">

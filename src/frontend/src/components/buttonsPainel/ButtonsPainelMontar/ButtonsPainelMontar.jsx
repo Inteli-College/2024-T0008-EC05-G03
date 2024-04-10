@@ -3,6 +3,7 @@ import Voltar from "../../voltar/voltar.jsx";
 import './ButtonsPainelMontar.css';
 import robotArm from '../../../assets/robot-arm.svg';
 
+// Função geral JSX para o componente ButtonsPainelMontar
 const ButtonsPainelMontar = () => {
     return (
         <>

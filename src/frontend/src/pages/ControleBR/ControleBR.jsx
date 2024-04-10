@@ -2,6 +2,7 @@ import './ControleBR.css';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
+// Função geral JSX para a página de ControleBR
 function ControleBR() {
   const [layouts, setLayouts] = useState([]);
 
@@ -9,6 +10,7 @@ function ControleBR() {
     getLayouts();
   }, []); // Executa uma vez quando o componente monta
 
+  // Função para obter os layouts disponíveis
   function getLayouts() {
     axios.get(`${import.meta.env.VITE_BACKEND}/get_layouts`, { headers: { "Content-Type": "application/json" } } )
       .then((response) => {
@@ -22,7 +24,7 @@ function ControleBR() {
   }
 
 
-
+  // Função para robo ir para a posição Home
   function goHome() {
     axios.get(`${import.meta.env.VITE_BACKEND}/home`, { headers: { "Content-Type": "application/json" } } )
       .then((response) => {
@@ -34,6 +36,7 @@ function ControleBR() {
       });
   }
 
+  // Função para obter a posição atual do robo
   function actualPos(){
     axios.get(`${import.meta.env.VITE_BACKEND}/robo_position`, { headers: { "Content-Type": "application/json" } } )
       .then((response) => {
@@ -45,6 +48,7 @@ function ControleBR() {
       });
   }
 
+  // Função para ligar o atuador do robo
   function turnActuator(){
     axios.get(`${import.meta.env.VITE_BACKEND}/actuator`, { headers: { "Content-Type": "application/json" } } )
       .then((response) => {
@@ -56,6 +60,7 @@ function ControleBR() {
       });
   }
 
+  // Div principal da página de ControleBR
   return (
     <>
       <div className='mainCBR'>

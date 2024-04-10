@@ -1,0 +1,11 @@
+# Considerações finais
+
+&emsp;&emsp;Ao concluir este projeto em parceria com o Hospital Sírio-Libanês, o Grupo 3 - Violeta alcançou importantes marcos no desenvolvimento de uma solução inovadora para otimização dos processos de reabastecimento e montagem dos carrinhos de emergência. O compromisso com a excelência e a busca pela eficiência operacional foram pilares fundamentais durante todo o ciclo de desenvolvimento.
+
+&emsp;&emsp;Nossa solução, composta por hardware e software, foi cuidadosamente projetada para atender às necessidades específicas do hospital, garantindo não apenas a prontidão constante dos equipamentos, mas também oferecendo flexibilidade para adaptações futuras. A conectividade aprimorada promove uma integração mais eficiente com outras ferramentas essenciais do ambiente hospitalar, fortalecendo a capacidade de resposta em situações de emergência.
+
+&emsp;&emsp;Ao longo do processo, enfrentamos desafios significativos, mas cada obstáculo foi superado com determinação e trabalho em equipe. As entregas de cada sprint refletem não apenas o progresso técnico, mas também o comprometimento em fornecer uma solução de alta qualidade que atenda às expectativas do cliente.
+
+&emsp;&emsp;É importante ressaltar que este projeto não se encerra aqui. A implementação bem-sucedida da solução marca apenas o início de uma jornada contínua de aprimoramento e suporte ao Hospital Sírio-Libanês. Estamos comprometidos em acompanhar de perto a aplicação da solução, garantindo sua eficácia e realizando ajustes conforme necessário.
+
+&emsp;&emsp;Por fim, gostaríamos de expressar nossa gratidão ao Hospital Sírio-Libanês pela parceria e confiança em nosso trabalho. Este projeto não teria sido possível sem o apoio e a colaboração de sua equipe. Estamos confiantes de que a solução desenvolvida contribuirá significativamente para a melhoria dos serviços de saúde prestados, impactando positivamente a vida dos pacientes e profissionais envolvidos. Além disso, gostariamos de agradecer o Inteli pela oportunidade de realizar um projeto de grande importância como este.

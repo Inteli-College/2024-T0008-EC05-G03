@@ -1,0 +1,8 @@
+{
+    "label": "Conclusão",
+    "position": 1,
+    "link": {
+      "type": "generated-index",
+      "description": "Conclusão de todo o projeto contendo as considerações finais e descrição do que foi realizado em cada sprint"
+    }
+  }

@@ -33,8 +33,6 @@
 
 - O atributo ```serial``` representa a porta serial (USB) com a qual é feita a comunicação com o sensor infravermelho acoplado ao robô.
 
-
-
 ### Método mover
 
 <p style={{textAlign: 'center'}}>Figura 2 - Método mover</p>
@@ -50,13 +48,9 @@
 
 &emsp;&emsp;O método mover recebe os parâmetros ```x``` e ```y```, que representam as respectivas coordenadas necessárias para movimentação do braço mecânico num plano bidimensional. Quando o método é executado, a velocidade de movimentação do braço mecânico é ajustada, a movimentação para a posição determinada pelos parâmetros é feita e, durante 2 segundos, o dado booleano de se algum objeto foi detectado pelo sensor infravermelho é registrada na variável do tipo lista "leitura". Caso essa detecção ocorra, o método retorna ```True```.
 
-
-
 ### Método espiral e método cobrinha
 
 &emsp;&emsp;Os métodos ```espiral``` e ```cobrinha``` são referentes às rotinas de verificação implementadas pela equipe Violeta. Mais informações sobre elas podem ser encontradas [nesta seção](../../sprint-3/hardware_integracao/rotina_verificacao.md).
-
-
 
 ### Método reabastecer
 
@@ -90,8 +84,6 @@
 
 &emsp;&emsp;Com as rotinas de verificação, o robô é capaz de detectar quando um objeto é pego e, então, levá-lo para sua posição de destino no respectivo compartimento do layout de destino previamente definido na aplicação web. Após essa transposição, as respectivas posições de caminho e destino armazenadas nas variáveis homônimas passam a ser desconsideradas pelo programa, de modo que o loop definido na linha 14 não se torne infinito.
 
-
-
 ### Método inicial
 
 <p style={{textAlign: 'center'}}>Figura 4 - Método inicial</p>
@@ -106,8 +98,6 @@
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &emsp;&emsp;O método inicial faz com que o braço mecânico se mova à sua posição inicial.
-
-
 
 ### Método posicao
 
@@ -124,8 +114,6 @@
 
 &emsp;&emsp;O método posicao retorna a posição atual do braço mecânico.
 
-
-
 ### Método fechar
 
 <p style={{textAlign: 'center'}}>Figura 6 - Método fechar</p>
@@ -140,8 +128,6 @@
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &emsp;&emsp;O método fechar faz com que a conexão com o robô de braço mecânico seja terminada.
-
-
 
 ### Método ferramenta
 
@@ -163,7 +149,6 @@
 &emsp;&emsp;Para permitir a comunicação efetiva entre o backend da aplicação web da solução e o robô Dobot Magician Lite, a equipe Violeta definiu uma série de rotas para API que executam métodos da classe ```Robo``` listados acima. A tabela 2, a seguir, contém a relação entre cada rota em questão e os métodos da classe Robo executados em tal rota, bem como uma breve descrição da relação em cada linha.
 
 <p style={{textAlign: 'center'}}>Tabela 2 - Relação entre rotas da aplicação web e métodos da classe Robo</p>
-
 
 | **Rota da API**           | **Método da classe Robo** | **Descrição**                                                                                                                                                                                           |
 |--------------------|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

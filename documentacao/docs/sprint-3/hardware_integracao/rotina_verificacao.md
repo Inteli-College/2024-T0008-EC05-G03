@@ -32,7 +32,6 @@ Documentação da rotina de verificação desenvolvida para o robô de braço me
 
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
-
 ## Algoritmo 2: Cobrinha
 
 &emsp;&emsp;O segundo algoritmo segue uma lógica semelhante à encontrada nos jogos do tipo "snake game", no qual uma cobra controlada pelo jogador deve comer todas as frutas espalhadas pelo mapa para ganhar. Nesse tipo de jogo, se o jogador controlar a cobra de modo a sempre passar por todos os pontos do mapa, a tendência é que ele ganhe o jogo, uma vez que a cobra sempre comerá pelo menos uma fruta a cada iteração por todo o mapa.
@@ -40,7 +39,7 @@ Documentação da rotina de verificação desenvolvida para o robô de braço me
 &emsp;&emsp;De maneira análoga, o mesmo ocorre com a ventosa do braço robótico nos compartimentos dos layouts. Caso ela passe por todos os pontos que existem dentro do compatimento seguindo trajetórias lineares e tentando pegar itens do compartimento, ela sempre encontrará e pegará um item (desde que haja um item para ser pego dentro do compartimento).
 
 &emsp;&emsp;Da mesma forma que o algoritmo 1, este algoritmo interrompe o processo de reabastecimento do carrinho de parada quando não encontra e pega nenhum item dentro do compartimento definido. Além disso, ele também foi implementado e também pode ser encontrado em ```src/main.py```. A função que o contém está representada na figura 2.
- 
+
 <p style={{textAlign: 'center'}}>Figura 1 - Código do algoritmo 2</p>
 
 ![Código do algoritmo 2 (cobrinha)](../../../static/img/sprint-3/hardware-integracao/verificacao2_code_snippet.png)

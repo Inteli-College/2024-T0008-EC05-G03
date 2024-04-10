@@ -21,8 +21,6 @@ custom_edit_url: null
 
 &emsp;&emsp;A página de menu principal é a primeira página acessada pelo usuário ao iniciar a aplicação web da solução, logo após efetuar seu login. Nela, ela pode controlar o robô de braço robótico por meio do botão ```home``` (que faz o braço mecânico retornar a sua posição principal), por meio do botão ````posição atual``` (que exibe, na tela, a posição atual do braço mecânico) e por meio do botão ```ligar ferramenta``` (que liga ou desligada a ventosa fixa na extremidade do braço mecânico). Além disso, também há o botão ```Selecionar layout```, que redireciona o usuário para a página homônima.
 
-
-
 ## Selecionar layout
 
 <p style={{textAlign: 'center'}}>Figura 2 - Página de selecionar layout</p>
@@ -33,7 +31,6 @@ custom_edit_url: null
 
 &emsp;&emsp;A página de selecionar layout exibe, por meio de uma lista de componentes, todos os layout armazenados na base de dados da solução. Nesses componentes, há informações breves sobre cada layout: nome, data de criação e itens contidos. Para selecionar um dos layouts exibidos, o usuário deve clicar no componente correspondente, o que o redirecionará para a página de layout selecionado.
 
-
 ## Layout selecionado
 
 <p style={{textAlign: 'center'}}>Figura 3 - Página de layout selecionado</p>
@@ -43,8 +40,6 @@ custom_edit_url: null
 <p style={{textAlign: 'center'}}>Fonte: Elaboração própria</p>
 
 &emsp;&emsp;A página de layout selecionado exibe cada um dos compartimentos existentes no layout selecionado previamente pelo usuário, bem como os itens e as quantidades pré-definidas dentro de cada compartimento. No menu lateral da tela, há, ainda um menu de dropdown para selecionar um dos demais layouts exibidos na página anterior, um botão para dar início ao processo de montagem/reabastecimento do carrinho de emergência a partir do layout atual, um botão para editar o layout atual, um botão para descartar o layout atual e outro botão para voltar à página anterior.
-
-
 
 ## Montagem de layout
 

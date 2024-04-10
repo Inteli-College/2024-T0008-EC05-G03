@@ -20,4 +20,4 @@ Para inicializar apenas o frontend da aplicação do projeto é simples. Siga os
 
 Após digitar os comandos mostrados, o frontend será aberto em seu navegador.
 
-Para fechar o frontend é necessário pressionar no teclado "Ctrl" + "c", após isso, digite "s" no terminal, e assim o frontend será fechado. 
+Para fechar o frontend é necessário pressionar no teclado "Ctrl" + "c", após isso, digite "s" no terminal, e assim o frontend será fechado.

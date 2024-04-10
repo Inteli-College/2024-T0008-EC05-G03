@@ -3,6 +3,7 @@ import ButtonsPainelSelecionar from '../../components/buttonsPainel/ButtonsPaine
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faFileExport } from '@fortawesome/free-solid-svg-icons'; 
 import axios from 'axios';
+import "./Selecionar.css"
 
 // Função geral JSX para a página de Selecionar
 function Selecionar() {
@@ -42,8 +43,8 @@ function Selecionar() {
                     <button key={layout.id} className='layoutInfo botaoPersonalizado' onClick={() => handleButtonClick(layout.id)}
                         horario={layout.criado}>
                         {layout.nome_layout}
-                        {showExportIcon && <FontAwesomeIcon icon={faFileExport} />}
-                        {showEditIcon && <FontAwesomeIcon icon={faPen} />}
+                        {showExportIcon && <FontAwesomeIcon icon={faFileExport} className='iconExport' />}
+                        {showEditIcon && <FontAwesomeIcon icon={faPen} className='iconEdit'/>}
                     </button>
                 ))}
             </div>

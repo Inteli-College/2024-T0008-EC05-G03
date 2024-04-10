@@ -12,7 +12,7 @@ function Item({ nomeItem, quantidadeItem, onClick, deleteMode, onDelete, isRefil
     const isPlaceholder = !nomeItem || nomeItem === "+";
 
     return (
-        <div className='item' onClick={onClick} style={{ position: 'relative' }}>
+        <div className='item' onClick={onClick} style={{ position: 'relative', alignContent: 'center'}}>
 
             {deleteMode && (
                 <button onClick={(e) => {

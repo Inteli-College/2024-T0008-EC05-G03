@@ -107,6 +107,10 @@ Siga passo a passo para inicializar a documentação:
   - Integração entre backend e robô de braço mecânico
   - Desenvolvimento do frontend
   - Integração inicial entre frontend e backend
+- 0.5.0 - 11/04/2024
+  - Finalização da integração entre frontend e backend
+  - Refinamento e ajustes na integração com o robô
+  - Refinamento e ajustes na aplicação web
 
 ##  Licença/License
 

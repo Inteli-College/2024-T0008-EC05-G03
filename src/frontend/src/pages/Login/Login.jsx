@@ -69,7 +69,7 @@ function Login() {
                     ) : (
                         <div className="buttonContainer">
                             <button className="loginButton" onClick={handleLoginClick}>Login</button>
-                            <button className="signupButton">Criar conta</button>
+                            <form action="/Cadastro"><button className="signupButton">Criar conta</button></form>
                         </div>
                     )}
                 </div>

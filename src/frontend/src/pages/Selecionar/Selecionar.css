@@ -1,0 +1,14 @@
+.iconExport {
+    position: absolute;
+    top: 40%;
+    right: 10px; /* Ajuste a distância do ícone em relação à borda direita */
+    transform: translateY(-50%);
+    color: #9004d3;
+}
+
+.iconEdit {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajuste a distância do ícone em relação à borda direita */
+    transform: translateY(-50%);
+}

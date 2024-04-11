@@ -116,18 +116,18 @@ A matriz é composta por quatro quadrantes, cada um representando uma abordagem 
 
 ## Bibliografia
 
-Blue Ocean – more success with the right strategy. Disponível em: <https://www.ionos.com/startupguide/get-started/blue-ocean-strategy/>.
+Blue Ocean – more success with the right strategy. Disponível em: https://www.ionos.com/startupguide/get-started/blue-ocean-strategy/.
 
-SYDLE. Automação hospitalar: o que é e quais são os benefícios? Disponível em: <https://www.sydle.com/br/blog/automacao-hospitalar-63d28b3af467593bde10daed>.
+SYDLE. Automação hospitalar: o que é e quais são os benefícios? Disponível em: https://www.sydle.com/br/blog/automacao-hospitalar-63d28b3af467593bde10daed.
 
-DOBOT MG400 Robotic Arm | Adaptable for Small Batch Production. Disponível em: <https://www.dobot-robots.com/products/desktop-four-axis/mg400.html>.
+DOBOT MG400 Robotic Arm | Adaptable for Small Batch Production. Disponível em: https://www.dobot-robots.com/products/desktop-four-axis/mg400.html.
 
-SUMAART.COM. DOBOT CR3 Robotic Arm | Lightweight Cobot for Flexible Manufacturing Automation. Disponível em: <https://www.dobot-robots.com/products/cr-series/cr3.html>.
+SUMAART.COM. DOBOT CR3 Robotic Arm | Lightweight Cobot for Flexible Manufacturing Automation. Disponível em: https://www.dobot-robots.com/products/cr-series/cr3.html.
 
-SUMAART.COM. DOBOT CR10 Robotic Arm | Reliable Cobot with Wide Working Radius. Disponível em: <https://www.dobot-robots.com/products/cr-series/cr10.html>.
+SUMAART.COM. DOBOT CR10 Robotic Arm | Reliable Cobot with Wide Working Radius. Disponível em: https://www.dobot-robots.com/products/cr-series/cr10.html.
 
-SUMAART.COM. Cobot in Medical Industry | Dobot Industries. Disponível em: <https://www.dobot-robots.com/industries/medical.html#:~:text=Dobot>
+SUMAART.COM. Cobot in Medical Industry | Dobot Industries. Disponível em: https://www.dobot-robots.com/industries/medical.html#:~:text=Dobot
 
-SUMAART.COM. 3 Powerful Ways to Deploy Robotic Arms in Healthcare Industry. Disponível em: <https://www.dobot-robots.com/insights/news/3-powerful-ways-to-deploy-robotic-arms-in-healthcare-industry.html>
+SUMAART.COM. 3 Powerful Ways to Deploy Robotic Arms in Healthcare Industry. Disponível em: https://www.dobot-robots.com/insights/news/3-powerful-ways-to-deploy-robotic-arms-in-healthcare-industry.html
 
-Reclame Aqui - Sírio-Libanês. Disponível em: <https://www.reclameaqui.com.br/empresa/hospital-sirio-libanes-sp/lista-reclamacoes/>
+Reclame Aqui - Sírio-Libanês. Disponível em: https://www.reclameaqui.com.br/empresa/hospital-sirio-libanes-sp/lista-reclamacoes/

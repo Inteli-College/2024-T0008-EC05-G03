@@ -1,6 +1,6 @@
 # Sistema completo
 
-&emsp;&emsp;O video da demonstração completa do sistema pode ser encontrado [aqui](https://drive.google.com/file/d/1b1pR7EieMeWkYIRsn5jEGtGzFdqBU_8i/view?usp=sharing)
+&emsp;&emsp;O vídeo da demonstração completa do sistema pode ser encontrado [aqui](https://drive.google.com/file/d/1b1pR7EieMeWkYIRsn5jEGtGzFdqBU_8i/view?usp=sharing)
 
 &emsp;&emsp;O Violeta é uma solução abrangente que oferece uma gama de funcionalidades projetadas para simplificar e agilizar o processo de montagem de carrinhos de parada. Uma das principais finalidades do Violeta é proporcionar a criação e edição de layouts para a montagem desses carrinhos, oferecendo flexibilidade para adaptar as configurações de acordo com as necessidades específicas de cada situação.
 

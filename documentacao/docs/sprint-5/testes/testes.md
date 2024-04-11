@@ -67,7 +67,7 @@
 
 <p style={{textAlign: 'center'}}>Fonte: UX Collective</p>
 
-&emsp;&emsp;De acordo com a escala do SUS, chegamos ao número 78.75, sendo assim ele está classificado entre "bom" e "excelente". Todavia, mesmo com uma boa classificação, fizemos melhoras no sistema de acordo com o *feedback* dos testes.
+&emsp;&emsp;De acordo com a escala do SUS, chegamos ao número 78.75, sendo assim ele está classificado entre "bom" e "excelente". Todavia, mesmo com uma boa classificação, fizemos melhorias no sistema de acordo com o *feedback* dos testes.
 
 ## Mudanças
 
@@ -77,9 +77,10 @@
 
 - Manter pressionado o botão de exportar: era necessário manter o botão de exportar pressionado, ajustamos ele para apenas ser necessário o clique.
 
-- Fonte da quantidade de itens muito pequena: alguns usuários alegaram que a fonta da quantidade de cada item não estava tão visível, então aumentamos a fonte que a quantidade de cada item do layout aparece.
+- Fonte da quantidade de itens muito pequena: alguns usuários alegaram que a fonte da quantidade de cada item não estava tão visível, então aumentamos a fonte que a quantidade de cada item do layout aparece.
 
 #### Observações
 
-&emsp;&emsp;Por fim, é importante fazer uma observação. Os testes feitos foram em pequena escala, ou seja, poucas pessoas o testaram. Além disso, todas as pessoas tinham letramento digital intermdiário ou avançado.
-&emsp;&emsp;Entretanto, os testes feitos foram de extrema importância para encontrar elementos a serem melhorados que não haviamos encontrado antes.
+&emsp;&emsp;Por fim, é importante fazer uma observação. Os testes feitos foram em pequena escala, ou seja, poucas pessoas o testaram. Além disso, todas as pessoas tinham letramento digital intermediário ou avançado.
+
+&emsp;&emsp;Entretanto, os testes feitos foram de extrema importância para encontrar elementos a serem melhorados que não havíamos encontrado antes.

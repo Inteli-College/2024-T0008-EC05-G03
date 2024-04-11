@@ -1,6 +1,6 @@
 # Integração
 
-Esta documentação descreve a integração entre o frontend desenvolvido em React e o backend desenvolvido em Flask para o projeto Violeta.
+&emsp;&emsp;Esta documentação descreve a integração entre o frontend desenvolvido em React e o backend desenvolvido em Flask para o projeto Violeta.
 
 &emsp;&emsp;No desenvolvimento de aplicações web modernas, a integração entre o backend e o frontend desempenha um papel crucial. Essa integração representa a harmonia entre as partes que compõem a aplicação, permitindo que os dados fluam sem problemas entre o servidor e o cliente, resultando em uma experiência de usuário coesa e eficiente.
 

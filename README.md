@@ -111,6 +111,7 @@ Siga passo a passo para inicializar a documentação:
   - Finalização da integração entre frontend e backend
   - Refinamento e ajustes na integração com o robô
   - Refinamento e ajustes na aplicação web
+  - Testes de usabilidade
 
 ##  Licença/License
 

@@ -25,7 +25,7 @@ const ModalModo = ({ onClose, onModeSelect, json }) => {
         <p style={{fontSize:10}}>0: Nenhuma verificação, 1: Verificação em espiral,</p>
         <p style={{fontSize:10}}>2: Verificação em cobrinha, 3: Ambas verificações</p><br></br>
         
-        <button className="modal-confirm" onClick={onClose}>Confirmar</button>
+        <button className="modal-confirm" onClick={onClose}>Fechar</button>
       </div>
     </div>
   );

@@ -123,7 +123,7 @@ const ButtonsPainelSelecionado = ({ toggleDeleteMode, deleteMode }) => {
                     <div className='selectedLayoutName'>{selectedLayoutName}</div> {/* Exibindo o nome do layout selecionado */}
                     <div className='buttonsPainelSelecionado'>
                         <button className='botaoPadrao' onClick={handleGeneratedJson}>Iniciar Montagem</button>
-                        <button className='botaoPadrao' onClick={toggleDeleteMode}>{deleteMode ? "Desabilitar deletar" : "Habilitar deletar"}</button>
+                        <button className='botaoPadrao' onClick={toggleDeleteMode}>{deleteMode ? "Editar Layout" : "Limpar Layout"}</button>
                         <form onSubmit={handleOpenModal}>
                             <button className='botaoDelete' type="submit"></button>
                         </form>

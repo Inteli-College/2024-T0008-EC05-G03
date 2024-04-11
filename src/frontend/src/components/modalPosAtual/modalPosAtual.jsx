@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './modalPosAtual.css'; // Make sure to create a corresponding CSS file for styling
 
-const ModalPosAtual = ({ show, handleClose }) => {
+const ModalPosAtual = ({ show, handleClose, position }) => {
   if (!show) {
     return null;
   }

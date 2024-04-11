@@ -64,7 +64,7 @@ function ControleBR() {
   return (
     <>
       <div className='mainCBR'>
-        <ModalPosAtual show={showModalPos} handleClose={handleCloseModalPos}/>
+        <ModalPosAtual show={showModalPos} handleClose={handleCloseModalPos} position={position}/>
         <HomeModal show={showModalHome} handleClose={handleCloseModalHome}/>
         <div className='titulo'></div>
         <div className='linhaHorizontal'></div>

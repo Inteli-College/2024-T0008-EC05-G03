@@ -60,3 +60,15 @@ Para inicializar o sistema da solução desenvolvido até a sprint 3, deve-se se
 
 > Ao digitar esses comandos, você estará instalando as dependências necessárias para executar o frontend do sistema e, logo depois, executando-o. Dessa forma, uma url aparecerá no terminal e você poderá acessá-la num navegador da web para utilizar o frontend.
 > O tutorial para inicializar o frontend também está diponível [aqui](frontend/inicializacao).
+
+> Além disto, para uma inicialização mais prática, basta seguir o passo a passo abaixo.
+
+## Passo a passo inicialização mais veloz
+
+```cd src/frontend```
+
+```npm i```
+
+```npm run start```
+
+> Após a execução de tais comandos no terminal dentro da pasta do projeto, ele irá iniciar tanto o frontend quanto o backend de uma só vez, bastando apenas clicar no link que aparece no terminal.

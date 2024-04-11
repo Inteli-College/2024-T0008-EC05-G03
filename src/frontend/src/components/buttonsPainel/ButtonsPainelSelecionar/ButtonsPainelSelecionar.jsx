@@ -1,5 +1,5 @@
 import React from "react";
-import Voltar from "../../voltar";
+import Voltar from "../../voltar/voltar.jsx";
 import './ButtonsPainelSelecionar.css';
 import logoCompleta from '../../../assets/logo_completa.svg';
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Voltar from "../voltar";
+import Voltar from "../voltar/voltar.jsx";
 import './ButtonsPainelMontar.css';
 import robotArm from '../../assets/robot-arm.svg';
 

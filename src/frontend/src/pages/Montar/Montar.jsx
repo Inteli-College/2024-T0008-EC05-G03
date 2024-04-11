@@ -1,10 +1,10 @@
 import './Montar.css'
 import React from 'react'
 import robotArm from '../../assets/robot-arm.svg'
-import Voltar from '../../components/voltar.jsx'
+import Voltar from '../../components/voltar/voltar.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import ButtonsPainelMontar from '../../components/ButtonsPainel/ButtonsPainelMontar.jsx'
+import ButtonsPainelMontar from '../../components/buttonsPainel/ButtonsPainelMontar.jsx';
 
 
 function BotaoAdd() {

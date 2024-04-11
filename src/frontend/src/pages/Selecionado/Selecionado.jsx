@@ -1,7 +1,7 @@
 import './Selecionado.css'
 import React from 'react'
 import robotArm from '../../assets/robot-arm.svg'
-import ButtonsPainelSelecionado from '../../components/ButtonsPainel/ButtonsPainelSelecionado/ButtonsPainelSelecionado.jsx'
+import ButtonsPainelSelecionado from '../../components/buttonsPainel/ButtonsPainelSelecionado/ButtonsPainelSelecionado';
 
 function Item() {
     return (

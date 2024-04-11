@@ -27,7 +27,7 @@ const ModifyModal = ({ onClose, compartmentDetails, isRefill }) => {
       headers: { "Content-Type": "application/json" } 
     }).then((response) => {
       console.log('Sucesso', response);
-      onClose(); // Close the modal on success
+      window.location.reload()
     }).catch(err => {
       console.log('Erro', err)
     });

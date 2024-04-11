@@ -1,8 +1,9 @@
 import React from "react";
-import Voltar from "../voltar/voltar.jsx";
+import Voltar from "../../voltar/voltar.jsx";
 import './ButtonsPainelMontar.css';
-import robotArm from '../../assets/robot-arm.svg';
+import robotArm from '../../../assets/robot-arm.svg';
 
+// Função geral JSX para o componente ButtonsPainelMontar
 const ButtonsPainelMontar = () => {
     return (
         <>
@@ -10,7 +11,7 @@ const ButtonsPainelMontar = () => {
         <div className='armBackground'>
           <img src={robotArm} />
         </div>
-        <form className='formName'>
+        <form className='formName' action="/add_layout">
           <label>
             Insira o nome do Layout: <br />
             <input type='text' className='insertName'/>

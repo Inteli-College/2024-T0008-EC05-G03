@@ -17,8 +17,10 @@ def create_app():
     app.config["SESSION_PERMANENT"] = False
     app.config["SESSION_TYPE"] = "filesystem"
     app.register_blueprint(main_blueprint)
+
+    app.secret_key = os.urandom(24)
     
     db.init_app(app)
-    CORS(app)
+    CORS(app, supports_credentials=True)
 
     return app

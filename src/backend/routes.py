@@ -3,8 +3,9 @@ from flask import request, jsonify, send_file, make_response, Blueprint, session
 from flask_session import Session
 from werkzeug.utils import secure_filename
 from io import StringIO
+import io
 import csv
-from .models import db, Layout, Compartment, Users, UserLogin
+from .models import db, Layout, Compartment, Users, UserLogin, RefillCompartment, Uso
 import sys
 import os
 from datetime import datetime
@@ -28,7 +29,61 @@ def utc_to_sp_time(utc_dt):
 state = False
 
 
+# Rotas referentes a tabela RefillCompartment
 
+@main.route('/get_refill_compartment/<int:id_layout>', methods=['GET'])
+def get_refill_compartment(id_layout):
+    compartments = RefillCompartment.query.filter_by(id_layout=id_layout).all()
+    if compartments:
+        compartment_list = [{
+            'id': compartment.id,
+            'nome_item': compartment.nome_item,
+            'quantidade_item': compartment.quantidade_item,
+            'numero_compartimento': compartment.numero_compartimento,
+            'id_layout': compartment.id_layout
+        } for compartment in compartments]
+        return jsonify(compartment_list)
+    else:
+        return jsonify({'message': 'No compartments found for the given layout ID'}), 404
+    
+@main.route('/add_refill_compartment/<int:id_layout>', methods=['POST'])
+def add_refill_compartment(id_layout):
+    data = request.json
+    nome_item = data['nome_item']
+    quantidade_item = data['quantidade_item']
+    numero_compartimento = data['numero_compartimento']
+    
+    new_compartment = RefillCompartment(nome_item=nome_item, quantidade_item=quantidade_item,
+                        numero_compartimento=numero_compartimento, id_layout=id_layout)
+    
+    db.session.add(new_compartment)
+    db.session.commit()
+    
+    return jsonify({'message': 'compartment added successfully'})
+
+@main.route('/modify_refill_compartment/<int:id>', methods=['PUT', 'PATCH'])
+def modify_refill_compartment(id):
+    compartment = RefillCompartment.query.get(id)
+    if not compartment:
+        return jsonify({'message': 'Compartment not found'}), 404
+
+    data = request.json
+    for key, value in data.items():
+        setattr(compartment, key, value)
+
+    db.session.commit()
+    return jsonify({'message': 'Compartment modified successfully'})
+
+
+@main.route('/delete_refill_compartment/<int:id>', methods=['DELETE'])
+def delete_refill_compartment(id):
+    compartment = RefillCompartment.query.get(id)
+    if not compartment:
+        return jsonify({'message': 'Compartment not found'}), 404
+    else:
+        db.session.delete(compartment)
+        db.session.commit()
+        return jsonify({'message': 'Compartment deleted successfully'})
 # Rotas referentes às tabelas Compartment e Layout
 
 # Rota para puxar nome e quantidade de todos os remédios da tabela Compartment
@@ -40,7 +95,6 @@ def get_all_compartments_medication():
             'id': compartment.id,
             'nome_item': compartment.nome_item,
             'quantidade_item': compartment.quantidade_item,
-            'id_item': compartment.id_item
         } for compartment in compartments]
         return jsonify(compartment_list)
     else:
@@ -54,10 +108,9 @@ def add_compartment(id_layout):
     nome_item = data['nome_item']
     quantidade_item = data['quantidade_item']
     numero_compartimento = data['numero_compartimento']
-    id_item = data['id_item']
     
     new_compartment = Compartment(nome_item=nome_item, quantidade_item=quantidade_item,
-                        numero_compartimento=numero_compartimento, id_layout=id_layout, id_item=id_item)
+                        numero_compartimento=numero_compartimento, id_layout=id_layout)
     
     db.session.add(new_compartment)
     db.session.commit()
@@ -77,95 +130,102 @@ def get_compartments(id_layout):
             'nome_item': compartment.nome_item,
             'quantidade_item': compartment.quantidade_item,
             'numero_compartimento': compartment.numero_compartimento,
-            'id_item': compartment.id_item
         } for compartment in compartments]
         return jsonify(compartment_list)
     else:
         return jsonify({'message': 'No compartments found for the given layout ID'}), 404
     
+# Download Route
+# Download Route
 @main.route('/download_compartment/<int:id_layout>', methods=['GET'])
 def download_compartment(id_layout):
-    # Adquirir o nome do layout através do id do layout
-    layout = Layout.query.filter_by(id=id_layout).first()
+    # Find the layout by id
+    layout = Layout.query.get(id_layout)
     
-    # Se não  haver layout
-    if layout is None:
+    if not layout:
         return jsonify({'message': 'Layout not found'}), 404
     
-    nome_layout = layout.nome_layout  
+    nome_layout = layout.nome_layout
     
-    # Filtrar todos as linhas da tabela compartment com o id layout igual ao id_layout da URL
+    # Get all compartments and refill compartments associated with the layout
     compartments = Compartment.query.filter_by(id_layout=id_layout).all()
-    if compartments:
-        # Criar um CSV na memória
-        si = StringIO()
-        cw = csv.writer(si)
-        # Escrever o "Header"
-        cw.writerow(['id', 'id_item', 'nome_item', 'numero_compartimento', 'quantidade_item'])
-        # Escrever dados
-        for compartment in compartments:
-            cw.writerow([
-                compartment.id,
-                compartment.id_item,
-                compartment.nome_item,
-                compartment.numero_compartimento,
-                compartment.quantidade_item
-            ])
-        
-        # Resetar o ponteiro da memória do arquivo para o início
-        si.seek(0)
-        
-        # Formatar o nome do layout para adicionar ao arquivo
-        formatted_layout_name = nome_layout.replace(" ", "_")
-        filename = f"{formatted_layout_name}.csv"
-        
-        output = make_response(si.getvalue())
-        output.headers["Content-Disposition"] = f"attachment; filename={filename}"
-        output.headers["Content-type"] = "text/csv"
-        return output
-    else:
-        return jsonify({'message': 'No compartments found for the given layout ID'}), 404
+    refill_compartments = RefillCompartment.query.filter_by(id_layout=id_layout).all()
+    
+    # Create CSV data
+    output_data = []
+    output_data.append(['id', 'nome_item', 'numero_compartimento', 'quantidade_item', 'refill'])
+    
+    for compartment in compartments:
+        output_data.append([str(compartment.id), compartment.nome_item, compartment.numero_compartimento, compartment.quantidade_item, ''])
+    
+    for refill_compartment in refill_compartments:
+        output_data.append([str(refill_compartment.id), refill_compartment.nome_item, refill_compartment.numero_compartimento, refill_compartment.quantidade_item, 'refill'])
+    
+    # Create response
+    response = make_response('\n'.join([','.join(map(str, row)) for row in output_data]))
+    
+    # Set headers
+    response.headers["Content-Disposition"] = f"attachment; filename={nome_layout}.csv"
+    response.headers["Content-Type"] = "text/csv"
+    
+    return response
+
     
 # Rota para ler arquivo CSV e adicionar a base de dados
 
+# Upload Route
 @main.route('/upload_compartment', methods=['POST'])
 def upload_compartment():
     if 'file' not in request.files:
         return jsonify({'message': 'No file part'}), 400
+    
     file = request.files['file']
+    
     if file.filename == '':
         return jsonify({'message': 'No selected file'}), 400
-    if file:
-        filename = secure_filename(file.filename)
-
-        # Pegar o nome do layout através do nome do arquivo
-        layout_name = filename.rsplit('.', 1)[0]
-
-        # Criar uma nova coluna na tabela Layout
-        new_layout = Layout(nome_layout=layout_name)
-        db.session.add(new_layout)
-        db.session.flush()
-        
-        # Ler o arquivo CSV
-        stream = StringIO(file.stream.read().decode("UTF8"), newline=None)
-        csv_reader = csv.DictReader(stream)
-        
-        # Adicionar novas linhas na tabela Compartment
-        for row in csv_reader:
-            new_compartment = Compartment(
-                nome_item=row['nome_item'],
-                quantidade_item=row['quantidade_item'],
-                numero_compartimento=row['numero_compartimento'],
-                id_item=row['id_item'],
-                id_layout=new_layout.id  # Associate with the new layout
-            )
-            db.session.add(new_compartment)
-        
-        db.session.commit()  # Commit all changes to the database
-        
-        return jsonify({'message': 'File uploaded and processed successfully'}), 201
     
-    return jsonify({'message': 'Error processing file'}), 400
+    # Extract filename without extension to use as layout name
+    filename = secure_filename(file.filename)
+    layout_name = os.path.splitext(filename)[0]
+    
+    # Read the uploaded CSV file in text mode
+    csv_data = csv.DictReader(io.StringIO(file.stream.read().decode('utf-8')), delimiter=',')
+    
+    # Get current timestamp
+    current_time = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
+    
+    # Create a new layout for the compartments from the uploaded file
+    layout = Layout(nome_layout=layout_name, criado=current_time)
+    db.session.add(layout)
+    db.session.flush()
+    
+    # Separate compartments and refill compartments
+    compartments = []
+    refill_compartments = []
+    for row in csv_data:
+        if 'refill' in row and row['refill'] == 'refill':
+            # It's a refill compartment
+            refill_compartments.append(RefillCompartment(
+                nome_item=row['nome_item'],
+                quantidade_item=int(row['quantidade_item']),
+                numero_compartimento=int(row['numero_compartimento']),
+                id_layout=layout.id
+            ))
+        else:
+            # It's a normal compartment
+            compartments.append(Compartment(
+                nome_item=row['nome_item'],
+                quantidade_item=int(row['quantidade_item']),
+                numero_compartimento=int(row['numero_compartimento']),
+                id_layout=layout.id
+            ))
+    
+    # Add compartments and refill compartments to the database
+    db.session.add_all(compartments)
+    db.session.add_all(refill_compartments)
+    db.session.commit()
+    
+    return jsonify({'message': 'File uploaded and processed successfully'}), 201
 
     
 # Rota para modificar um compartimento de acordo com a id do compartimento na url
@@ -218,7 +278,7 @@ def add_layout():
     data = request.json
     nome_layout = data['nome_layout']
     
-    new_layout = Layout(nome_layout=nome_layout)
+    new_layout = Layout(nome_layout=nome_layout, criado=str(datetime.now().strftime("%d/%m/%Y, %H:%M:%S")))
     
     db.session.add(new_layout)
     db.session.commit()
@@ -232,11 +292,13 @@ def get_layouts():
     layouts = Layout.query.all()
 
     layouts_list = [{
-            'id_layout': layout.id,
+            'id': layout.id,
             'nome_layout': layout.nome_layout,
+            "criado": layout.criado,
         } for layout in layouts]
         
     return jsonify(layouts_list)
+
 
 # Rotas referentes ao robo
 
@@ -286,13 +348,21 @@ def refill(mode):
         try:
             global state
             data = request.get_json()
-            
+            user = session['username']
+            layout_id = data.get('layout', None)
             reabastecimento_dict = data.get('reabastecimento', {})
             gaveta_dict = data.get('gaveta', {})
             
             m1 = [[int(key), value['nome'], value['qtd']] for key, value in reabastecimento_dict.items()]
             m2 = [[int(key), value['nome'], value['qtd']] for key, value in gaveta_dict.items()]
 
+            layout = Layout.query.filter_by(id=layout_id).first()
+            user_data = Users.query.filter_by(username=user).first()
+
+            uso = Uso(id=user_data.id, nome_layout=layout.nome_layout, horario=str(datetime.now().strftime("%d/%m/%Y, %H:%M:%S")), username=user_data.username)
+
+            db.session.add(uso)
+            db.session.commit()
 
             if not m1 or not m2:
                 return jsonify({"error": "Missing m1 or m2 in the request"}), 400
@@ -301,6 +371,7 @@ def refill(mode):
             robo.reabastecer(mode)
             state = False
             robo.fechar()
+
             return jsonify({"message": "Reabastecimento completed successfully with mode {}".format(mode)}), 200
 
         except Exception as e:
@@ -332,29 +403,26 @@ def login_user():
     
 @main.route('/logout_user', methods=['POST', 'GET'])
 def logout_user():
-    if request.method == 'POST':
-       # CHECAR SE O USUARIO ESTA LOGADO
-       if not session.get("username"):
-           # REDIRECIONAR PAG DE LOGIN
-           return jsonify({'error': 'User not logged in'}), 401
-       else:
-            username = request.json['username']
-            user = Users.query.filter_by(username=username).first()
-            if user:
-                last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
-                if last_login and last_login.logout_time is None:
-                    last_login.logout_time = datetime.now(spTmz)
-                    session.pop('username', default=None)
-                    db.session.commit()
-                    
-                    return jsonify({'message': f'User {username} logged out successfully'})
-                else:
-                    return jsonify({'error': 'User not logged in or already logged out'}), 400
-            else:
-                return jsonify({'error': 'User not found'}), 404
+    if 'username' not in session:
+        return jsonify({'error': 'User not logged in'}), 401
+    
+    username = session.get('username')
+    
+    user = Users.query.filter_by(username=username).first()
+    if user:
+        last_login = UserLogin.query.filter_by(user_id=user.id).order_by(UserLogin.login_time.desc()).first()
+        if last_login:
+            last_login.logout_time = datetime.now(spTmz)  
+            db.session.commit()
+            session.pop('username', None)
+            
+              # Clear the session
+            return jsonify({'message': f'User {username} logged out successfully'})
+        else:
+            return jsonify({'error': 'User not logged in or already logged out'}), 400
     else:
-        # RETORNAR A PAGINA DE LOGOUT AQUI
-        return jsonify({'error': 'Method not allowed'}), 405
+        return jsonify({'error': 'User not found'}), 404
+
 
 
 @main.route('/get_users', methods=['GET'])
@@ -409,3 +477,22 @@ def update_user():
             return jsonify({'error': 'No new information provided'}), 400
     else:
         return jsonify({'error': 'User not found'}), 404
+    
+@main.route('/check_session', methods=['GET'])
+def check_session():
+    if 'username' in session:
+        return jsonify({'isAuthenticated': True, 'username': session['username']})
+    else:
+        return jsonify({'isAuthenticated': False})
+    
+@main.route('/get_uso', methods=['GET'])
+def get_uso():
+    usos = Uso.query.all()
+    usos_list = [{
+        'id_uso': uso.id_uso,
+        'id': uso.id,
+        'nome_layout': uso.nome_layout,
+        'horario': uso.horario,
+        'username': uso.username
+    } for uso in usos]
+    return jsonify(usos_list)

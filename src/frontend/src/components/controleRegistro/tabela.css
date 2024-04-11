@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+  }
+  
+  .activity-table th,
+  .activity-table td {
+    border: 1px solid #F7F5FF;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .activity-table th {
+    background-color: #F7F5FF; 
+    color: black;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .activity-table tr:nth-child(even) {
+    background-color: #F7F5FF;
+  }
+  
+  .activity-table tr:hover {
+    background-color:#ddd;
+  }
+
+  .table-container {
+    max-height: 500px; 
+    overflow-y: auto; 
+    margin-bottom: 20px;
+  }
+
+  .activity-table, .activity-table th, .activity-table td {
+    border: 1px solid #9004D3; /* Sets the border color to light gray and thickness to 2px */
+  }
+  

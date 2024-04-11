@@ -1,6 +1,7 @@
 import React from 'react';
 import './modal.css';
 
+// Função geral JSX para o componente Modal
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 

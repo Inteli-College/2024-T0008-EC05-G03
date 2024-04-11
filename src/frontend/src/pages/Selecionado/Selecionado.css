@@ -1,6 +1,29 @@
+.footer {
+    margin-left: 25%;
+    margin-top: 1%;
+    font-family: 'Public Sans', sans-serif;
+  }  
+
+.placeholderVisible {
+    display: flex; /* or "block" depending on your design */
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin-top: 3%;
+}
+
+.placeholderInvisible {
+    display: none;
+}
+
+.smallText {
+    font-size: 0.75em;
+  }
+
 .pageContent {
     display: flex;
     flex-direction: row;
+    margin-top: 1%;
 }
 
 .infoContainer {
@@ -14,6 +37,21 @@
     margin-left: 2vw;
 }
 
+.nomeItem {
+    font-size: 1.3em;
+    color: #333333; 
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 200;
+    margin-top: 5%;
+  }
+
+  .quantidadeItem {
+    font-size: 1em; 
+    color: #666666; 
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 100;
+  }
+
 .carrinhoTitle1::before {
     content: "GAVETA DE\A REABASTECIMENTO";
     display: block;
@@ -21,6 +59,7 @@
     font-size: 1.7vw;
     white-space: pre-wrap;
     text-align: center;
+    margin-top: 5vh;
 }
 
 .carrinhoTitle2::before {
@@ -30,6 +69,7 @@
     font-size: 1.7vw;
     white-space: pre-wrap;
     text-align: center;
+    margin-top: 5vh;
 }
 
 .backgroundCarrinho {
@@ -56,25 +96,15 @@
     border-radius: 1.25rem;
     background-color: #fff;
     border: none;
+    padding: 9%;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; 
 }
 
-
-.nomeItem::before{
-    content: "Nome do Item";
-    display: block;
-    font-size: 1.08em;
-    font-weight: bold;
-    margin-left: 1vw;
-    margin-top: 2vh;
-    padding-top: 1vh;
-}
-
-.quantidadeItem::before{
-    content: "Quantidade do Item";
-    display: block;
-    font-size: 1em;
-    margin-left: 1vw;
-    margin-top: 1.6vh;
+.item:hover {
+    background-color: #A06EE0; 
+    color: white; 
 }
 
 
@@ -124,14 +154,8 @@
     position: relative; 
 }
 
-.botaoPersonalizado::before {
-    content: 'Layout X';
-    display: block;
-    margin-bottom: 0.5vw;
-}
-
 .botaoPersonalizado::after {
-    content: 'Data de criação: 20/03/2024 Itens: xxxxxx, xxxxxxx, xxxxxx';
+    content: 'Horário de criação: 'attr(horario)'';
     display: block;
     font-size: 1vw;
     margin-top: 0.5vw;
@@ -143,3 +167,9 @@
 }
 
 
+.delete-icon {
+    cursor: pointer;
+}
+.delete-icon {
+    cursor: pointer;
+}

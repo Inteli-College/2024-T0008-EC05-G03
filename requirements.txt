@@ -30,4 +30,3 @@ typing_extensions==4.10.0
 wcwidth==0.2.13
 Werkzeug==3.0.1
 xmod==1.8.1
-yaspin @ https://github.com/pavdmyt/yaspin/archive/master.zip#sha256=4627fc8bd12c9919802b676dd813e8e2b1d2d035dac44bc3adef670dc0489438

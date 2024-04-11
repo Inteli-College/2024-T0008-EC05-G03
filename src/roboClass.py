@@ -5,7 +5,7 @@ import numpy as np
 import time
 import serial
 
-#Classe para mexer o robô (o instanciamento precisa de duas matrizes do formato [[id, nome, qtd],...])
+# Classe para mexer o robô (o instanciamento precisa de duas matrizes do formato [[id, nome, qtd],...])
 
 class Robo: 
     def __init__(self, reab, gav):
@@ -43,7 +43,7 @@ class Robo:
         self.device.speed(100,100)
         return "True" in leitura  # Se pegou ou não
     
-    #Primeiro tipo de verificação
+    # Primeiro tipo de verificação em espiral
     def espiral(self, pc, cx, cy, p):
         div = 2*p + 1
         matRot = np.array([[0.0, 1.0], [-1.0, 0.0]])
@@ -70,7 +70,7 @@ class Robo:
                 break
         return pegou
     
-    #Segundo tipo de verificação
+    # Segundo tipo de verificação em cobrinha
     def cobrinha (self, pc, cx, cy, qx, qy):
         dx, dy = round(2*cx/(qx-1),2), round(2*cy/qy,2)
         xVal = -1
@@ -91,7 +91,7 @@ class Robo:
             xVal *= -1
         return achou
     
-    #Função que arruma com base nos dados do objeto (o modo pode ser: 0 - nenhuma verificação, 1 - espiral, 2 - cobrinha, 3 - as duas)
+    # Função que arruma com base nos dados do objeto (o modo pode ser: 0 - nenhuma verificação, 1 - espiral, 2 - cobrinha, 3 - as duas)
     def reabastecer(self, mode: int):
         caminho = []
         destino = []

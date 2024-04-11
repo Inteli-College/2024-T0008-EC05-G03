@@ -14,6 +14,7 @@ class Layout(db.Model):
     __tablename__ = 'Layout'
     id = Column(Integer, primary_key=True)
     nome_layout = Column(Text, nullable=False)
+    criado = Column(Text)
     
 class Compartment(db.Model):
     __tablename__ = 'Compartment'
@@ -22,7 +23,15 @@ class Compartment(db.Model):
     quantidade_item = Column(Integer, nullable=False)
     numero_compartimento = Column(Integer, nullable=False)
     id_layout = Column(Integer, ForeignKey('Layout.id'), nullable=False)
-    id_item = Column(Integer, nullable=False)
+    layout = relationship("Layout")
+
+class RefillCompartment(db.Model):
+    __tablename__ = 'RefillCompartment'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    nome_item = Column(Text, nullable=False)
+    quantidade_item = Column(Integer, nullable=False)
+    numero_compartimento = Column(Integer, nullable=False)
+    id_layout = Column(Integer, ForeignKey('Layout.id'), nullable=False)
     layout = relationship("Layout")
 
 class Users(db.Model):
@@ -45,3 +54,13 @@ class UserLogin(db.Model):
     logout_time = db.Column(db.DateTime, nullable=True)
 
     user = db.relationship('Users', backref=db.backref('logins', lazy=True))
+
+class Uso(db.Model):
+    __tablename__ = 'Uso'
+    id_uso = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
+    nome_layout = db.Column(db.Text, db.ForeignKey("Layout.nome_layout"), nullable=False)
+    horario = db.Column(db.Text, nullable=False)
+    username = db.Column(db.Text, db.ForeignKey("Users.username"), nullable=False)
+
+

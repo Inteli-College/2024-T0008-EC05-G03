@@ -1,5 +1,6 @@
 import React from "react";
 
+// Função para voltar para a página anterior
 function acaoVoltar() {
   window.history.back();
 }

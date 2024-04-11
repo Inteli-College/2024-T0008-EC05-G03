@@ -1,3 +1,19 @@
+.botaoAtivo {
+    background-color: #CF80FF;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Public Sans', sans-serif;
+    width: 16vw;
+    height: 3vw;
+    margin-top: 5vh;
+    font-size: 1.4vw;
+    border-radius: 15px;
+}
+
 .painelDeControleSelecionar {
     display: flex;
     flex-direction: column;
